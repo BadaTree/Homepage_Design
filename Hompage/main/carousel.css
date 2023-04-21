@@ -65,7 +65,6 @@ nav ul li:hover ul {
 .menu {
   display: flex;
   justify-content: flex-end;
-  background-color: #c7cedd;
 }
 
 .menu li {
