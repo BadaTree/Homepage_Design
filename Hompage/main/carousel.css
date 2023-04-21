@@ -11,6 +11,11 @@ body {
   color: #943232;
 }
 
+img{
+  max-width: 100%;
+  height: auto;
+}
+
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -48,6 +53,7 @@ body {
 }
 /* rtl:begin:ignore */
 .marketing .col-lg-4 p {
+  font-size: 16px;
   margin-top: 0.5rem;
   margin-right: .75rem;
   margin-left: .75rem;
@@ -61,8 +67,8 @@ body {
 
 /* 게시판 폰트 설정 */
 .marketing .col-lg-4 h2 {
-  /* font-family: monospace;
-  font-size: 20px; */
+  /* font-family: monospace;*/
+  font-size: 23px; 
   margin-top: 1.5rem;
 }
 
