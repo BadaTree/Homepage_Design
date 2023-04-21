@@ -38,6 +38,16 @@ img{
 
 }
 
+/* 슬라이드 제목 텍스트 수정 */
+.carousel h1{
+  font-size: 20px;
+}
+
+/* 슬라이드 부제목 텍스트 수정 */
+.carousel h4{
+  font-size: 15px;
+}
+
 
 /* MARKETING CONTENT
 -------------------------------------------------- */
@@ -63,6 +73,7 @@ img{
 .marketing .col-lg-4 h1 {
   /* font-family: monospace;
   font-size: 20px; */
+  font-size: 10px;
 }
 
 /* 게시판 폰트 설정 */
