@@ -65,6 +65,7 @@ nav ul li:hover ul {
 .menu {
   display: flex;
   justify-content: flex-end;
+  background-color: #c7cedd;
 }
 
 .menu li {
@@ -89,9 +90,10 @@ nav ul li:hover ul {
   position: absolute;
   top: 100%;
   left: 0;
-  padding: 5px;
+  padding: 5px 0;
   background-color: #f0f0f0;
   background-size: auto; /* set background size to auto */
+  display: inline-block; /* make submenu inline-block */
 }
 
 .submenu li {
@@ -100,7 +102,7 @@ nav ul li:hover ul {
 
 .submenu li a {
   font-size: 14px;
-  padding: 5px;
+  padding: 5px 0;
   text-decoration: none;
   color: #333;
 }
