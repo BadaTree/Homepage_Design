@@ -88,6 +88,16 @@
         max-width: 100%;
     }
 
+    	/* 하위 메뉴를 감추기 위해 display: none 속성을 지정합니다. */
+		.sub-menu {
+			display: none;
+		}
+
+		/* 마우스를 갖다대면 하위 메뉴가 보이도록 합니다. */
+		.menu:hover .sub-menu {
+			display: block;
+		}
+
     /* 구분선 수정 */
       hr {
         border: none;
@@ -97,9 +107,12 @@
         /* 구분선 아래 공백 조절*/
         padding-bottom: 20px;
       }
-     
+
+      /* footer 영역 수정 */
       p {
 			line-height: 1.5;
+      /* 좌측 정렬 (left, center, right) 속성을 이용해 좌우,가운데 정렬 수정 가능 */
+      text-align: left;
 		  }
 
     </style>
@@ -109,33 +122,27 @@
     <link href="carousel.css" rel="stylesheet">
   </head>
   <body>
-    
+<!-- ******************************************** 카테고리 영역 ******************************************** -->
 <header>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Carousel</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li>
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-  </nav>
+  <nav>
+		<ul class="menu">
+			<li><a href="#">메뉴 1</a>
+				<ul class="sub-menu">
+					<li><a href="#">하위 메뉴 1-1</a></li>
+					<li><a href="#">하위 메뉴 1-2</a></li>
+					<li><a href="#">하위 메뉴 1-3</a></li>
+				</ul>
+			</li>
+			<li><a href="#">메뉴 2</a></li>
+			<li><a href="#">메뉴 3</a>
+				<ul class="sub-menu">
+					<li><a href="#">하위 메뉴 3-1</a></li>
+					<li><a href="#">하위 메뉴 3-2</a></li>
+					<li><a href="#">하위 메뉴 3-3</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
 </header>
 
 <main>
@@ -152,7 +159,7 @@
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
     </div>
 
-    <!-- ******************************************** Slider 수정시 ******************************************** -->
+    <!-- ******************************************** Slider 영역 ******************************************** -->
     <div class="carousel-inner">
       <div class="carousel-item active">
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
@@ -261,7 +268,8 @@
     </button>
   </div>
 
-  <!-- ******************************************** 게시판 영역 수정시 ******************************************** -->
+  
+  <!-- ******************************************** 게시판 영역 ******************************************** -->
   <!-- Marketing messaging and featurettes : 게시판 영역 
   ================================================== -->
   <!-- Wrap the rest of the page in another container to center all the content. -->
@@ -332,6 +340,7 @@
   <!-- 구분선 -->
   <hr>
 
+  <!-- ******************************************** FOOTER 영역 ******************************************** -->
   <!-- FOOTER -->
   <footer class="container">
     <h3> COMPUTER SYSTEM LAB</h3>

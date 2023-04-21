@@ -56,9 +56,11 @@ img{
 .marketing .col-lg-4 {
   margin-bottom: 1.5rem;
   text-align: center;
-  /* margin: 8px;
-  margin-left: 0 auto;
-  margin-right: 0 auto; */
+
+  /*이미지별 간격 조절*/
+  padding-left: 2rem;
+  padding-right: 2rem;
+
   
 }
 /* rtl:begin:ignore */
@@ -73,14 +75,18 @@ img{
 .marketing .col-lg-4 h1 {
   /* font-family: monospace;
   font-size: 20px; */
+  text-align: left;
   font-size: 10px;
 }
 
 /* 게시판 폰트 설정 */
 .marketing .col-lg-4 h2 {
-  /* font-family: monospace;*/
-  font-size: 23px; 
+  font-family: monospace;
+  font-size: 20px; 
+  text-align: left;
   margin-top: 1.5rem;
+  margin-right: .75rem;
+  margin-left: .75rem;
 }
 
 /* rtl:end:ignore */
