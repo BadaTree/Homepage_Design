@@ -16,6 +16,116 @@ img{
   height: auto;
 }
 
+/* 마우스 커서 올리면 서브 메뉴가 보이는 토글형태 카테고리 만들기*/
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin-right: 40px; 
+  /* Set the spacing between the menu items */
+  position: relative; /* Add relative positioning to the parent li element */
+}
+
+nav ul li:last-child {
+  margin-right: 0; /* Remove the right margin from the last menu item */
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+nav ul li a:hover {
+  text-decoration: underline; /* Add underline to the link on hover */
+}
+
+nav ul li ul {
+  display: none; /* Hide the sub-menu by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  padding: 0px 0;
+  z-index: 1;
+}
+
+nav ul li:hover ul {
+  display: block; /* Show the sub-menu on hover */
+}
+
+/* 카테고리 반응형으로 만들기 */
+.menu {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu li {
+  margin-right: 20px;
+  list-style: none;
+}
+
+.menu li a {
+  font-size: 16px;
+  text-align: left;
+  padding: 8px 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+.menu li a:hover {
+  text-decoration: underline;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 5px;
+  background-color: #f0f0f0;
+  background-size: auto; /* set background size to auto */
+}
+
+.submenu li {
+  list-style: none;
+}
+
+.submenu li a {
+  font-size: 14px;
+  padding: 5px;
+  text-decoration: none;
+  color: #333;
+}
+
+.submenu li a:hover {
+  text-decoration: underline;
+}
+
+/* show submenu on hover */
+.menu li:hover .submenu {
+  display: block;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  .menu li {
+    margin-right: 10px;
+  }
+  
+  .menu li a {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -40,7 +150,8 @@ img{
 
 /* 슬라이드 제목 텍스트 수정 */
 .carousel h1{
-  font-size: 20px;
+  font-size: 30px;
+  text-align: left;
 }
 
 /* 슬라이드 부제목 텍스트 수정 */
@@ -69,14 +180,6 @@ img{
   margin-top: 0.5rem;
   margin-right: .75rem;
   margin-left: .75rem;
-}
-
-/* 슬라이드 안 폰트 설정 */
-.marketing .col-lg-4 h1 {
-  /* font-family: monospace;
-  font-size: 20px; */
-  text-align: left;
-  font-size: 10px;
 }
 
 /* 게시판 폰트 설정 */
