@@ -48,6 +48,7 @@ body {
 }
 /* rtl:begin:ignore */
 .marketing .col-lg-4 p {
+  margin-top: 0.5rem;
   margin-right: .75rem;
   margin-left: .75rem;
 }
@@ -62,6 +63,7 @@ body {
 .marketing .col-lg-4 h2 {
   /* font-family: monospace;
   font-size: 20px; */
+  margin-top: 1.5rem;
 }
 
 /* rtl:end:ignore */
