@@ -8,9 +8,6 @@ body {
   /* font-size: 40px; */
   padding-top: 3rem;
   padding-bottom: 3rem;
-  margin: 8px;
-  margin-left: auto;
-  margin-right: auto;
   color: #943232;
 }
 
@@ -42,11 +39,11 @@ body {
 
 /* Center align the text within the three columns below the carousel */
 .marketing .col-lg-4 {
-  margin-bottom: 1.5 auto;
+  margin-bottom: 1.5rem;
   text-align: center;
-  margin: 8px;
+  /* margin: 8px;
   margin-left: 0 auto;
-  margin-right: 0 auto;
+  margin-right: 0 auto; */
   
 }
 /* rtl:begin:ignore */
@@ -65,12 +62,6 @@ body {
 .marketing .col-lg-4 h2 {
   /* font-family: monospace;
   font-size: 20px; */
-}
-
-/* rtl:begin:ignore */
-.col-lg-4 {
-  margin-right: .75rem;
-  margin-left: .75rem;
 }
 
 /* rtl:end:ignore */
