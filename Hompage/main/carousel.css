@@ -25,6 +25,7 @@ nav ul {
   margin: 0;
 }
 
+
 nav ul li {
   margin-right: 40px; 
   /* Set the spacing between the menu items */
@@ -62,62 +63,6 @@ nav ul li ul {
 
 nav ul li:hover ul {
   display: block; /* Show the sub-menu on hover */
-}
-
-/* 카테고리 반응형으로 만들기 */
-.menu {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.menu li {
-  margin-right: 20px;
-  list-style: none;
-}
-
-.menu li a {
-  font-size: 20px;
-  text-align: left;
-  padding: 8px 20px;
-  text-decoration: none;
-  color: #333;
-}
-
-.menu li a:hover {
-  text-decoration: underline;
-}
-
-.submenu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  padding: 5px 0;
-  background-color: #f0f0f0;
-  background-size: auto; /* set background size to auto */
-  display: inline-block; /* make submenu inline-block */
-}
-
-.submenu li {
-  list-style: none;
-}
-
-.submenu li a {
-  text-align: left;
-  font-size: 18px;
-  font-family: 'Courier New', Courier, monospace;
-  padding: 5px 0;
-  text-decoration: none;
-  color: #333;
-}
-
-.submenu li a:hover {
-  text-decoration: underline;
-}
-
-/* show submenu on hover */
-.menu li:hover .submenu {
-  display: block;
 }
 
 /* 슬라이드 영역 버튼 스타일링 */
