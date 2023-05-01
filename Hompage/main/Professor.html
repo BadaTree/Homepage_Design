@@ -2,421 +2,339 @@
 <html lang="ko">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="Mark Otto, Jacob Thornton, 그리고 Bootstrap 기여자들">
-  <meta name="generator" content="Hugo 0.104.2">
-  <title>Carousel Template · Bootstrap v5.2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, 그리고 Bootstrap 기여자들">
+    <meta name="generator" content="Hugo 0.104.2">
+    <title>Carousel Template · Bootstrap v5.2</title>
 
-  <link rel="canonical" href="https://getbootstrap.kr/docs/5.2/examples/carousel/">
-
-
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-  <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-  <link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
-  <link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
-  <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
-  <meta name="theme-color" content="#712cf9">
+    <link rel="canonical" href="https://getbootstrap.kr/docs/5.2/examples/carousel/">
 
 
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
-    }
 
-    <blade media|%20(min-width%3A%20768px)%20%7B>.bd-placeholder-img-lg {
-      font-size: 3.5rem;
-    }
-    }
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    .b-example-divider {
-      height: 3rem;
-      background-color: rgba(17, 0, 144, 0.1);
-      border: solid rgba(232, 9, 9, 0.15);
-      border-width: 1px 0;
-      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-    }
-
-    .b-example-vr {
-      flex-shrink: 0;
-      width: 1.5rem;
-      height: 100vh;
-    }
-
-    .bi {
-      vertical-align: -.125em;
-      fill: currentColor;
-    }
-
-    .nav-scroller {
-      position: relative;
-      z-index: 2;
-      height: 2.75rem;
-      overflow-y: hidden;
-    }
-
-    .nav-scroller .nav {
-      display: flex;
-      flex-wrap: nowrap;
-      padding-bottom: 1rem;
-      margin-top: -1px;
-      overflow-x: auto;
-      text-align: center;
-      white-space: nowrap;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .image-wrapper img {
-      border: 0.5px solid black;
-      padding: 5px;
-      border-radius: 5px;
-      width: 500px;
-      height: 300px;
-
-    }
-
-    iframe {
-      display: block;
-      margin: 0 auto;
-      max-width: 100%;
-    }
-
-    /* 구분선 수정 */
-    hr {
-      border: none;
-      border-top: 1.5px solid #050404;
-      /* 구분선 위 공백 조절*/
-      margin: 15px 0;
-      /* 구분선 아래 공백 조절*/
-      padding-bottom: 20px;
-    }
-
-    /* footer 영역 수정 */
-    p {
-      line-height: 1.5;
-      /* 좌측 정렬 (left, center, right) 속성을 이용해 좌우,가운데 정렬 수정 가능 */
-      text-align: left;
-    }
-
-    row {}
-  </style>
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#712cf9">
 
 
-  <!-- Custom styles for this template -->
-  <link href="carousel.css" rel="stylesheet">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        <blade media|%20(min-width%3A%20768px)%20%7B>.bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+        }
+
+        .b .b-example-divider {
+            height: 3rem;
+            background-color: rgba(17, 0, 144, 0.1);
+            border: solid rgba(232, 9, 9, 0.15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .image-wrapper img {
+            border: 0.5px solid black;
+            padding: 5px;
+            border-radius: 5px;
+            width: 500px;
+            height: 300px;
+
+        }
+
+        iframe {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        /* 구분선 수정 */
+        hr {
+            border: none;
+            border-top: 1.5px solid #050404;
+            /* 구분선 위 공백 조절*/
+            margin: 15px 0;
+            /* 구분선 아래 공백 조절*/
+            padding-bottom: 20px;
+        }
+
+        /* footer 영역 수정 */
+        p {
+            line-height: 1.5;
+            /* 좌측 정렬 (left, center, right) 속성을 이용해 좌우,가운데 정렬 수정 가능 */
+            text-align: left;
+        }
+
+        
+
+        .awards {
+            color: #050404;
+            max-width: 800px;
+            margin: 0 auto;
+            margin-left: 20%;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .awards h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .awards li {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .awards li strong {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .col-md-8 {
+            color: #050404;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .col-md-8 h2{
+            font-size: 40px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .col-md-8 li{
+            font-size: 18px;
+            line-height: 1.0;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .col-md-8 li strong {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+       
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
 </head>
 
 <body>
-  <!-- ******************************************** 카테고리 영역 ******************************************** -->
-  <header>
-    <nav>
-      <ul class="menu">
-        <li><a href="#">Research</a>
-          <ul class="sub-menu">
-            <li><a href="http://it.korea.ac.kr/engine/index.php?mid=researcharea">Research Area</a></li>
-            <li><a href="http://it.korea.ac.kr/engine/index.php?mid=project">Projects</a></li>
-          </ul>
-        </li>
-        <li><a href="http://it.korea.ac.kr/engine/index.php?mid=page_aIXY65">Professor</a>
-        </li>
-        <li><a href="#">People</a>
-          <ul class="sub-menu">
-            <li><a href="http://it.korea.ac.kr/engine/index.php?mid=Students">Current members</a></li>
-            <li><a href="http://it.korea.ac.kr/engine/index.php?mid=Students">Alumni</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Publications</a>
-          <ul class="sub-menu">
-            <li><a href="http://it.korea.ac.kr/engine/index.php?mid=publication">Journals</a></li>
-            <li><a href="">Conferences</a></li>
-            <li><a href="#">Patents</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Courses</a>
-          <ul class="sub-menu">
-            <li><a href="#">Undergraduate Courses</a></li>
-            <li><a href="#">Graduate Courses</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Boards</a>
-          <ul class="sub-menu">
-            <li><a href="http://it.korea.ac.kr/engine/index.php?mid=laboratory_notice">notice</a></li>
-            <li><a href="#">news</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </header>
+    <!-- ******************************************** 카테고리 영역 ******************************************** -->
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Research</a>
+                    <ul class="sub-menu">
+                        <li><a href="http://it.korea.ac.kr/engine/index.php?mid=researcharea">Research Area</a></li>
+                        <li><a href="http://it.korea.ac.kr/engine/index.php?mid=project">Projects</a></li>
+                    </ul>
+                </li>
+                <li><a href="http://it.korea.ac.kr/engine/index.php?mid=page_aIXY65">Professor</a>
+                </li>
+                <li><a href="#">People</a>
+                    <ul class="sub-menu">
+                        <li><a href="http://it.korea.ac.kr/engine/index.php?mid=Students">Current members</a></li>
+                        <li><a href="http://it.korea.ac.kr/engine/index.php?mid=Students">Alumni</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Publications</a>
+                    <ul class="sub-menu">
+                        <li><a href="http://it.korea.ac.kr/engine/index.php?mid=publication">Journals</a></li>
+                        <li><a href="">Conferences</a></li>
+                        <li><a href="#">Patents</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Courses</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Undergraduate Courses</a></li>
+                        <li><a href="#">Graduate Courses</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Boards</a>
+                    <ul class="sub-menu">
+                        <li><a href="http://it.korea.ac.kr/engine/index.php?mid=laboratory_notice">notice</a></li>
+                        <li><a href="#">news</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-  <main>
+    <main>
 
-    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
-          aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
-      </div>
+            <div class="main-background" style="width: 100%; height:100%; margin-top: 50px;">
+                <div class="card mb-3" style="width:90%; margin: 100px auto 0; font-family: sans-serif; border: none ; margin-left: 20%;">
+                    <div class="row g-0 justify-content-center align-items-center">
+                        <div class="col-md-4 col-4 col-lg-2">
+                            <img src="http://it.korea.ac.kr/engine/files/attach/images/4149/150/004/4ac942071527fc8edd95b8e32e643884.jpg"
+                                class="img-fluid rounded-start" style="margin-right: 30px;margin-left: 10px;">
+                        </div>
+                        <div class="col-md-8 col-8 col-lg-10">
+                            <h2>Lynn Choi<br></h2>
+                            <ul>
+                                <li>
+                                    <strong>Professor</strong> School of Electrical Engineering, Korea University
+                                </li>
+                                <li>
+                                    <strong>Location</strong> 236, College of Engineering Building, Anam Ro 5, Sungbuk ku, Seoul, Republic of Korea.
+                                    <br></li>
+                                <li>
+                                    <strong>Phone</strong>3290-3896
+                                </li>
+                                <li>
+                                    <strong>E-mail</strong>lchoi@korea.ac.kr
+                                </li>
+                        </div>
+                    </div>
+                </div>
+                
 
-      <!-- ******************************************** Slider 영역 ******************************************** -->
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <rect width="100%" height="100%" fill="#777" /></svg>
+<!-- 구분선 -->
+<hr style="margin-left: 20%; margin-right: 20%;">
 
-          <!-- Slide 1  -->
-          <div class="container">
-            <div class="carousel-caption text-start">
-              <h1> 최린 교수님, 2022 대한민국 산업기술진흥 유공자 선정 </h1>
-              <h4>전기전자공학부 최린 교수가 ‘2022 대한민국 산업기술 R&D 대전’에서 기술개발부문에서 산업기술진흥유공 정부포상자 (훈격: 대통령표창)로 선정되었다..</h4>
-              <p><a class="btn btn-custom"
-                  href="https://www.korea.ac.kr/user/boardList.do?boardId=474633&siteId=university&page=2&search=&column=&boardType=02&listType=&id=university_060108000000&parent=&boardSeq=494187&command=albumView&chkBoxSeq=&chkBoxId=&chkBoxPos=&chkBoxDepth=&chkBoxFamSeq=&warningYn=N&categoryId=&categoryDepth=&totalYn=&searchDate1=&searchDate2=">Sign
-                  up today</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <rect width="100%" height="100%" fill="#777" /></svg>
+<!-- ******************************************** Education 영역 ******************************************** -->                
+<div class="awards">
+    <h2>Education</h2>
+    <ul>
+        <li>
+            <strong>Mar. 2023 – Present(날짜)​</strong>
+            Korea University, South Korea: Professor, Electrical Engineering(내용)
+        </li><br>
+        <li>
+            <strong>​Mar. 2023 – 2022</strong>
+            Korea University, South Korea: Professor, Electrical Engineering
+        </li><br>
+        <li>
+            <strong>​Mar. 2023 – Present</strong>
+            Korea University, South Korea: Professor, Electrical Engineering
+        </li><br>
 
-          <!-- Slide 2  -->
-          <div class="container">
-            <div class="carousel-caption text-start">
-              <h1>세계 최초 수도권 지하철/KTX 역사 실내측위 시스템 및 실내 내비게이션 앱 개발 착수</h1>
-              <h4>최린 교수 연구팀, 딥러닝 기반의 지자기 실내측위 기술을 이용
-                지하철 역사 내 교통약자 위한 맞춤형스마트 내비게이션 개발 계획</h4>
-              <p><a class="btn btn-custom"
-                  href="https://www.korea.ac.kr/user/boardList.do?boardId=474633&siteId=university&page=1&boardType=02&listType=&id=university_060108000000&parent=&boardSeq=493672&command=albumView&totalYn=">Sign
-                  up today</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <rect width="100%" height="100%" fill="#777" /></svg>
+    </ul>
+</div>
 
-          <!-- Slide 3  -->
-          <div class="container">
-            <div class="carousel-caption text-start">
-              <h1>NET 신기술 인증</h1>
-              <h4>딥러닝 기술 사용 자기장 기반 실내측위 기술</h4>
-              <p><a class="btn btn-custom" href="#">Sign up today</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <rect width="100%" height="100%" fill="#777" /></svg>
+<!-- 구분선 -->
+<hr style="margin-left: 20%; margin-right: 20%;">
+<!-- ******************************************** Employment history 영역 ******************************************** -->                
+<div class="awards">
+    <h2>Employment history</h2>
+    <ul>
+        <li>
+            <strong>​Mar. 2023 – Present</strong>
+            Professor, Department of Electrical Engineering, Korea University, Seoul, Korea, 2018~Present
+        </li><br>
+        <li>
+            <strong>​Mar. 2023 – 2022</strong>
+            Korea University, South Korea: Professor, Electrical Engineering
+        </li><br>
+        <li>
+            <strong>​Mar. 2023 – Present</strong>
+            Korea University, South Korea: Professor, Electrical Engineering
+        </li><br>
 
-          <!-- Slide 4  -->
-          <div class="container">
-            <div class="carousel-caption text-start">
-              <h1>최린 교수팀 NET 신기술 인증, 스마트폰만으로 대형 실내 공간에서 실내 측위 가능 </h1>
-              <h4>최린 교수팀 “딥러닝 기반 지자기 기반 실내측위 기술” NET 신기술인증받아
-                공항, 쇼핑몰, 박물관, 공장 등 다양한 실내 공간에서 시범 사이트 구축 추진</h4>
-              <p><a class="btn btn-custom" href="#">Sign up today</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <rect width="100%" height="100%" fill="#777" /></svg>
+    </ul>
+</div>
 
-          <!-- Slide 5  -->
-          <div class="container">
-            <div class="carousel-caption text-start">
-              <h1>스마트폰만으로 실내 공간 위치 정밀 확인 </h1>
-              <h4>최린 고려대 교수 연구팀, 지자기 실내 측위 기술 개발 딥러닝 분석 기능 접목 NET 신기술인증 획득도</h4>
-              <p><a class="btn btn-custom" href="#">Sign up today</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <rect width="100%" height="100%" fill="#777" /></svg>
+<!-- 구분선 -->
+<hr style="margin-left: 20%; margin-right: 20%;">
+<!-- ******************************************** Awards 영역 ******************************************** -->                
+                <div class="awards">
+                    <h2>Awards</h2>
+                    <ul>
+                        <li>
+                            <strong>​Mar. 1990 - 1993</strong>
+                            교육부 국비유학생, 컴퓨터공학 분야
+                        </li><br>
+                        <li>
+                            <strong>​Mar. 2023 – 2022</strong>
+                            Korea University, South Korea: Professor, Electrical Engineering
+                        </li><br>
+                        <li>
+                            <strong>​Mar. 2023 – Present</strong>
+                            Korea University, South Korea: Professor, Electrical Engineering
+                        </li><br>
+                        <li>
+                            <strong>​Mar. 2023 – Present</strong>
+                            Korea University, South Korea: Professor, Electrical Engineering
+                        </li><br>
+                
+                    </ul>
+                </div>
+</body>
+<!-- 구분선 -->
+<hr style="margin-left: 20%; margin-right: 20%;">
 
-          <!-- Slide 6  -->
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>실내에서 3D 네비게이션을?…고려대 연구진 실내측위 기술 개발</h1>
-              <h4>Some representative placeholder content for the second slide of the carousel.</h4>
-              <p><a class="btn btn-custom" href="#">Learn more</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <rect width="100%" height="100%" fill="#777" /></svg>
+<!-- ******************************************** FOOTER 영역 ******************************************** -->
+<!-- FOOTER -->
+<footer class="container"></footer>
+<div style="font-size: 16px; font-family: sans-serif; color: #333; margin-left: 20%;">
+    <h3> COMPUTER SYSTEM LAB</h3>
+    <p>Industry-Academy Building 236, Korea University, 145 Anam-ro, Seongbuk-gu, Seoul, Republic of Korea. 02841
+        <br>Professor : lchoi@korea.ac.kr · Lab master : qwerty2901@korea.ac.kr
+        <br>Tel : +82-2-3290-3896 </p>
 
-          <!-- Slide 7  -->
-          <div class="container">
-            <div class="carousel-caption text-end">
-              <h1>와이즈스톤 시험 인증</h1>
-              <h4>Some representative placeholder content for the third slide of this carousel.</h4>
-              <p><a class="btn btn-custom" href="#">Browse gallery</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <rect width="100%" height="100%" fill="#777" /></svg>
-          </div>
-
-          <!-- Slide 8  -->
-          <div class="container">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/BAe5t6DEu2Y?autoplay=1&mute=1"
-              frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        
-        <div class="carousel-item">
-          <!-- <iframe width= "100%" height="100%" src="https://www.youtube.com/embed/BAe5t6DEu2Y?autoplay=1&mute=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
+</footer>
+</main>
 
 
-    <!-- ******************************************** 게시판 영역 ******************************************** -->
-    <!-- Marketing messaging and featurettes : 게시판 영역 
-  ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
-    <div class="container marketing">
-
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <style>
-          .image-wrapper {
-            border-radius: 10px;
-            overflow: hidden;
-          }
-        </style>
-        <div class="col-lg-4">
-          <div class="image-wrapper">
-            <!-- 기사 이미지 사이즈 수정 (width, height)-->
-            <img
-              src="http://it.korea.ac.kr/engine/files/attach/images/4147/408/004/633bf1a508cd77084536afecb427bb65.png"
-              alt="이미지 설명" width="440" height="240">
-          </div>
-          <!-- 기사 글 수정 (사이즈: h1,2,3.., 글귀)-->
-          <h2 class="fw-normal">LG화학 여수 화학 단지 측위시스템 Pilot 구축</h2>
-          <p>LG CNS<br>2022.11.22 ~ 2022.12.31</p>
-          <p><a class="btn btn-secondary"
-              href="http://it.korea.ac.kr/engine/index.php?mid=board_TJva06&document_srl=4626">View details &raquo;</a>
-          </p>
-        </div><!-- /.col-lg-4(1)-->
-        <div class="col-lg-4">
-          <div class="image-wrapper">
-            <img
-              src="http://it.korea.ac.kr/engine/files/attach/images/4147/408/004/378f6085223bd6f085038073e48f288e.jpg"
-              alt="이미지 설명" width="440" height="240">
-          </div>
-          <h2 class="fw-normal">산학연 주관 미래도전국방기술 연구개발</h2>
-          <p>국방 과학 연구소<br>2022.11.25 ~ 2025.10.31</p>
-          <p><a class="btn btn-secondary"
-              href="http://it.korea.ac.kr/engine/index.php?mid=board_TJva06&document_srl=4590">View details &raquo;</a>
-          </p>
-        </div><!-- /.col-lg-4(2)-->
-        <div class="col-lg-4">
-          <div class="image-wrapper">
-            <img
-              src="http://it.korea.ac.kr/engine/files/attach/images/2959/337/004/336236d441e9f944df52e7761acf4218.png"
-              alt="이미지 설명" width="440" height="240">
-          </div>
-          <h2 class="fw-normal">도시철도 역사내 맞춤형 스마트 내비게이션 개발</h2>
-          <p>산업자원부<br>2022.05.01~2023.12.31</p>
-          <p><a class="btn btn-secondary"
-              href="http://it.korea.ac.kr/engine/index.php?mid=board_TJva06&document_srl=4337">View details &raquo;</a>
-          </p>
-        </div><!-- /.col-lg-4(3)-->
-        <div class="col-lg-4">
-          <div class="image-wrapper">
-            <img
-              src="http://it.korea.ac.kr/engine/files/attach/images/4147/408/004/cc40c49eca3a76917e11921f472fb9dd.png"
-              alt="이미지 설명" width="440" height="240">
-          </div>
-          <h2 class="fw-normal">디지털기반 건축 시공 및 안전감리 기술 개발</h2>
-          <p>국토교통부<br>2022.04.01~2026.12.31</p>
-          <p><a class="btn btn-secondary"
-              href="http://it.korea.ac.kr/engine/index.php?mid=board_TJva06&document_srl=4336">View details &raquo;</a>
-          </p>
-        </div><!-- /.col-lg-4(4)-->
-        <div class="col-lg-4">
-          <div class="image-wrapper">
-            <img
-              src="http://it.korea.ac.kr/engine/files/attach/images/2959/244/004/cb179c2d3faafc17ffc0adb6d2711f4b.jpg"
-              alt="이미지 설명" width="440" height="240">
-          </div>
-          <h2 class="fw-normal">위치기반 마케팅 플랫폼 개발을 위한 실내 측위 시스템 구축</h2>
-          <p>TA9<br>2021.08.13~2023~12.31</p>
-          <p><a class="btn btn-secondary"
-              href="http://it.korea.ac.kr/engine/index.php?mid=board_TJva06&document_srl=4244">View details &raquo;</a>
-          </p>
-        </div><!-- /.col-lg-4(5)-->
-        <div class="col-lg-4">
-          <div class="image-wrapper">
-            <img
-              src="http://it.korea.ac.kr/engine/files/attach/images/2959/239/004/a6519635fe3ef2676a0ee16e74dce48f.jpg"
-              alt="이미지 설명" width="440" height="240">
-          </div>
-          <h2 class="fw-normal">스마트 공장 안전 및 관제 시스템을 위한 자기장 기반 실내측위 기술의 포스코 현장 성능검증</h2>
-          <p>포스코<br>2021.02.01~2021.11.26</p>
-          <p><a class="btn btn-secondary"
-              href="http://it.korea.ac.kr/engine/index.php?mid=board_TJva06&document_srl=4061">View details &raquo;</a>
-          </p>
-        </div><!-- /.col-lg-4(6)-->
-      </div><!-- /.row -->
-
-
-      <!-- 구분선 -->
-      <hr>
-
-      <!-- ******************************************** FOOTER 영역 ******************************************** -->
-      <!-- FOOTER -->
-      <footer class="container">
-        <h3> COMPUTER SYSTEM LAB</h3>
-        <p>Industry-Academy Building 236, Korea University, 145 Anam-ro, Seongbuk-gu, Seoul, Republic of Korea. 02841
-          <br>Professor : lchoi@korea.ac.kr · Lab master : qwerty2901@korea.ac.kr
-          <br>Tel : +82-2-3290-3896 </p>
-
-      </footer>
-  </main>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
-  </script>
+</script>
 
 
 </body>
