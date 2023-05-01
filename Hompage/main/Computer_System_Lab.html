@@ -107,6 +107,76 @@
       /* 좌측 정렬 (left, center, right) 속성을 이용해 좌우,가운데 정렬 수정 가능 */
       text-align: left;
     }
+
+    nav {
+            font-family: Arial, sans-serif;
+            /* Set font family */
+            font-size: 16px;
+            /* Set font size */
+            background-color: #fff;
+            /* set the background color */
+            position: relative;
+            /* set the position */
+            display: flex;
+            /* use flexbox to align items */
+            justify-content: flex-end;
+            /* align items to the right */
+            padding: 10px;
+            /* add some padding */
+        }
+
+        .btn-group {
+            font-size: 16px;
+            background-color: rgb(252, 252, 252);
+            /* set the font size */
+            margin-right: 50px;
+            margin-top: 2%;
+            
+            /* add some margin between buttons */
+        }
+
+        .btn-danger {
+            font-family: Arial, sans-serif;
+            /* set the font family */
+            color: #0e0404;
+            background-color: rgb(252, 252, 252);
+            border: none;
+            /* set the font color */
+        }
+
+        /* 버튼에 마우스 올렸을 때 */
+        .btn-danger:hover {
+            background-color: blueviolet;
+        }
+
+        /* 버튼에 마우스 눌렀을 때 */
+        .btn-danger:active {
+            background-color: blueviolet;
+        }
+
+        .dropdown-menu {
+            background-color: #ecf0f5;
+            /* set the background color of the dropdown menu */
+        }
+
+        /* sub 카테고리 텍스트 수정 */
+        .dropdown-item {
+            font-family: 'Times New Roman', Times, serif;
+            /* set the font family */
+            font-size: 20px;
+            /* set the font size */
+            color: #343a40;
+            /* set the font color */
+        }
+
+        /* main 카테고리 텍스트 수정 */
+        .btn-group button {
+            font-family:'Times New Roman', Times, serif;
+            /* Set font family */
+            font-size: 20px;
+            color: #050404;
+            /* Set font size */
+        }
   </style>
 
 
@@ -118,42 +188,82 @@
   <!-- ******************************************** 카테고리 영역 ******************************************** -->
   <header>
     <nav>
-      <ul class="menu">
-        <li><a href="#">Research</a>
-          <ul class="submenu">
-              <li><a href="http://it.korea.ac.kr/engine/index.php?mid=researcharea">Research Area</a></li>
-              <li><a href="http://it.korea.ac.kr/engine/index.php?mid=project">Projects</a></li>
+      <div class="btn-group">
+          <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Research
+          </button>
+          <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="http://it.korea.ac.kr/engine/index.php?mid=researcharea">Research
+                      Area</a></li>
+              <li><a class="dropdown-item" href="http://it.korea.ac.kr/engine/index.php?mid=project">Projects</a>
+              </li>
           </ul>
-      </li>
-      <li><a href="http://it.korea.ac.kr/engine/index.php?mid=page_aIXY65">Professor</a>
-      </li>
-      <li><a href="#">People</a>
-          <ul class="submenu">
-              <li><a href="http://it.korea.ac.kr/engine/index.php?mid=Students">Current members</a></li>
-              <li><a href="http://it.korea.ac.kr/engine/index.php?mid=Students">Alumni</a></li>
+      </div>
+      <div class="btn-group">
+          <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Professor
+          </button>
+          <ul class="dropdown-menu">
+              <li><a class="dropdown-item"
+                      href="http://it.korea.ac.kr/engine/index.php?mid=page_aIXY65">Professor</a></li>
+
+      </div>
+      <div class="btn-group">
+          <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              People
+          </button>
+          <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="http://it.korea.ac.kr/engine/index.php?mid=Students">Current
+                      members</a></li>
+              <li><a class="dropdown-item" href="http://it.korea.ac.kr/engine/index.php?mid=Students">Alumni</a>
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
-      </li>
-      <li><a href="#">Publications</a>
-          <ul class="submenu">
-              <li><a href="http://it.korea.ac.kr/engine/index.php?mid=publication">Journals</a></li>
-              <li><a href="">Conferences</a></li>
-              <li><a href="#">Patents</a></li>
+      </div>
+      <div class="btn-group">
+          <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Publications
+          </button>
+          <ul class="dropdown-menu">
+              <li><a class="dropdown-item"
+                      href="http://it.korea.ac.kr/engine/index.php?mid=publication">Journals</a></li>
+              <li><a class="dropdown-item"
+                      href="http://it.korea.ac.kr/engine/index.php?mid=publication">Conferences</a></li>
+              <li><a class="dropdown-item"
+                      href="http://it.korea.ac.kr/engine/index.php?mid=publication">Patents</a></li>
           </ul>
-      </li>
-      <li><a href="#">Courses</a>
-          <ul class="submenu">
-              <li><a href="#">Undergraduate Courses</a></li>
-              <li><a href="#">Graduate Courses</a></li>
+      </div>
+      <div class="btn-group">
+          <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Courses
+          </button>
+          <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Undergraduate Courses</a></li>
+              <li><a class="dropdown-item" href="#">Graduate Courses</a></li>
           </ul>
-      </li>
-      <li><a href="#">Boards</a>
-          <ul class="submenu">
-              <li><a href="http://it.korea.ac.kr/engine/index.php?mid=laboratory_notice">notice</a></li>
-              <li><a href="#">news</a></li>
+      </div>
+      <div class="btn-group">
+          <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Boards
+          </button>
+          <ul class="dropdown-menu">
+              <li><a class="dropdown-item"
+                      href="http://it.korea.ac.kr/engine/index.php?mid=laboratory_notice">notice</a></li>
+              <li><a class="dropdown-item" href="#">news</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li>
+                  <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Separated link</a></li>
           </ul>
-      </li>
-      </ul>
-    </nav>
+      </div>
+  </nav>
   </header>
   
   <main>
