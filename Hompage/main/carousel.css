@@ -9,12 +9,23 @@ body {
   padding-top: 3rem;
   padding-bottom: 3rem;
   color: #000000;
+  background-color: #FAFAFA;
 }
+
+
 
 img {
   max-width: 100%;
   height: auto;
 }
+
+nav img{
+  width: 130px;
+  height: 100px;
+  padding-left: 13%;
+
+}
+
 
 /* 마우스 커서 올리면 서브 메뉴가 보이는 토글형태 카테고리 만들기*/
 nav ul {
@@ -68,6 +79,16 @@ nav ul li ul {
 nav ul li:hover ul {
   display: block;
   /* Show the sub-menu on hover */
+}
+
+/* 슬라이드 영역 버튼 스타일링 */
+.btn-custom {
+  background-color: #b0f4f3;
+  color: #ffffff;
+  margin-top: 45px;
+  font-size: 20px;
+  font-family: 'Pretendard', Courier, monospace;
+  padding: 5px 20px;
 }
 
 /* 게시판 영역 버튼 수정 */
@@ -141,7 +162,7 @@ nav ul li:hover ul {
 
 /* Center align the text within the three columns below the carousel */
 .marketing .col-lg-4 {
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1.5rem; */
   text-align: center;
 
   /*이미지별 간격 조절*/
@@ -154,7 +175,7 @@ nav ul li:hover ul {
 /* rtl:begin:ignore */
 .marketing .col-lg-4 p {
   font-family: 'Pretendard', Courier, monospace;
-  font-size: 16px;
+  font-size: 20px;
   margin-top: 0.5rem;
   margin-right: .75rem;
   margin-left: .75rem;
@@ -163,12 +184,14 @@ nav ul li:hover ul {
 /* 게시판 폰트 설정 */
 .marketing .col-lg-4 h2 {
   font-family: 'Pretendard', Courier, monospace;
-  font-size: 20px;
+  font-size: 25px;
   text-align: left;
   margin-top: 1.5rem;
   margin-right: .75rem;
   margin-left: .75rem;
 }
+
+
 
 /* rtl:end:ignore */
 
@@ -200,6 +223,7 @@ nav ul li:hover ul {
     margin-bottom: 1.25rem;
     font-size: 1.25rem;
     line-height: 1.4;
+    
   }
 
   .featurette-heading {
