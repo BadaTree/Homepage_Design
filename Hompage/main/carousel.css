@@ -19,7 +19,7 @@ img {
   height: auto;
 }
 
-nav img{
+nav img {
   width: 130px;
   height: 100px;
   padding-left: 13%;
@@ -110,8 +110,7 @@ nav ul li:hover ul {
 
 
 @media only screen and (max-width: 600px) {
-  .menu
-   li {
+  .menu li {
     margin-right: 10px;
   }
 
@@ -138,14 +137,16 @@ nav ul li:hover ul {
   z-index: 10;
 
 }
+
 .carousel-control-prev {
   color: black;
 }
+
 /* Declare heights because of positioning of img element */
 /*슬라이드 배경색 지정*/
 .carousel-item {
-/*슬라이드 높이 지정*/
-  height: 38rem;
+  /*슬라이드 사이즈 지정*/
+  height: 40rem;
   background-color: rgba(56, 56, 59, 0.5);
   /*그라데이션 방향, 시작컬러, 끝 컬러, 투명도*/
   background: linear-gradient(to right, #38383b, #250909);
@@ -165,9 +166,21 @@ nav ul li:hover ul {
   font-size: 15px;
 }
 
+/* main 카테고리 텍스트 수정 */
+.btn-group button {
+  border: #76ca1d;
+  /* 버튼의 테두리를 없애는 속성 */
+  font-family: 'Pretendard', Courier, monospace;
+  /* Set font family */
+  font-size: 20px;
+  color: #050404;
+  background-color: #fbfafc;
+  /* Set font size */
+}
 
 /* MARKETING CONTENT
--------------------------------------------------- */
+-------------
+------------------------------------- */
 
 /* Center align the text within the three columns below the carousel */
 .marketing .col-lg-4 {
@@ -200,15 +213,15 @@ nav ul li:hover ul {
   margin-left: .75rem;
 }
 
-    /* 구분선 수정 */
-    hr {
-    
-      border-top: 1.5px solid #050404;
-      /* 구분선 위 공백 조절*/
-      margin: 15px 0;
-      /* 구분선 아래 공백 조절*/
-      padding-bottom: 20px;
-    }
+/* 구분선 수정 */
+hr {
+
+  border-top: 1.5px solid #050404;
+  /* 구분선 위 공백 조절*/
+  margin: 15px 0;
+  /* 구분선 아래 공백 조절*/
+  padding-bottom: 20px;
+}
 
 
 
@@ -242,7 +255,7 @@ nav ul li:hover ul {
     margin-bottom: 1.25rem;
     font-size: 1.25rem;
     line-height: 1.4;
-    
+
   }
 
   .featurette-heading {
