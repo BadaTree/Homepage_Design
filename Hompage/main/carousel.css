@@ -127,6 +127,8 @@ nav ul li:hover ul {
 /* Carousel base class */
 .carousel {
   margin-bottom: 4rem;
+  /*슬라이드 배경지정*/
+  background-color: #FAFAFA;
 
 }
 
@@ -136,11 +138,14 @@ nav ul li:hover ul {
   z-index: 10;
 
 }
-
+.carousel-control-prev {
+  color: black;
+}
 /* Declare heights because of positioning of img element */
+/*슬라이드 배경색 지정*/
 .carousel-item {
   height: 32rem;
-
+  background-color:  #FAFAFA;
 }
 
 /* 슬라이드 제목 텍스트 수정 */
@@ -190,6 +195,16 @@ nav ul li:hover ul {
   margin-right: .75rem;
   margin-left: .75rem;
 }
+
+    /* 구분선 수정 */
+    hr {
+    
+      border-top: 1.5px solid #050404;
+      /* 구분선 위 공백 조절*/
+      margin: 15px 0;
+      /* 구분선 아래 공백 조절*/
+      padding-bottom: 20px;
+    }
 
 
 
