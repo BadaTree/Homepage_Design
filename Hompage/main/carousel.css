@@ -91,23 +91,6 @@ nav ul li:hover ul {
   padding: 5px 20px;
 }
 
-/* 게시판 영역 버튼 수정 */
-.btn {
-  border: none;
-  background-color: #770c0c;
-  /* change to your desired color */
-  font-size: 18px;
-  /* change to your desired font size */
-  font-family: Arial, sans-serif;
-  /* change to your desired font family */
-  color: #fff;
-  /* change to your desired font color */
-  padding: 10px 20px;
-  /* change to adjust the padding */
-  border-radius: 5px;
-  /* add border radius to give rounded corners */
-}
-
 
 @media only screen and (max-width: 600px) {
   .menu li {
@@ -168,14 +151,11 @@ nav ul li:hover ul {
 
 /* main 카테고리 텍스트 수정 */
 .btn-group button {
-  border: #76ca1d;
-  /* 버튼의 테두리를 없애는 속성 */
+  border: none;
+  background-color: transparent;
   font-family: 'Pretendard', Courier, monospace;
-  /* Set font family */
   font-size: 20px;
   color: #050404;
-  background-color: #fbfafc;
-  /* Set font size */
 }
 
 /* MARKETING CONTENT
@@ -222,7 +202,6 @@ hr {
   /* 구분선 아래 공백 조절*/
   padding-bottom: 20px;
 }
-
 
 
 /* rtl:end:ignore */
