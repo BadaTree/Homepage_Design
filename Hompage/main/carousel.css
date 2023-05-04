@@ -144,8 +144,11 @@ nav ul li:hover ul {
 /* Declare heights because of positioning of img element */
 /*슬라이드 배경색 지정*/
 .carousel-item {
-  height: 32rem;
-  background-color:  #FAFAFA;
+/*슬라이드 높이 지정*/
+  height: 38rem;
+  background-color: rgba(56, 56, 59, 0.5);
+  /*그라데이션 방향, 시작컬러, 끝 컬러, 투명도*/
+  background: linear-gradient(to right, #38383b, #250909);
 }
 
 /* 슬라이드 제목 텍스트 수정 */
@@ -153,6 +156,7 @@ nav ul li:hover ul {
   font-family: 'Pretendard', Courier, monospace;
   font-size: 30px;
   text-align: left;
+  color: #FAFAFA;
 }
 
 /* 슬라이드 부제목 텍스트 수정 */
