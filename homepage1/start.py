@@ -16,8 +16,8 @@ def start1(name):
 
 @app.route("/") #127.0.0.1
 def index():
-    return send_from_directory('html', 'index.html') # 127.0.0.1/html/css/b.css
+    return send_from_directory('./main/html', 'index.html') # 127.0.0.1/html/index.html
 
 @app.route('/<path:name>') #127.0.0.1/css/b.css
 def start(name):
-    return send_from_directory('html',name) # 127.0.0.1/html/css/b.css
+    return send_from_directory('.main/html',name) # 127.0.0.1/html/css/b.css
