@@ -384,7 +384,8 @@ button,
 [type=button],
 [type=reset],
 [type=submit] {
-  -webkit-appearance: button;
+  -webkit-appearance: none;
+  appearance: none;
 }
 button:not(:disabled),
 [type=button]:not(:disabled),
@@ -442,7 +443,7 @@ legend + * {
 
 [type=search] {
   outline-offset: -2px;
-  -webkit-appearance: textfield;
+  moz-appearance: none;
 }
 
 /* rtl:raw:
@@ -463,7 +464,7 @@ legend + * {
 
 ::file-selector-button {
   font: inherit;
-  -webkit-appearance: button;
+  appearance: none;
 }
 
 output {
