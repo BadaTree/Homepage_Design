@@ -49,6 +49,7 @@
   --bs-warning-rgb: 255, 193, 7;
   --bs-danger-rgb: 220, 53, 69;
   --bs-light-rgb: 248, 249, 250;
+  --bs-lightblue-rgb: 247, 250, 255;
   --bs-dark-rgb: 33, 37, 41;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
@@ -675,6 +676,12 @@ progress {
   margin-right: calc(-0.5 * var(--bs-gutter-x));
   margin-left: calc(-0.5 * var(--bs-gutter-x));
 }
+
+.row h1 {
+  padding-top: 20px;
+  color: red;
+}
+
 .row > * {
   flex-shrink: 0;
   width: 100%;
@@ -7784,6 +7791,13 @@ textarea.form-control-lg {
 .py-5 {
   padding-top: 3rem !important;
   padding-bottom: 3rem !important;
+  font-size: large;
+  color: #0a53be;
+  
+}
+.py-5 bg-dark{
+  margin-left: 20%;
+  color: white;
 }
 
 .pt-0 {
@@ -8155,6 +8169,11 @@ textarea.form-control-lg {
 }
 
 .bg-light {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-lightblue-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-lightblue {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
 }
@@ -10831,6 +10850,11 @@ html {
 header {
   padding-top: 9.5rem;
   padding-bottom: 6rem;
+}
+
+hr {
+  border: 1px solid #000000;
+  border-bottom: 1px solid #ff0000;
 }
 
 section {
