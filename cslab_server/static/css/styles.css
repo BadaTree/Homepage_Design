@@ -10848,6 +10848,12 @@ html {
   scroll-padding-top: 3.5rem;
 }
 
+header {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+
 hr {
   border: 1px solid #000000;
   border-bottom: 1px solid #ff0000;
