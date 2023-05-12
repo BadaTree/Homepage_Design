@@ -38,7 +38,7 @@
             }
 
             .box-container img {
-                margin: 20px;
+                /* margin: 20px; */
                 width: 100px;
                 height: 100px;
             }
@@ -52,11 +52,13 @@
             .navbar-brand {
                 font-size: 37px;
                 padding-right: 20px;
+                color: #00143A;
                 /* 원하는 글씨 크기로 지정 */
             }
 
             .nav-link.dropdown-toggle {
                 font-size: 27px;
+                color: #080808;
             }
 
             .navbar-nav .nav-link {
@@ -65,8 +67,10 @@
             }
 
             .navbar-brand .navbar-nav {
-                margin-right: 10%;
+                margin-right: 30%;
             }
+
+            
         </style>
     </head>
 
@@ -84,6 +88,7 @@
                 .navbar-nav {
                     margin-right: 30%;
                 }
+
             </style>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
@@ -227,25 +232,32 @@
             data-bs-ride="carousel">
             <style>
                 h5 {
-                    font-size: 30px;
+                    font-size: 24px;
                     text-align: left;
+                    font-family: Arial, Helvetica, sans-serif;
                     /* 원하는 크기로 변경 */
                 }
 
                 p {
-                    font-size: 26px;
+                    font-size: 22px;
                     text-align: left;
+                    font-family: Arial, Helvetica, sans-serif;
                     /* 원하는 크기로 변경 */
                 }
 
                 .btn-slider {
                     font-size: 20px;
                     /* 폰트 크기 지정 */
-                    color: black;
+                    color: rgb(255, 255, 255);
                     /* 추가로 스타일을 변경하고 싶은 속성을 지정할 수 있습니다 */
                     /* 배경색 지정 */
-                    background-color: #F7FAFF;
+                    background-color: #00143A;
                 }
+
+                a {
+                    color:rgb(249, 249, 249)
+                }
+
             </style>
             <div class="carousel-indicators">
                 <button
@@ -267,10 +279,10 @@
                     aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner">
-                <div class="carousel-item active">
+                <div class="carousel-item active " style="background-color: #00143A;">
                     <img
-                        src="{{ url_for('static', filename='images/sample.jpg') }}"
-                        style="max-width: 100%; height: auto; align-items: center;"
+                        src="{{ url_for('static', filename='images/main1_1.jpg') }}"
+                        style="display: block; margin: auto; max-width: 130%; height: auto;"
                         alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>최린 교수님, 2022 대한민국 산업기술진흥 유공자 선정</h5>
@@ -279,30 +291,30 @@
                         <p>
                             <a
                                 class="btn btn-slider"
-                                href="https://www.korea.ac.kr/user/boardList.do?boardId=474633&siteId=university&page=2&search=&column=&boardType=02&listType=&id=university_060108000000&parent=&boardSeq=494187&command=albumView&chkBoxSeq=&chkBoxId=&chkBoxPos=&chkBoxDepth=&chkBoxFamSeq=&warningYn=N&categoryId=&categoryDepth=&totalYn=&searchDate1=&searchDate2=">바로가기 &raquo;</a>
+                                href="https://www.korea.ac.kr/user/boardList.do?boardId=474633&siteId=university&page=2&search=&column=&boardType=02&listType=&id=university_060108000000&parent=&boardSeq=494187&command=albumView&chkBoxSeq=&chkBoxId=&chkBoxPos=&chkBoxDepth=&chkBoxFamSeq=&warningYn=N&categoryId=&categoryDepth=&totalYn=&searchDate1=&searchDate2=">View More  &raquo;</a>
                         </p>
                     </div>
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item" style="background-color: #00143A;">
                     <img
-                        src="http://it.korea.ac.kr/engine/files/attach/images/4147/408/004/0660550c06138aa569f9c3bcccc67ae4.jpeg"
-                        style="max-width: 100%; height: auto;  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); align-items: center;"
-                        alt="...">
+                    src="{{ url_for('static', filename='images/main1_2.jpg') }}"
+                    style="display: block; margin: auto; max-width: 100%; height: auto;"
+                    alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>세계 최초 수도권 지하철/KTX 역사 실내측위 시스템 및 실내 내비게이션 앱 개발 착수</h5>
                         <p>최린 교수 연구팀, 딥러닝 기반의 지자기 실내측위 기술을 이용 지하철 역사 내 교통약자 위한 맞춤형스마트 내비게이션 개발 계획</p>
                         <p>
                             <a
                                 class="btn btn-slider"
-                                href="https://www.korea.ac.kr/user/boardList.do?boardId=474633&siteId=university&page=1&boardType=02&listType=&id=university_060108000000&parent=&boardSeq=493672&command=albumView&totalYn=">바로가기 &raquo;</a>
+                                href="https://www.korea.ac.kr/user/boardList.do?boardId=474633&siteId=university&page=1&boardType=02&listType=&id=university_060108000000&parent=&boardSeq=493672&command=albumView&totalYn=">View More  &raquo;</a>
                         </p>
                     </div>
                 </div>
-                <div class="carousel-item align-items: center">
+                <div class="carousel-item align-items: center" style="background-color: #00143A;">
                     <img
-                        src="http://it.korea.ac.kr/engine/files/attach/images/4147/408/004/31bad17be4193be1acdc22e3437ab2be.jpeg"
-                        style="max-width: 100%; height: auto; align-items: center;"
-                        alt="...">
+                    src="{{ url_for('static', filename='images/main1_3.jpg') }}"
+                    style="display: block; margin: auto; max-width: 100%; height: auto;"
+                    alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>
                             NET 신기술 인증</h5>
@@ -311,7 +323,7 @@
                         <p>
                             <a
                                 class="btn btn-slider"
-                                href="http://it.korea.ac.kr/engine/index.php?mid=laboratory_notice&document_srl=4124">바로가기 &raquo;</a>
+                                href="http://it.korea.ac.kr/engine/index.php?mid=laboratory_notice&document_srl=4124">View More  &raquo;</a>
                         </p>
                     </div>
                 </div>
@@ -337,98 +349,80 @@
         <!-- About section-->
         <section class="bg-light" style=" padding: 50px 100px;" id="Projects">
             <div
-                style="color: rgb(0, 0, 0); font-size: 50px; padding-top: -20px; text-align: center;">
+                style="color: #00143A; font-size: 50px; padding-top: -20px; text-align: center;">
                 <h1>Projects</h1>
             </div>
             <div class="row row-cols-1 row-cols-md-3 g-4" style="margin: 50px;">
                 <div class="col text-center">
                     <div class="card h-100">
                         <img
-                            src="http://it.korea.ac.kr/engine/files/attach/images/4147/408/004/633bf1a508cd77084536afecb427bb65.png"
-                            class="card-img-top"
-                            alt="..."
-                            width="500"
-                            height="300">
+                        src="{{ url_for('static', filename='images/main2_1.png') }}"
+                        style="display: block; margin-left: auto; margin-right: auto; width: 500px; height: 300px; max-width: 100%; height: auto;" alt="...">
                         <div class="card-body">
                             <h4 class="card-title" style="font-size: 20px;">LG화학 여수 화학 단지 측위시스템 Pilot 구축</h4>
                             <h6 class="card-text" style="font-size: 18px;">LG CNS</h6>
                             <h6 class="card-text" style="font-size: 18px;">2022.11.22 ~ 2022.12.31</h6>
-                            <a href="#" class="btn btn-primary">View Details</a>
+                            <a href="#" class="btn btn-primary" style="background-color: #00143A;">View Details</a>
                         </div>
                     </div>
                 </div>
                 <div class="col text-center">
                     <div class="card h-100">
                         <img
-                            src="http://it.korea.ac.kr/engine/files/attach/images/4147/408/004/378f6085223bd6f085038073e48f288e.jpg"
-                            class="card-img-top"
-                            alt="..."
-                            width="500"
-                            height="300">
+                        src="{{ url_for('static', filename='images/main2_2.jpg') }}"
+                        style="display: block; margin-left: auto; margin-right: auto; width: 500px; height: 300px; max-width: 100%; height: auto;" alt="...">
                         <div class="card-body">
                             <h4 class="card-title" style="font-size: 20px;">산학연 주관 미래도전 국방기술 연구개발</h4>
                             <h6 class="card-text" style="font-size: 18px;">국방 과학 연구소</h6>
                             <h6 class="card-text" style="font-size: 18px;">2022.11.25 ~ 2025.10.31</h6>
-                            <a href="#" class="btn btn-primary">View Details</a>
+                            <a href="#" class="btn btn-primary" style="background-color: #00143A;">View Details</a>
                         </div>
                     </div>
                 </div>
                 <div class="col text-center">
                     <div class="card h-100">
                         <img
-                            src="http://it.korea.ac.kr/engine/files/attach/images/2959/337/004/336236d441e9f944df52e7761acf4218.png"
-                            class="card-img-top"
-                            alt="..."
-                            width="500"
-                            height="300">
+                        src="{{ url_for('static', filename='images/main2_3.png') }}"
+                        style="display: block; margin-left: auto; margin-right: auto; width: 500px; height: 300px; max-width: 100%; height: auto;" alt="...">
                         <div class="card-body">
                             <h4 class="card-title" style="font-size: 20px;">도시철도 역사내 맞춤형 스마트 내비게이션 개발</h4>
                             <h6 class="card-text" style="font-size: 18px;">산업자원부</h6>
                             <h6 class="card-text" style="font-size: 18px;">2022.05.01~2023.12.31</h6>
-                            <a href="#" class="btn btn-primary">View Details</a>
+                            <a href="#" class="btn btn-primary" style="background-color: #00143A;">View Details</a>
                         </div>
                     </div>
                 </div>
                 <div class="col text-center">
                     <div class="card h-100">
                         <img
-                            src="http://it.korea.ac.kr/engine/files/attach/images/4147/408/004/cc40c49eca3a76917e11921f472fb9dd.png"
-                            class="card-img-top"
-                            alt="..."
-                            width="500"
-                            height="300">
+                        src="{{ url_for('static', filename='images/main2_4.png') }}"
+                        style="display: block; margin-left: auto; margin-right: auto; width: 500px; height: 300px; max-width: 100%; height: auto;" alt="...">
                         <div class="card-body">
                             <h4 class="card-title" style="font-size: 20px;">디지털기반 건축 시공 및 안전감리 기술 개발<br><br></h4>
                             <h6 class="card-text" style="font-size: 18px;">국토교통부</h6>
                             <h6 class="card-text" style="font-size: 18px;">2022.04.01~2026.12.31</h6>
-                            <a href="#" class="btn btn-primary">View Details</a>
+                            <a href="#" class="btn btn-primary" style="background-color: #00143A;">View Details</a>
                         </div>
                     </div>
                 </div>
                 <div class="col text-center">
                     <div class="card h-100">
                         <img
-                            src="http://it.korea.ac.kr/engine/files/attach/images/2959/244/004/cb179c2d3faafc17ffc0adb6d2711f4b.jpg"
-                            class="card-img-top"
-                            alt="..."
-                            width="500"
-                            height="300">
+                        src="{{ url_for('static', filename='images/main2_4.png') }}"
+                        style="display: block; margin-left: auto; margin-right: auto; width: 500px; height: 300px; max-width: 100%; height: auto;" alt="...">
                         <div class="card-body">
                             <h4 class="card-title" style="font-size: 20px;">위치기반 마케팅 플랫폼 개발을 위한 실내 측위 시스템 구축<br><br></h4>
                             <h6 class="card-text" style="font-size: 18px;">TA9</h6>
                             <h6 class="card-text" style="font-size: 18px;">2021.08.13~2023~12.31</h6>
-                            <a href="#" class="btn btn-primary">View Details</a>
+                            <a href="#" class="btn btn-primary" style="background-color: #00143A;">View Details</a>
                         </div>
                     </div>
                 </div>
                 <div class="col text-center">
                     <div class="card h-100">
                         <img
-                            src="http://it.korea.ac.kr/engine/files/attach/images/2959/239/004/a6519635fe3ef2676a0ee16e74dce48f.jpg"
-                            class="card-img-top"
-                            alt="..."
-                            width="500"
-                            height="300">
+                        src="{{ url_for('static', filename='images/main2_6.jpg') }}"
+                        style="display: block; margin-left: auto; margin-right: auto; width: 500px; height: 300px; max-width: 100%; height: auto;" alt="...">
                         <div class="card-body">
                             <h4 class="card-title" style="font-size: 20px;">스마트 공장 안전 및 관제 시스템을 위한 자기장 기반 실내측위
                                 <br>기술의 포스코 현장 성능 검증</h4>
@@ -442,7 +436,7 @@
             <!-- Services section-->
             <section class="bg-lightblue" style=" padding: 55px 110px;" id="cslab">
                 <div
-                    style="color: rgb(0, 0, 0); font-size: 50px; padding-top: -20px; text-align: center;">
+                    style="color: #00143A; font-size: 50px; padding-top: -20px; text-align: center;">
                     <h1>COMPUTERSYSTEMLAB<br><br></h1>
                 </div>
                 <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -526,8 +520,10 @@
             <!-- Contact section-->
             <section class="bg-light" id="contact">
                 <div
-                    style="color: rgb(0, 0, 0); font-size: 50px; padding-top: -20px; text-align: center;">
+                    style="color: #00143A; font-size: 50px; padding-top: -20px; text-align: center;">
                     <h1>오시는 길</h1>
+                    <div id="map"></div>
+
                 </div>
                 <div class="container px-4 text-left">
                     <div class="row gx-4 justify-content-center">
