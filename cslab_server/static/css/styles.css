@@ -8171,7 +8171,7 @@ textarea.form-control-lg {
 
 .bg-light {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-lightblue-rgb), var(--bs-bg-opacity)) !important;
+  background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-lightblue {
@@ -10849,9 +10849,10 @@ html {
 }
 
 header {
-  padding-top: 9.5rem;
-  padding-bottom: 6rem;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
+
 
 hr {
   border: 1px solid #000000;
