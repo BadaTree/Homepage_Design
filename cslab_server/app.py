@@ -18,7 +18,7 @@ def Projects():
 
 @app.route('/professor')
 def Professor():
-    return render_template('/index_copy.html')
+    return render_template('/Professor.html')
 
 @app.route('/members')
 def CurrentMembers():
@@ -57,4 +57,4 @@ def News():
     return render_template('/index_copy.html')
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000, host='0.0.0.0')
+    app.run(debug=True, port=5000, host='it.korea.ac.kr')
