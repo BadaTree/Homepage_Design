@@ -6,7 +6,7 @@ bootstrap = Bootstrap(app)
 
 @app.route('/')
 def index():
-    return render_template('/index_temp.html')
+    return render_template('/index.html')
 
 # @app.route('./home')
 # def index1():
