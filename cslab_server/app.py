@@ -5,12 +5,56 @@ app = Flask(__name__, static_folder='static')
 bootstrap = Bootstrap(app)
 
 @app.route('/')
-def index():
+def main():
     return render_template('/index.html')
 
-# @app.route('./home')
-# def index1():
-#     return render_template('/index.html')
+@app.route('/research')
+def ResearchArea():
+    return render_template('/index_copy.html')
+
+@app.route('/project')
+def Projects():
+    return render_template('/index_copy.html')
+
+@app.route('/professor')
+def Professor():
+    return render_template('/index_copy.html')
+
+@app.route('/members')
+def CurrentMembers():
+    return render_template('/index_copy.html')
+
+@app.route('/alumni')
+def Alumni():
+    return render_template('/index_copy.html')
+
+@app.route('/journal')
+def Journals():
+    return render_template('/index_copy.html')
+
+@app.route('/conference')
+def Conferences():
+    return render_template('/index_copy.html')
+
+@app.route('/patent')
+def Patent():
+    return render_template('/index_copy.html')
+
+@app.route('/undergradute')
+def Undergradute():
+    return render_template('/index_copy.html')
+
+@app.route('/gradute')
+def Gradute():
+    return render_template('/index_copy.html')
+
+@app.route('/notice')
+def Notice():
+    return render_template('/index_copy.html')
+
+@app.route('/news')
+def News():
+    return render_template('/index_copy.html')
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8038, host='0.0.0.0')
+    app.run(debug=True, port=5000, host='0.0.0.0')
