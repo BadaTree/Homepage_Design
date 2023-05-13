@@ -22,7 +22,7 @@ def Professor():
 
 @app.route('/members')
 def CurrentMembers():
-    return render_template('/member.html')
+    return render_template('/team.html')
 
 @app.route('/alumni')
 def Alumni():
@@ -50,7 +50,7 @@ def Gradute():
 
 @app.route('/notice')
 def Notice():
-    return render_template('/index_copy.html')
+    return render_template('/index_main.html')
 
 @app.route('/news')
 def News():
