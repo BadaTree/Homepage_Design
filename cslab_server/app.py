@@ -54,7 +54,7 @@ def Notice():
 
 @app.route('/news')
 def News():
-    return render_template('/index_copy.html')
+    return render_template('/team.html')
 
 if __name__ == '__main__':
     app.run(port=800)
