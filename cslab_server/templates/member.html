@@ -275,7 +275,11 @@
                 flex: 0 0 auto;
                 margin-right: 10px;
                 font-family: 'Palatino';
+
                 /* Adjust spacing between cards if desired */
+            }
+            .card img {
+                align-items: center;
             }
         </style>
 
@@ -286,21 +290,18 @@
     <body>
         <!-- Header -->
         <header
-            style="padding-top: 0rem;padding-bottom: 0rem; margin-left: 20px; margin-bottom: 20px;">
+            style="padding-top: 0rem;padding-bottom: 0rem; margin-left: 20px; ">
             <style>
                 .navbar-brand {
-                    margin-left: 10%;
                     text-align: justify;
-                    
+
                 }
 
-                .navbar-nav {
-                    padding-right: 30%;
-                }
+                .navbar-nav {}
             </style>
             <nav
                 class="navbar navbar-expand-lg navbar-light bg-light"
-                style="font-family: Palatino;">
+                style="font-family: Palatino; height: 100px;">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="/">COMPUTERSYSTEMLAB</a>
                     <button
@@ -423,118 +424,161 @@
         </header>
 
         <main>
-            <!-- PH -->
-            <div class="card border-dark mb-3" style="max-width: 80%; margin: 0 auto;">
-                <div class="card-header">박사</div>
+            <img
+            src="{{ url_for('static', filename='images/member.jpg') }}"
+                alt="Card image cap" style="height: 400PX; width: 100%;">
+
+            <div
+                class="card border-dark mb-3"
+                style="max-width: 80%; margin: 0 auto; margin-top: 5%;">
+                <div class="card-header" style="font-size: 24px;">
+                    M.S/Ph.D</div>
                 <div class="card-body text-dark">
-                    <div class="card-deck">
-                        <div class="card">
-                            <img
-                                class="card-img-top"
-                                src="{{ url_for('static', filename='images/원준.jpeg') }}"
-                                alt="Card image cap"
-                                style="width: 300px; height: 300px; align-items: center;">
-                            <div class="card-body" style="padding-top: 20px; padding-bottom: 20px; text-align: left;">
-                                <h4 class="card-title">Name : 손 원 준 (Won-Joon Son) </h4>
-                                <h5 class="card-text">Course : M.S/Ph.D, 2018/09 ~</h5>
-                                <h5 class="card-text">Contact Point : swj8905@korea.ac.kr<br></h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card text-center">
+                                <img
+                                    class="card-img-top mx-auto"
+                                    src="{{ url_for('static', filename='images/one.jpg') }}"
+                                    alt="Card image cap"
+                                    style="width: 300px; height: 300px;">
+                                <div
+                                    class="card-body text-center"
+                                    style="padding-top: 20px; padding-bottom: 20px; text-align: left;">
+                                    <h4 class="card-title">Name : 손 원 준 (Won-Joon Son)
+                                    </h4>
+                                    <h5 class="card-text">Course : M.S/Ph.D, 2018/09 ~</h5>
+                                    <h5 class="card-text">Contact Point : swj8905@korea.ac.kr<br></h5>
+                                </div>
                             </div>
                         </div>
-                        <div class="card">
-                            <img
-                                class="card-img-top"
-                                src= "{{ url_for('static', filename='images/영웅.jpeg') }}"
-                                style="width: 300px; height: 300px; align-items: center;">
-                            <div class="card-body" style="padding-top: 20px; padding-bottom: 20px; text-align: left;">
-                                <h4 class="card-title"> Name : 고 영 웅 (Young-Woong Ko)</h4>
-                                <h5 class="card-text">Course : M.S/Ph.D, 2019/03 ~</h5>
-                                <h5 class="card-text">Contact Point :  vhzpahs52@korea.ac.kr<br></h5>
+                        <div class="col-md-6">
+                            <div class="card text-center">
+                                <img
+                                    class="card-img-top mx-auto"
+                                    src="{{ url_for('static', filename='images/hero.jpg') }}"
+                                    style="width: 300px; height: 300px; align-items: center;">
+                                <div
+                                    class="card-body text-center"
+                                    style="padding-top: 20px; padding-bottom: 20px; text-align: left;">
+                                    <h4 class="card-title">
+                                        Name : 고 영 웅 (Young-Woong Ko)</h4>
+                                    <h5 class="card-text">Course : M.S/Ph.D, 2019/03 ~</h5>
+                                    <h5 class="card-text">Contact Point : vhzpahs52@korea.ac.kr<br></h5>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-            <!-- Ms -->
-            <div class="card border-dark mb-3" style="max-width: 80%; margin: 0 auto;">
-                <div class="card-header">박사</div>
+            <div
+                class="card border-dark mb-3"
+                style="max-width: 80%; margin: 0 auto; margin-top: 3%;">
+                <div class="card-header" style="font-size: 24px;">
+                    M.S</div>
                 <div class="card-body text-dark">
-                    <div class="card-deck">
-                        <div class="card">
-                            <img
-                                class="card-img-top"
-                                src="{{ url_for('static', filename='images/진원.jpeg') }}"
-                                alt="Card image cap"
-                                style="width: 300px; height: 300px; align-items: center;">
-                            <div class="card-body" style="padding-top: 20px; padding-bottom: 20px; text-align: left;">
-                                <h4 class="card-title"> Name : 성 진 원 (Jin-Won Seong)</h4>
-                                <h5 class="card-text">Course : M.S, 2022/03~ </h5>
-                                <h5 class="card-text">Contact Point : jin1seong@korea.ac.kr<br></h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card text-center">
+                                <img
+                                    class="card-img-top mx-auto"
+                                    src="{{ url_for('static', filename='images/jinone.jpeg') }}"
+                                    alt="Card image cap"
+                                    style="width: 300px; height: 300px; align-items: center;">
+                                <div
+                                    class="card-body text-center"
+                                    style="padding-top: 20px; padding-bottom: 20px; text-align: left;">
+                                    <h4 class="card-title">
+                                        Name : 성 진 원 (Jin-Won Seong)</h4>
+                                    <h5 class="card-text">Course : M.S, 2022/03~
+                                    </h5>
+                                    <h5 class="card-text">Contact Point : jin1seong@korea.ac.kr<br></h5>
+                                </div>
                             </div>
                         </div>
-                        <div class="card">
-                            <img
-                                class="card-img-top"
-                                src= "{{ url_for('static', filename='images/sea.jpeg') }}"
-                                alt="Card image cap"
-                                style="width: 300px; height: 300px; align-items: center;">
-                            <div class="card-body" style="padding-top: 20px; padding-bottom: 20px; text-align: left;">
-                                <h4 class="card-title"> Name :  임 바 다 (Ba-Da Lim)</h4>
-                                <h5 class="card-text">Course :  M.S, 2021/09 ~ </h5>
-                                <h5 class="card-text">Contact Point :  zzzxxx3166@korea.ac.kr<br></h5>
+                        <div class="col-md-6">
+                            <div class="card text-center">
+                                <img
+                                    class="card-img-top mx-auto"
+                                    src="{{ url_for('static', filename='images/sea.jpeg') }}"
+                                    alt="Card image cap"
+                                    style="width: 300px; height: 300px; align-items: center;">
+                                <div
+                                    class="card-body text-center"
+                                    style="padding-top: 20px; padding-bottom: 20px; text-align: left;">
+                                    <h4 class="card-title">
+                                        Name : 임 바 다 (Ba-Da Lim)</h4>
+                                    <h5 class="card-text">Course : M.S, 2021/09 ~
+                                    </h5>
+                                    <h5 class="card-text">Contact Point : zzzxxx3166@korea.ac.kr<br></h5>
+                                </div>
                             </div>
                         </div>
-                        <div class="card">
-                            <img
-                                class="card-img-top"
-                                src= "{{ url_for('static', filename='images/민혁.jpeg') }}"
-                                alt="Card image cap"
-                                style="width: 300px; height: 300px; align-items: center;">
-                            <div class="card-body" style="padding-top: 20px; padding-bottom: 20px; text-align: left;">
-                                <h4 class="card-title"> Name : 최 민 혁 (Min-hyeok Choi)</h4>
-                                <h5 class="card-text">Course :  M.S, 2023/03 ~</h5>
-                                <h5 class="card-text">Contact Point : chlrhalsgur0209@gmail.com<br></h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card text-center">
+                                <img
+                                    class="card-img-top mx-auto"
+                                    src="{{ url_for('static', filename='images/min.jpeg') }}"
+                                    alt="Card image cap"
+                                    style="width: 300px; height: 300px; align-items: center;">
+                                <div
+                                    class="card-body text-center"
+                                    style="padding-top: 20px; padding-bottom: 20px; text-align: left;">
+                                    <h4 class="card-title">
+                                        Name : 최 민 혁 (Min-hyeok Choi)</h4>
+                                    <h5 class="card-text">Course : M.S, 2023/03 ~</h5>
+                                    <h5 class="card-text">Contact Point : chlrhalsgur0209@gmail.com<br></h5>
+                                </div>
                             </div>
                         </div>
-                        <div class="card">
-                            <img
-                                class="card-img-top"
-                                src="{{ url_for('static', filename='images/덕원.jpeg') }}"
-                                alt="Card image cap"
-                                style="width: 300px; height: 300px; align-items: center;">
-                            <div class="card-body" style="padding-top: 20px; padding-bottom: 20px; text-align: left;">
-                                <h4 class="card-title"> Name : 윤 덕 원 (Deok-Won Yoon) </h4>
-                                <h5 class="card-text">Course : M.S, 2023/03 ~</h5>
-                                <h5 class="card-text">Contact Point : ydw1007@naver.com<br></h5>
+                        <div class="col-md-6">
+                            <div class="card text-center">
+                                <img
+                                    class="card-img-top mx-auto"
+                                    src="{{ url_for('static', filename='images/duckone.jpeg') }}"
+                                    alt="Card image cap"
+                                    style="width: 300px; height: 300px; align-items: center;">
+                                <div
+                                    class="card-body text-center"
+                                    style="padding-top: 20px; padding-bottom: 20px; text-align: left;">
+                                    <h4 class="card-title">
+                                        Name : 윤 덕 원 (Deok-Won Yoon)
+                                    </h4>
+                                    <h5 class="card-text">Course : M.S, 2023/03 ~</h5>
+                                    <h5 class="card-text">Contact Point : ydw1007@naver.com<br></h5>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </body>
-        </main>
-        <!-- 구분선 -->
-        <hr style="margin-left: 10%; margin-right: 10%;">
+            </div>
+        </body>
+    </main>
+    <!-- 구분선 -->
+    <hr style="margin-left: 10%; margin-right: 10%;">
 
-        <!-- ******************************************** FOOTER 영역
-        ******************************************** -->
-        <!-- FOOTER -->
-        <footer class="container"></footer>
-        <div
-            style="font-size: 16px; font-family: 'Palatino'; color: #333; margin-left: 20%;">
+    <!-- ******************************************** FOOTER 영역
+    ******************************************** -->
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+        <div class="container px-4 text-white">
+            <!-- <hr> -->
             <h3>
                 COMPUTER SYSTEM LAB</h3>
             <p>Industry-Academy Building 236, Korea University, 145 Anam-ro, Seongbuk-gu,
                 Seoul, Republic of Korea. 02841
-                <br>Professor : lchoi@korea.ac.kr · Lab master : qwerty2901@korea.ac.kr
+                <br>Professor : lchoi@korea.ac.kr · swj8905@korea.ac.kr
                 <br>Tel : +82-2-3290-3896
             </p>
+        </div>
+    </footer>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
 
-        </footer>
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-            crossorigin="anonymous"></script>
-
-    </body>
+</body>
 
 </html>
