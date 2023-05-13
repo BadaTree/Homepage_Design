@@ -10,7 +10,7 @@ def main():
 
 @app.route('/research')
 def ResearchArea():
-    return render_template('/index_copy.html')
+    return render_template('/Researcharea.html')
 
 @app.route('/project')
 def Projects():
@@ -57,4 +57,4 @@ def News():
     return render_template('/index_copy.html')
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000, host='it.korea.ac.kr')
+    app.run(host='0.0.0.0', port= 80)

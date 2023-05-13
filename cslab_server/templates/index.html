@@ -44,24 +44,31 @@
             }
 
             .box-container a {
-                font-size: 26px;
+                font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+                font-size: 20px;
                 padding-left: 10%;
                 color: black;
             }
 
             .navbar-brand {
-                font-size: 37px;
+                font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            /* set the font family */
+                font-size: 24px;
                 padding-right: 20px;
                 color: #00143A;
                 /* 원하는 글씨 크기로 지정 */
             }
 
             .nav-link.dropdown-toggle {
-                font-size: 27px;
+                font-family: 'Palatino';
+                font-size: 20px;
                 color: #080808;
             }
 
             .navbar-nav .nav-link {
+                font-family: 'Palatino';
+            /* Set font family */
+                font-size: 20px;
                 font-size: 27px;
                 /* 예시 값, 원하는 크기로 변경하세요 */
             }
@@ -92,7 +99,7 @@
             </style>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="163.152.52.63:80">COMPUTERSYSTEMLAB</a>
+                    <a class="navbar-brand" href="/">COMPUTERSYSTEMLAB</a>
                     <button
                         class="navbar-toggler"
                         type="button"
@@ -112,19 +119,36 @@
                                     id="navbarDropdownMenuLink"
                                     role="button"
                                     data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                    aria-expanded="false" style="font-family: 'Palatino'; font-size: 24px;">
                                     Research
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <li>
                                         <a
                                             class="dropdown-item"
-                                            href="/research">Research Area</a>
+                                            href="/research" style="font-family: 'Palatino'; font-size: 18px;">Research Area</a>
                                     </li>
+                                    <li>
+                                        <a class="dropdown-item" href="/project" style="font-family: 'Palatino'; font-size: 18px;">Projects</a>
+
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a
+                                    class="nav-link dropdown-toggle"
+                                    href="#"
+                                    id="navbarDropdownMenuLink"
+                                    role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false" style="font-family: 'Palatino'; font-size: 24px;">
+                                    Research
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <li>
                                         <a
                                             class="dropdown-item"
-                                            href="/project">Projects</a>
+                                            href="/professor" style="font-family: 'Palatino'; font-size: 18px;" style="font-family: 'Palatino'; font-size: 24px;">Professor</a>
                                     </li>
                                 </ul>
                             </li>
@@ -132,7 +156,7 @@
                                 <a
                                     class="nav-link active"
                                     aria-current="page"
-                                    href="/professor">Professor</a>
+                                    href="/professor" style="font-family: 'Palatino'; font-size: 18px;" style="font-family: 'Palatino'; font-size: 24px;">Professor</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a
@@ -141,19 +165,19 @@
                                     id="navbarDropdownMenuLink"
                                     role="button"
                                     data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                    aria-expanded="false" style="font-family: 'Palatino'; font-size: 24px;">
                                     People
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <li>
                                         <a
                                             class="dropdown-item"
-                                            href="/members">Current members</a>
+                                            href="/members" style="font-family: 'Palatino'; font-size: 18px;">Current members</a>
                                     </li>
                                     <li>
                                         <a
                                             class="dropdown-item"
-                                            href="/alumni">Alumni</a>
+                                            href="/alumni" style="font-family: 'Palatino'; font-size: 18px;">Alumni</a>
                                     </li>
                                 </ul>
                             </li>
@@ -164,18 +188,18 @@
                                     id="navbarDropdownMenuLink"
                                     role="button"
                                     data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                    aria-expanded="false" style="font-family: 'Palatino'; font-size: 24px;">
                                     Publications
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <li>
-                                        <a class="dropdown-item" href="/journal">Journals</a>
+                                        <a class="dropdown-item" href="/journal" style="font-family: 'Palatino'; font-size: 18px;">Journals</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="/conference">Conferences</a>
+                                        <a class="dropdown-item" href="/conference" style="font-family: 'Palatino'; font-size: 18px;">Conferences</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="/patent">Patentse</a>
+                                        <a class="dropdown-item" href="/patent" style="font-family: 'Palatino'; font-size: 18px;">Patentse</a>
                                     </li>
                                 </ul>
                             </li>
@@ -186,15 +210,15 @@
                                     id="navbarDropdownMenuLink"
                                     role="button"
                                     data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                    aria-expanded="false" style="font-family: 'Palatino'; font-size: 24px;">
                                     Courses
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <li>
-                                        <a class="dropdown-item" href="/undergradute">Undergraduate Courses</a>
+                                        <a class="dropdown-item" href="/undergradute" style="font-family: 'Palatino'; font-size: 18px;">Undergraduate Courses</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="/gradute">Graduate Courses</a>
+                                        <a class="dropdown-item" href="/gradute" style="font-family: 'Palatino'; font-size: 18px;">Graduate Courses</a>
                                     </li>
                                 </ul>
                             </li>
@@ -205,17 +229,17 @@
                                     id="navbarDropdownMenuLink"
                                     role="button"
                                     data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                    aria-expanded="false" style="font-family: 'Palatino'; font-size: 24px;">
                                     Boards
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <li>
                                         <a
                                             class="dropdown-item"
-                                            href="/notice">notice</a>
+                                            href="/notice" style="font-family: 'Palatino'; font-size: 18px;">notice</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="/news">news</a>
+                                        <a class="dropdown-item" href="/news" style="font-family: 'Palatino'; font-size: 18px;">news</a>
                                     </li>
                                 </ul>
                             </li>
@@ -234,19 +258,19 @@
                 h5 {
                     font-size: 24px;
                     text-align: left;
-                    font-family: Arial, Helvetica, sans-serif;
+                    font-family: 'Palatino'
                     /* 원하는 크기로 변경 */
                 }
 
                 p {
                     font-size: 22px;
                     text-align: left;
-                    font-family: Arial, Helvetica, sans-serif;
+                    font-family: 'Palatino';
                     /* 원하는 크기로 변경 */
                 }
 
                 .btn-slider {
-                    font-size: 20px;
+                    font-family: 'Palatino';
                     /* 폰트 크기 지정 */
                     color: rgb(255, 255, 255);
                     /* 추가로 스타일을 변경하고 싶은 속성을 지정할 수 있습니다 */
@@ -257,6 +281,11 @@
                 a {
                     color:rgb(249, 249, 249)
                 }
+
+                body {
+                 /* margin: 20px; */
+                 /* padding: 5%; */
+        }
 
             </style>
             <div class="carousel-indicators">
@@ -279,7 +308,7 @@
                     aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner">
-                <div class="carousel-item active " style="background-color: #00143A;">
+                <div class="carousel-item active " style="background-color: #00143A; font-family: system-ui, -apple-system, "Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji>
                     <img
                         src="{{ url_for('static', filename='images/main1_1.jpg') }}"
                         style="display: block; margin: auto; max-width: 130%; height: auto;"
@@ -287,7 +316,7 @@
                     <div class="carousel-caption d-none d-md-block">
                         <h5>최린 교수님, 2022 대한민국 산업기술진흥 유공자 선정</h5>
                         <p>전기전자공학부 최린 교수가 ‘2022 대한민국 산업기술 R&D 대전’에서 기술개발부문에서 산업기술진흥유공 정부포상자 (훈격: 대통령표창)로
-                            선정되었다.</p>
+                            선정.</p>
                         <p>
                             <a
                                 class="btn btn-slider"
@@ -295,7 +324,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="carousel-item" style="background-color: #00143A;">
+                <div class="carousel-item" style="background-color: #00143A; font-family: 'Pretendard', Courier, monospace;">
                     <img
                     src="{{ url_for('static', filename='images/main1_2.jpg') }}"
                     style="display: block; margin: auto; max-width: 100%; height: auto;"
@@ -347,12 +376,12 @@
         </div>
 
         <!-- About section-->
-        <section class="bg-light" style=" padding: 50px 100px; background-color: #F7FAFF;" id="Projects">
+        <section class="bg-light" style=" padding: 50px 100px; background-color: #F7FAFF; font-family:'Palatino';" id = "Projects";>
             <div
-                style="color: #00143A; font-size: 50px; padding-top: -20px; text-align: center;">
-                <h1>Projects</h1>
+                style = "color: #00143A; font-size: 50px; padding-top: -20px; text-align: center;">
+                <h1>PROJECTS</h1>
             </div>
-            <div class="row row-cols-1 row-cols-md-3 g-4" style="margin: 50px;">
+            <div class="row row-cols-1 row-cols-md-3 g-4" style="margin: 50px; font-family: 'Palatino';">
                 <div class="col text-center">
                     <div class="card h-100">
                         <img
@@ -396,7 +425,7 @@
                     <div class="card h-100">
                         <img
                         src="{{ url_for('static', filename='images/main2_4.png') }}"
-                        style="display: block; margin-left: auto; margin-right: auto; width: 500px; height: 300px; max-width: 100%; height: auto;" alt="...">
+                        style="display: block; margin: 0 auto; max-width: 100%; height: auto; width: 500px; max-height: 300px;" alt="...">
                         <div class="card-body">
                             <h4 class="card-title" style="font-size: 20px;">디지털기반 건축 시공 및 안전감리 기술 개발<br><br></h4>
                             <h6 class="card-text" style="font-size: 18px;">국토교통부</h6>
@@ -408,7 +437,7 @@
                 <div class="col text-center">
                     <div class="card h-100">
                         <img
-                        src="{{ url_for('static', filename='images/main2_4.png') }}"
+                        src="data:image/png;base64,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"
                         style="display: block; margin-left: auto; margin-right: auto; width: 500px; height: 300px; max-width: 100%; height: auto;" alt="...">
                         <div class="card-body">
                             <h4 class="card-title" style="font-size: 20px;">위치기반 마케팅 플랫폼 개발을 위한 실내 측위 시스템 구축<br><br></h4>
@@ -425,7 +454,7 @@
                         style="display: block; margin-left: auto; margin-right: auto; width: 500px; height: 300px; max-width: 100%; height: auto;" alt="...">
                         <div class="card-body">
                             <h4 class="card-title" style="font-size: 20px;">스마트 공장 안전 및 관제 시스템을 위한 자기장 기반 실내측위
-                                <br>기술의 포스코 현장 성능 검증</h4>
+                                기술의 포스코 현장 성능 검증</h4>
                             <h6 class="card-text" style="font-size: 18px;">포스코</h6>
                             <h6 class="card-text" style="font-size: 18px;">2021.02.01~2021.11.26<br></h6>
                             <a href="#" class="btn btn-primary" style="background-color: #00143A; border: none;">View Details</a>
@@ -436,14 +465,14 @@
             <!-- Services section-->
             <section class="bg-lightblue" style=" padding: 55px 60px; background-color: black;" id="cslab">
                 <div
-                    style="color: #00143A; font-size: 50px; padding-top: -20px; text-align: center;">
-                    <h1>COMPUTERSYSTEMLAB<br><br></h1>
+                    style="color: #00143A; font-size: 50px; padding-top: -20px; text-align: center; font-family: 'Palatino';">
+                    <h1>COMPUTERSYSTEMLAB</h1>
                 </div>
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col text-center">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Introduction</h5>
+                                <h5 class="card-title" style="font-family: 'Palatino'; font-size: 30px; text-align: center;">Introduction</h5>
                                 <div class="box-container">
                                     <a href="https://example.com">About Us</a>
                                     <img
@@ -466,7 +495,7 @@
                     <div class="col text-center">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Research Area</h5>
+                                <h5 class="card-title" style="font-family: 'Palatino'; font-size: 30px; text-align: center;">Research Area</h5>
                                 <div class="box-container">
                                     <a href="https://example.com">About Us</a>
                                     <img
@@ -475,7 +504,7 @@
                                         style="width: 100px;height: 100px;">
 
                                 </div>
-                                <div class="box-container">
+                                <div class="box-container" style="text-align: center; font-family:'Palatino';">
                                     <a href="https://example.com">About Us</a>
                                     <img
                                         src="https://i.pinimg.com/474x/60/07/df/6007df92ad20808e097d2a77465abad6.jpg"
@@ -489,7 +518,7 @@
                     <div class="col text-center">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Notice</h5>
+                                <h5 class="card-title" style="font-family: 'Palatino'; font-size: 30px; text-align: center;">Notice</h5>
                                 <!-- <button class="btn btn-primary" style="color: blueviolet; border: 2px solid
                                 rgb(189, 126, 126); background-color: white;padding: 10px 20px; font-size: 20px;
                                 text-align: center;"> 2023년 대학원생 및 인턴 모집 </button> <button class="btn
@@ -518,7 +547,7 @@
                 </div>
             </section>
             <!-- Contact section-->
-            <section class="bg-light" id="contact" style="background-color: #3a0030;">
+            <!-- <section class="bg-light" id="contact" style="background-color: #3a0030;">
                 <div
                     style="color: #00143A; font-size: 50px; padding-top: -20px; text-align: center;">
                     <h1>오시는 길</h1>
@@ -536,7 +565,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
             <!-- Footer-->
             <footer class="py-5 bg-dark">
                 <div class="container px-4 text-white">
