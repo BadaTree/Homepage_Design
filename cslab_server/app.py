@@ -10,7 +10,7 @@ def main():
 
 @app.route('/research')
 def ResearchArea():
-    return render_template('/Researcharea.html')
+    return render_template('/ResearchArea.html')
 
 @app.route('/project')
 def Projects():
@@ -22,7 +22,7 @@ def Professor():
 
 @app.route('/members')
 def CurrentMembers():
-    return render_template('/index_copy.html')
+    return render_template('/member.html')
 
 @app.route('/alumni')
 def Alumni():
