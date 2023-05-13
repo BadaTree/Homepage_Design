@@ -57,4 +57,4 @@ def News():
     return render_template('/index_copy.html')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port= 80)
+    app.run(port=800)
