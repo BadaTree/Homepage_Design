@@ -268,11 +268,13 @@
 
             .card-container {
                 display: flex;
+                font-family: 'Palatino';
             }
 
             .card {
                 flex: 0 0 auto;
                 margin-right: 10px;
+                font-family: 'Palatino';
                 /* Adjust spacing between cards if desired */
             }
         </style>
@@ -422,38 +424,31 @@
 
         <main>
             <!-- PH -->
-            <div class="card border-info mb-3" style="max-width: 80%; margin: 0 auto;">
+            <div class="card border-dark mb-3" style="max-width: 80%; margin: 0 auto;">
                 <div class="card-header">박사</div>
-                <div class="card-body text-info">
+                <div class="card-body text-dark">
                     <div class="card-deck">
                         <div class="card">
                             <img
                                 class="card-img-top"
-                                src="http://it.korea.ac.kr/engine/files/attach/images/3646/647/003/ca905f3534f9bd9043fe8f38480ba32e.jpg"
+                                src="{{ url_for('static', filename='images/원준.jpeg') }}"
                                 alt="Card image cap"
-                                style="width: 300px; height: 300px;">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a
-                                    natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
-                                </p>
+                                style="width: 300px; height: 300px; align-items: center;">
+                            <div class="card-body" style="padding-top: 20px; padding-bottom: 20px; text-align: left;">
+                                <h4 class="card-title">Name : 손 원 준 (Won-Joon Son) </h4>
+                                <h5 class="card-text">Course : M.S/Ph.D, 2018/09 ~</h5>
+                                <h5 class="card-text">Contact Point : swj8905@korea.ac.kr<br></h5>
                             </div>
                         </div>
                         <div class="card">
                             <img
                                 class="card-img-top"
-                                src="http://it.korea.ac.kr/engine/files/attach/images/3646/647/003/ca905f3534f9bd9043fe8f38480ba32e.jpg"
-                                alt="Card image cap"
-                                style="width: 300px; height: 300px;">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a
-                                    natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
-                                </p>
+                                src= "{{ url_for('static', filename='images/영웅.jpeg') }}"
+                                style="width: 300px; height: 300px; align-items: center;">
+                            <div class="card-body" style="padding-top: 20px; padding-bottom: 20px; text-align: left;">
+                                <h4 class="card-title"> Name : 고 영 웅 (Young-Woong Ko)</h4>
+                                <h5 class="card-text">Course : M.S/Ph.D, 2019/03 ~</h5>
+                                <h5 class="card-text">Contact Point :  vhzpahs52@korea.ac.kr<br></h5>
                             </div>
                         </div>
                     </div>
@@ -461,68 +456,56 @@
 
             </div>
             <!-- Ms -->
-            <div class="card border-info mb-3" style="max-width: 80%; margin: 0 auto;">
+            <div class="card border-dark mb-3" style="max-width: 80%; margin: 0 auto;">
                 <div class="card-header">박사</div>
-                <div class="card-body text-info">
+                <div class="card-body text-dark">
                     <div class="card-deck">
                         <div class="card">
                             <img
                                 class="card-img-top"
-                                src="http://it.korea.ac.kr/engine/files/attach/images/3646/647/003/ca905f3534f9bd9043fe8f38480ba32e.jpg"
+                                src="{{ url_for('static', filename='images/진원.jpeg') }}"
                                 alt="Card image cap"
-                                style="width: 300px; height: 300px;">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a
-                                    natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
-                                </p>
+                                style="width: 300px; height: 300px; align-items: center;">
+                            <div class="card-body" style="padding-top: 20px; padding-bottom: 20px; text-align: left;">
+                                <h4 class="card-title"> Name : 성 진 원 (Jin-Won Seong)</h4>
+                                <h5 class="card-text">Course : M.S, 2022/03~ </h5>
+                                <h5 class="card-text">Contact Point : jin1seong@korea.ac.kr<br></h5>
                             </div>
                         </div>
                         <div class="card">
                             <img
                                 class="card-img-top"
-                                src="http://it.korea.ac.kr/engine/files/attach/images/3646/647/003/ca905f3534f9bd9043fe8f38480ba32e.jpg"
+                                src= "{{ url_for('static', filename='images/sea.jpeg') }}"
                                 alt="Card image cap"
-                                style="width: 300px; height: 300px;">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a
-                                    natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
-                                </p>
+                                style="width: 300px; height: 300px; align-items: center;">
+                            <div class="card-body" style="padding-top: 20px; padding-bottom: 20px; text-align: left;">
+                                <h4 class="card-title"> Name :  임 바 다 (Ba-Da Lim)</h4>
+                                <h5 class="card-text">Course :  M.S, 2021/09 ~ </h5>
+                                <h5 class="card-text">Contact Point :  zzzxxx3166@korea.ac.kr<br></h5>
                             </div>
                         </div>
                         <div class="card">
                             <img
                                 class="card-img-top"
-                                src="http://it.korea.ac.kr/engine/files/attach/images/3646/647/003/ca905f3534f9bd9043fe8f38480ba32e.jpg"
+                                src= "{{ url_for('static', filename='images/민혁.jpeg') }}"
                                 alt="Card image cap"
-                                style="width: 300px; height: 300px;">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a
-                                    natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
-                                </p>
+                                style="width: 300px; height: 300px; align-items: center;">
+                            <div class="card-body" style="padding-top: 20px; padding-bottom: 20px; text-align: left;">
+                                <h4 class="card-title"> Name : 최 민 혁 (Min-hyeok Choi)</h4>
+                                <h5 class="card-text">Course :  M.S, 2023/03 ~</h5>
+                                <h5 class="card-text">Contact Point : chlrhalsgur0209@gmail.com<br></h5>
                             </div>
                         </div>
                         <div class="card">
                             <img
                                 class="card-img-top"
-                                src="http://it.korea.ac.kr/engine/files/attach/images/3646/647/003/ca905f3534f9bd9043fe8f38480ba32e.jpg"
+                                src="{{ url_for('static', filename='images/덕원.jpeg') }}"
                                 alt="Card image cap"
-                                style="width: 300px; height: 300px;">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a
-                                    natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
-                                </p>
+                                style="width: 300px; height: 300px; align-items: center;">
+                            <div class="card-body" style="padding-top: 20px; padding-bottom: 20px; text-align: left;">
+                                <h4 class="card-title"> Name : 윤 덕 원 (Deok-Won Yoon) </h4>
+                                <h5 class="card-text">Course : M.S, 2023/03 ~</h5>
+                                <h5 class="card-text">Contact Point : ydw1007@naver.com<br></h5>
                             </div>
                         </div>
                     </div>
