@@ -42,11 +42,11 @@ def Patent():
 
 @app.route('/undergradute')
 def Undergradute():
-    return render_template('/undergradute.html')
+    return render_template('/undergraduate.html')
 
 @app.route('/gradute')
 def Gradute():
-    return render_template('/gradute.html')
+    return render_template('/graduate.html')
 
 @app.route('/notice')
 def Notice():
