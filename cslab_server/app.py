@@ -6,11 +6,11 @@ bootstrap = Bootstrap(app)
 
 @app.route('/')
 def main():
-    return render_template('/index.html')
+    return render_template('/index_main.html')
 
 @app.route('/research')
 def ResearchArea():
-    return render_template('/ResearchArea.html')
+    return render_template('/ResearchArea_.html')
 
 @app.route('/project')
 def Projects():
@@ -18,7 +18,7 @@ def Projects():
 
 @app.route('/professor')
 def Professor():
-    return render_template('/Professor.html')
+    return render_template('/Professor_.html')
 
 @app.route('/members')
 def CurrentMembers():
@@ -26,7 +26,7 @@ def CurrentMembers():
 
 @app.route('/alumni')
 def Alumni():
-    return render_template('/index_copy.html')
+    return render_template('/Alumni.html')
 
 @app.route('/journal')
 def Journals():
@@ -56,5 +56,6 @@ def Notice():
 def News():
     return render_template('/team.html')
 
+app.run(host='163.152.52.63', port=80)
 if __name__ == '__main__':
-    app.run(port=800)
+    app.run(host='163.152.52.63', port=80)
