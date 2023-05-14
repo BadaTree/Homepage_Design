@@ -56,6 +56,6 @@ def Notice():
 def News():
     return render_template('/team.html')
 
-app.run(host='163.152.52.63', port=80)
+app.run(port=5000)
 if __name__ == '__main__':
-    app.run(host='163.152.52.63', port=80)
+    app.run(port=80)
