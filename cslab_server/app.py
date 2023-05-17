@@ -30,15 +30,15 @@ def Alumni():
 
 @app.route('/journal')
 def Journals():
-    return render_template('/index_copy.html')
+    return render_template('/journal.html')
 
 @app.route('/conference')
 def Conferences():
-    return render_template('/index_copy.html')
+    return render_template('/conference.html')
 
 @app.route('/patent')
 def Patent():
-    return render_template('/index_copy.html')
+    return render_template('/patent.html')
 
 @app.route('/undergradute')
 def Undergradute():
