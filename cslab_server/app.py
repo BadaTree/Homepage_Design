@@ -44,8 +44,28 @@ def Patent():
 def Undergradute():
     return render_template('/undergraduate.html')
 
+@app.route('/undergradute/KECE207')
+def Undergradute_KECE207():
+    return render_template('/undergraduate.html')
+
+@app.route('/undergradute/KECE340')
+def Undergradute_KECE340():
+    return render_template('/undergraduate.html')
+
+@app.route('/undergraduate/KECE343')
+def Undergradute_KECE343():
+    return render_template('/undergraduate.html')
+
 @app.route('/gradute')
 def Gradute():
+    return render_template('/graduate.html')
+
+@app.route('/gradute/ECE656')
+def Gradute_ECE656():
+    return render_template('/graduate.html')
+
+@app.route('/gradute/ECE519')
+def Gradute_ECE519():
     return render_template('/graduate.html')
 
 @app.route('/notice')
