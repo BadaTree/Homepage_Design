@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
+# from flask_uploads import UploadSet, configure_uploads, IMAGES
 
 app = Flask(__name__, static_folder='static')
 bootstrap = Bootstrap(app)
@@ -46,15 +47,15 @@ def Undergradute():
 
 @app.route('/undergradute/KECE207')
 def Undergradute_KECE207():
-    return render_template('/undergraduate.html')
+    return render_template('/undergraduates/KECE207.html')
 
 @app.route('/undergradute/KECE340')
 def Undergradute_KECE340():
-    return render_template('/undergraduate.html')
+    return render_template('/undergraduates/KECE340.html')
 
 @app.route('/undergraduate/KECE343')
 def Undergradute_KECE343():
-    return render_template('/undergraduate.html')
+    return render_template('/undergraduates/KECE343.html')
 
 @app.route('/gradute')
 def Gradute():
@@ -62,11 +63,11 @@ def Gradute():
 
 @app.route('/gradute/ECE656')
 def Gradute_ECE656():
-    return render_template('/graduate.html')
+    return render_template('/graduates/ECE656.html')
 
 @app.route('/gradute/ECE519')
 def Gradute_ECE519():
-    return render_template('/graduate.html')
+    return render_template('/graduates/ECE519.html')
 
 @app.route('/notice')
 def Notice():
