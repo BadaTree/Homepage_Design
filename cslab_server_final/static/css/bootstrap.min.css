@@ -3691,6 +3691,7 @@ fieldset:disabled .btn {
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
+    height: 245px;
 }
 .navbar-nav .nav-link {
     padding-right: 0;
@@ -3917,6 +3918,8 @@ fieldset:disabled .btn {
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .show > .nav-link {
     color: rgba(0,0,0,0.9);
+    font-size: 24px;
+    
 }
 .navbar-light .navbar-toggler {
     color: rgba(0,0,0,0.55);
