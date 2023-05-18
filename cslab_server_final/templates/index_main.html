@@ -50,31 +50,56 @@
     <!-- Spinner End -->
 
     <!-- Navbar Start -->
-    
+
     <div class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top" style="background: #FFFFFF;
-    box-shadow: 0px -4px 40px rgba(0, 0, 0, 0.3); height: 245px;" >
-        <a href="/" class="navbar-brand d-flex align-items-center" style="margin-left: 300px;" >
-            <h2 class="m-0 text-primary" href="/" style="color: #262626; font-family: 'Open Sans', sans-serif; font-size: 56px;">
-                </i>CS LAB</h2>
-        </a>
+    box-shadow: 0px -4px 40px rgba(0, 0, 0, 0.3); height: 200px;">
+        <style>
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .image {
+                text-align: center;
+            }
+
+            .image img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .title-container {
+                text-align: center;
+            }
+        </style>
+        <div class="container" style="padding: 0%; margin-left: 150px;">
+            <div class="image" style="padding: 0%;">
+              <img src="{{ url_for('static', filename='img/mark.png') }}" alt="Your Image">
+            </div>
+            <div class="title-container" style="margin:0% ; padding-left: 0%;">
+              <h1 class="main-title" style="font-family: 'Open-sans', sans-serif; font-weight: 700; font-size: 50px; color: #262626;">CS LAB</h1>
+              <p class="sub-title" style="font-family: 'Open-sans', sans-serif; font-weight: 400; font-size: 14px; color: #000000;">COMPUTER SYSTEM LAB</p>
+            </div>
+          </div>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <style>
-                a{
-                    font-size: 24px;
+                a {
+                    font-size: 16px;
                 }
             </style>
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse"id="navbarCollapse" style="margin-right: 300px;font-family: 'Open Sans', sans-serif;
-        font-style: normal; font-weight: 500; font-size: 24px;">
+        <div class="collapse navbar-collapse" id="navbarCollapse" style="margin-right: 150px;font-family: 'Open Sans', sans-serif;
+        font-style: normal; font-weight: 500; font-size: 16px;">
             <style>
-                a{
-                    font-size: 24px;
+                a {
+                    font-size: 16px;
                 }
             </style>
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <div class="nav-item dropdown" style="font-size: 40px;">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Research</a>
+                <div class="nav-item dropdown" >
+                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="font-family: 'Open Sans', sans-serif;
+                    font-style: normal; font-weight: 700; font-size: 16px;">Research</a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="/research" class="dropdown-item active">Research Area</a>
                         <a href="/project" class="dropdown-item">Projects</a>
@@ -82,20 +107,23 @@
                     </div>
                 </div>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Professor</a>
+                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="font-family: 'Open Sans', sans-serif;
+                    font-style: normal; font-weight: 700; font-size: 16px;">Professor</a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="/professor" class="dropdown-item active">Professor</a>
                     </div>
                 </div>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">People</a>
+                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="font-family: 'Open Sans', sans-serif;
+                    font-style: normal; font-weight: 700; font-size: 16px;">People</a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="/members" class="dropdown-item active">Current members</a>
                         <a href="/alumni" class="dropdown-item">Alumni</a>
                     </div>
                 </div>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Publications</a>
+                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="font-family: 'Open Sans', sans-serif;
+                    font-style: normal; font-weight: 700; font-size: 16px;">Publications</a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="/journal" class="dropdown-item active">Journals</a>
                         <a href="/conference" class="dropdown-item">Conferences</a>
@@ -103,14 +131,16 @@
                     </div>
                 </div>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Courses</a>
+                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="font-family: 'Open Sans', sans-serif;
+                    font-style: normal; font-weight: 700; font-size: 16px;">Courses</a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="/undergraduate" class="dropdown-item active">Undergraduate Courses</a>
                         <a href="/graduate" class="dropdown-item">Graduate Courses</a>
                     </div>
                 </div>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Boards</a>
+                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="font-family: 'Open Sans', sans-serif;
+                    font-style: normal; font-weight: 700; font-size: 16px;">Boards</a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="/notice" class="dropdown-item active">notice</a>
                         <a href="/news" class="dropdown-item">news</a>
@@ -125,26 +155,29 @@
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <style>
             h5 {
-                font-size: 24px;
+                font-size: 40px;
                 text-align: left;
                 /* 원하는 크기로 변경 */
-                font-family: 'Palatino';
+                font-family: 'Pretendard-Regular';
+                src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
             }
 
             p {
                 font-size: 22px;
                 text-align: left;
-                font-family: 'Palatino';
                 /* 원하는 크기로 변경 */
+                font-family: 'Pretendard-Regular';
+                src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
             }
 
+
             .btn-slider {
-                font-family: 'Palatino';
+                font-family: 'Open-sans', Arial, Helvetica, sans-serif;
                 /* 폰트 크기 지정 */
                 color: rgb(255, 255, 255);
                 /* 추가로 스타일을 변경하고 싶은 속성을 지정할 수 있습니다 */
                 /* 배경색 지정 */
-                background-color: #00143A;
+                background-color: #7C001A;
             }
 
             a {
@@ -176,7 +209,7 @@
                 arial,="Arial," sans-serif,="sans-serif," apple="Apple" color="Color" emoji,="Emoji," ui="UI"
                 symbol,="Symbol," emoji="Emoji">
                 <img src="{{ url_for('static', filename='img/main1_1.jpg') }}"
-                    style="display: block; margin: auto; max-width: 130%; height: auto;" alt="...">
+                    style="display: block; margin: auto; max-width: 130%; max-height: 536px;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5 style="color:azure ;">[ 고려대 뉴스 ] 최린 교수님, 2022 대한민국 산업기술진흥 유공자 선정</h5>
                     <p>전기전자공학부 최린 교수가 ‘2022 대한민국 산업기술 R&D 대전’에서 기술개발부문에서 산업기술진흥유공 정부포상자<br>(훈격: 대통령표창)로 선정.</p>
@@ -190,7 +223,7 @@
             <div class="carousel-item"
                 style="background-color: #00143A; font-family: 'Pretendard', Courier, monospace;">
                 <img src="{{ url_for('static', filename='img/main1_2.jpg') }}"
-                    style="display: block; margin: auto; max-width: 100%; height: auto;" alt="...">
+                    style="display: block; margin: auto; max-width: 100%; max-height: 536px;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5 style="color:azure ;">[ 고려대 뉴스 ] 세계 최초 수도권 지하철/KTX 역사 실내측위 시스템 및 실내 내비게이션 앱 개발 착수</h5>
                     <p>최린 교수 연구팀, 딥러닝 기반의 지자기 실내측위 기술을 이용 지하철 역사 내 교통약자 위한 맞춤형스마트 내비게이션 개발 계획</p>
@@ -203,7 +236,7 @@
             </div>
             <div class="carousel-item align-items: center" style="background-color: #00143A;">
                 <img src="{{ url_for('static', filename='img/main1_3.jpg') }}"
-                    style="display: block; margin: auto; max-width: 100%; height: auto;" alt="...">
+                    style="display: block; margin: auto; max-width: 100%; max-height: 536px;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5 style="color:azure ;">
                         [ 고려대 뉴스 ] NET 신기술 인증</h5>
@@ -218,7 +251,7 @@
             </div>
             <div class="carousel-item align-items: center" style="background-color: #00143A;">
                 <img src="{{ url_for('static', filename='img/main4.jpeg') }}"
-                    style="display: block; margin: auto; max-width: 100%; height: auto;" alt="...">
+                    style="display: block; margin: auto; max-width: 100%; max-height: 536px;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5 style="color:azure ;">
                         [ 고려대 뉴스 ] 스마트폰만으로 대형 실내 공간에서 실내 측위 가능</h5>
@@ -234,7 +267,7 @@
             </div>
             <div class="carousel-item align-items: center" style="background-color: #00143A;">
                 <img src="{{ url_for('static', filename='img/main555.jpeg') }}"
-                    style="display: block; margin: auto; max-width: 100%; height: auto;" alt="...">
+                    style="display: block; margin: auto; max-width: 100%; max-height: 536px;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5 style="color:azure ;">
                         [ 정보 통신 신문 ] 스마트폰만으로 실내 공간 위치 정밀 확인</h5>
@@ -249,7 +282,7 @@
             </div>
             <div class="carousel-item align-items: center" style="background-color: #00143A;">
                 <img src="{{ url_for('static', filename='img/main6.jpeg') }}"
-                    style="display: block; margin: auto; max-width: 100%; height: auto;" alt="...">
+                    style="display: block; margin: auto; max-width: 100%; max-height: 536px;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5 style="color:azure ;">
                         [ 중앙 일보 ] 실내에서 3D 네비게이션을?…고려대 연구진 실내측위 기술 개발</h5>
