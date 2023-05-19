@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
+# import ssl
 # from flask_uploads import UploadSet, configure_uploads, IMAGES
 
 app = Flask(__name__, static_folder='static')

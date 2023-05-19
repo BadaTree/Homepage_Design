@@ -3,13 +3,16 @@
 
 <head>
     <meta charset="utf-8">
-    <title>고려대학교 컴퓨터시스템 연구실</title>
+    <link rel="icon" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <title>Korea University Computer Systems Laboratory &bull; Page Title</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link rel="icon" href="/img/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,116 +52,69 @@
     </div>
     <!-- Spinner End -->
 
-    <!-- Navbar Start -->
+    <!--nav-bar-->
+    <section style="height: 100px; border: none; display: flex; align-items: center;">
+        <ul class="nav nav-tabs" style="margin-right: 200px;">
+            <!-- <div class="logo ">
+                <p>computer</p>
+            </div> -->
+            <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                    aria-expanded="false" style="color: #000000;">Research</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/research">Research Area</a>
+                    <a class="dropdown-item" href="/project">Projects</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                    aria-expanded="false">Professor</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/professor">Professor</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                    aria-expanded="false">People</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/members">Current members</a>
+                    <a class="dropdown-item" href="/alumni">Alumni</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                    aria-expanded="false">Publications</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/journal">Journals</a>
+                    <a class="dropdown-item" href="/conference">Conferences</a>
+                    <a class="dropdown-item" href="/patent">Patents</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                    aria-expanded="false">Courses</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/undergraduate">Undergraduate Courses</a>
+                    <a class="dropdown-item" href="/graduate">Graduate Courses</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                    aria-expanded="false">Boards</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/undergraduate">notice</a>
+                    <a class="dropdown-item" href="/graduate">News</a>
+                </div>
+            </li>
 
-    <div class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top" style="background: #FFFFFF;
-    box-shadow: 0px -4px 40px rgba(0, 0, 0, 0.3); height: 150px;">
-        <style>
-            .container {
-                max-width: 1200px;
-                margin: 0 auto;
-            }
-
-            .image {
-                text-align: center;
-            }
-
-            .image img {
-                max-width: 100%;
-                height: auto;
-            }
-
-            .title-container {
-                text-align: center;
-            }
-        </style>
-        <div class="container" style="padding: 0%; margin-left: 150px;">
-            <!-- <div class="image" style="padding: 0%;"> -->
-            <!-- <img src="{{ url_for('static', filename='img/mark.png') }}" alt="Your Image"> -->
-            <!-- </div> -->
-            <div class="title-container" style="margin:0% ; padding-left: 0%;">
-                <h1 class="main-title"
-                    style="font-family: 'Open-sans', sans-serif; font-weight: 700; font-size: 50px; color: #262626;">CS
-                    LAB</h1>
-                <p class="sub-title"
-                    style="font-family: 'Open-sans', sans-serif; font-weight: 400; font-size: 14px; color: #000000;">
-                    COMPUTER SYSTEM LAB</p>
-            </div>
-        </div>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <style>
-                a {
-                    font-size: 16px;
-                }
-            </style>
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse" style="margin-right: 150px;font-family: 'Open Sans', sans-serif;
-        font-style: normal; font-weight: 500; font-size: 16px;">
-            <style>
-                a {
-                    font-size: 16px;
-                }
-            </style>
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="font-family: 'Open Sans', sans-serif;
-                    font-style: normal; font-weight: 700; font-size: 16px;">Research</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="/research" class="dropdown-item active">Research Area</a>
-                        <a href="/project" class="dropdown-item">Projects</a>
-
-                    </div>
-                </div>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="font-family: 'Open Sans', sans-serif;
-                    font-style: normal; font-weight: 700; font-size: 16px;">Professor</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="/professor" class="dropdown-item active">Professor</a>
-                    </div>
-                </div>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="font-family: 'Open Sans', sans-serif;
-                    font-style: normal; font-weight: 700; font-size: 16px;">People</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="/members" class="dropdown-item active">Current members</a>
-                        <a href="/alumni" class="dropdown-item">Alumni</a>
-                    </div>
-                </div>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="font-family: 'Open Sans', sans-serif;
-                    font-style: normal; font-weight: 700; font-size: 16px;">Publications</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="/journal" class="dropdown-item active">Journals</a>
-                        <a href="/conference" class="dropdown-item">Conferences</a>
-                        <a href="/patent" class="dropdown-item">Patents</a>
-                    </div>
-                </div>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="font-family: 'Open Sans', sans-serif;
-                    font-style: normal; font-weight: 700; font-size: 16px;">Courses</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="/undergraduate" class="dropdown-item active">Undergraduate Courses</a>
-                        <a href="/graduate" class="dropdown-item">Graduate Courses</a>
-                    </div>
-                </div>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="font-family: 'Open Sans', sans-serif;
-                    font-style: normal; font-weight: 700; font-size: 16px;">Boards</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="/notice" class="dropdown-item active">notice</a>
-                        <a href="/news" class="dropdown-item">news</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Navbar End -->
+        </ul>
+    </section>
+    <!--nav-bar-->
 
     <!-- slider -->
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <style>
             h5 {
+                color: #FFFFFF;
                 font-size: 40px;
                 text-align: left;
                 /* 원하는 크기로 변경 */
@@ -167,6 +123,7 @@
             }
 
             p {
+                color: #FFFFFF;
                 font-size: 22px;
                 text-align: left;
                 /* 원하는 크기로 변경 */
@@ -189,7 +146,7 @@
             }
 
             .body {
-                font-family: 'Palatino' !important;
+                font-family: 'Open-sans' !important;
             }
         </style>
         <div class="carousel-indicators">
@@ -206,17 +163,14 @@
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"
                 aria-label="Slide 6"></button>
         </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active "
-                style="background-color: #00143A; font-family: system-ui, -apple-system, " segoe="Segoe" ui,="UI,"
-                roboto,="Roboto," helvetica="Helvetica" neue,="Neue," noto="Noto" sans,="Sans," liberation="Liberation"
-                arial,="Arial," sans-serif,="sans-serif," apple="Apple" color="Color" emoji,="Emoji," ui="UI"
-                symbol,="Symbol," emoji="Emoji">
+        <div class="carousel-inner" style="text-align: left;">
+            <div class="carousel-item active " style="background-color: #00143A; color: #FFFFFF;">
                 <img src="{{ url_for('static', filename='img/main1_1.jpg') }}"
-                    style="display: block; margin: auto; max-width: 130%; max-height: 536px;" alt="...">
+                    style="display: block;  max-width: 130%; max-height: 536px;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5 style="color:azure ;">[ 고려대 뉴스 ] 최린 교수님, 2022 대한민국 산업기술진흥 유공자 선정</h5>
-                    <p>전기전자공학부 최린 교수가 ‘2022 대한민국 산업기술 R&D 대전’에서 기술개발부문에서 산업기술진흥유공 정부포상자<br>(훈격: 대통령표창)로 선정.</p>
+                    <p style="color:azure ;">전기전자공학부 최린 교수가 ‘2022 대한민국 산업기술 R&D 대전’에서 기술개발부문에서 산업기술진흥유공 정부포상자<br>(훈격:
+                        대통령표창)로 선정.</p>
                     <p>
                         <a class="btn btn-slider"
                             href="https://www.korea.ac.kr/user/boardList.do?boardId=474633&siteId=university&page=2&search=&column=&boardType=02&listType=&id=university_060108000000&parent=&boardSeq=494187&command=albumView&chkBoxSeq=&chkBoxId=&chkBoxPos=&chkBoxDepth=&chkBoxFamSeq=&warningYn=N&categoryId=&categoryDepth=&totalYn=&searchDate1=&searchDate2=">View
@@ -227,10 +181,10 @@
             <div class="carousel-item"
                 style="background-color: #00143A; font-family: 'Pretendard', Courier, monospace;">
                 <img src="{{ url_for('static', filename='img/main1_2.jpg') }}"
-                    style="display: block; margin: auto; max-width: 100%; max-height: 536px;" alt="...">
+                    style="display: block;  max-width: 130%; max-height: 536px;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5 style="color:azure ;">[ 고려대 뉴스 ] 세계 최초 수도권 지하철/KTX 역사 실내측위 시스템 및 실내 내비게이션 앱 개발 착수</h5>
-                    <p>최린 교수 연구팀, 딥러닝 기반의 지자기 실내측위 기술을 이용 지하철 역사 내 교통약자 위한 맞춤형스마트 내비게이션 개발 계획</p>
+                    <p style="color:azure ;">최린 교수 연구팀, 딥러닝 기반의 지자기 실내측위 기술을 이용 지하철 역사 내 교통약자 위한 맞춤형스마트 내비게이션 개발 계획</p>
                     <p>
                         <a class="btn btn-slider"
                             href="https://www.korea.ac.kr/user/boardList.do?boardId=474633&siteId=university&page=1&boardType=02&listType=&id=university_060108000000&parent=&boardSeq=493672&command=albumView&totalYn=">View
@@ -240,11 +194,11 @@
             </div>
             <div class="carousel-item align-items: center" style="background-color: #00143A;">
                 <img src="{{ url_for('static', filename='img/main1_3.jpg') }}"
-                    style="display: block; margin: auto; max-width: 100%; max-height: 536px;" alt="...">
+                    style="display: block;  max-width: 130%; max-height: 536px;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5 style="color:azure ;">
                         [ 고려대 뉴스 ] NET 신기술 인증</h5>
-                    <p>딥러닝 기술 사용 자기장 기반 실내측위, NET 신기술 인증
+                    <p style="color:azure ;">딥러닝 기술 사용 자기장 기반 실내측위, NET 신기술 인증
                     </p>
                     <p>
                         <a class="btn btn-slider"
@@ -255,11 +209,12 @@
             </div>
             <div class="carousel-item align-items: center" style="background-color: #00143A;">
                 <img src="{{ url_for('static', filename='img/main4.jpeg') }}"
-                    style="display: block; margin: auto; max-width: 100%; max-height: 536px;" alt="...">
+                    style="display: block;  max-width: 130%; max-height: 536px;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5 style="color:azure ;">
                         [ 고려대 뉴스 ] 스마트폰만으로 대형 실내 공간에서 실내 측위 가능</h5>
-                    <p>최린 교수팀 “딥러닝 기반 지자기 기반 실내측위 기술” NET 신기술인증받아 공항, 쇼핑몰, 박물관, 공장 등 다양한 실내 공간에서 시범
+                    <p style="color:azure ;">최린 교수팀 “딥러닝 기반 지자기 기반 실내측위 기술” NET 신기술인증받아 공항, 쇼핑몰, 박물관, 공장 등 다양한 실내 공간에서
+                        시범
                         사이트 구축 추진
                     </p>
                     <p>
@@ -271,11 +226,12 @@
             </div>
             <div class="carousel-item align-items: center" style="background-color: #00143A;">
                 <img src="{{ url_for('static', filename='img/main555.jpeg') }}"
-                    style="display: block; margin: auto; max-width: 100%; max-height: 536px;" alt="...">
+                    style="display: block;  max-width: 130%; max-height: 536px;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5 style="color:azure ;">
                         [ 정보 통신 신문 ] 스마트폰만으로 실내 공간 위치 정밀 확인</h5>
-                    <p>최린 교수 연구팀은 '딥러닝 기반 지구자기장(지자기) 실내 측위 기술'을 개발, 산업통상자원부 산하 국가기술표준원의 NET 신기술 인증을
+                    <p style="color:azure ;">최린 교수 연구팀은 '딥러닝 기반 지구자기장(지자기) 실내 측위 기술'을 개발, 산업통상자원부 산하 국가기술표준원의 NET 신기술
+                        인증을
                         획득했다고 최근 밝혔다. <br>이 기술은 2020년 2차 신기술 인증 수여식에서 대표적 신기술로 소개되기도 했다.
                     </p>
                     <p>
@@ -286,11 +242,12 @@
             </div>
             <div class="carousel-item align-items: center" style="background-color: #00143A;">
                 <img src="{{ url_for('static', filename='img/main6.jpeg') }}"
-                    style="display: block; margin: auto; max-width: 100%; max-height: 536px;" alt="...">
+                    style="display: block;  max-width: 130%; max-height: 536px;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5 style="color:azure ;">
                         [ 중앙 일보 ] 실내에서 3D 네비게이션을?…고려대 연구진 실내측위 기술 개발</h5>
-                    <p>연구진은 딥러닝의 순환신경망(Recurrent Neural Networks) 기술을 사용해 실내 지구자기장의 분포 패턴을 기계학습했다.<br>
+                    <p style="color:azure ;">연구진은 딥러닝의 순환신경망(Recurrent Neural Networks) 기술을 사용해 실내 지구자기장의 분포 패턴을
+                        기계학습했다.<br>
                         이를 이용해 사람 또는 사물의 실내 위치를 추적하는 방식을 고안했다. 비콘이나 AP와 같은 추가적인 장비의 설치 없이 스마트폰만으로 대형 실내
                         공간에서 50~80 cm 수준의 측위가 가능하다.
                     </p>
@@ -374,7 +331,7 @@
                         <div class="col-lg-4 col-md-4 wow fadeInUp" data-wow-delay="0.2s">
                             <div class="card shadow">
                                 <img src="{{ url_for('static', filename='img/main2_1.png') }}"
-                                    style="display: block; margin-left: auto; margin-right: auto; width: 100%; height: 250px; object-fit: cover;"
+                                    style="display: block; margin-left: auto; margin-right: auto; width: 100%; height: 210px; object-fit: cover;"
                                     alt="...">
                                 <div class="card-body">
                                     <h4 class="card-title" style="font-size: 20px;">LG화학 여수 화학 단지<br>측위시스템 Pilot
@@ -391,7 +348,7 @@
                         <div class="col-lg-4 col-md-4 wow fadeInUp" data-wow-delay="0.3s">
                             <div class="card shadow">
                                 <img src="{{ url_for('static', filename='img/main2_2.jpg') }}"
-                                    style="display: block; margin-left: auto; margin-right: auto; width: 100%; height: 250px; object-fit: cover;"
+                                    style="display: block; margin-left: auto; margin-right: auto; width: 100%; height: 210px; object-fit: cover;"
                                     alt="...">
                                 <div class="card-body">
                                     <h4 class="card-title" style="font-size: 20px;">산학연 주관 미래도전<br>국방기술 연구개발<br>
@@ -407,7 +364,7 @@
                         <div class="col-lg-4 col-md-4 wow fadeInUp" data-wow-delay="0.4s">
                             <div class="card shadow">
                                 <img src="{{ url_for('static', filename='img/main2_3.png') }}"
-                                    style="display: block; margin-left: auto; margin-right: auto; width: 100%; height: 250px; object-fit: cover;"
+                                    style="display: block; margin-left: auto; margin-right: auto; width: 100%; height: 210px; object-fit: cover;"
                                     alt="...">
                                 <div class="card-body">
                                     <h4 class="card-title" style="font-size: 20px;">도시철도 역사내 맞춤형 스마트 내비게이션 개발<br>
@@ -427,7 +384,7 @@
                         <div class="col-lg-4 col-md-4 wow fadeInUp" data-wow-delay="0.5s">
                             <div class="card shadow">
                                 <img src="{{ url_for('static', filename='img/main2_4.png') }}"
-                                    style="display: block; margin-left: auto; margin-right: auto; width: 100%; height: 250px; object-fit: cover;"
+                                    style="display: block; margin-left: auto; margin-right: auto; width: 100%; height: 210px; object-fit: cover;"
                                     alt="...">
                                 <div class="card-body">
                                     <h4 class="card-title" style="font-size: 20px;">디지털기반 건축 시공 및<br>안전감리 기술 개발<br>
@@ -443,7 +400,7 @@
                         <div class="col-lg-4 col-md-4 wow fadeInUp" data-wow-delay="0.6s">
                             <div class="card shadow">
                                 <img src="data:image/png;base64,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"
-                                    style="display: block; margin-left: auto; margin-right: auto; width: 100%; height: 250px; object-fit: cover;"
+                                    style="display: block; margin-left: auto; margin-right: auto; width: 100%; height: 210px; object-fit: cover;"
                                     alt="...">
                                 <div class="card-body">
                                     <h4 class="card-title" style="font-size: 20px;">위치기반 마케팅 플랫폼 개발을 위한 실내 측위 시스템
@@ -554,11 +511,11 @@
                             }
 
                             h5 {
-                                margin-top: 20px;
+                                margin-top: 25px;
                                 font-weight: bold;
                                 color: #202020;
                                 text-align: center;
-                                font-size: 30px;
+                                font-size: 24px;
                                 font-family: 'Pretendard-Regular';
                                 src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
                                 /* font-size: 45px; */
@@ -566,7 +523,7 @@
                         </style>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <div class="embed-responsive embed-responsive-16by9">
+                                <div class="embed-responsive embed-responsive-16by9 shadow rounded">
                                     <iframe class="embed-responsive-item"
                                         src="https://www.youtube.com/embed/pk2e7jMveEY?autoplay=1&mute=1"
                                         allowfullscreen allow="autoplay"></iframe>
@@ -576,7 +533,7 @@
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <div class="embed-responsive embed-responsive-16by9">
+                                <div class="embed-responsive embed-responsive-16by9 shadow rounded">
                                     <iframe class="embed-responsive-item"
                                         src="https://www.youtube.com/embed/oBqC-l1Gsok?autoplay=1&mute=1"
                                         allowfullscreen allow="autoplay"></iframe>
@@ -587,7 +544,7 @@
                             </div>
 
                             <div class="carousel-item">
-                                <div class="embed-responsive embed-responsive-16by9">
+                                <div class="embed-responsive embed-responsive-16by9 shadow rounded">
                                     <iframe class="embed-responsive-item"
                                         src="https://www.youtube.com/embed/nCcTHQ-77Vk?autoplay=1&mute=1"
                                         allowfullscreen allow="autoplay"></iframe>
@@ -613,67 +570,262 @@
     </section>
     <!-- Youtube End -->
 
+    <!--Information Start-->
+    <section style="background-color:#fff ;">
+        <div class="container-xxl py-5">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.8s">
+                <style>
+                    h1 {
+                        font-family: 'Open-sans', Arial, Helvetica, sans-serif;
+                        font-size: 50px;
+                        font-weight: bold;
+                        color: #7C001A;
+                        text-align: center;
+                    }
 
+                    h3 {
+                        font-family: 'Open-sans', Arial, Helvetica, sans-serif;
+                        font-size: 30px;
+                        font-weight: bold;
+                        color: #7C001A;
+                        text-align: center;
+                        padding-top: 20px;
+                    }
 
-    <!-- Recruit Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">COMPUTERSYSTEMLAB</h6>
-                <h1 class="mb-5">Notice</h1>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
-                    <div class="position-relative h-100">
-                        <img class="img-fluid position-absolute w-100 h-100"
-                            src="https://i.pinimg.com/236x/51/c9/28/51c9288340f89044bf1135ddeb416d59.jpg" alt=""
-                            style="object-fit: cover;">
+                    p {
+                        font-family: 'Open-sans', Arial, Helvetica, sans-serif;
+                        font-size: 18px;
+                        color: #000000;
+                        font-weight: bold;
+                        text-align: center;
+
+                    }
+
+                    .box {
+                        border: 2px solid #EBEBEB;
+                        /* Set the border width and style */
+                        border-radius: 10px;
+                        height: 300px;
+                    }
+
+                    .inner-box {
+                        font-family: 'Open-sans', Arial, Helvetica, sans-serif;
+                        height: 15%;
+                        background-color: #FBEEEE;
+                        width: 75%;
+                        align-items: center;
+                        border-radius: 10px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        margin-bottom: 5px;
+                    }
+
+                    .inner-box2 {
+                        font-family: 'Pretendard-Regular';
+                        src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+                        height: 30%;
+                        background-color: #FBEEEE;
+                        width: 75%;
+                        align-items: center;
+                        border-radius: 10px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        margin-bottom: 5px;
+                    }
+                </style>
+
+                <h1 class="mb-5"> Information
+                    <p> Computer Systems Lab demo Information</p>
+                </h1>
+                <div class="row justify-content-center">
+                    <style>
+                        h1 {
+                            font-family: 'Open-sans', Arial, Helvetica, sans-serif;
+                            font-size: 50px;
+                            font-weight: bold;
+                            color: #7C001A;
+                            text-align: center;
+                        }
+
+                        h3 {
+                            font-family: 'Open-sans', Arial, Helvetica, sans-serif;
+                            font-size: 30px;
+                            font-weight: bold;
+                            color: #7C001A;
+                            text-align: center;
+                            padding-top: 20px;
+                        }
+
+                        p {
+                            font-family: 'Open-sans', Arial, Helvetica, sans-serif;
+                            font-size: 18px;
+                            color: #000000;
+                            font-weight: bold;
+                            text-align: center;
+
+                        }
+
+                        .box {
+                            border: 2px solid #EBEBEB;
+                            /* Set the border width and style */
+                            border-radius: 10px;
+                            height: 300px;
+                        }
+
+                        .inner-box {
+                            font-family: 'Open-sans', Arial, Helvetica, sans-serif;
+                            height: 15%;
+                            background-color: #FBEEEE;
+                            width: 75%;
+                            align-items: center;
+                            border-radius: 10px;
+                            margin-left: auto;
+                            margin-right: auto;
+                            margin-bottom: 5px;
+                        }
+
+                        .inner-box2 {
+                            font-family: 'Pretendard-Regular';
+                            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+                            height: 30%;
+                            background-color: #FBEEEE;
+                            width: 75%;
+                            align-items: center;
+                            border-radius: 10px;
+                            margin-left: auto;
+                            margin-right: auto;
+                            margin-bottom: 5px;
+                        }
+                    </style>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="box rounded">
+                            <h3 style="color:#7C001A; font-size: 30px;"> Research</h3>
+                            <div class="inner-box ">
+                                <p>Indoor
+                                    Localization</p>
+                            </div>
+                            <div class="inner-box ">
+                                <p>Internet of
+                                    Things</p>
+                            </div>
+                            <div class="inner-box ">
+                                <p>Computer Architecture</p>
+                            </div>
+                            <div class="inner-box ">
+                                <p>Internet
+                                    Security</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <h1 class="mb-4">대학원생을 모집합니다.</h1>
-                    <p class="mb-4">고려대학교 전기전자공학부 컴퓨터 시스템 연구실에서 신기술 개발 및 연구에 참여할 연구원을 초빙하고 있습니다. 관련
-                        연구 분야는 딥러닝, IoT,안드로이드/IOS 앱 개발, HW 설계, 시공간 DB 등입니다.</p>
-                    <p class="mb-4">연구팀은 실내 측위 기술을 철도 역사, 공장, 쇼핑몰, 공항, 병원과 같은 대규모 실내공간에 적용하여 실내
-                        내비게이션, 스마트 안전, 화재 대피 안내, 건물 내 트래픽 분석, 병원 내 환자 추적, 광고와 마케팅, 증가 현실 게임 등 다양한 서비스와
-                        어플리케이션을 개발 중에 있으며 향후 4차 산업 분야에서 차세대 성장 동력이 될 것으로 기대합니다.</p>
-                    <div class="row gy-2 gx-4 mb-4">
-                        <div class="col-sm-6">
-                            <p class="mb-0">
-                                <i class="fa fa-arrow-right text-primary me-2"></i>딥러닝</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0">
-                                <i class="fa fa-arrow-right text-primary me-2"></i>IoT</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0">
-                                <i class="fa fa-arrow-right text-primary me-2"></i>안드로이드/IOS 앱 개발</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0">
-                                <i class="fa fa-arrow-right text-primary me-2"></i>HW 설계</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0">
-                                <i class="fa fa-arrow-right text-primary me-2"></i>시공간 DB</p>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="box rounded">
+                            <h3 style="color:#7C001A; font-size: 30px;">Notice</h3>
+                            <div class="inner-box2 ">
+                            </div>
+                            <div class="inner-box2 ">
+                            </div>
                         </div>
                     </div>
-                    <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Recruit End -->
+    </section>
+    <!--Information END-->
 
+
+    <!-- Contact Start-->
+    <section style="background-color:#F9F9F9;">
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.8s">
+                    <style>
+                        h1 {
+                            font-family: 'Open-sans', Arial, Helvetica, sans-serif;
+                            font-size: 50px;
+                            font-weight: bold;
+                            color: #7C001A;
+                            text-align: center;
+                        }
+
+                        h3 {
+                            font-family: 'Open-sans', Arial, Helvetica, sans-serif;
+                            font-size: 18px;
+                            font-weight: bold;
+                            color: #202020;
+                            text-align: center;
+                            padding-top: 20px;
+                        }
+
+                        h3 .mb-5 {
+                            margin-bottom: 20px;
+                        }
+
+                        p {
+                            font-family: 'Open-sans', Arial, Helvetica, sans-serif;
+                            font-size: 18px;
+                            color: #7E7E7E;
+                            text-align: center;
+
+                        }
+
+                        .box {
+                            border: 2px solid #EBEBEB;
+                            /* Set the border width and style */
+                            border-radius: 10px;
+                            height: 300px;
+                        }
+
+                        .inner-box {
+                            font-family: 'Open-sans', Arial, Helvetica, sans-serif;
+                            height: 15%;
+                            background-color: #FBEEEE;
+                            width: 75%;
+                            align-items: center;
+                            border-radius: 10px;
+                            margin-left: auto;
+                            margin-right: auto;
+                            margin-bottom: 5px;
+                        }
+
+                        .inner-box2 {
+                            font-family: 'Pretendard-Regular';
+                            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+                            height: 30%;
+                            background-color: #FBEEEE;
+                            width: 75%;
+                            align-items: center;
+                            border-radius: 10px;
+                            margin-left: auto;
+                            margin-right: auto;
+                            margin-bottom: 5px;
+                        }
+                    </style>
+
+                    <h1 class="mb-5"> Contact
+                        <p>Computer Systems Lab directions</p>
+                    </h1>
+                    <img src="{{ url_for('static', filename='img/map.png') }}"
+                        style="display: block; margin: auto; max-width: 130%; max-height: 536px;" alt="...">
+                    <h3>#420, New Engineering Bldg, 145 Anam-ro, Korea University,<br>
+                        Seongbuk-gu, Seoul 136-713, Republic of Korea<br>
+                        서울특별시 성북구 안암동5가 126-16<br>
+                        Tel: +82-2-3290-3752 <br>
+                        E-Mail: dlstn0910@korea.ac.kr
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact END-->
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.17s">
         <div class="container py-5">
+            <hr style="color: #FFFFFF;">
             <div class="container px-4 text-white" style="color: azure;">
-                <h3 style="color: rgb(255, 255, 255);">
+                <h3 style="color: rgb(255, 255, 255); text-align: left;">
                     COMPUTER SYSTEM LAB</h3>
-                <p>
+                <p style="text-align: left; color: #FFFFFF;">
                     <i class="fa fa-map-marker-alt me-3"></i>Industry-Academy Building 236, Korea
                     University, 145 Anam-ro, Seongbuk-gu, Seoul, Republic of Korea. 02841
                     <br>

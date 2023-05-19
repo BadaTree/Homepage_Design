@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #262626;
+    --primary: #06BBCC;
     --light: #F0FBFC;
     --dark: #181d38;
 }
@@ -39,7 +39,7 @@
 
 /*** Button ***/
 .btn {
-    font-family: 'Open-sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-weight: 600;
     transition: .5s;
 }
@@ -84,14 +84,13 @@
     font-weight: 900;
     vertical-align: middle;
     margin-left: 8px;
-    font-size: 24px;
 }
 
 .navbar-light .navbar-nav .nav-link {
     margin-right: 30px;
     padding: 25px 0;
     color: #FFFFFF;
-    font-size: 24px !important; 
+    font-size: 15px;
     text-transform: uppercase;
     outline: none;
 }
@@ -102,7 +101,7 @@
 }
 
 @media (max-width: 991.98px) {
-    .navbar-light .navbar-nav .nav-link {
+    .navbar-light .navbar-nav .nav-link  {
         margin-right: 0;
         padding: 10px 0;
     }
@@ -115,26 +114,11 @@
 .navbar-light .navbar-brand,
 .navbar-light a.btn {
     height: 75px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 14px 22.4px;
-    gap: 28px;
-
-    position: absolute;
-    width: 236.8px;
-    height: 95px;
-    left: 424.54px;
-    top: 87px;
-
-    border-radius: 14px;
-    font-size: 40px;
 }
 
 .navbar-light .navbar-nav .nav-link {
     color: var(--dark);
     font-weight: 500;
-    font-size: 24px;
 }
 
 .navbar-light.sticky-top {
@@ -173,7 +157,7 @@
         position: relative;
         min-height: 500px;
     }
-
+    
     .header-carousel .owl-carousel-item img {
         position: absolute;
         width: 100%;
@@ -223,7 +207,7 @@
     background: rgba(15, 23, 43, .7);
 }
 
-.breadcrumb-item+.breadcrumb-item::before {
+.breadcrumb-item + .breadcrumb-item::before {
     color: var(--light);
 }
 
@@ -334,7 +318,6 @@
 }
 
 @media (min-width: 768px) {
-
     .testimonial-carousel::before,
     .testimonial-carousel::after {
         width: 200px;
@@ -342,7 +325,6 @@
 }
 
 @media (min-width: 992px) {
-
     .testimonial-carousel::before,
     .testimonial-carousel::after {
         width: 300px;
