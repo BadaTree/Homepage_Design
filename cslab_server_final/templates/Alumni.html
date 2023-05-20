@@ -1,593 +1,620 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <title>고려대학교 컴퓨터시스템 연구실</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+<head>
+    <meta charset="utf-8">
+    <title>고려대학교 컴퓨터시스템 연구실</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-        <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
 
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossorigin="crossorigin">
-        <link
-            href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
-            rel="stylesheet">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
 
-        <!-- Icon Font Stylesheet -->
-        <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
-            rel="stylesheet">
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
-            rel="stylesheet">
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-        <!-- Libraries Stylesheet -->
-        <link
-            href="{{ url_for('static', filename='lib/animate/animate.min.css') }}"
-            rel="stylesheet">
-        <link
-            href="{{ url_for('static', filename='lib/animate/animate.css') }}"
-            rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link
+        href="{{ url_for('static', filename='lib/animate/animate.min.css') }}"
+        rel="stylesheet">
+    <link
+        href="{{ url_for('static', filename='lib/animate/animate.css') }}"
+        rel="stylesheet">
 
-        <!-- Customized Bootstrap Stylesheet -->
-        <link
-            href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
-            rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+        rel="stylesheet">
 
-        <!-- Template Stylesheet -->
-        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <!-- Template Stylesheet -->
+    <link href="{{ url_for('static', filename='css/style.css') }}"
+        rel="stylesheet">
 
-        <style>
-            .board-container {
-                width: 80%;
-                margin: 0 auto;
-                padding: 5px;
-                background-color: #f0f0f0;
-            }
+    <style>
+        .board-container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 5px;
+            background-color: #f0f0f0;
+        }
 
-            .board {
-                background-color: #fff;
-                padding: 5px;
-            }
+        .board {
+            background-color: #fff;
+            padding: 5px;
+        }
 
-            .post {
-                margin-bottom: 20px;
-            }
+        .post {
+            margin-bottom: 20px;
+        }
 
-            .post h3 {
-                margin-bottom: 5px;
-            }
+        .post h3 {
+            margin-bottom: 5px;
+        }
 
-            .post p {
-                color: #333;
-            }
-        </style>
-    </head>
+        .post p {
+            color: #333;
+        }
+    </style>
+</head>
 
-    <body>
-        <!-- Spinner Start -->
-        <div
-            id="spinner"
-            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div
-                class="spinner-border text-primary"
-                style="width: 3rem; height: 3rem;"
-                role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
-        <!-- Spinner End -->
+    </div>
+    <!-- Spinner End -->
 
-        
- 
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2 class="m-0 text-primary" href="/" style="color: #00143A;">
-                <i class="fa fa-book me-3"></i>COMPUTERSYSTEMLAB</h2>
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Research</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="/research" class="dropdown-item active">Research Area</a>
-                        <a href="/project" class="dropdown-item">Projects</a>
-                    </div>
-                </div>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Professor</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="/professor" class="dropdown-item active">Professor</a>
-                    </div>
-                </div>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">People</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="/members" class="dropdown-item active">Current members</a>
-                        <a href="/alumni" class="dropdown-item">Alumni</a>
-                    </div>
-                </div>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Publications</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="/journal" class="dropdown-item active">Journals</a>
-                        <a href="/conference" class="dropdown-item">Conferences</a>
-                        <a href="/patent" class="dropdown-item">Patents</a>
-                    </div>
-                </div>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Courses</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="/undergraduate" class="dropdown-item active">Undergraduate Courses</a>
-                        <a href="/graduate" class="dropdown-item">Graduate Courses</a>
-                    </div>
-                </div>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Boards</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="/notice" class="dropdown-item active">notice</a>
-                        <a href="/news" class="dropdown-item">news</a>
-                    </div>
-                </div>
-            </div>
+
+
+    <!--nav-bar-->
+    <section style="height: 135px; border: none; display: flex; align-items: center; font-family: 'Open-sans';">
+        <div class="logo" style="padding-left: 13%;">
+            <a href="/">
+                <img src="{{ url_for('static', filename='img/mark.png') }}"
+                    alt="School Logo" style="width: 80px; height: 100px; margin-right: 20px; border: none;">
+            </a>
         </div>
-    </nav>
-    <!-- Navbar End -->
-
-        <!-- Header Start -->
-        <div class="container-fluid bg-primary py-5 mb-5 page-header">
-            <div class="container py-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10 text-center">
-                        <h1 class="display-3 text-white animated slideInDown">Alumni</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Header End -->
-
-        <!-- Team Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h6
-                        class="section-title bg-white text-center text-primary px-3"
-                        style="color: #00143A;">
-                        COMPUTERSYSTEMLAB</h6>
-                    <h1 class="mb-5">Alumni</h1>
-                </div>
-                <div class="row g-2 justify-content-center"></div>
-            </div>
+        <div style="padding-right: 20%;">
+            <h2 style="font-size: 50px; font-weight: bold; font-family: 'Open-sans';">
+                <a href="/" style="text-decoration: none; color: #000000;">CS LAB</a>
+            </h2>
+            <h5 style="font-size: 16px; font-family: 'Open-sans'; margin-top: -10px;">
+                <a href="/" style="text-decoration: none; color: #000000;">COMPUTER SYSTEM LAB</a>
+            </h5>
         </div>
 
-        <div class="board-container">
-            <div class="board" style="text-align: center;">
+        <ul class="nav nav-tabs" style="margin-right: 100px">
+            <!-- <div class="logo ">
+                <p>computer</p>
+            </div> -->
+            <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                    aria-expanded="false" style="color: #000000;">Research</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/research">Research Area</a>
+                    <a class="dropdown-item" href="/project">Projects</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                    aria-expanded="false">Professor</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/professor">Professor</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                    aria-expanded="false">People</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/members">Current members</a>
+                    <a class="dropdown-item" href="/alumni">Alumni</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                    aria-expanded="false">Publications</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/journal">Journals</a>
+                    <a class="dropdown-item" href="/conference">Conferences</a>
+                    <a class="dropdown-item" href="/patent">Patents</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                    aria-expanded="false">Courses</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/undergraduate">Undergraduate Courses</a>
+                    <a class="dropdown-item" href="/graduate">Graduate Courses</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                    aria-expanded="false">Boards</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/undergraduate">notice</a>
+                    <a class="dropdown-item" href="/graduate">News</a>
+                </div>
+            </li>
+
+        </ul>
+    </section>
+    <!--nav-bar-->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Alumni</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Team Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3" style="color: #00143A;">
+                    COMPUTERSYSTEMLAB</h6>
+                <h1 class="mb-5">Alumni</h1>
+            </div>
+            <div class="row g-2 justify-content-center"></div>
+        </div>
+    </div>
+
+    <div class="board-container">
+        <div class="board" style="text-align: center;">
+
+            <p>&nbsp;</p>
+
+            <p>
+                <span style="font-size: 18px;">Name :&nbsp;</span>
+                <span style="font-size: 18px; line-height: 1.5;">
+                    <strong>허 재 성 (Jae-sung Heo)</strong></span></p>
+
+            <p>
+                <span style="font-size: 18px; line-height: 1.5;">Course :&nbsp;M.S. 2003</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Contact Point :&nbsp;</span><span
+                    style="font-size: 18px; line-height: 1.5;">jsheo@korea.ac.kr</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Affiliation :&nbsp;</span><span
+                    style="font-size: 18px; line-height: 1.5;">삼성전자(DS총괄)</span>
+                <span class="Apple-tab-span" style="font-size: 18px; line-height: 1.5; white-space: pre;"></span>
+            </p>
+
+            <hr style="margin: 0 auto; width: 80%;">
+            <p>&nbsp;</p>
+
+            <p>
+                <span style="font-size: 18px;">Name :
+                    <strong>신 상 훈 (Sang-hoon Shin)</strong></span></p>
+
+            <p>
+                <span style="font-size: 18px;">Course :&nbsp;M.S. 2004</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Contact Point : kaisshin@korea.ac.kr</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Affiliation : 박사진학(고려대)</span></p>
+
+            <hr style="margin: 0 auto; width: 80%;">
+            <p>&nbsp;</p>
+
+            <p>
+                <span style="font-size: 18px;">Name :
+                    <strong>김 일 관 (Il-kwan Kim)</strong></span></p>
+
+            <p>
+                <span style="font-size: 18px;">Course :&nbsp;M.S. 2004</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Contact Point : bitinno@korea.ac.kr</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Affiliation : LG전자</span></p>
+
+            <hr style="margin: 0 auto; width: 80%;">
+            <p>&nbsp;</p>
+
+            <p>
+                <span style="font-size: 18px;">Name :
+                    <strong>박 준 호 (Jun-ho Park)</strong></span></p>
+
+            <p>
+                <span style="font-size: 18px;">Course :&nbsp;M.S. 2005</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Contact Point : cronide@korea.ac.kr</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Affiliation : LG전자</span></p>
+
+            <hr style="margin: 0 auto; width: 80%;">
+            <p>&nbsp;</p>
+
+            <p>
+                <span style="font-size: 18px;">Name :
+                    <strong>신 용 (Yong Shin)</strong></span></p>
+
+            <p>
+                <span style="font-size: 18px;">Course :&nbsp;M.S. 2005</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Contact Point : sy3620@hanmail.net</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Affiliation : 삼성전자</span></p>
+
+            <hr style="margin: 0 auto; width: 80%;">
+            <p>&nbsp;</p>
+
+            <p>
+                <span style="font-size: 18px;">Name :
+                    <strong>한 규 춘 (Kyu-chun Han)</strong></span></p>
+
+            <p>
+                <span style="font-size: 18px;">Course :&nbsp;M.S. 2005</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Contact Point : hackingplus@korea.ac.kr</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Affiliation : 삼성테크윈</span></p>
+
+            <hr style="margin: 0 auto; width: 80%;">
+            <p>&nbsp;</p>
+
+            <p>
+                <span style="font-size: 18px;">Name :
+                    <strong>최 광 석 (Kwang-seok Choi)</strong></span></p>
+
+            <p>
+                <span style="font-size: 18px;">Course :&nbsp;M.S. 2005</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Contact Point : emugi22@korea.ac.kr</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Affiliation : 현대자동차</span></p>
+
+            <hr style="margin: 0 auto; width: 80%;">
+            <p>&nbsp;</p>
+
+            <p>
+                <span style="font-size: 18px;">Name :
+                    <strong>오 병 두 (Byong-doo Oh)</strong></span></p>
+
+            <p>
+                <span style="font-size: 18px;">Course :&nbsp;M.S. 2006</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Contact Point : dydrl11@korea.ac.kr</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Affiliation : LG전자</span></p>
+
+            <hr style="margin: 0 auto; width: 80%;">
+            <p>&nbsp;</p>
+
+            <p>
+                <span style="font-size: 18px;">Name :
+                    <strong>신 나 라 (Na-ra Shin)</strong></span></p>
+
+            <p>
+                <span style="font-size: 18px;">Course :&nbsp;M.S. 2007</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Contact Point : rubsprite@korea.ac.kr</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Affiliation : 조사중</span></p>
+
+            <hr style="margin: 0 auto; width: 80%;">
+            <p>&nbsp;</p>
+
+            <p>
+                <span style="font-size: 18px;">Name :
+                    <strong>권 정 은 (Jung-eun Kwon)</strong></span></p>
+
+            <p>
+                <span style="font-size: 18px;">Course :&nbsp;M.S. 2007</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Contact Point : liger11@korea.ac.kr</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Affiliation : 조사중</span></p>
+
+            <hr style="margin: 0 auto; width: 80%;">
+            <p>&nbsp;</p>
+
+            <p>
+                <span style="font-size: 18px;">Name :
+                    <strong>송 민 우 (Min-woo Song)</strong></span></p>
+
+            <p>
+                <span style="font-size: 18px;">Course :&nbsp;M.S. 2007</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Contact Point : auiune@korea.ac.kr</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Affiliation : 삼성전자</span></p>
+
+            <hr style="margin: 0 auto; width: 80%;">
+            <p>&nbsp;</p>
+
+            <p>
+                <span style="font-size: 18px;">Name :
+                    <strong>조 병 하 (Byong-ha Cho)</strong></span></p>
+
+            <p>
+                <span style="font-size: 18px;">Course :&nbsp;M.S. 2007</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Contact Point : sntblue@korea.ac.kr</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Affiliation : 삼성전자</span></p>
+
+            <hr style="margin: 0 auto; width: 80%;">
+            <p>&nbsp;</p>
+
+            <p>
+                <span style="font-size: 18px;">Name :
+                    <strong>정 재 균 (Jae-Kyun Jung)</strong></span></p>
+
+            <p>
+                <span style="font-size: 18px;">Course :&nbsp;M.S. 2008</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Contact Point : kernel@korea.ac.kr</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Affiliation : LG전자</span></p>
+
+            <hr style="margin: 0 auto; width: 80%;">
+            <p>&nbsp;</p>
+
+            <p>
+                <span style="font-size: 18px;">Name :
+                    <strong>이 현 준 (Hyun-jun Lee)</strong></span></p>
+
+            <p>
+                <span style="font-size: 18px;">Course : M.S. 2008</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Contact Point : kelly1104@korea.ac.kr</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Affiliation : 삼성전기</span></p>
+
+            <hr style="margin: 0 auto; width: 80%;">
+            <p>&nbsp;</p>
+
+            <p>
+                <span style="font-size: 18px;">Name :
+                    <strong>장 재 혁 (Jae-hyeok Chang)</strong></span></p>
+
+            <p>
+                <span style="font-size: 18px;">Course : M.S. 2008</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Contact Point : twinsjjh@korea.ac.kr</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Affiliation : 삼성전자</span></p>
+
+            <hr style="margin: 0 auto; width: 80%;">
+            <p>&nbsp;</p>
+
+            <p>
+                <span style="font-size: 18px;">Name :
+                    <strong>윤 원 기 (Won-ki Yoon)</strong></span></p>
+
+            <p>
+                <span style="font-size: 18px;">Course : M.S. 2010</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Contact Point : yoonpro@korea.ac.kr</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Affiliation : 솔루션박스</span></p>
+
+            <hr style="margin: 0 auto; width: 80%;">
+            <p>&nbsp;</p>
+
+            <p>
+                <span style="font-size: 18px;">Name :
+                    <strong>홍 기 섭 (Ki-Sup Hong)</strong></span></p>
+
+            <p>
+                <span style="font-size: 18px;">Course : M.S. 2011</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Contact Point : mastaks@korea.ac.kr</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Affiliation :&nbsp;</span><span style="font-size: 18px;">LG 전자</span></p>
+
+            <hr style="margin: 0 auto; width: 80%;">
+            <p>&nbsp;</p>
+
+            <p>
+                <span style="font-size: 18px;">Name :&nbsp;<strong>홍 순 원 (Soon-Won Hong)</strong></span></p>
+
+            <p>
+                <span style="font-size: 18px;">Course : M.S. 2012</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Contact Point : aldig@korea.ac.kr</span></p>
+
+            <p>
+                <span style="font-size: 18px;">Affiliation : LG 전자</span></p>
+
+            <div>
+
+                <p>&nbsp;</p>
+
+                <hr style="margin: 0 auto; width: 80%;">
+                <p>&nbsp;</p>
+
+                <p>
+                    <span style="font-size: 18px;">Name :&nbsp;<strong>이 상 훈 (Sang-Hoon Lee)</strong></span></p>
+
+                <p>
+                    <span style="font-size: 18px;">Course : Ph.D 2013</span></p>
+
+                <p>
+                    <span style="font-size: 18px;">Contact Point : smile97@korea.ac.kr</span></p>
+
+                <p>
+                    <span style="font-size: 18px;">Affiliation : 삼성전자</span></p>
+            </div>
+
+            <div>&nbsp;</div>
+
+            <div>
+
+                <p>&nbsp;</p>
+
+                <hr style="margin: 0 auto; width: 80%;">
+                <p>&nbsp;</p>
+
+                <p>
+                    <span style="font-size: 18px;">Name :&nbsp;<strong>윤 창 현 (Chanhyun Yun)</strong></span></p>
+
+                <p>
+                    <span style="font-size: 18px;">Course : M.S. 2014</span></p>
+
+                <p>
+                    <span style="font-size: 18px;">Contact Point : yunch@korea.ac.kr</span></p>
+
+                <p>
+                    <span style="font-size: 18px;">Affiliation : 삼성전자</span></p>
+            </div>
+
+            <hr style="margin: 0 auto; width: 80%;">
+            <p>&nbsp;</p>
+
+            <div>
+                <p>&nbsp;</p>
+
+                <p>
+                    <span style="font-size: 18px;">Name :&nbsp;<strong>신 동 욱 (Dong-Wook Shin)</strong></span></p>
+
+                <p>
+                    <span style="font-size: 18px;">Course : M.S. 2014</span></p>
+
+                <p>
+                    <span style="font-size: 18px;">Contact Point : shindw@korea.ac.kr</span></p>
+
+                <p>
+                    <span style="font-size: 18px;">Affiliation : 삼성 테크윈</span></p>
+            </div>
+            <div>&nbsp;</div>
+            <hr style="margin: 0 auto; width: 80%;">
+            <p>&nbsp;</p>
+
+            <div>
+                <p>&nbsp;</p>
+
+                <p>
+                    <span style="font-size: 18px;">Name :&nbsp;<strong>차 두 진 (Du Jin Cha)</strong></span></p>
+
+                <p>
+                    <span style="font-size: 18px;">Course : M.S. 2015</span></p>
+
+                <p>
+                    <span style="font-size: 18px;">Contact Point :&nbsp;</span></p>
+
+                <p>
+                    <span style="font-size: 18px;">Affiliation : 삼성 전자</span></p>
+            </div>
+            <div>&nbsp;</div>
+            <hr style="margin: 0 auto; width: 80%;">
+            <p>&nbsp;</p>
+
+            <div>
+
+                <p>&nbsp;</p>
+
+                <p>
+                    <span style="font-size: 18px;">Name :&nbsp;<strong>김 민 지 (Min-Ji Kim)</strong></span></p>
+
+                <p>
+                    <span style="font-size: 18px;">Course : M.S. 2015</span></p>
+
+                <p>
+                    <span style="font-size: 18px;">Contact Point : 777vvv@korea.ac.kr</span></p>
+
+                <p>
+                    <span style="font-size: 18px;">Affiliation : 삼성전자</span></p>
+            </div>
+            <div>&nbsp;</div>
+
+            <hr style="margin: 0 auto; width: 80%;">
+            <p>&nbsp;</p>
+
+            <div>
 
                 <p>&nbsp;</p>
 
                 <p>
                     <span style="font-size: 18px;">Name :&nbsp;</span>
-                    <span style="font-size: 18px; line-height: 1.5;">
-                        <strong>허 재 성 (Jae-sung Heo)</strong></span></p>
-
-                <p>
-                    <span style="font-size: 18px; line-height: 1.5;">Course :&nbsp;M.S. 2003</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Contact Point :&nbsp;</span><span style="font-size: 18px; line-height: 1.5;">jsheo@korea.ac.kr</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Affiliation :&nbsp;</span><span style="font-size: 18px; line-height: 1.5;">삼성전자(DS총괄)</span>
-                    <span
-                        class="Apple-tab-span"
-                        style="font-size: 18px; line-height: 1.5; white-space: pre;"></span>
+                    <strong>
+                        <span style="font-size: 18px;">안 재 형 (Jae Hyung An)</span></strong>
                 </p>
 
-                <hr style="margin: 0 auto; width: 80%;">
-                <p>&nbsp;</p>
+                <p>
+                    <span style="font-size: 18px;">Course : M.S. 2016</span></p>
 
                 <p>
-                    <span style="font-size: 18px;">Name :
-                        <strong>신 상 훈 (Sang-hoon Shin)</strong></span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Course :&nbsp;M.S. 2004</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Contact Point : kaisshin@korea.ac.kr</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Affiliation : 박사진학(고려대)</span></p>
-
-                <hr style="margin: 0 auto; width: 80%;">
-                <p>&nbsp;</p>
-
-                <p>
-                    <span style="font-size: 18px;">Name :
-                        <strong>김 일 관 (Il-kwan Kim)</strong></span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Course :&nbsp;M.S. 2004</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Contact Point : bitinno@korea.ac.kr</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Affiliation : LG전자</span></p>
-
-                <hr style="margin: 0 auto; width: 80%;">
-                <p>&nbsp;</p>
-
-                <p>
-                    <span style="font-size: 18px;">Name :
-                        <strong>박 준 호 (Jun-ho Park)</strong></span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Course :&nbsp;M.S. 2005</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Contact Point : cronide@korea.ac.kr</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Affiliation : LG전자</span></p>
-
-                <hr style="margin: 0 auto; width: 80%;">
-                <p>&nbsp;</p>
-
-                <p>
-                    <span style="font-size: 18px;">Name :
-                        <strong>신 용 (Yong Shin)</strong></span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Course :&nbsp;M.S. 2005</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Contact Point : sy3620@hanmail.net</span></p>
+                    <span style="font-size: 18px;">Contact Point : vovojh@korea.ac.kr</span></p>
 
                 <p>
                     <span style="font-size: 18px;">Affiliation : 삼성전자</span></p>
+            </div>
+            <div>&nbsp;</div>
 
-                <hr style="margin: 0 auto; width: 80%;">
-                <p>&nbsp;</p>
+            <hr style="margin: 0 auto; width: 80%;">
+            <p>&nbsp;</p>
 
-                <p>
-                    <span style="font-size: 18px;">Name :
-                        <strong>한 규 춘 (Kyu-chun Han)</strong></span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Course :&nbsp;M.S. 2005</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Contact Point : hackingplus@korea.ac.kr</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Affiliation : 삼성테크윈</span></p>
-
-                <hr style="margin: 0 auto; width: 80%;">
-                <p>&nbsp;</p>
-
-                <p>
-                    <span style="font-size: 18px;">Name :
-                        <strong>최 광 석 (Kwang-seok Choi)</strong></span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Course :&nbsp;M.S. 2005</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Contact Point : emugi22@korea.ac.kr</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Affiliation : 현대자동차</span></p>
-
-                <hr style="margin: 0 auto; width: 80%;">
-                <p>&nbsp;</p>
-
-                <p>
-                    <span style="font-size: 18px;">Name :
-                        <strong>오 병 두 (Byong-doo Oh)</strong></span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Course :&nbsp;M.S. 2006</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Contact Point : dydrl11@korea.ac.kr</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Affiliation : LG전자</span></p>
-
-                <hr style="margin: 0 auto; width: 80%;">
-                <p>&nbsp;</p>
-
-                <p>
-                    <span style="font-size: 18px;">Name :
-                        <strong>신 나 라 (Na-ra Shin)</strong></span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Course :&nbsp;M.S. 2007</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Contact Point : rubsprite@korea.ac.kr</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Affiliation : 조사중</span></p>
-
-                <hr style="margin: 0 auto; width: 80%;">
-                <p>&nbsp;</p>
-
-                <p>
-                    <span style="font-size: 18px;">Name :
-                        <strong>권 정 은 (Jung-eun Kwon)</strong></span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Course :&nbsp;M.S. 2007</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Contact Point : liger11@korea.ac.kr</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Affiliation : 조사중</span></p>
-
-                <hr style="margin: 0 auto; width: 80%;">
-                <p>&nbsp;</p>
-
-                <p>
-                    <span style="font-size: 18px;">Name :
-                        <strong>송 민 우 (Min-woo Song)</strong></span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Course :&nbsp;M.S. 2007</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Contact Point : auiune@korea.ac.kr</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Affiliation : 삼성전자</span></p>
-
-                <hr style="margin: 0 auto; width: 80%;">
-                <p>&nbsp;</p>
-
-                <p>
-                    <span style="font-size: 18px;">Name :
-                        <strong>조 병 하 (Byong-ha Cho)</strong></span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Course :&nbsp;M.S. 2007</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Contact Point : sntblue@korea.ac.kr</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Affiliation : 삼성전자</span></p>
-
-                <hr style="margin: 0 auto; width: 80%;">
-                <p>&nbsp;</p>
-
-                <p>
-                    <span style="font-size: 18px;">Name :
-                        <strong>정 재 균 (Jae-Kyun Jung)</strong></span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Course :&nbsp;M.S. 2008</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Contact Point : kernel@korea.ac.kr</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Affiliation : LG전자</span></p>
-
-                <hr style="margin: 0 auto; width: 80%;">
-                <p>&nbsp;</p>
-
-                <p>
-                    <span style="font-size: 18px;">Name :
-                        <strong>이 현 준 (Hyun-jun Lee)</strong></span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Course : M.S. 2008</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Contact Point : kelly1104@korea.ac.kr</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Affiliation : 삼성전기</span></p>
-
-                <hr style="margin: 0 auto; width: 80%;">
-                <p>&nbsp;</p>
-
-                <p>
-                    <span style="font-size: 18px;">Name :
-                        <strong>장 재 혁 (Jae-hyeok Chang)</strong></span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Course : M.S. 2008</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Contact Point : twinsjjh@korea.ac.kr</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Affiliation : 삼성전자</span></p>
-
-                <hr style="margin: 0 auto; width: 80%;">
-                <p>&nbsp;</p>
-
-                <p>
-                    <span style="font-size: 18px;">Name :
-                        <strong>윤 원 기 (Won-ki Yoon)</strong></span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Course : M.S. 2010</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Contact Point : yoonpro@korea.ac.kr</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Affiliation : 솔루션박스</span></p>
-
-                <hr style="margin: 0 auto; width: 80%;">
-                <p>&nbsp;</p>
-
-                <p>
-                    <span style="font-size: 18px;">Name :
-                        <strong>홍 기 섭 (Ki-Sup Hong)</strong></span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Course : M.S. 2011</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Contact Point : mastaks@korea.ac.kr</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Affiliation :&nbsp;</span><span style="font-size: 18px;">LG 전자</span></p>
-
-                <hr style="margin: 0 auto; width: 80%;">
-                <p>&nbsp;</p>
-
-                <p>
-                    <span style="font-size: 18px;">Name :&nbsp;<strong>홍 순 원 (Soon-Won Hong)</strong></span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Course : M.S. 2012</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Contact Point : aldig@korea.ac.kr</span></p>
-
-                <p>
-                    <span style="font-size: 18px;">Affiliation : LG 전자</span></p>
+            <div>
 
                 <div>
-
-                    <p>&nbsp;</p>
-
-                    <hr style="margin: 0 auto; width: 80%;">
-                    <p>&nbsp;</p>
-
-                    <p>
-                        <span style="font-size: 18px;">Name :&nbsp;<strong>이 상 훈 (Sang-Hoon Lee)</strong></span></p>
-
-                    <p>
-                        <span style="font-size: 18px;">Course : Ph.D 2013</span></p>
-
-                    <p>
-                        <span style="font-size: 18px;">Contact Point : smile97@korea.ac.kr</span></p>
-
-                    <p>
-                        <span style="font-size: 18px;">Affiliation : 삼성전자</span></p>
-                </div>
-
-                <div>&nbsp;</div>
-
-                <div>
-
-                    <p>&nbsp;</p>
-
-                    <hr style="margin: 0 auto; width: 80%;">
-                    <p>&nbsp;</p>
-
-                    <p>
-                        <span style="font-size: 18px;">Name :&nbsp;<strong>윤 창 현 (Chanhyun Yun)</strong></span></p>
-
-                    <p>
-                        <span style="font-size: 18px;">Course : M.S. 2014</span></p>
-
-                    <p>
-                        <span style="font-size: 18px;">Contact Point : yunch@korea.ac.kr</span></p>
-
-                    <p>
-                        <span style="font-size: 18px;">Affiliation : 삼성전자</span></p>
-                </div>
-
-                <hr style="margin: 0 auto; width: 80%;">
-                <p>&nbsp;</p>
-
-                <div>
-                    <p>&nbsp;</p>
-
-                    <p>
-                        <span style="font-size: 18px;">Name :&nbsp;<strong>신 동 욱 (Dong-Wook Shin)</strong></span></p>
-
-                    <p>
-                        <span style="font-size: 18px;">Course : M.S. 2014</span></p>
-
-                    <p>
-                        <span style="font-size: 18px;">Contact Point : shindw@korea.ac.kr</span></p>
-
-                    <p>
-                        <span style="font-size: 18px;">Affiliation : 삼성 테크윈</span></p>
-                </div>
-                <div>&nbsp;</div>
-                <hr style="margin: 0 auto; width: 80%;">
-                <p>&nbsp;</p>
-
-                <div>
-                    <p>&nbsp;</p>
-
-                    <p>
-                        <span style="font-size: 18px;">Name :&nbsp;<strong>차 두 진 (Du Jin Cha)</strong></span></p>
-
-                    <p>
-                        <span style="font-size: 18px;">Course : M.S. 2015</span></p>
-
-                    <p>
-                        <span style="font-size: 18px;">Contact Point :&nbsp;</span></p>
-
-                    <p>
-                        <span style="font-size: 18px;">Affiliation : 삼성 전자</span></p>
-                </div>
-                <div>&nbsp;</div>
-                <hr style="margin: 0 auto; width: 80%;">
-                <p>&nbsp;</p>
-
-                <div>
-
-                    <p>&nbsp;</p>
-
-                    <p>
-                        <span style="font-size: 18px;">Name :&nbsp;<strong>김 민 지 (Min-Ji Kim)</strong></span></p>
-
-                    <p>
-                        <span style="font-size: 18px;">Course : M.S. 2015</span></p>
-
-                    <p>
-                        <span style="font-size: 18px;">Contact Point : 777vvv@korea.ac.kr</span></p>
-
-                    <p>
-                        <span style="font-size: 18px;">Affiliation : 삼성전자</span></p>
-                </div>
-                <div>&nbsp;</div>
-
-                <hr style="margin: 0 auto; width: 80%;">
-                <p>&nbsp;</p>
-
-                <div>
-
                     <p>&nbsp;</p>
 
                     <p>
                         <span style="font-size: 18px;">Name :&nbsp;</span>
                         <strong>
-                            <span style="font-size: 18px;">안 재 형 (Jae Hyung An)</span></strong>
+                            <span style="font-size: 18px;">장 호 준 (Ho Jun Jang)</span></strong>
                     </p>
 
                     <p>
-                        <span style="font-size: 18px;">Course : M.S. 2016</span></p>
+                        <span style="font-size: 18px;">Course : M.S. 2017</span></p>
 
                     <p>
-                        <span style="font-size: 18px;">Contact Point : vovojh@korea.ac.kr</span></p>
+                        <span style="font-size: 18px;">Contact Point : nametom@korea.ac.kr</span></p>
 
                     <p>
-                        <span style="font-size: 18px;">Affiliation : 삼성전자</span></p>
+                        <span style="font-size: 18px;">Affiliation : ?</span></p>
                 </div>
                 <div>&nbsp;</div>
 
@@ -595,160 +622,139 @@
                 <p>&nbsp;</p>
 
                 <div>
-
-                    <div>
-                        <p>&nbsp;</p>
-
-                        <p>
-                            <span style="font-size: 18px;">Name :&nbsp;</span>
-                            <strong>
-                                <span style="font-size: 18px;">장 호 준 (Ho Jun Jang)</span></strong>
-                        </p>
-
-                        <p>
-                            <span style="font-size: 18px;">Course : M.S. 2017</span></p>
-
-                        <p>
-                            <span style="font-size: 18px;">Contact Point : nametom@korea.ac.kr</span></p>
-
-                        <p>
-                            <span style="font-size: 18px;">Affiliation : ?</span></p>
-                    </div>
-                    <div>&nbsp;</div>
-
-                    <hr style="margin: 0 auto; width: 80%;">
                     <p>&nbsp;</p>
 
-                    <div>
-                        <p>&nbsp;</p>
+                    <p>
+                        <span style="font-size: 18px;">Name :&nbsp;</span>
+                        <strong>
+                            <span style="font-size: 18px;">김 정 원 (Jung Won Kim)</span></strong>
+                    </p>
 
-                        <p>
-                            <span style="font-size: 18px;">Name :&nbsp;</span>
-                            <strong>
-                                <span style="font-size: 18px;">김 정 원 (Jung Won Kim)</span></strong>
-                        </p>
+                    <p>
+                        <span style="font-size: 18px;">Course : M.S. 2018</span></p>
 
-                        <p>
-                            <span style="font-size: 18px;">Course : M.S. 2018</span></p>
+                    <p>
+                        <span style="font-size: 18px;">Contact Point : bse635@korea.ac.kr</span></p>
 
-                        <p>
-                            <span style="font-size: 18px;">Contact Point : bse635@korea.ac.kr</span></p>
-
-                        <p>
-                            <span style="font-size: 18px;">Affiliation : 삼성전자</span></p>
-                    </div>
-
-                    <div>&nbsp;</div>
-
-                    <hr style="margin: 0 auto; width: 80%;">
-                    <p>&nbsp;</p>
-
-                    <div>
-                        <p>&nbsp;</p>
-
-                        <p>
-                            <span style="font-size: 18px;">Name :&nbsp;</span>
-                            <strong>
-                                <span style="font-size: 18px;">김 도 윤 (Do Yun Kim)</span></strong>
-                        </p>
-
-                        <p>
-                            <span style="font-size: 18px;">Course : M.S. 2018</span></p>
-
-                        <p>
-                            <span style="font-size: 18px;">Contact Point : doyun880@korea.ac.kr</span></p>
-
-                        <p>
-                            <span style="font-size: 18px;">Affiliation : 삼성전자</span></p>
-                    </div>
-
-                    <div>&bsp;</div>
-
-                    <hr style="margin: 0 auto; width: 80%;">
-                    <p>&nbsp;</p>
-
-                    <div>
-                        <p>&nbsp;</p>
-
-                        <p>
-                            <span style="font-size: 18px;">Name :&nbsp;</span>
-                            <strong>
-                                <span style="font-size: 18px;">구 경 현 (Kyung Hyun Koo)</span></strong>
-                        </p>
-
-                        <p>
-                            <span style="font-size: 18px;">Course : M.S. 2018</span></p>
-
-                        <p>
-                            <span style="font-size: 18px;">Contact Point : poyo062@korea.ac.kr</span></p>
-
-                        <p>
-                            <span style="font-size: 18px;">Affiliation : ?</span></p>
-                    </div>
-
-                    <div>&nbsp;</div>
+                    <p>
+                        <span style="font-size: 18px;">Affiliation : 삼성전자</span></p>
                 </div>
 
+                <div>&nbsp;</div>
+
+                <hr style="margin: 0 auto; width: 80%;">
                 <p>&nbsp;</p>
 
-            </div>
-        </div>
-        <!-- Team End -->
+                <div>
+                    <p>&nbsp;</p>
 
-        <!-- Footer Start -->
-        <div
-            class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn"
-            data-wow-delay="0.17s">
-            <div class="container py-5">
-                <div class="container px-4 text-white" style="color: azure;">
-                    <h3 style="color: rgb(255, 255, 255);">
-                        COMPUTER SYSTEM LAB</h3>
                     <p>
-                        <i class="fa fa-map-marker-alt me-3"></i>Industry-Academy Building 236, Korea
-                        University, 145 Anam-ro, Seongbuk-gu, Seoul, Republic of Korea. 02841
-                        <br>
-                        <i class="fa fa-envelope me-3"></i>Professor : lchoi@korea.ac.kr · swj8905@korea.ac.kr
-                        <br>
-                        <i class="fa fa-phone-alt me-3"></i>
-                        Tel : +82-2-3290-3896
+                        <span style="font-size: 18px;">Name :&nbsp;</span>
+                        <strong>
+                            <span style="font-size: 18px;">김 도 윤 (Do Yun Kim)</span></strong>
                     </p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href="">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a class="btn btn-outline-light btn-social" href="">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a class="btn btn-outline-light btn-social" href="">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a class="btn btn-outline-light btn-social" href="">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
+
+                    <p>
+                        <span style="font-size: 18px;">Course : M.S. 2018</span></p>
+
+                    <p>
+                        <span style="font-size: 18px;">Contact Point : doyun880@korea.ac.kr</span></p>
+
+                    <p>
+                        <span style="font-size: 18px;">Affiliation : 삼성전자</span></p>
+                </div>
+
+                <div>&bsp;</div>
+
+                <hr style="margin: 0 auto; width: 80%;">
+                <p>&nbsp;</p>
+
+                <div>
+                    <p>&nbsp;</p>
+
+                    <p>
+                        <span style="font-size: 18px;">Name :&nbsp;</span>
+                        <strong>
+                            <span style="font-size: 18px;">구 경 현 (Kyung Hyun Koo)</span></strong>
+                    </p>
+
+                    <p>
+                        <span style="font-size: 18px;">Course : M.S. 2018</span></p>
+
+                    <p>
+                        <span style="font-size: 18px;">Contact Point : poyo062@korea.ac.kr</span></p>
+
+                    <p>
+                        <span style="font-size: 18px;">Affiliation : ?</span></p>
+                </div>
+
+                <div>&nbsp;</div>
+            </div>
+
+            <p>&nbsp;</p>
+
+        </div>
+    </div>
+    <!-- Team End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 pb-5 wow fadeIn" data-wow-delay="0.17s">
+        <div class="container">
+            <hr style="color: #FFFFFF;">
+            <div class="container px-4 text-white" style="color: azure;">
+                <h3 style="color: rgb(255, 255, 255); text-align: left;">
+                    COMPUTER SYSTEM LAB</h3>
+                <p style="text-align: left; color: #FFFFFF;">
+                    <i class="fa fa-map-marker-alt me-3"></i>Industry-Academy Building 236, Korea
+                    University, 145 Anam-ro, Seongbuk-gu, Seoul, Republic of Korea. 02841
+                    <br>
+                    <i class="fa fa-envelope me-3"></i>Professor : lchoi@korea.ac.kr · swj8905@korea.ac.kr
+                    <br>
+                    <i class="fa fa-phone-alt me-3"></i>
+                    Tel : +82-2-3290-3896
+                </p>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-outline-light btn-social" href="">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-social" href="">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-social" href="">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-social" href="">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
                 </div>
             </div>
         </div>
-        <!-- Footer End -->
+    </div>
+    <!-- Footer End -->
 
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top">
-            <i class="bi bi-arrow-up"></i>
-        </a>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </a>
 
-        <!-- JavaScript Libraries -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
-        <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
-        <script
-            src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
-        <script
-            src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+        src="{{ url_for('static', filename='lib/wow/wow.min.js') }}">
+    </script>
+    <script
+        src="{{ url_for('static', filename='lib/easing/easing.min.js') }}">
+    </script>
+    <script
+        src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}">
+    </script>
+    <script
+        src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}">
+    </script>
 
-        <!-- Template Javascript -->
-        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-    </body>
+    <!-- Template Javascript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
 
 </html>

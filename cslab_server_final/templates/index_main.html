@@ -50,15 +50,22 @@
     <!-- Spinner End -->
 
     <!--nav-bar-->
-    <section
-        style="height: 135px; border: none; display: flex; align-items: center; font-family: 'Open-sans';">
-        <div class="logo" style ="padding-left: 13%;">
-            <img src="{{ url_for('static', filename='img/mark.png') }}" alt="School Logo" style="width: 80px; height: 100px;  margin-right: 20px; border: none;">
+    <section style="height: 135px; border: none; display: flex; align-items: center; font-family: 'Open-sans';">
+        <div class="logo" style="padding-left: 13%;">
+            <a href="/">
+                <img src="{{ url_for('static', filename='img/mark.png') }}"
+                    alt="School Logo" style="width: 80px; height: 100px; margin-right: 20px; border: none;">
+            </a>
         </div>
         <div style="padding-right: 20%;">
-            <h2 style="font-size: 50px; font-weight: bold; font-family: 'Open-sans'; color: #000000;">CS LAB</h2>
-            <h5 style="font-size: 16px; font-family: 'Open-sans'; margin-top: -10px;">COMPUTER SYSTEM LAB</h5>
+            <h2 style="font-size: 50px; font-weight: bold; font-family: 'Open-sans';">
+                <a href="/" style="text-decoration: none; color: #000000;">CS LAB</a>
+            </h2>
+            <h5 style="font-size: 16px; font-family: 'Open-sans'; margin-top: -10px;">
+                <a href="/" style="text-decoration: none; color: #000000;">COMPUTER SYSTEM LAB</a>
+            </h5>
         </div>
+        
         <ul class="nav nav-tabs" style="margin-right: 100px">
             <!-- <div class="logo ">
                 <p>computer</p>
@@ -119,13 +126,15 @@
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <style>
             .carousel-item {
-                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.36) 38.02%, rgba(0, 0, 0, 0.6) 100%); background-color: #3C3C3C;
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.36) 38.02%, rgba(0, 0, 0, 0.6) 100%);
+                background-color: #3C3C3C;
                 /* Your other styles here */
                 /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
             }
 
             .carousel-item img {
-                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.36) 38.02%, rgba(0, 0, 0, 0.6) 100%); background-color: #3C3C3C;
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.36) 38.02%, rgba(0, 0, 0, 0.6) 100%);
+                background-color: #3C3C3C;
                 /* Your other styles here */
                 /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
             }
@@ -210,7 +219,7 @@
                     </p>
                 </div>
             </div>
-            <div class="carousel-item align-items: center" >
+            <div class="carousel-item align-items: center">
                 <img src="{{ url_for('static', filename='img/main1_3.jpg') }}"
                     style="display: block; margin: auto; width: 80%; height: 530px;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
@@ -225,10 +234,11 @@
                     </p>
                 </div>
             </div>
-            <div class="carousel-item align-items: center" >
+            <div class="carousel-item align-items: center">
                 <img src="{{ url_for('static', filename='img/main4.jpeg') }}"
                     style="display: block; margin: auto; width: 80%; height: 530px;" alt="...">
-                <div class="carousel-caption d-none d-md-block" style="background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.36) 38.02%, rgba(0, 0, 0, 0.6) 100%); background-color: #00143A;">
+                <div class="carousel-caption d-none d-md-block"
+                    style="background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.36) 38.02%, rgba(0, 0, 0, 0.6) 100%); background-color: #00143A;">
                     <h5 style="color:azure ;">
                         [ 고려대 뉴스 ] 스마트폰만으로 대형 실내 공간에서 실내 측위 가능</h5>
                     <p>최린 교수팀 “딥러닝 기반 지자기 기반 실내측위 기술” NET 신기술인증받아 공항, 쇼핑몰, 박물관, 공장 등 다양한 실내 공간에서 시범
@@ -241,7 +251,7 @@
                     </p>
                 </div>
             </div>
-            <div class="carousel-item align-items: center" >
+            <div class="carousel-item align-items: center">
                 <img src="{{ url_for('static', filename='img/main555.jpeg') }}"
                     style="display: block; margin: auto; width: 80%; height:530px;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
@@ -256,7 +266,7 @@
                     </p>
                 </div>
             </div>
-            <div class="carousel-item align-items: center" >
+            <div class="carousel-item align-items: center">
                 <img src="{{ url_for('static', filename='img/main6.jpeg') }}"
                     style="display: block; margin: auto; width: 80%; height: 530px;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
@@ -835,7 +845,7 @@
     <!-- Contact END-->
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer pt-5 wow fadeIn" data-wow-delay="0.17s">
+    <div class="container-fluid bg-dark text-light footer pt-5 pb-5 wow fadeIn" data-wow-delay="0.17s">
         <div class="container">
             <hr style="color: #FFFFFF;">
             <div class="container px-4 text-white" style="color: azure;">

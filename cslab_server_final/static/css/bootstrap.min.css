@@ -2439,7 +2439,7 @@ textarea.form-control-lg {
 }
 
 .form-select:focus {
-    border-color: #83dde6;
+    border-color: #7C001A;
     outline: 0;
     box-shadow: 0 0 0 .25rem rgba(6, 187, 204, 0.25)
 }
@@ -2518,7 +2518,7 @@ textarea.form-control-lg {
 }
 
 .form-check-input:checked {
-    background-color: #06BBCC;
+    background-color: #7C001A;
     border-color: #06BBCC
 }
 
@@ -3084,21 +3084,21 @@ fieldset:disabled .btn {
 
 .btn-primary {
     color: #000;
-    background-color: #06BBCC;
+    background-color: #7C001A;
     border-color: #06BBCC
 }
 
 .btn-primary:hover {
     /*수정 텍스트*/
     color: #7C001A;
-    background-color: #2bc5d4;
+    background-color: #7C001A;
     border-color: #1fc2d1
 }
 
 .btn-check:focus+.btn-primary,
 .btn-primary:focus {
     color: #000;
-    background-color: #2bc5d4;
+    background-color: #7C001A;
     border-color: #1fc2d1;
     box-shadow: 0 0 0 .25rem rgba(5, 159, 173, 0.5)
 }
@@ -3109,7 +3109,7 @@ fieldset:disabled .btn {
 .btn-primary.active,
 .show>.btn-primary.dropdown-toggle {
     color: #000;
-    background-color: #38c9d6;
+    background-color: #7C001A;
     border-color: #1fc2d1
 }
 
