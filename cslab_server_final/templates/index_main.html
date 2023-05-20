@@ -111,25 +111,43 @@
     <!-- slider -->
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <style>
-            h5 {
-                font-size: 24px;
+            .carousel-item {
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.36) 38.02%, rgba(0, 0, 0, 0.6) 100%);
+                /* Your other styles here */
+                /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+            }
+
+            .carousel-item img {
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.36) 38.02%, rgba(0, 0, 0, 0.6) 100%);
+                /* Your other styles here */
+                /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+            }
+
+
+            .carousel-inner h5 {
+                /* Your styles here */
+                color: white;
+                font-family: 'Pretendard-Regular';
+                src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
                 text-align: left;
             }
 
-            p {
-                font-size: 2px;
-                text-align: left;
+            .carousel-inner p {
+                /* Your styles here */
+                color: white;
                 font-family: 'Pretendard-Regular';
                 src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
                 text-align: left;
             }
 
             .btn-slider {
+                border-radius: 10px;
                 /* 폰트 크기 지정 */
                 color: rgb(255, 255, 255);
-                /* 추가로 스타일을 변경하고 싶은 속성을 지정할 수 있습니다 */
-                /* 배경색 지정 */
-                background-color: #00143A;
+                font-family: 'Open-sans';
+                text-align: center;
+                background-color: #7C001A;
+                /* background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.36) 38.02%, rgba(0, 0, 0, 0.6) 100%); */
             }
 
             a {
@@ -140,6 +158,8 @@
                 font-family: 'Pretendard-Regular';
                 src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
                 text-align: left;
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.36) 38.02%, rgba(0, 0, 0, 0.6) 100%);
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             }
         </style>
         <div class="carousel-indicators">
@@ -157,7 +177,7 @@
                 aria-label="Slide 6"></button>
         </div>
         <div class="carousel-inner">
-            <div class="carousel-item active " style="background-color: #00143A; ">
+            <div class="carousel-item active " style="background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.36) 38.02%, rgba(0, 0, 0, 0.6) 100%); background-color: #00143A;">
                 <img src="{{ url_for('static', filename='img/main1_1.jpg') }}"
                     style="display: block; margin: auto; width: 80%; height: 530px;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
@@ -171,7 +191,7 @@
                 </div>
             </div>
             <div class="carousel-item"
-                style="background-color: #00143A; font-family: 'Pretendard', Courier, monospace;">
+            style="background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.36) 38.02%, rgba(0, 0, 0, 0.6) 100%);">
                 <img src="{{ url_for('static', filename='img/main1_2.jpg') }}"
                     style="display: block; margin: auto; width: 80%; height: 530px;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
@@ -184,7 +204,7 @@
                     </p>
                 </div>
             </div>
-            <div class="carousel-item align-items: center" style="background-color: #00143A;">
+            <div class="carousel-item align-items: center" style="background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.36) 38.02%, rgba(0, 0, 0, 0.6) 100%); background-color: #00143A;">
                 <img src="{{ url_for('static', filename='img/main1_3.jpg') }}"
                     style="display: block; margin: auto; width: 80%; height: 530px;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
@@ -199,10 +219,10 @@
                     </p>
                 </div>
             </div>
-            <div class="carousel-item align-items: center" style="background-color: #00143A;">
+            <div class="carousel-item align-items: center" style="background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.36) 38.02%, rgba(0, 0, 0, 0.6) 100%); background-color: #00143A;">
                 <img src="{{ url_for('static', filename='img/main4.jpeg') }}"
                     style="display: block; margin: auto; width: 80%; height: 530px;" alt="...">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-none d-md-block" style="background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.36) 38.02%, rgba(0, 0, 0, 0.6) 100%); background-color: #00143A;">
                     <h5 style="color:azure ;">
                         [ 고려대 뉴스 ] 스마트폰만으로 대형 실내 공간에서 실내 측위 가능</h5>
                     <p>최린 교수팀 “딥러닝 기반 지자기 기반 실내측위 기술” NET 신기술인증받아 공항, 쇼핑몰, 박물관, 공장 등 다양한 실내 공간에서 시범
@@ -215,7 +235,7 @@
                     </p>
                 </div>
             </div>
-            <div class="carousel-item align-items: center" style="background-color: #00143A;">
+            <div class="carousel-item align-items: center" style="background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.36) 38.02%, rgba(0, 0, 0, 0.6) 100%); background-color: #00143A;">
                 <img src="{{ url_for('static', filename='img/main555.jpeg') }}"
                     style="display: block; margin: auto; width: 80%; height:530px;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
@@ -230,7 +250,7 @@
                     </p>
                 </div>
             </div>
-            <div class="carousel-item align-items: center" style="background-color: #00143A;">
+            <div class="carousel-item align-items: center" style="background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.36) 38.02%, rgba(0, 0, 0, 0.6) 100%); background-color: #00143A;">
                 <img src="{{ url_for('static', filename='img/main6.jpeg') }}"
                     style="display: block; margin: auto; width: 80%; height: 530px;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
