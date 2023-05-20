@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <title>Korea University Computer Systems Laboratory &bull; Page Title</title>
-    <link rel="shortcut icon" href="{{ url_for('static', filename='mark.ico') }}">
+    <link rel="shortcut icon"
+        href="{{ url_for('static', filename='mark.ico') }}">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -49,8 +50,9 @@
     <!-- Spinner End -->
 
     <!--nav-bar-->
-    <section style="height: 100px; border: none; display: flex; align-items: center;">
-        <ul class="nav nav-tabs" style="margin-right: 200px;">
+    <section
+        style="height: 100px; border: none; display: flex; align-items: center;margin-left:50%; font-family: 'Open-sans';">
+        <ul class="nav nav-tabs">
             <!-- <div class="logo ">
                 <p>computer</p>
             </div> -->
@@ -110,39 +112,34 @@
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <style>
             h5 {
-                color: #FFFFFF;
-                font-size: 40px;
+                font-size: 24px;
                 text-align: left;
-                /* 원하는 크기로 변경 */
-                font-family: 'Pretendard-Regular';
-                src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
             }
 
             p {
-                color: #FFFFFF;
-                font-size: 22px;
+                font-size: 2px;
                 text-align: left;
-                /* 원하는 크기로 변경 */
                 font-family: 'Pretendard-Regular';
                 src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+                text-align: left;
             }
 
-
             .btn-slider {
-                font-family: 'Open-sans', Arial, Helvetica, sans-serif;
                 /* 폰트 크기 지정 */
                 color: rgb(255, 255, 255);
                 /* 추가로 스타일을 변경하고 싶은 속성을 지정할 수 있습니다 */
                 /* 배경색 지정 */
-                background-color: #7C001A;
+                background-color: #00143A;
             }
 
             a {
                 color: rgb(249, 249, 249);
             }
 
-            .body {
-                font-family: 'Open-sans' !important;
+            .carousel-caption d-none d-md-block {
+                font-family: 'Pretendard-Regular';
+                src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+                text-align: left;
             }
         </style>
         <div class="carousel-indicators">
@@ -159,14 +156,13 @@
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"
                 aria-label="Slide 6"></button>
         </div>
-        <div class="carousel-inner" style="text-align: left;">
-            <div class="carousel-item active " style="background-color: #00143A; color: #FFFFFF;">
+        <div class="carousel-inner">
+            <div class="carousel-item active " style="background-color: #00143A; ">
                 <img src="{{ url_for('static', filename='img/main1_1.jpg') }}"
-                    style="display: block;  max-width: 130%; max-height: 536px;" alt="...">
+                    style="display: block; margin: auto; width: 80%; height: 530px;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5 style="color:azure ;">[ 고려대 뉴스 ] 최린 교수님, 2022 대한민국 산업기술진흥 유공자 선정</h5>
-                    <p style="color:azure ;">전기전자공학부 최린 교수가 ‘2022 대한민국 산업기술 R&D 대전’에서 기술개발부문에서 산업기술진흥유공 정부포상자<br>(훈격:
-                        대통령표창)로 선정.</p>
+                    <p>전기전자공학부 최린 교수가 ‘2022 대한민국 산업기술 R&D 대전’에서 기술개발부문에서 산업기술진흥유공 정부포상자<br>(훈격: 대통령표창)로 선정.</p>
                     <p>
                         <a class="btn btn-slider"
                             href="https://www.korea.ac.kr/user/boardList.do?boardId=474633&siteId=university&page=2&search=&column=&boardType=02&listType=&id=university_060108000000&parent=&boardSeq=494187&command=albumView&chkBoxSeq=&chkBoxId=&chkBoxPos=&chkBoxDepth=&chkBoxFamSeq=&warningYn=N&categoryId=&categoryDepth=&totalYn=&searchDate1=&searchDate2=">View
@@ -177,10 +173,10 @@
             <div class="carousel-item"
                 style="background-color: #00143A; font-family: 'Pretendard', Courier, monospace;">
                 <img src="{{ url_for('static', filename='img/main1_2.jpg') }}"
-                    style="display: block;  max-width: 130%; max-height: 536px;" alt="...">
+                    style="display: block; margin: auto; width: 80%; height: 530px;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5 style="color:azure ;">[ 고려대 뉴스 ] 세계 최초 수도권 지하철/KTX 역사 실내측위 시스템 및 실내 내비게이션 앱 개발 착수</h5>
-                    <p style="color:azure ;">최린 교수 연구팀, 딥러닝 기반의 지자기 실내측위 기술을 이용 지하철 역사 내 교통약자 위한 맞춤형스마트 내비게이션 개발 계획</p>
+                    <p>최린 교수 연구팀, 딥러닝 기반의 지자기 실내측위 기술을 이용 지하철 역사 내 교통약자 위한 맞춤형스마트 내비게이션 개발 계획</p>
                     <p>
                         <a class="btn btn-slider"
                             href="https://www.korea.ac.kr/user/boardList.do?boardId=474633&siteId=university&page=1&boardType=02&listType=&id=university_060108000000&parent=&boardSeq=493672&command=albumView&totalYn=">View
@@ -190,11 +186,11 @@
             </div>
             <div class="carousel-item align-items: center" style="background-color: #00143A;">
                 <img src="{{ url_for('static', filename='img/main1_3.jpg') }}"
-                    style="display: block;  max-width: 130%; max-height: 536px;" alt="...">
+                    style="display: block; margin: auto; width: 80%; height: 530px;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5 style="color:azure ;">
                         [ 고려대 뉴스 ] NET 신기술 인증</h5>
-                    <p style="color:azure ;">딥러닝 기술 사용 자기장 기반 실내측위, NET 신기술 인증
+                    <p>딥러닝 기술 사용 자기장 기반 실내측위, NET 신기술 인증
                     </p>
                     <p>
                         <a class="btn btn-slider"
@@ -205,12 +201,11 @@
             </div>
             <div class="carousel-item align-items: center" style="background-color: #00143A;">
                 <img src="{{ url_for('static', filename='img/main4.jpeg') }}"
-                    style="display: block;  max-width: 130%; max-height: 536px;" alt="...">
+                    style="display: block; margin: auto; width: 80%; height: 530px;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5 style="color:azure ;">
                         [ 고려대 뉴스 ] 스마트폰만으로 대형 실내 공간에서 실내 측위 가능</h5>
-                    <p style="color:azure ;">최린 교수팀 “딥러닝 기반 지자기 기반 실내측위 기술” NET 신기술인증받아 공항, 쇼핑몰, 박물관, 공장 등 다양한 실내 공간에서
-                        시범
+                    <p>최린 교수팀 “딥러닝 기반 지자기 기반 실내측위 기술” NET 신기술인증받아 공항, 쇼핑몰, 박물관, 공장 등 다양한 실내 공간에서 시범
                         사이트 구축 추진
                     </p>
                     <p>
@@ -222,12 +217,11 @@
             </div>
             <div class="carousel-item align-items: center" style="background-color: #00143A;">
                 <img src="{{ url_for('static', filename='img/main555.jpeg') }}"
-                    style="display: block;  max-width: 130%; max-height: 536px;" alt="...">
+                    style="display: block; margin: auto; width: 80%; height:530px;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5 style="color:azure ;">
                         [ 정보 통신 신문 ] 스마트폰만으로 실내 공간 위치 정밀 확인</h5>
-                    <p style="color:azure ;">최린 교수 연구팀은 '딥러닝 기반 지구자기장(지자기) 실내 측위 기술'을 개발, 산업통상자원부 산하 국가기술표준원의 NET 신기술
-                        인증을
+                    <p>최린 교수 연구팀은 '딥러닝 기반 지구자기장(지자기) 실내 측위 기술'을 개발, 산업통상자원부 산하 국가기술표준원의 NET 신기술 인증을
                         획득했다고 최근 밝혔다. <br>이 기술은 2020년 2차 신기술 인증 수여식에서 대표적 신기술로 소개되기도 했다.
                     </p>
                     <p>
@@ -238,12 +232,11 @@
             </div>
             <div class="carousel-item align-items: center" style="background-color: #00143A;">
                 <img src="{{ url_for('static', filename='img/main6.jpeg') }}"
-                    style="display: block;  max-width: 130%; max-height: 536px;" alt="...">
+                    style="display: block; margin: auto; width: 80%; height: 530px;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5 style="color:azure ;">
                         [ 중앙 일보 ] 실내에서 3D 네비게이션을?…고려대 연구진 실내측위 기술 개발</h5>
-                    <p style="color:azure ;">연구진은 딥러닝의 순환신경망(Recurrent Neural Networks) 기술을 사용해 실내 지구자기장의 분포 패턴을
-                        기계학습했다.<br>
+                    <p>연구진은 딥러닝의 순환신경망(Recurrent Neural Networks) 기술을 사용해 실내 지구자기장의 분포 패턴을 기계학습했다.<br>
                         이를 이용해 사람 또는 사물의 실내 위치를 추적하는 방식을 고안했다. 비콘이나 AP와 같은 추가적인 장비의 설치 없이 스마트폰만으로 대형 실내
                         공간에서 50~80 cm 수준의 측위가 가능하다.
                     </p>
@@ -265,6 +258,7 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+    <!-- Slider END -->
 
 
 
@@ -413,7 +407,7 @@
                         <div class="col-lg-4 col-md-4 wow fadeInUp" data-wow-delay="0.7s">
                             <div class="card shadow">
                                 <img src="{{ url_for('static', filename='img/main2_6.jpg') }}"
-                                    style="display: block; margin-left: auto; margin-right: auto; width: 100%; height: 250px; object-fit: cover;"
+                                    style="display: block; margin-left: auto; margin-right: auto; width: 100%; height: 210px; object-fit: cover;"
                                     alt="...">
                                 <div class="card-body">
                                     <h4 class="card-title" style="font-size: 20px;">자기장 기반 실내측위
@@ -815,7 +809,7 @@
     <!-- Contact END-->
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.17s">
+    <div class="container-fluid bg-dark text-light footer pt-5 wow fadeIn" data-wow-delay="0.17s">
         <div class="container py-5">
             <hr style="color: #FFFFFF;">
             <div class="container px-4 text-white" style="color: azure;">
