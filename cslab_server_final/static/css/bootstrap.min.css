@@ -1998,7 +1998,9 @@ progress {
     --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
     --bs-table-active-color: #52565b;
     --bs-table-active-bg: rgba(0, 0, 0, 0.1);
-    --bs-table-hover-color: #52565b;
+
+    /* 다운토글 배경색*/
+    --bs-table-hover-color: #7C001A;
     --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
     width: 100%;
     margin-bottom: 1rem;
@@ -3064,7 +3066,7 @@ textarea.form-control.is-invalid {
 }
 
 .btn:hover {
-    color: #52565b
+    color: #7C001A
 }
 
 .btn-check:focus+.btn,
@@ -3087,7 +3089,8 @@ fieldset:disabled .btn {
 }
 
 .btn-primary:hover {
-    color: #000;
+    /*수정 텍스트*/
+    color: #7C001A;
     background-color: #2bc5d4;
     border-color: #1fc2d1
 }
@@ -4130,8 +4133,8 @@ fieldset:disabled .btn {
 
 .dropdown-item:hover,
 .dropdown-item:focus {
-    color: #1e2125;
-    background-color: #e9ecef
+    color: #7C001A;
+    background-color: #7C001A
 }
 
 .dropdown-item.active,
