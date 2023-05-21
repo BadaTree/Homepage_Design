@@ -1998,9 +1998,7 @@ progress {
     --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
     --bs-table-active-color: #52565b;
     --bs-table-active-bg: rgba(0, 0, 0, 0.1);
-
-    /* 다운토글 배경색*/
-    --bs-table-hover-color: #7C001A;
+    --bs-table-hover-color: #52565b;
     --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
     width: 100%;
     margin-bottom: 1rem;
@@ -2439,7 +2437,7 @@ textarea.form-control-lg {
 }
 
 .form-select:focus {
-    border-color: #7C001A;
+    border-color: #83dde6;
     outline: 0;
     box-shadow: 0 0 0 .25rem rgba(6, 187, 204, 0.25)
 }
@@ -2518,7 +2516,7 @@ textarea.form-control-lg {
 }
 
 .form-check-input:checked {
-    background-color: #7C001A;
+    background-color: #06BBCC;
     border-color: #06BBCC
 }
 
@@ -3066,7 +3064,7 @@ textarea.form-control.is-invalid {
 }
 
 .btn:hover {
-    color: #7C001A
+    color: #52565b
 }
 
 .btn-check:focus+.btn,
@@ -3084,21 +3082,20 @@ fieldset:disabled .btn {
 
 .btn-primary {
     color: #000;
-    background-color: #7C001A;
+    background-color: #06BBCC;
     border-color: #06BBCC
 }
 
 .btn-primary:hover {
-    /*수정 텍스트*/
-    color: #7C001A;
-    background-color: #7C001A;
+    color: #000;
+    background-color: #2bc5d4;
     border-color: #1fc2d1
 }
 
 .btn-check:focus+.btn-primary,
 .btn-primary:focus {
     color: #000;
-    background-color: #7C001A;
+    background-color: #2bc5d4;
     border-color: #1fc2d1;
     box-shadow: 0 0 0 .25rem rgba(5, 159, 173, 0.5)
 }
@@ -3109,7 +3106,7 @@ fieldset:disabled .btn {
 .btn-primary.active,
 .show>.btn-primary.dropdown-toggle {
     color: #000;
-    background-color: #7C001A;
+    background-color: #38c9d6;
     border-color: #1fc2d1
 }
 
@@ -4133,8 +4130,8 @@ fieldset:disabled .btn {
 
 .dropdown-item:hover,
 .dropdown-item:focus {
-    color: #7C001A;
-    background-color: #7C001A
+    color: #1e2125;
+    background-color: #e9ecef
 }
 
 .dropdown-item.active,
