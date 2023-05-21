@@ -41,12 +41,13 @@
     <style>
         .line-container {
             position: relative;
-            height: 300px;
+            height: 420px;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
-            padding-left: 20px;
-            padding-right: 20px;
+            padding-top: -10px;
+            padding-left: 30px;
+            padding-right: 30px;
         }
 
         .line {
@@ -58,13 +59,15 @@
             height: 100%;
             background-color: #DDDDDD;
             z-index: 0.5;
+            justify-content: flex-start;
         }
 
         .circle-container {
             display: flex;
             flex-direction: column;
+            margin-top: 20px;
             /* align-items: center; */
-            justify-content: flex-start;
+            /* justify-content: flex-start; */
         }
 
         .circle {
@@ -72,7 +75,7 @@
             height: 15px;
             background-color: #9A9A9A;
             border-radius: 50%;
-            margin: 30px;
+            margin-bottom: 100px;
             z-index: 1;
         }
     </style>
@@ -201,7 +204,7 @@
 
         <!-- Education -->
         <div class="text-center wow fadeInUp " data-wow-delay="0.6s"
-            style=" background-color: rgb(249, 249, 249); padding-top: 75px; padding-bottom: 50px; font-family: 'Open-sans';">
+            style=" background-color: rgb(249, 249, 249); padding-top: 75px; padding-bottom: 75px; font-family: 'Open-sans';">
             <div class="col-md-8 col-8 col-lg-10"
                 style="display: flex; align-items:flex-start; font-size: 18px; margin: 0 auto; padding: 25px; width: 50%; text-align: left;">
                 <h3 style="color: #7C001A; text-align: left; font-family: 'Open-sans';">Education</h3>
@@ -210,39 +213,40 @@
                 style="display: flex; align-items:flex-start; font-size: 18px; margin: 0 auto; padding: 25px; width: 50%; text-align: left;">
 
                 <h2
-                    style="color: #F3DADA; font-family: 'Pretendard-Regular';
-                src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');">
+                    style="color: #F3DADA;font-family: 'Pretendard-Regular';
+                src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');padding-right: 70px;">
                     ~ 2023</h2>
-                <div class="line-container">
-                    <div class="circle-container">
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                        <div class="circle"></div>
+                <div class="line-container" style="height: 280px;">
+                    <div class="circle-container" style="padding-top: -150px;">
+                        <div class="circle" style="margin-bottom: 80px;"></div>
+                        <div class="circle" style="margin-bottom: 80px;"></div>
+                        <div class="circle" style="margin-bottom: 80px;"></div>
                     </div>
-                    <div class="line" style="height: 245px;"></div>
+                    <div class="line"></div>
                 </div>
 
                 <div class="col-md-8 col-8 col-lg-10" style="text-align: left; font-size: 18px; margin: 0 auto;">
-                    <li>
-                        <strong>Mar.1996​<br></strong>
+                    <p>
+                        <strong>Mar.1996<br></strong>
                         Seoul National University, Computer Engineering, B.S.
-                    </li><br>
-                    <li>
+                    </p><br>
+                    <p>
                         <strong>Feb.1988<br></strong>
                         University of Illinois Urbana - Champaign, Computer Science, PhD
-                    </li><br>
-                    <li>
+                    </p><br>
+                    <p>
                         <strong>Feb.1986<br></strong>
                         Seoul National University, Computer Engineering, M.S
-                    </li><br>
+                    </p><br>
                 </div>
+
             </div>
         </div>
 
 
         <!-- History -->
         <div class="text-center wow fadeInUp " data-wow-delay="0.6s"
-            style=" background-color: rgb(255, 255, 255); padding-top: 75px; padding-bottom: 50px; font-family: 'Open-sans';">
+            style=" background-color: rgb(255, 255, 255); padding-top: 75px; padding-bottom: 75px; font-family: 'Open-sans';">
             <div class="col-md-8 col-8 col-lg-10"
                 style="display: flex; align-items:flex-start; font-size: 18px; margin: 0 auto; padding: 25px; width: 50%; text-align: left;">
                 <h3 style="color: #7C001A; text-align: left; font-family: 'Open-sans';">Employment history</h3>
@@ -261,34 +265,34 @@
                         <div class="circle"></div>
                         <div class="circle"></div>
                     </div>
-                    <div class="line" style="height: 380px;"></div>
+                    <div class="line" style=""></div>
                 </div>
                 <div class="col-md-8 col-8 col-lg-10" style="text-align: left; font-size: 18px; margin: 0 auto;">
-                    <li>
+                    <p>
                         <strong>Sep.2000 - Present​<br></strong>
                         Korea University, School of Electrical Engineering, Professor
-                    </li><br>
-                    <li>
+                    </p><br>
+                    <p>
                         <strong>Sep.1998 - Aug.2000<br></strong>
                         University of California Irvine, Department of Electrical and Computer
                         Engineering, Assistant Professor
-                    </li><br>
-                    <li>
+                    </p><br>
+                    <p>
                         <strong>Apr.1996 - Aug.1998<br></strong>
                         Intel Corporation, Santa Clara, California, Senior Design Engineer, Microarchitecture team of
                         64-bit CPU, Itanium (Merced) project
-                    </li><br>
-                    <li>
+                    </p><br>
+                    <p>
                         <strong>Feb.1988 - Aug.1990<br></strong>
                         한국통신 연구개발단 전임연구원
-                    </li><br>
+                    </p><br>
                 </div>
             </div>
         </div>
 
         <!-- Award -->
         <div class="text-center wow fadeInUp " data-wow-delay="0.6s"
-            style=" background-color: rgb(249, 249, 249); padding-top: 75px; padding-bottom: 50px; font-family: 'Open-sans';">
+            style=" background-color: rgb(249, 249, 249); padding-top: 75px; padding-bottom: 75px; font-family: 'Open-sans';">
             <div class="col-md-8 col-8 col-lg-10"
                 style="display: flex; align-items:flex-start; font-size: 18px; margin: 0 auto; padding: 25px; width: 50%; text-align: left;">
                 <h3 style="color: #7C001A; text-align: left; font-family: 'Open-sans';">Awards</h3>
@@ -297,7 +301,7 @@
                 style="display: flex; align-items:flex-start; font-size: 18px; margin: 0 auto; padding: 25px; width: 50%; text-align: left;">
 
                 <h2
-                    style="color: #F3DADA; font-family: 'Pretendard-Regular';
+                    style="color: #F3DADA; padding-right: 20px; font-family: 'Pretendard-Regular';
             src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');padding-right: 70px;">
                     ~ 2023</h2>
                 <div class="line-container">
@@ -307,26 +311,26 @@
                         <div class="circle"></div>
                         <div class="circle"></div>
                     </div>
-                    <div class="line" style="height:360px;"></div>
+                    <div class="line" style=""></div>
                 </div>
                 <div class="col-md-8 col-8 col-lg-10" style="text-align: left; font-size: 18px; margin: 0 auto;">
-                    <li>
+                    <p>
                         <strong>2022<br></strong>
                         대한민국 산업기술 대전, 산업기술진흥 유공자 대통령 표창 (2022) “세계 최고 수준 (측위 오차 1미터 이내)의 독자적인 실내측위 원천기술
                         개발”
-                    </li><br>
-                    <li>
+                    </p><br>
+                    <p>
                         <strong>2020<br></strong>
                         산업자원부 신기술인증 (2020), “딥러닝 기술 사용 자기장 기반 실내측위 기술”
-                    </li><br>
-                    <li>
+                    </p><br>
+                    <p>
                         <strong>2006<br></strong>
                         한국정보과학회, 가헌학술상 (2006), “버퍼 오버플로우 공격에 대한 마이크로구조적 방어 및 복구 기법"
-                    </li><br>
-                    <li>
+                    </p><br>
+                    <p>
                         <strong>1990 ~ 1993<br></strong>
                         교육부 국비유학생, 컴퓨터공학 분야
-                    </li><br>
+                    </p><br>
                 </div>
             </div>
         </div>
