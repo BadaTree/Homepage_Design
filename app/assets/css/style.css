@@ -1,0 +1,94 @@
+#mask {
+    opacity:0;
+    position:absolute;
+    z-index:3;
+    left:0px;
+    top:50px;
+}
+#location_area {
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+
+#circle{
+    border-radius: 100%;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-animation: sk-bounce 4.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+@keyframes sk-bounce {
+    0%, 100% {
+        transform: scale(0.5);
+        -webkit-transform: scale(0.5);
+    }
+    50% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+        /*background-color: #ec407a;*/
+    }
+}
+
+html, body {
+    margin: 0;
+    width: 200%;
+    height: 200%;
+}
+
+.dot {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    pointer-events: none;
+    width: 10px;
+    left: -1000px;
+    top: -1000px;
+}
+
+.children {
+    position: absolute;
+    z-index: 2;
+    left: -1000px;
+    top: -1000px;
+    display:block;
+    pointer-events: none;
+}
+
+#circle {
+    position: absolute;
+    z-index: 0;
+    left: -1000px;
+    top: -1000px;
+    display:block;
+    pointer-events: none;
+    width: 60px;
+}
+
+#arrow {
+    position: absolute;
+    z-index: 0;
+    left: -1000px;
+    top: -1000px;
+    display:block;
+    pointer-events: none;
+    content: url("../images/arrow.png");
+    width: 30px;
+}
+
+#X {
+    position: absolute;
+    z-index: 3;
+    left: -1000px;
+    top: -1000px;
+    display:block;
+    pointer-events: none;
+    content: url("../images/X.png");
+    width: 12px;
+    transform: rotate(180deg);
+}
+
+canvas {
+    transform: rotate(90deg);
+}

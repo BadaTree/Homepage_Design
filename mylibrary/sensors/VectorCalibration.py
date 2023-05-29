@@ -1,0 +1,2 @@
+class VetorCalibration:
+    pass
