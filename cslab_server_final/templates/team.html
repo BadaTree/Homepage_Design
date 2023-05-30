@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>고려대학교 컴퓨터시스템 연구실</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='mark.ico') }}">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -37,6 +38,20 @@
     <!-- Template Stylesheet -->
     <link href="{{ url_for('static', filename='css/style.css') }}"
         rel="stylesheet">
+        <style>
+            :lang(en) {
+                font-family: 'Open-sans'; /* English font */
+            }
+
+            :lang(ko) {
+                font-family: 'Pretendard-Regular';
+                src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+             /* Korean font */
+            }
+            .dropdown .btn::after {
+               display: none;
+            }
+        </style>
 </head>
 
 <body>
@@ -49,303 +64,233 @@
     </div>
     <!-- Spinner End -->
 
-    <!--nav-bar-->
-    <section style="height: 135px; border: none; display: flex; align-items: center; font-family: 'Open-sans'; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);">
-        <div class="logo" style="padding-left: 13%;">
-            <a href="/">
-                <img src="{{ url_for('static', filename='img/mark.png') }}"
-                    alt="School Logo" style="width: 80px; height: 100px; margin-right: 20px; border: none;">
-            </a>
-        </div>
-        <div style="padding-right: 20%;">
-            <h2 style="font-size: 50px; font-weight: bold; font-family: 'Open-sans';">
-                <a href="/" style="text-decoration: none; color: #000000;">CS LAB</a>
-            </h2>
-            <h5 style="font-size: 16px; font-family: 'Open-sans'; margin-top: -10px;">
-                <a href="/" style="text-decoration: none; color: #000000;">COMPUTER SYSTEM LAB</a>
-            </h5>
-        </div>
-
-        <ul class="nav nav-tabs" style="margin-right: 100px">
-            <!-- <div class="logo ">
-                <p>computer</p>
-            </div> -->
-            <li class="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false" style="color: #000000;">Research</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/research">Research Area</a>
-                    <a class="dropdown-item" href="/project">Projects</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false">Professor</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/professor">Professor</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false">People</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/members">Current members</a>
-                    <a class="dropdown-item" href="/alumni">Alumni</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false">Publications</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/journal">Journals</a>
-                    <a class="dropdown-item" href="/conference">Conferences</a>
-                    <a class="dropdown-item" href="/patent">Patents</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false">Courses</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/undergraduate">Undergraduate Courses</a>
-                    <a class="dropdown-item" href="/graduate">Graduate Courses</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false">Boards</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/undergraduate">notice</a>
-                    <a class="dropdown-item" href="/graduate">News</a>
-                </div>
-            </li>
-
-        </ul>
-    </section>
-    <!--nav-bar-->
-
-
-    <!-- Header Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 page-header">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Current members</h1>
-                </div>
+     <!-- 카테고리 영역 -->
+    <div class="row " style="height: 10rem;">
+        <div class="col-1" ></div>
+        <div class="col-3" style="background-color: rgb(255, 255, 255); margin-top: 3rem;">
+            <div class="container">
+                <img href="/" src="../static/img/mark_.png" class="rounded float-start" alt="..." style="width: 5rem;height: 5rem; padding-right: 20px;">
+                <h1 href="/" style="color:#262626; font-weight: bold;">CS LAB</h1>
+                <p href="/" style="font-size: small;">COMPUTER SYSTEM LAB</p>
             </div>
         </div>
+    
+        <div class="col-7" style="background-color:#ffffff;margin-top: 5.5rem;padding-right: 3rem; ">
+            <div class="col-1"></div>
+            <div class="container-sm-auto d-flex justify-content-end">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: white;
+                    border: none; color: black;font-weight: bold; ">
+                        Research
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/research">Research Area</a></li>
+                        <li><a class="dropdown-item" href="/project">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: white;
+                    border: none; color: black;font-weight: bold;margin-left:  1.875rem;">
+                       Professor
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/professor">Professor</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: white;
+                    border: none; color: black;font-weight: bold;margin-left:  1.875rem;">
+                        People
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/members">Current members</a></li>
+                        <li><a class="dropdown-item" href="/alumni">Alumni</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: white;
+                    border: none; color: black;font-weight: bold;margin-left:  1.875rem;">
+                        Publications
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/journal">Journals</a></li>
+                        <li><a class="dropdown-item" href="/conference">Conferences</a></li>
+                        <li><a class="dropdown-item" href="/patent">Patents</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: white;
+                    border: none; color: black;font-weight: bold;margin-left:  1.875rem">
+                        Courses
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/undergraduate">Undergraduate Courses</a></li>
+                        <li><a class="dropdown-item" href="/graduate">Graduate Courses</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: white;
+                    border: none; color: black;font-weight: bold;margin-left:  1.875rem">
+                       Boards
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/undergraduate">notice</a></li>
+                        <li><a class="dropdown-item" href="/graduate">News</a></li>
+                    </ul>
+                </div>
+            </div>
+           
+            <div class="row">
+                
+            </div>
+        </div>
+        <div class="col-1"></div>
     </div>
-    <!-- Header End -->
-
 
     <!-- Team Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3" style="color: #00143A;">
-                    COMPUTERSYSTEMLAB</h6>
-                <h1 class="mb-5">M.S/Ph.D</h1>
+    
+    <div calss="row" style="background-color: #F9F9F9;">
+        <h1 style="color: #7C001A; font-weight: bold; text-align: center; padding-top: 5rem;">M.S/Ph.D</h1>
+        <h4 style="color: #7E7E7E; font-weight: bold; text-align: center; margin-top: 0.5rem;">Computer Systems Lab News</h4>
+        <div lang= "ko" class="row row-cols-1 row-cols-md-2 g-2" style="padding-top: 5rem; padding-bottom: 5rem; padding-left: 32rem;padding-right: 32rem;">
+            <div class="col" style="padding-left: 1.5rem;padding-right: 1.5rem; margin-bottom: 3rem;">
+                <div class="card shadow rounded-5" style="border-radius: 40px;">
+                    <img src="{{ url_for('static', filename='img/one.jpg') }}"
+                        style="display: block; margin-left: auto; margin-right: auto; width: 100%; height: 20rem; object-fit: cover; border-top-left-radius: 40px;
+                        border-top-right-radius: 40px; border-bottom: 1px solid #7E7E7E;"
+                        alt="...">
+                    <div class="card-body" style="text-align: center;">
+                        <h5 class="mb-0">손 원 준 (Won-Joon Son)</h5>
+                        <middle>Course : M.S/Ph.D, 2018/09 ~<br></middle>
+                        <middle>E-mail : swj8905@korea.ac.kr</middle>
+                    </div>
+                </div>
             </div>
-            <div class="row g-2 justify-content-center">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid"
-                                src="{{ url_for('static', filename='img/one.jpg') }}"
-                                alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                            </div>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0"></h5>
-                            <h5 class="mb-0">손 원 준 (Won-Joon Son)</h5>
-                            <small>Course : M.S/Ph.D, 2018/09 ~<br></small>
-                            <small>E-mail : swj8905@korea.ac.kr</small>
-                        </div>
+            <div class="col" style="padding-left: 1.5rem;padding-right: 1.5rem; margin-bottom: 3rem;">
+                <div class="card shadow rounded-5" style="border-radius: 40px;">
+                    <img src="{{ url_for('static', filename='img/hero.jpg') }}"
+                        style="display: block; margin-left: auto; margin-right: auto; width: 100%; height: 20rem; object-fit: cover; border-top-left-radius: 40px;
+                        border-top-right-radius: 40px; border-bottom: 1px solid #7E7E7E;"
+                        alt="...">
+                    <div class="card-body" style="text-align: center;">
+                        <h5 class="mb-0"> 고 영 웅 (Young-Woong Ko)</h5>
+                        <middle> Course : M.S/Ph.D, 2019/03 ~<br></middle>
+                        <middle> E-mail : vhzpahs52@korea.ac.kr</middle>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid"
-                                src="{{ url_for('static', filename='img/hero.jpg') }}"
-                                alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
-
-                            </div>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">고 영 웅 (Young-Woong Ko)</h5>
-                            <small>Course : M.S/Ph.D, 2019/03 ~<br></small>
-                            <small>E-mail : vhzpahs52@korea.ac.kr</small>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- MS -->
-                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 class="section-title bg-white text-center text-primary px-3 "
-                        style="margin-top: 100px; font-color: #00143A; ;">COMPUTERSYSTEMLAB</h6>
-                    <h1 class="mb-5">M.S</h1>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid"
-                                src="{{ url_for('static', filename='img/jinone.jpeg') }}"
-                                alt="" style="width: 312px; height: 401px;">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                            </div>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">성 진 원 (Jin-Won Seong)</h5>
-                            <small>Course : M.S, 2022/03~<br></small>
-                            <small>E-mail : jin1seong@korea.ac.kr</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid"
-                                src="{{ url_for('static', filename='img/sea.jpeg') }}"
-                                alt="" style="width: 312px; height: 401px;">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                            </div>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">임 바 다 (Ba-Da Lim)</h5>
-                            <small>Course : M.S, 2021/09 ~<br></small>
-                            <small>E-mail : zzzxxx3166@korea.ac.kr</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid"
-                                src="{{ url_for('static', filename='img/min.jpeg') }}"
-                                alt="" style="width: 312px; height: 401px;">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                            </div>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">최 민 혁 (Min-hyeok Choi)</h5>
-                            <small>Course : M.S, 2023/03 ~<br></small>
-                            <small>E-mail : chlrhalsgur0209@gmail.com</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid"
-                                src="{{ url_for('static', filename='img/duckone.jpeg') }}"
-                                alt="" style="width: 312px; height: 401px;">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                            </div>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">윤 덕 원 (Deok-Won Yoon)</h5>
-                            <small>Course : M.S, 2023/03 ~<br></small>
-                            <small>E-mail : ydw1007@naver.com</small>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!--직원 -->
-                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 class="section-title bg-white text-center text-primary px-3 "
-                        style="margin-top: 100px; font-color: #00143A; ;">COMPUTERSYSTEMLAB</h6>
-                    <h1 class="mb-5">Staff</h1>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid"
-                                src="{{ url_for('static', filename='img/sohee.jpeg') }}"
-                                alt="" style="width: 312px; height: 401px;">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                            </div>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">성 소 희 (So-Heui Sung)</h5>
-                            <small></small>
-                            <small>E-mail : sshhkh@naver.com</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid"
-                                src="{{ url_for('static', filename='img/yunhee.png') }}"
-                                alt="" style="width: 312px; height: 401px;">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                            </div>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">이 윤 희 (Yun-Hee Lee)</h5>
-                            <small></small>
-                            <small>E-mail : yunhee2997@korea.ac.kr </small>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </div>
+          </div>
     </div>
-    <!-- Team End -->
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer pt-5 pb-5 wow fadeIn" data-wow-delay="0.17s">
-        <div class="container">
-            <hr style="color: #FFFFFF;">
-            <div class="container px-4 text-white" style="color: azure;">
-                <h3 style="color: rgb(255, 255, 255); text-align: left;">
-                    COMPUTER SYSTEM LAB</h3>
-                <p style="text-align: left; color: #FFFFFF;">
-                    <i class="fa fa-map-marker-alt me-3"></i>Industry-Academy Building 236, Korea
-                    University, 145 Anam-ro, Seongbuk-gu, Seoul, Republic of Korea. 02841
-                    <br>
-                    <i class="fa fa-envelope me-3"></i>Professor : lchoi@korea.ac.kr · swj8905@korea.ac.kr
-                    <br>
-                    <i class="fa fa-phone-alt me-3"></i>
-                    Tel : +82-2-3290-3896
-                </p>
-                <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href="">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a class="btn btn-outline-light btn-social" href="">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a class="btn btn-outline-light btn-social" href="">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                    <a class="btn btn-outline-light btn-social" href="">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
+    <div calss="row" >
+        <h1 style="color: #7C001A; font-weight: bold; text-align: center; margin-top: 7rem;">M.S</h1>
+        <h4 style="color: #7E7E7E; font-weight: bold; text-align: center; margin-top: 0.5rem;">Computer Systems Lab News</h4>
+        <div lang= "ko" class="row row-cols-1 row-cols-md-4 g-2" style="padding-top: 5rem; padding-bottom: 5rem; padding-left:14rem;padding-right: 14rem;">
+            <div class="col" style="padding-left: 1.5rem;padding-right: 1.5rem; margin-bottom: 3rem;">
+                <div class="card shadow rounded-5" style="border-radius: 40px;">
+                    <img src="{{ url_for('static', filename='img/jinone.jpeg') }}"
+                        style="display: block; margin-left: auto; margin-right: auto; width: 100%; height: 20rem; object-fit: cover; border-top-left-radius: 40px;
+                        border-top-right-radius: 40px; border-bottom: 1px solid #7E7E7E;"
+                        alt="...">
+                    <div class="card-body" style="text-align: center;">
+                        <h5 class="mb-0">  성 진 원 (Jin-Won Seong)</h5>
+                        <middle> Course : M.S, 2022/03~<br></middle>
+                        <middle>E-mail : jin1seong@korea.ac.kr </middle>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="col" style="padding-left: 1.5rem;padding-right: 1.5rem; margin-bottom: 3rem;">
+                <div class="card shadow rounded-5" style="border-radius: 40px;">
+                    <img src="{{ url_for('static', filename='img/sea.jpeg') }}"
+                        style="display: block; margin-left: auto; margin-right: auto; width: 100%; height: 20rem; object-fit: cover; border-top-left-radius: 40px;
+                        border-top-right-radius: 40px; border-bottom: 1px solid #7E7E7E;"
+                        alt="...">
+                    <div class="card-body" style="text-align: center;">
+                        <h5 class="mb-0"> 임 바 다 (Ba-Da Lim) </h5>
+                        <middle> Course : M.S, 2021/09 ~<br></middle>
+                        <middle>E-mail : zzzxxx3166@korea.ac.kr </middle>
+                    </div>
+                </div>
+            </div>
+            <div class="col" style="padding-left: 1.5rem;padding-right: 1.5rem; margin-bottom: 3rem;">
+                <div class="card shadow rounded-5" style="border-radius: 40px;">
+                    <img src="{{ url_for('static', filename='img/min.jpeg') }}"
+                        style="display: block; margin-left: auto; margin-right: auto; width: 100%; height: 20rem; object-fit: cover; border-top-left-radius: 40px;
+                        border-top-right-radius: 40px; border-bottom: 1px solid #7E7E7E;"
+                        alt="...">
+                    <div class="card-body" style="text-align: center;">
+                        <h5 class="mb-0"> 최 민 혁 (Min-hyeok Choi) </h5>
+                        <middle> Course : M.S, 2023/03 ~<br></middle>
+                        <middle> E-mail : chlrhalsgur0209@gmail.com</middle>
+                    </div>
+                </div>
+            </div>
+            <div class="col" style="padding-left: 1.5rem;padding-right: 1.5rem; margin-bottom: 3rem;">
+                <div class="card shadow rounded-5" style="border-radius: 40px;">
+                    <img src="{{ url_for('static', filename='img/duckone.jpeg') }}"
+                        style="display: block; margin-left: auto; margin-right: auto; width: 100%; height: 20rem; object-fit: cover; border-top-left-radius: 40px;
+                        border-top-right-radius: 40px; border-bottom: 1px solid #7E7E7E;"
+                        alt="...">
+                    <div class="card-body" style="text-align: center;">
+                        <h5 class="mb-0"> 윤 덕 원 (Deok-Won Yoon) </h5>
+                        <middle> Course : M.S, 2023/03 ~<br></middle>
+                        <middle>E-mail : ydw1007@naver.com </middle>
+                    </div>
+                </div>
+            </div>
     </div>
-    <!-- Footer End -->
+
+    <div calss="row" style="background-color: #F9F9F9">
+        <h1 style="color: #7C001A; font-weight: bold; text-align: center; padding-top: 5rem;">Staff</h1>
+        <h4 style="color: #7E7E7E; font-weight: bold; text-align: center; margin-top: 0.5rem;">Computer Systems Lab News</h4>
+        <div lang= "ko" class="row row-cols-1 row-cols-md-2 g-2" style="padding-top: 5rem; padding-bottom: 5rem; padding-left: 32rem;padding-right: 32rem;">
+            <div class="col" style="padding-left: 1.5rem;padding-right: 1.5rem; margin-bottom: 3rem;">
+                <div class="card shadow rounded-5" style="border-radius: 40px;">
+                    <img src="{{ url_for('static', filename='img/sohee.jpeg') }}"
+                        style="display: block; margin-left: auto; margin-right: auto; width: 100%; height: 20rem; object-fit: cover; border-top-left-radius: 40px;
+                        border-top-right-radius: 40px; border-bottom: 1px solid #7E7E7E;"
+                        alt="...">
+                    <div class="card-body" style="text-align: center;">
+                        <h5 class="mb-0"> 성 소 희 (So-Heui Sung) </h5>
+                        <middle> E-mail : sshhkh@naver.com</middle>
+                        <middle> </middle>
+                    </div>
+                </div>
+            </div>
+            <div class="col" style="padding-left: 1.5rem;padding-right: 1.5rem; margin-bottom: 3rem;">
+                <div class="card shadow rounded-5" style="border-radius: 40px;">
+                    <img src="{{ url_for('static', filename='img/yunhee.png') }}"
+                        style="display: block; margin-left: auto; margin-right: auto; width: 100%; height: 20rem; object-fit: cover; border-top-left-radius: 40px;
+                        border-top-right-radius: 40px; border-bottom: 1px solid #7E7E7E;"
+                        alt="...">
+                    <div class="card-body" style="text-align: center;">
+                        <h5 class="mb-0"> 이 윤 희 (Yun-Hee Lee) </h5>
+                        <middle> E-mail : yunhee2997@korea.ac.kr</middle>
+                        <middle> </middle>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </div>
+
+
+
+     <!-- footer 영역 -->
+     <div lang="en" class="row d-flex align-items-center" style="height: 17rem; background-color: #1E1E1E;">
+        <div class="col" ></div>
+        <div lang="en" class="col-9 " lang="ko" >
+            <hr style="color: #FFFFFF; border-width: 2px;">    
+        <h3 style="color: rgb(255, 255, 255); text-align: left;">
+            COMPUTER SYSTEM LAB</h3>
+        <p style="text-align: left; color: #FFFFFF;">Industry-Academy Building 236, Korea
+            University, 145 Anam-ro, Seongbuk-gu, Seoul, Republic of Korea. 02841
+            <br>Professor : lchoi@korea.ac.kr · swj8905@korea.ac.kr
+            <br> Tel : +82-2-3290-3896
+            </p>
+       
+        </div>
+        <div class="col"></div>
+    </div>
 
 
     <!-- Back to Top -->
