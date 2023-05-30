@@ -23,6 +23,26 @@
                 .dropdown .btn::after {
                    display: none;
                 }
+
+                .btn-custom-size {
+                    margin-top: 1rem;
+                    width: 90%; 
+                    height: 4rem; 
+                    font-size: 19px; 
+                    line-height: 3rem;
+                    text-align: center;
+                    font-weight: bold;
+                }
+
+                .btn-custom-size1 {
+                    margin-top: 1rem;
+                    width: 90%; 
+                    height: 8rem; 
+                    font-size: 18px; 
+                    line-height: 7rem;
+                    text-align: center;
+                    font-weight: bold;
+                }
             </style>
     </head>
     <body>
@@ -196,7 +216,7 @@
                     </div>
                     <div class="carousel-item align-items: center">
                         <img class="opacity-50" src="../static/img/main6.jpeg" 
-                            style="display: block; margin: auto; width: 80%; height: 540rem" alt="...">
+                            style="display: block; margin: auto; width: 80%; height: 40rem" alt="...">
                         <div class="carousel-caption d-none d-md-block"style="margin-left: -4rem;">
                             <h4 style="color:azure ; font-weight: bold; text-align: left; padding-bottom: 1rem;">
                                 [ 중앙 일보 ] 실내에서 3D 네비게이션을?…고려대 연구진 실내측위 기술 개발</h4>
@@ -225,9 +245,9 @@
         <!-- 프로젝트 영역 -->
         
         <div calss="row" >
-            <h1 style="color: #7C001A; font-weight: bold; text-align: center; margin-top: 9rem;">News</h1>
+            <h1 style="color: #7C001A; font-weight: bold; text-align: center; margin-top: 7rem;">News</h1>
             <h4 style="color: #7E7E7E; font-weight: bold; text-align: center; margin-top: 0.5rem;">Computer Systems Lab News</h4>
-            <div lang= "ko" class="row row-cols-1 row-cols-md-3 g-3" style="padding-top: 5rem; padding-bottom: 5rem; padding-left: 20rem;padding-right: 20rem;">
+            <div lang= "ko" class="row row-cols-1 row-cols-md-3 g-3" style="padding-top: 5rem; padding-bottom: 5rem; padding-left: 18rem;padding-right: 18rem;">
                 <div class="col" style="padding-left: 1.5rem;padding-right: 1.5rem; margin-bottom: 3rem;">
                     <div class="card shadow rounded" >
                         <img src="../static/img/main2_1.png"
@@ -345,28 +365,59 @@
         </div>
 
         <!-- information 영역 -->
-        <div class="row" style="height: 40rem;">
-            <div class="col" ></div>
-            <div class="col-9" lang="ko" > 
+            <div class="row " style="margin-bottom: 3rem;">
                 <h1 style="color: #7C001A; font-weight: bold; text-align: center; margin-top: 5rem;">Information</h1>
                 <h4 style="color: #7E7E7E; font-weight: bold; text-align: center;">Computer Systems Lab Information</h4>
+                <div class="col-3" ></div>
+                
+              <div class="col-3"  style="margin-top: 3rem; margin-bottom: 5rem;" >
+                <div class="box p-4 border rounded " style="border: #EBEBEB; height: 28rem;">
+                    <h3 style="color: #7C001A; font-weight: bold; text-align: center;margin-bottom: 2rem;">Research</h3>
+                    <a href="#" class="btn rounded btn-custom-size d-block mx-sm-auto" style="background-color: #FBEEEE;">Indoor
+                        Localization</a>
+                    <a href="#" class="btn rounded btn-custom-size d-block mx-sm-auto" style="background-color: #FBEEEE;">Internet of
+                        Things</a>
+                    <a href="#" class="btn rounded btn-custom-size d-block mx-sm-auto" style="background-color: #FBEEEE;">Computer Architecture</a>
+                    <a href="#" class="btn rounded btn-custom-size d-block mx-sm-auto" style="background-color: #FBEEEE;">Internet
+                        Security</a>
+
+                </div>
+              </div>
+              <div class="col-3" style="margin-top: 3rem; margin-bottom: 5rem;">
+                <div class="box p-4 border rounded" style="border: #EBEBEB; height: 28rem;">
+                    <h3 style="color: #7C001A; font-weight: bold; text-align: center;margin-bottom: 2rem;">Notice</h3>
+                    <a href="#" class="btn rounded btn-custom-size1 d-block mx-sm-auto" style="background-color: #FBEEEE;">Indoor
+                        Localization</a>
+                    <a href="#" class="btn rounded btn-custom-size1 d-block mx-sm-auto" style="background-color: #FBEEEE;">Internet of
+                        Things</a>
+                 
+                </div>
+              </div>
+              <div class="col-3" ></div>
             </div>
-            <div class="col"></div>
-        </div>
+         
 
         <!-- contact 영역 -->
-          <div class="row" style="height: 40rem; background-color: #F9F9F9;">
-           
+          <div class="row" style=" background-color: #F9F9F9; ">
             <div class="col" ></div>
-            <div class="col-9" lang="ko" > 
-                <h1 style="color: #7C001A; font-weight: bold; text-align: center; margin-top: 5rem;">Contact</h1>
+            <div class="col-9" lang="ko" style="margin-top: 7rem; margin-bottom: 7rem;"> 
+                <h1 style="color: #7C001A; font-weight: bold; text-align: center; ">Contact</h1>
                 <h4 style="color: #7E7E7E; font-weight: bold; text-align: center;">Computer Systems Lab directions</h4>
+
+                <img src="../static/img/map.png"
+                        style="display: block; margin: auto; width: 100%; height: 30rem; padding-top: 2rem; padding-bottom: 1rem;" alt="...">
+                    <h5 lang="ko" style="text-align: center; ">#420, New Engineering Bldg, 145 Anam-ro, Korea University,<br>
+                        Seongbuk-gu, Seoul 136-713, Republic of Korea<br>
+                        서울특별시 성북구 안암동5가 126-16<br>
+                        Tel: +82-2-3290-3752 <br>
+                        E-Mail: dlstn0910@korea.ac.kr
+                    </h5>
             </div>
             <div class="col"></div>
         </div>
 
          <!-- footer 영역 -->
-        <div lang="en" class="row d-flex align-items-center" style="height: 20rem; background-color: #1E1E1E;">
+        <div lang="en" class="row d-flex align-items-center" style="height: 17rem; background-color: #1E1E1E;">
             <div class="col" ></div>
             <div lang="en" class="col-9 " lang="ko" >
                 <hr style="color: #FFFFFF; border-width: 2px;">    
