@@ -56,6 +56,18 @@
                 src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
              /* Korean font */
             }
+            .dropdown .btn::after {
+                display: none;
+            }
+
+            .dropdown-toggle-no-caret::after {
+                display: none !important;
+            }
+
+            .nav-item:hover .nav-link {
+                color: #7C001A;
+                /* 원하는 색상으로 변경 */
+            }
 
             .board-container {
                 width: 80%;
@@ -97,99 +109,131 @@
         </div>
         <!-- Spinner End -->
 
-        
- 
-   <!-- 카테고리 영역 -->
-   <div class="row " style="height: 10rem;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);">
-    <div class="col-1" ></div>
-    <div class="col-3" style="background-color: rgb(255, 255, 255); margin-top: 3rem;">
-        <div class="container">
-            <img src="../static/img/mark_.png" class="rounded float-start" alt="..." style="width: 5rem;height: 5rem; padding-right: 20px;">
-            <h1 style="color:#262626; font-weight: bold;">CS LAB</h1>
-            <p style="font-size: small;">COMPUTER SYSTEM LAB</p>
-        </div>
-    </div>
+   <!-- 카테고리 영역 시작 -->
+   <nav
+   class="navbar navbar-expand-lg bg-white "
+   aria-label="Eighth navbar example"
+   style="height: 10rem;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);">
+   <div class="container d-flex align-items-center">
+       <a class="navbar-brand " href="#">
+           <div class="container h-100">
+               <img
+                   href="/"
+                   src="../static/img/mark_.png"
+                   class="rounded float-start"
+                   alt="..."
+                   style="width: 5rem;height: 5rem; padding-right: 20px;">
+               <h1 href="/" style="color:#262626; font-weight: bold;">CS LAB</h1>
+               <p href="/" style="font-size: small;">COMPUTER SYSTEM LAB</p>
+           </div>
+       </a>
+       <button
+           class="navbar-toggler"
+           style="background-color: #F9F9F9;"
+           type="button"
+           data-bs-toggle="collapse"
+           data-bs-target="#navbarsExample07"
+           aria-controls="navbarsExample07"
+           aria-expanded="false"
+           aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse justify-content-end" id="navbarsExample07">
+           <ul class="navbar-nav" style="font-weight: bold;">
+               <li class="nav-item" style="padding-right: 1.5rem;padding-top:1rem;">
+                   <a class="nav-link active" aria-current="page" href="/">Home</a>
+               </li>
 
-    <div class="col-7" style="background-color:#ffffff;margin-top: 5.5rem;padding-right: 3rem; ">
-        <div class="col-1"></div>
-        <div class="container-sm-auto d-flex justify-content-end">
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: white;
-                border: none; color: black;font-weight: bold;margin-left:  1.875rem;">
-                HOME
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/">HOME</a></li>
-                </ul>
-            </div>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: white;
-                border: none; color: black;font-weight: bold; margin-left:  1.875rem;">
-                    Research
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/research">Research Area</a></li>
-                    <li><a class="dropdown-item" href="/project">Projects</a></li>
-                </ul>
-            </div>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: white;
-                border: none; color: black;font-weight: bold;margin-left:  1.875rem;">
-                   Professor
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/professor">Professor</a></li>
-                </ul>
-            </div>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: white;
-                border: none; color: black;font-weight: bold;margin-left:  1.875rem;">
-                    People
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/members">Current members</a></li>
-                    <li><a class="dropdown-item" href="/alumni">Alumni</a></li>
-                </ul>
-            </div>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: white;
-                border: none; color: black;font-weight: bold;margin-left:  1.875rem;">
-                    Publications
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/journal">Journals</a></li>
-                    <li><a class="dropdown-item" href="/conference">Conferences</a></li>
-                    <li><a class="dropdown-item" href="/patent">Patents</a></li>
-                </ul>
-            </div>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: white;
-                border: none; color: black;font-weight: bold;margin-left:  1.875rem">
-                    Courses
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/undergraduate">Undergraduate Courses</a></li>
-                    <li><a class="dropdown-item" href="/graduate">Graduate Courses</a></li>
-                </ul>
-            </div>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: white;
-                border: none; color: black;font-weight: bold;margin-left:  1.875rem">
-                   Boards
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/undergraduate">notice</a></li>
-                    <li><a class="dropdown-item" href="/graduate">News</a></li>
-                </ul>
-            </div>
-        </div>
-       
-        <div class="row">
-            
-        </div>
-    </div>
-    <div class="col-1"></div>
-</div>
+               <li class="nav-item dropdown" style="padding-right: 1.5rem;padding-top:1rem;">
+                   <a
+                       class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                       href="#"
+                       data-bs-toggle="dropdown"
+                       aria-expanded="false">Research</a>
+                   <ul class="dropdown-menu">
+                       <li>
+                           <a class="dropdown-item" href="/research">Research Area</a>
+                       </li>
+                       <li>
+                           <a class="dropdown-item" href="/project">Projects</a>
+                       </li>
+                   </ul>
+               </li>
+
+               <li class="nav-item" style="padding-right: 1.5rem; padding-top:1rem;">
+                <a class="nav-link active" aria-current="page" href="/professor">Professor</a>
+               </li>
+
+               <li class="nav-item dropdown" style="padding-right: 1.5rem;padding-top:1rem;">
+                   <a
+                       class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                       href="#"
+                       data-bs-toggle="dropdown dropdown-toggle-no-caret"
+                       aria-expanded="false">People</a>
+                   <ul class="dropdown-menu">
+                       <li>
+                           <a class="dropdown-item" href="/members">Current members</a>
+                       </li>
+                       <li>
+                           <a class="dropdown-item" href="/alumni">Alumni</a>
+                       </li>
+                   </ul>
+               </li>
+               <li class="nav-item dropdown" style="padding-right: 1.5rem;padding-top:1rem;">
+                   <a
+                       class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                       href="#"
+                       data-bs-toggle="dropdown"
+                       aria-expanded="false">Publications</a>
+                   <ul class="dropdown-menu">
+                       <li>
+                           <a class="dropdown-item" href="/journal">Journals</a>
+                       </li>
+                       <li>
+                           <a class="dropdown-item" href="/conference">Conferences</a>
+                       </li>
+                       <li>
+                           <a class="dropdown-item" href="/patent">Patents</a>
+                       </li>
+                   </ul>
+               </li>
+
+               <li class="nav-item dropdown" style="padding-right: 1.5rem;padding-top:1rem;">
+                   <a
+                       class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                       href="#"
+                       data-bs-toggle="dropdown"
+                       aria-expanded="false">Courses</a>
+                   <ul class="dropdown-menu">
+                       <li>
+                           <a class="dropdown-item" href="/undergraduate">Undergraduate Courses</a>
+                       </li>
+                       <li>
+                           <a class="dropdown-item" href="/graduate">Graduate Courses</a>
+                       </li>
+                   </ul>
+               </li>
+               <li class="nav-item dropdown" style="padding-top:1rem;">
+                   <a
+                       class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                       href="#"
+                       data-bs-toggle="dropdown"
+                       aria-expanded="false">Boards</a>
+                   <ul class="dropdown-menu">
+                       <li>
+                           <a class="dropdown-item" href="/undergraduate">notice</a>
+                       </li>
+                       <li>
+                           <a class="dropdown-item" href="/graduate">News</a>
+                       </li>
+                   </ul>
+               </li>
+           </ul>
+       </div>
+   </nav>
+   <!-- 카테고리 영역 끝 -->
+
+   
 <!-- ***************************************** journal start
                 ***************************************** -->
 

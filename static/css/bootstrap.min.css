@@ -535,6 +535,7 @@ progress {
     margin-right: auto;
     margin-left: auto;
 }
+
 @media (min-width: 576px) {
     .container,
     .container-sm {
@@ -575,6 +576,18 @@ progress {
         max-width: 1320px;
     }
 }
+
+@media (min-width: 1400px) {
+    .container_custom,
+    .container-lg_custom,
+    .container-md_custom,
+    .container-sm_custom,
+    .container-xl_custom,
+    .container-xxl_custom {
+        max-width: 1370px;
+    }
+}
+
 .row {
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
@@ -3420,7 +3433,7 @@ fieldset:disabled .btn {
 .dropdown-item:active {
     color: #fff;
     text-decoration: none;
-    background-color: #06BBCC;
+    background-color: #7C001A;
 }
 .dropdown-item.disabled,
 .dropdown-item:disabled {
