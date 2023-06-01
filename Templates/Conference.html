@@ -1,0 +1,1952 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>고려대학교 컴퓨터시스템 연구실</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='mark.ico') }}">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin="crossorigin">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+            rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+            rel="stylesheet">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+            rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link
+            href="{{ url_for('static', filename='lib/animate/animate.min.css') }}"
+            rel="stylesheet">
+        <link
+            href="{{ url_for('static', filename='lib/animate/animate.css') }}"
+            rel="stylesheet">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link
+            href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+            rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+        <style>
+            :lang(en) {
+                font-family: 'Open-sans'; /* English font */
+            }
+    
+            :lang(ko) {
+                font-family: 'Pretendard-Regular';
+                src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+             /* Korean font */
+            }
+
+            .board-container {
+                width: 80%;
+                margin: 0 auto;
+                padding: 5px;
+                background-color: #f0f0f0;
+            }
+
+            .board {
+                background-color: #fff;
+                padding: 5px;
+            }
+
+            .post {
+                margin-bottom: 20px;
+            }
+
+            .post h3 {
+                margin-bottom: 5px;
+            }
+
+            .post p {
+                color: #333;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Spinner Start -->
+        <div
+            id="spinner"
+            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div
+                class="spinner-border text-primary"
+                style="width: 3rem; height: 3rem;"
+                role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        
+ 
+   <!-- 카테고리 영역 -->
+   <div class="row " style="height: 10rem;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);">
+    <div class="col-1" ></div>
+    <div class="col-3" style="background-color: rgb(255, 255, 255); margin-top: 3rem;">
+        <div class="container">
+            <img src="../static/img/mark_.png" class="rounded float-start" alt="..." style="width: 5rem;height: 5rem; padding-right: 20px;">
+            <h1 style="color:#262626; font-weight: bold;">CS LAB</h1>
+            <p style="font-size: small;">COMPUTER SYSTEM LAB</p>
+        </div>
+    </div>
+
+    <div class="col-7" style="background-color:#ffffff;margin-top: 5.5rem;padding-right: 3rem; ">
+        <div class="col-1"></div>
+        <div class="container-sm-auto d-flex justify-content-end">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: white;
+                border: none; color: black;font-weight: bold;margin-left:  1.875rem;">
+                HOME
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/">HOME</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: white;
+                border: none; color: black;font-weight: bold; margin-left:  1.875rem;">
+                    Research
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/research">Research Area</a></li>
+                    <li><a class="dropdown-item" href="/project">Projects</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: white;
+                border: none; color: black;font-weight: bold;margin-left:  1.875rem;">
+                   Professor
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/professor">Professor</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: white;
+                border: none; color: black;font-weight: bold;margin-left:  1.875rem;">
+                    People
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/members">Current members</a></li>
+                    <li><a class="dropdown-item" href="/alumni">Alumni</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: white;
+                border: none; color: black;font-weight: bold;margin-left:  1.875rem;">
+                    Publications
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/journal">Journals</a></li>
+                    <li><a class="dropdown-item" href="/conference">Conferences</a></li>
+                    <li><a class="dropdown-item" href="/patent">Patents</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: white;
+                border: none; color: black;font-weight: bold;margin-left:  1.875rem">
+                    Courses
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/undergraduate">Undergraduate Courses</a></li>
+                    <li><a class="dropdown-item" href="/graduate">Graduate Courses</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: white;
+                border: none; color: black;font-weight: bold;margin-left:  1.875rem">
+                   Boards
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/undergraduate">notice</a></li>
+                    <li><a class="dropdown-item" href="/graduate">News</a></li>
+                </ul>
+            </div>
+        </div>
+       
+        <div class="row">
+            
+        </div>
+    </div>
+    <div class="col-1"></div>
+</div>
+<!-- ***************************************** journal start
+                ***************************************** -->
+
+        <div class="board-container" style="margin-top:8rem; margin-bottom:10rem;">
+            <div class="board" style="text-align: center; padding-left: 3rem;">
+ 
+             <!-- ***************************************** Conference start
+                ***************************************** -->
+            <div id="div1">
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <strong>
+                        <span style="font-size: 18px;">International Conference</span></strong>
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left">
+                    <font face="Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">Young Woong Ko</span>
+                    </font><span style="font-family: Arial, Helvetica, sans-serif;"><span
+                            style="font-size: 14px;">&nbsp;and Lynn Choi</span>
+                    </span>
+                </p>
+
+                <p align="left"><span style="font-family: Arial, Helvetica, sans-serif;"><span
+                            style="font-size: 14px;">&quot;</span></span>
+                    <font face="Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">Fingerprint data map construction using
+                            Pedestrian Dead Reckoning for smartphone-based indoor&nbsp;</span></font>
+                    <font face="Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">Localization</span></font>
+                    <span style="font-family: Arial, Helvetica, sans-serif;"><span
+                            style="font-size: 14px;">&quot;,</span></span>
+                </p>
+
+                <p align="left">
+                    <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px;">In the Proceedings
+                        of&nbsp;</span><span
+                        style="font-family: Arial, Helvetica, sans-serif; font-size: 14px;">2020&nbsp;</span><span
+                        style="font-family: Arial, Helvetica, sans-serif;"><span style="font-size: 14px;">International
+                            Conference on Next Generation Computing&nbsp;(ICNGC), 17-19 Dec 2020,&nbsp;</span></span>
+                    <font face="Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">Busan, Korea</span></font>
+                </p>
+
+                <p align="left" style="">&nbsp;</p>
+
+                <p align="left">
+                    <font face="Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">Han Jun Bae</span></font>
+                    <span style="font-family: Arial, Helvetica, sans-serif;"><span style="font-size: 14px;">&nbsp;and
+                            Lynn Choi</span></span>
+                </p>
+
+                <p align="left"><span style="font-family: Arial, Helvetica, sans-serif;"><span
+                            style="font-size: 14px;">&quot;</span></span>
+                    <font face="Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">Low-Memory Embedded Hardware Design for Indoor
+                            Positioning System That Can Replace Smart Devices &quot;,</span></font>
+                </p>
+
+                <p align="left">
+                    <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px;">In the Proceedings
+                        of&nbsp;</span><span
+                        style="font-family: Arial, Helvetica, sans-serif; font-size: 14px;">2020&nbsp;</span><span
+                        style="font-family: Arial, Helvetica, sans-serif;"><span style="font-size: 14px;">International
+                            Conference on Next Generation Computing&nbsp;(ICNGC), 17-19 Dec 2020,&nbsp;</span></span>
+                    <font face="Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">Busan, Korea</span></font>
+                </p>
+
+                <p align="left">&nbsp;</p>
+
+                <p align="left">
+                    <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px;">Won Joon Son</span><span
+                        style="font-family: Arial, Helvetica, sans-serif;"><span style="font-size: 14px;">&nbsp;and Lynn
+                            Choi</span></span></p>
+
+                <p align="left"><span style="font-family: Arial, Helvetica, sans-serif;"><span
+                            style="font-size: 14px;">&quot;</span></span>
+                    <font face="Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">3D Indoor Navigation and Monitoring System Using
+                            Geomagnetic Field Based Indoor Localization&quot;,</span></font>
+                </p>
+
+                <p align="left">
+                    <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px;">In the Proceedings
+                        of&nbsp;</span><span
+                        style="font-family: Arial, Helvetica, sans-serif; font-size: 14px;">2020&nbsp;</span><span
+                        style="font-family: Arial, Helvetica, sans-serif;"><span style="font-size: 14px;">International
+                            Conference on Next Generation Computing&nbsp;(ICNGC), 17-19 Dec 2020,&nbsp;</span></span>
+                    <font face="Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">Busan, Korea</span></font>
+                </p>
+
+                <p align="left">&nbsp;</p>
+
+                <p align="left">
+                    <font face="Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">Seungkyu Hwang</span>
+                    </font><span style="font-family: Arial, Helvetica, sans-serif;"><span
+                            style="font-size: 14px;">&nbsp;and Lynn Choi</span>
+                    </span>
+                </p>
+
+                <p align="left"><span style="font-family: Arial, Helvetica, sans-serif;"><span
+                            style="font-size: 14px;">&quot;</span></span>
+                    <font face="Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">A New Indoor Monitoring System Using Geomagnetic
+                            Field Based Indoor Localization&nbsp;&quot;,</span></font>
+                </p>
+
+                <p align="left">
+                    <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px;">In the Proceedings
+                        of&nbsp;</span><span
+                        style="font-family: Arial, Helvetica, sans-serif; font-size: 14px;">2020&nbsp;</span><span
+                        style="font-family: Arial, Helvetica, sans-serif;"><span style="font-size: 14px;">International
+                            Conference on Next Generation Computing&nbsp;(ICNGC), 17-19 Dec 2020,&nbsp;</span></span>
+                    <font face="Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">Busan, Korea</span></font>
+                </p>
+
+                <p align="left">&nbsp;</p>
+
+                <p align="left">
+                    <font face="Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">Hankyeol Kyung</span>
+                    </font><span style="font-family: Arial, Helvetica, sans-serif;"><span
+                            style="font-size: 14px;">&nbsp;and Lynn Choi</span>
+                    </span>
+                </p>
+
+                <p align="left"><span style="font-family: Arial, Helvetica, sans-serif;"><span
+                            style="font-size: 14px;">&quot;</span></span>
+                    <font face="Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">Developing Navigation System for Using Indoor localization
+                            &quot;,</span></font>
+                </p>
+
+                <p align="left">
+                    <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px;">In the Proceedings
+                        of&nbsp;</span><span
+                        style="font-family: Arial, Helvetica, sans-serif; font-size: 14px;">2020&nbsp;</span><span
+                        style="font-family: Arial, Helvetica, sans-serif;"><span style="font-size: 14px;">International
+                            Conference on Next Generation Computing&nbsp;(ICNGC), 17-19 Dec 2020,&nbsp;</span></span>
+                    <font face="Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">Busan, Korea</span></font>
+                </p>
+
+                <p align="left">&nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size:14px;">Won Joon
+                            Son&nbsp;and Lynn Choi</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size:14px;">&quot;Magnetic
+                            Vector Calibration for Real-Time Indoor Positioning&quot;,</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">To
+                            Appear in&nbsp;2020&nbsp;IEEE International Conference on Communications (ICC),
+                            7-11 Jun 2020, Dublin, Ireland</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family: Arial, Helvetica, sans-serif;"><span style="font-size: 14px;">Won Joon
+                            Son&nbsp;and Lynn Choi</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family: Arial, Helvetica, sans-serif;"><span style="font-size: 14px;">&quot;Fast
+                            Magnetic Field Map Collection for Indoor Localization&quot;,</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px;">In the Proceedings
+                        of&nbsp;</span><span style="font-family: Arial, Helvetica, sans-serif;"><span
+                            style="font-size: 14px;">2019
+                            International Conference on Next Generation Computing&nbsp;(ICNGC), 19-21 Dec
+                            2019, Chiang Mai, Thailand</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family: Arial, Helvetica, sans-serif;"><span style="font-size: 14px;">Won Joon
+                            Son&nbsp;and Lynn Choi</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family: Arial, Helvetica, sans-serif;"><span style="font-size: 14px;">&quot;Vector
+                            Calibration for Magnetic Field Based Indoor Positioning&quot;,</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px;">In the Proceedings
+                        of&nbsp;</span><span style="font-family: Arial, Helvetica, sans-serif;"><span
+                            style="font-size: 14px;">2019
+                            Indoor Positioning and Indoor Localization&nbsp;(IPIN), 30 Sep - 3 Oct 2019,
+                            Pisa, Italy</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left">
+                    <span style="font-size:14px;">
+                        <font face="sans-serif">Han Jun Bae and Lynn Choi</font>
+                    </span>
+                </p>
+
+                <p align="left">
+                    <span style="font-size:14px;">
+                        <font face="sans-serif">&quot;</font>
+                        <span
+                            style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; background-color: rgb(255, 255, 255);">Large-Scale
+                            Indoor Positioning using Geomagnetic Field with Deep Neural Networks</span>
+                        <font face="sans-serif">&quot;,</font>
+                    </span>
+                </p>
+
+                <p align="left">
+                    <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px;">In the Proceedings
+                        of&nbsp;</span><span style="font-size:14px;"><span
+                            style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; background-color: rgb(255, 255, 255);">2019
+                            IEEE International Conference on Communications (</span><span class="il"
+                            style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; background-color: rgb(255, 255, 255);">ICC</span><span
+                            style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; background-color: rgb(255, 255, 255);">)</span>
+                        <font face="sans-serif">, 20-24 May 2019, China</font>
+                    </span>
+                </p>
+
+                <div>&nbsp;</div>
+
+                <div>
+                    <p align="left">
+                        <span style="font-size:14px;">
+                            <font face="sans-serif">Han Jun Bae and Lynn Choi</font>
+                        </span>
+                    </p>
+
+                    <p align="left">
+                        <span style="font-size:14px;">
+                            <font face="sans-serif">&quot;</font>
+                            <span
+                                style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; background-color: rgb(255, 255, 255);">Environment
+                                Aware Localization with BLE Fingerprinting for the Next Generation PEPS system</span>
+                            <font face="sans-serif">&quot;,</font>
+                        </span>
+                    </p>
+
+                    <p align="left">
+                        <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px;">In the Proceedings
+                            of&nbsp;</span><span style="font-size:14px;"><span
+                                style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; background-color: rgb(255, 255, 255);">2019
+                                IEEE Wireless Communications and Networking Conference (</span><span class="il"
+                                style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; background-color: rgb(255, 255, 255);">WCNC</span><span
+                                style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; background-color: rgb(255, 255, 255);">).</span>
+                            <font face="sans-serif">, 15-19 April 2019, Morocco</font>
+                        </span>
+                    </p>
+                </div>
+
+                <div>&nbsp;</div>
+
+                <div>
+                    <p align="left"><span style="font-family:Arial,Helvetica,sans-serif;"><span
+                                style="font-size:14px;">Han Jun Bae and Lynn Choi</span></span></p>
+
+                    <p align="left"><span style="font-family:Arial,Helvetica,sans-serif;"><span
+                                style="font-size:14px;">&quot;Semi-Automatic
+                                Construction of Field Maps for Fingerprint-based Indoor Positioning
+                                System&quot;,</span></span></p>
+
+                    <p align="left"><span style="font-family:Arial,Helvetica,sans-serif;"><span
+                                style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                                style="font-size:14px;">the
+                                4th International Conference on Next Generation Computing (ICNGC 2018),
+                                20-23&nbsp;December 2018, Vietnam</span></span>
+                    </p>
+                </div>
+
+                <div>&nbsp;</div>
+
+                <div>
+                    <p align="left"><span style="font-family:Arial,Helvetica,sans-serif;"><span
+                                style="font-size:14px;">Ho Jun Jang, Jae Min Shin and Lynn Choi</span></span></p>
+
+                    <p align="left"><span style="font-family:Arial,Helvetica,sans-serif;"><span
+                                style="font-size:14px;">&quot;Geomagnetic
+                                Field Based Indoor Localization Using Recurrent Neural Networks&quot;,</span></span></p>
+
+                    <p align="left"><span style="font-family:Arial,Helvetica,sans-serif;"><span
+                                style="font-size: 14px;">In
+                                the Proceedings of&nbsp;the 2017 IEEE Global Communications Conference
+                                (GLOBECOM), 4-8 December 2017, Singapore</span></span></p>
+                </div>
+
+                <div>&nbsp;</div>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span
+                            style="font-size: 14px; background-color: rgb(255, 255, 255);">Jae Hyung An</span><span
+                            style="font-size: 14px;">&nbsp;and Lynn Choi&nbsp;</span><br />
+                        <span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=2986&amp;sid=5434e0f83f544fca3ed171ed0c65cc3f&amp;module_srl=1024">Inverse
+                                Fingerprinting&nbsp;: Server side Indoor Localization with Bluetooth Low Energy</a>
+                        </span><span style="font-size: 14px;">&quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px; background-color: rgb(255, 255, 255);">the
+                            2016 IEEE 27th Annual IEEE International Symposium on Personal, Indoor and
+                            Mobile Radio Communications - (PIMRC): Mobile and Wireless Networks (IEEE
+                            PIMRC2016 Mobile and Wireless)</span><span style="font-size: 14px;">, September 4-7, 2016,
+                            Valencia, Spain.</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Ji Su Leem and
+                            Lynn Choi&nbsp;</span><br />
+                        <span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=2989&amp;sid=37210e90bfb2c6198a0023c58152003b&amp;module_srl=1024">Implementation
+                                of Sensor-Based 3D Virtual Keyboard for Wearable Devices</a>
+                        </span><span style="font-size: 14px;">&quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the 1st International Conference on Next Generation Computing
+                            2016(ICNGC 2016)</span><span style="font-size: 14px;">, January 28-30, 2016, Bangkok,
+                            Thailand.</span></span></p>
+
+                <div style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">&nbsp;</div>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Sang Hoon Lee
+                            and Lynn Choi&nbsp;</span><br />
+                        <span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=2990&amp;sid=326c9afdf39a767497c2a087664be6ef&amp;module_srl=1024">Cross-Layer
+                                Route Optimization using MAC overheariing for Reactive Routing Protocols in
+                                MANETs</a>
+                        </span><span style="font-size: 14px;">&quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            International Conference on ICT Convergence 2013(ICTC 2013), October 14-16,
+                            2013, Jeju, Korea.</span></span></p>
+
+                <div style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">&nbsp;</div>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Sang Hoon Lee,
+                            Yunmook Nah and Lynn Choi&nbsp;</span><br />
+                        <span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=2991&amp;sid=8377f578a62bc3ff7fd8f79502bdd7b8&amp;module_srl=1024">Influenza
+                                Surveillance and Forecast with Smartphone Sensors</a>
+                        </span>
+                        <span style="font-size: 14px;">
+                            &quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            9th Workshop on Software Technologies for Future Embedded and Uqiquitous
+                            Systems(SEUS 2013), June 17-18, 2013, Paderborn, Germany.</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Sang Hoon Lee
+                            and Lynn Choi&nbsp;</span><br />
+                        <span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=2992&amp;sid=cb61a60b56c7dc24340dfc1bf0f9e19c&amp;module_srl=1024">Proxy
+                                Clock Synchronization Energy-Efficient and Accurate Clock Synchronization for
+                                Large-scale Wireless Sensor Networks</a>
+                        </span>
+                        <span style="font-size: 14px;">
+                            &quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            2013 FTRA International Conference on Advanced IT, engineering and
+                            Manegement(FTRA AIM-13), February 21-23, 2013, Seoul, Korea.</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Sang Hoon Lee,
+                            Dong-wook Shin and Lynn Choi&nbsp;</span><br />
+                        <span style="font-size: 14px;">&quot;Policy-based Automatic Energy Monitoring
+                            and Control for Green IDCs &quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            2013 FTRA International Conference on Advanced IT, engineering and
+                            Manegement(FTRA AIM-13), February 21-23, 2013, Seoul, Korea.</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Jae Kyun Jung,
+                            Sang Hoon Lee and Lynn Choi&nbsp;</span><br />
+                        <span style="font-size: 14px;">&quot;Starcast: Robust and Energy-Efficient
+                            Geometric Routing for Mobile Sensor Networks &quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            2013 FTRA International Conference on Advanced IT, engineering and
+                            Manegement(FTRA AIM-13), February 21-23, 2013, Seoul, Korea.</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Sang Hoon Lee,
+                            Yong Soo Bae and Lynn Choi&nbsp;</span><br />
+                        <span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=2995&amp;sid=93d1f96e2748abba1a2ddf0ced60df3f&amp;module_srl=1024">On-Demand
+                                Radio Wave Sensor for Wireless Sensor Networks : Towards a Zero Idle Listening
+                                and Zero Sleep Delay MAC Protocol</a>
+                        </span><span style="font-size: 14px;">&quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            Global Communications Conference(Globecom 2012), December 3-7, 2012, California,
+                            USA.</span></span>
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Soon Won Hong
+                            and Lynn Choi&nbsp;</span><br />
+                        <span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=2994&amp;sid=61af7d9092b0c15d63d6dc9b3db80d16&amp;module_srl=1024">Automatic
+                                Recognition of Flowers through Color and Edge Based Contour Detection</a>
+                        </span><span style="font-size: 14px;">&quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            International Conference on Image Processing Theory, Tools and Applications(IPTA
+                            2012), October 15-18, 2012, Istanbul, Turkey.</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Yong Soo Bae,
+                            Sang Hoon Lee, and Lynn Choi&nbsp;</span><br />
+                        <span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=2997&amp;sid=8af062eac7bda2880c62790b099c407b&amp;module_srl=1024">The
+                                Design of a Ultra-Low Power RF Wakeup Sensor for Wireless Sensor Networks</a>
+                        </span>
+                        <span style="font-size: 14px;">
+                            &quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            the 18th Asia-Pacific Conference on Communications (APCC 2012), October 15-17,
+                            2012, Jeju, Korea.</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Sang Hoon Lee,
+                            Yong Soo Bae and Lynn Choi&nbsp;</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=2996&amp;sid=fc0d7229240be61277039c832e8eccb7&amp;module_srl=1024">Stability
+                                and Cost Path Quality Metrics for Mobile Adhoc Networks</a>
+                            &quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            2012 FTRA International Conference on Advanced IT, engineering and
+                            management(FTRA AIM Summer 2012), July 10-12, 2012, Jeju, Korea.</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Yong Soo Bae,
+                            Sang Hoon Lee, Byung Joon Park and Lynn Choi&nbsp;</span><br />
+                        <span style="font-size: 14px;">&quot;On-Demand RF Wakeup Sensor for Wireless Sensor
+                            Networks&quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            2012 International Conference on Information Science and Technlolgy(IST 2012),
+                            April 28-30, 2012, Shanghai, China.</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Minjoong Kim,
+                            Moonju Park, Jinseok Chae, Junsgun Kim and Lynn Choi&nbsp;</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">&quot;
+                            <a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3001&amp;sid=1608fa7e92cafefc616555c88d3e7995&amp;module_srl=1024">Power
+                                Control for Web-based Services on Multi-core Server Systems</a>
+                            &quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            International Conference on Cloud Computing and Social networking(ICCCSN 2012),
+                            April 26-27, 2012, Bandung, Indonesia.</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Soon-Won Hong,
+                            Byung Joon Park and Lynn Choi&nbsp;</span><br />
+                        <span style="font-size: 14px;">&quot;Automatic Flower Recognition using
+                            Smartphone&quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            International Conference on Advanced Signal Processing 2012(ASP 2012), March
+                            30-31, 2012, Seoul, Korea.</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Sang Hoon Lee,
+                            Byung Joon Park and Lynn Choi&nbsp;</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=2999&amp;sid=735774cfc97d3c7bf4b1a204e2f336f3&amp;module_srl=1024">A+MAC
+                                A Streamlined Variable Duty-Cycle MAC Protocol for Wireless Sensor Networks</a>
+                            &quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            International Conference on Computer and Applications (CCA), March 30-31, 2012,
+                            Seoul, Korea.</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Byung Joon
+                            Park, Seok-Won Hong and Lynn Choi&nbsp;</span><br />
+                        <span style="font-size: 14px;">&quot;An effective tool for recommending opinion leaders in
+                            SNS&quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">The
+                            2012 FTRA International Conference on Advanced IT, engineering and
+                            Management(FTRA AIM 2012), February 06-08, 2012, Seoul, Korea.</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Ki-Sup Hong and
+                            Lynn Choi&nbsp;</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3000&amp;sid=4386f2f9474e77b35c0bdcb1de0d9609&amp;module_srl=1024">DAG-based
+                                Multipath Routing for Mobile Sensor Networks</a>
+                            &quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            International Conference on ICT Convergence 2011 (ICTC 2011), September 28-30,
+                            2011, Seoul, Korea.</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Sang Hoon Lee,
+                            Yunmook Nah and Lynn Choi&nbsp;</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3002&amp;sid=f2daf96d2541154e0e7c96954dbf184b&amp;module_srl=1024">Reactive
+                                Clock Synchronization for Wireless Sensor Networks with Asynchronous Wakeup
+                                Scheduling</a>
+                            &quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            8th IFIP Workshop on Software Technologies for Future Embedded and Ubiquitous
+                            Systems (SEUS 2010), October 13-15, 2010, Waidhofen/Ybbs, Austria.</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Lynn Choi, Sang
+                            Hoon Lee&nbsp;</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3009&amp;sid=a9b2d425bf9af38af00901666baa150f&amp;module_srl=1024">SPEED-MAC_Speedy
+                                and Energy Efficient Data Delivery MAC Protocol for Real-Time Sensor Network
+                                Applications</a>
+                            &quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            International Conference on Communications (ICC 2010), May 2010, South Africa</span></span>
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Sang Hoon Lee,
+                            Lynn Choi, Yunmook Nah, Seungki Hong, Jong-Arm jun
+                        </span>
+                    </span>
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3007&amp;sid=633ff36687bf7fd0d7860c96e04d8f9f&amp;module_srl=1024">Policy-Based
+                                Reprogramming for Wrieless Sensor Networks</a>
+                            &quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            IEEE International Workshop on Object/component/service-oriented Real-time
+                            Networked Ultra-dependable Systems (WORNUS 2010), May 2010, Spain</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Sang Hoon Lee,
+                            Lynn Choi,&nbsp;</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3004&amp;sid=6a1b2bb1fb76137cef14ede85d76ad71&amp;module_srl=1024">Chaining
+                                Clock Synchronization_an Energy-Efficient Clock Synchronization Scheme for
+                                Wireless Sensor Networks</a>
+                            &quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            10th International Symposium on Pervasive Systems, Algorithms and Networks
+                            (ISPAN 2009), pp. 172-177, December 2009, Taiwan</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Lynn Choi, Jin
+                            Young Park&nbsp;</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3008&amp;sid=a7ce3c186924343f59254dfccfa9e1df&amp;module_srl=1024">RING-DATA
+                                ORDER_A New Cache Coherence Protocol for Ring-based Multicores</a>
+                            &quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            2009 International Conference on High Performance Computing &amp; Simulation
+                            (HPCS 2009), pp. 82-88, June 2009, German</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Lynn Choi, Sang
+                            Hoon Lee, Hyohyun Choi&nbsp;</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3006&amp;sid=85a2975377e1ef23b52199acdab46032&amp;module_srl=1024">M-MAC_Mobility-Based
+                                Link Management Protocol for Mobile Sensor Networks</a>
+                            &quot;.</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            2009 Software Technologies for Future Dependable Distributed Systems, pp.
+                            210-214, March 2009, Japan</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Lynn Choi, Jae
+                            Kyun Jung, Byong-Ha Cho, Hyohyun Choi&nbsp;</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3005&amp;sid=b5fd79bf6b542398dd9d433e5269b06c&amp;module_srl=1024">M-Geocast_Robust
+                                and Energy-Efficient Geometric Routing for Mobile Sensor Networks</a>
+                            &quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            6th IFIP Workshop on Softerware Technologies for Future Embedded &amp;
+                            Ubiquitous Systems (SEUS 2008), pp. 304 - 316 , Oct. 2008, Italy</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">[</span>
+                        <em>
+                            <span style="font-size: 14px;">Invited paper</span></em>
+                        <span style="font-size: 14px;">] Sang Hoon Lee, Lynn Choi,&nbsp;</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3011&amp;sid=979135643277252939204634db5c7db0&amp;module_srl=1024">Accelerating
+                                Symmetric and Asymmetric Ciphers with Register File Extension for Multi-word and
+                                Long-word Operation</a>
+                            &quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            International Conference on Information Science and Information Security (ICISS
+                            2008), pp. 102-107, Jan. 2008, Korea</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">[</span>
+                        <em>
+                            <span style="font-size: 14px;">Invited paper</span></em>
+                        <span style="font-size: 14px;">] Sang Hoon Lee, Byong-Ha Cho, Lynn Choi, Sun-Joong Kim
+                            ,&nbsp;</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3015&amp;sid=8f37df38d19ef76d5d1bc6049e7170b5&amp;module_srl=1024">Event-Driven
+                                Power Management for Wireless Sensor Networks</a>
+                            &quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            5th IFIP Workshop on Software Technologies for Embedded &amp; Ubiquitous Systems
+                            (SEUS 2007), pp. 419-428, May 2007, Greece</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">SangHoon Lee,
+                            Joon Ho Park, and Lynn Choi (2007),&nbsp;</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3012&amp;sid=a61c1a5da9207ebc5f88812236c49d19&amp;module_srl=1024">AMAC_Traffic-Adaptive
+                                Sensor Network Mac Protocol through Variable Duty-Cycle Operations</a>
+                            &quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            IEEE International Conference on Communications 2007,(ICC 2007), pp. 3259-3264,
+                            June 2007, Scotland</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Lynn Choi,
+                            Jaesung Heo, Hygon Kim, Sunil Kim (2004),</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">&quot;</span>
+                        <a
+                            href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3016&amp;sid=d23efd99b106e718c218fc145db2e981&amp;module_srl=1024">
+                            <span
+                                style="font-size: 14px;">Scalable_Packet_Classification_Through_Maximum_Entropy_Hashing</span></a>
+                        <span style="font-size: 14px;"></span><span style="font-size: 14px;">&quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">NETWORKING
+                            2004: Networking Technologies, Services, and Protocols; Performance of Computer
+                            and Communication Networks; Mobile and Wireless Communications, vol. 3042, pages
+                            296-307, Athens, Greece, May 2004.</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Lynn Choi, Yong
+                            Shin (2004),</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3014&amp;sid=2588c5142a4d9d6c3fbb7a9ab3dd311e&amp;module_srl=1024">Enforcement_of_Architectural_Safety_Guards_to_Deter_Malicious_Code_Attacks
+                                through Buffer Overflow Vulnerabilities</a>&nbsp; &quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">ARCS
+                            2004, International Conference on. Architecture of Computing Systems. - Organic
+                            and Pervasive Computing vol. 2981, pages 47-60, Augsburg, Germany, March 2004.</span></span>
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Hyogon Kim,
+                            Jaesung Heo, Lynn Choi, Inhye Kang, Sunil Kim (2004)</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3017&amp;sid=5c3526f28393b6806161364a0a446aeb&amp;module_srl=1024">Taming_Large_Classifiers_with_Rule_Reference_Locality</a>
+                            &quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">Information
+                            Networking: Networking Technologies for Enhanced Internet Services, Vol. 2662,
+                            pages 928-937, Feb. 2003.</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">S. H. Lee, I.
+                            K. Kim, L. Choi,</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3013&amp;sid=57cc14d7226d908b79ee25ce6027783e&amp;module_srl=1024">Branch_Predictor_Design_and_Performance_Estimation
+                                for a High Performance Embedded Microprocessor</a>
+                            &quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">Asia
+                            and South Pacific Design Automation Conference (ASP-DAC 2003) Tokyo, Japan,
+                            2003</span></span>
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">L. Choi, D. K.
+                            Kim, S. J. Lee, C. H. Kang,</span><br />
+                        <span style="font-size: 14px;">&quot;Intelligent and Automatic Creation of
+                            Hierarchical WML Decks for Efficient Access of Wireless Internet under Wireless
+                            Application Protocol&quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">CIC
+                            2002 (The 7th CDMA International Conference) Oct. 29 - Nov. 1, Seoul, Korea,
+                            2002</span></span>
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">D. K. Kim, S.
+                            J. Lee, L. Choi, C. H. Kang,</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3021&amp;sid=d71960861b984a79edf1efb1306109ab&amp;module_srl=1024">Efficient_Access_Using_Hierarchical_WML_Decks_for_Multimedia_Services
+                                under Wireless and Mobile Networks</a>
+                            &quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">5th
+                            IFIP/IEEE International Conference on Management of Multimedia Networks and
+                            Services, MMNS, Santa Babara, CA,Oct.2002.</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Kane Kim, Lynn
+                            Choi and Moon H. Kim,</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3024&amp;sid=ea1693bb759b64bf565c0990ac3b22da&amp;module_srl=1024">Issues_in_Realization_of_an_Execution_Time_Analyzer_for_Distributed_Real-Time_Objects</a>
+                            &quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            3rd IEEE Symposium on Application-Specific Systems and Software Engineering
+                            Technology (ASSET 2000), Richardson, Texas, March 2000</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Lynn Choi,
+                            Pen-Chung Yew,</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3025&amp;sid=8df02df5f0d1ff266ba0dae3b76fadfb&amp;module_srl=1024">Program_Analysis_for_Cache_Coherence_Beyond_Procedural_Boundaries</a>
+                            &quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of t</span><span style="font-size: 14px;">he
+                            1996 International Conference on Parallel Processing, Vol. III, pages 103-113,
+                            Bloomingdale, IL, Aug. 1996. Also available as CSRD Tech. Report 1483.</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Lynn Choi,
+                            Pen-Chung Yew,</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3022&amp;sid=c86ad2fb1cc45d8fea11a6422a289101&amp;module_srl=1024">Eliminating_Stale_Data_References_through_Array_Data-Flow_Analysis</a>
+                            &quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            10th IEEE International Parallel Processing Symposium &#39;96, pages 4-13,
+                            Honolulu, Hawaii, Also an early extended version available as a CSRD Technical
+                            Report No. 1425.</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Lynn Choi,
+                            Pen-Chung Yew,</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">&quot;</span>
+                        <a
+                            href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3020&amp;sid=d93e116dccf33cca6d198d153d592592&amp;module_srl=1024">
+                            <span
+                                style="font-size: 14px;">Compiler_and_Hardware_Support_Cache_Coherence_in_Large-Scale_Multiprocessors
+                                Design Considerations and Performance study</span></a>
+                        <span style="font-size: 14px;"></span><span style="font-size: 14px;">&quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            23rd ACM/IEEE Annual International Symposium on Computer Architecture, pages
+                            283-294, Philadelphia, PA, May 1996. Also an early extended version available as
+                            CSRD Tech. Report 1459, Nov. 1995.</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Lynn Choi,
+                            Pen-Chung Yew,</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3019&amp;sid=0e8a1b7a2b59673b6938a64707a241b4&amp;module_srl=1024">A_Compiler-Directed_Cache_Coherence_Scheme_with_Improved_Intertask_Locality</a>
+                            &quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">ACM/IEEE
+                            Supercomputing &#39;94,pages 773-782, Washington, D.C., Nov. 1994. Also
+                            available as CSRD Tech. Report No. 1325.</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">Lynn Choi,
+                            Andrew A. Chien,</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size: 14px;">&quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3023&amp;sid=976271585facdcebac0032ace76b0788&amp;module_srl=1024">Integrating_Networks_and_Memory_Hierarchies_in_a_Multicomputer_Node_Architecture</a>
+                            &quot;,</span><br />
+                        <span style="font-size: 14px;">In the Proceedings of&nbsp;</span><span
+                            style="font-size: 14px;">the
+                            8th IEEE International Parallel Processing Symposium &#39;94, pages 10-17,
+                            Cancun, Mexico, April 1994, Also available as CSRD Tech. Report No. 1477.</span></span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;</p>
+
+                <hr>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <strong>
+                        <span style="font-size: 18px;">Domestic Conference (Korea)</span></strong>
+                </p>
+
+                <div>&nbsp;</div>
+
+                <div>
+                    <div>
+                        <p align="left">
+                            <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                                <span style="font-size: 14px;">배한준, 최 린</span></font>
+                        </p>
+
+                        <p align="left">
+                            <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                                <span style="font-size: 14px;">&quot;다양한 사용자의 실제 이동을 반영하기 위한 LSTM을 이용한 자기장 기반 실내 위치인식
+                                    시스템 &quot;,</span></font>
+                        </p>
+
+                        <p align="left">
+                            <span
+                                style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif; font-size: 14px;">한국차세대컴퓨팅학회</span>
+                            <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                                <span style="font-size: 14px;">&nbsp;2021&nbsp;한국차세대컴퓨팅학회 춘계학술대회&nbsp;2021년 5월.</span>
+                            </font>
+                        </p>
+
+                        <p align="left">&nbsp;</p>
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <div>
+                            <p align="left">
+                                <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                                    <span style="font-size: 14px;">손원준, 최 린</span></font>
+                            </p>
+
+                            <p align="left">
+                                <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                                    <span style="font-size: 14px;">&quot;지구 자기장 기반 실내측위 기술을 활용한 3D 실내
+                                        내비게이션&nbsp;&quot;,</span></font>
+                            </p>
+
+                            <p align="left">
+                                <span
+                                    style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif; font-size: 14px;">한국차세대컴퓨팅학회</span>
+                                <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                                    <span style="font-size: 14px;">&nbsp;2020 한국차세대컴퓨팅학회 하계학술대회&nbsp;2020년 8월.</span>
+                                </font>
+                            </p>
+
+                            <p align="left">&nbsp;</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p align="left">
+                            <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                                <span style="font-size: 14px;">배한준, 최 린</span></font>
+                        </p>
+
+                        <p align="left">
+                            <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                                <span style="font-size: 14px;">&quot;실내 측위 시스템을 위한 스마트 기기 대체 태그 보드
+                                    개발&nbsp;&quot;,</span>
+                            </font>
+                        </p>
+
+                        <p align="left">
+                            <span
+                                style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif; font-size: 14px;">한국차세대컴퓨팅학회</span>
+                            <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                                <span style="font-size: 14px;">&nbsp;2020 한국차세대컴퓨팅학회 하계학술대회&nbsp;2020년 8월.</span></font>
+                        </p>
+
+                        <p align="left">&nbsp;</p>
+                    </div>
+                </div>
+
+                <div>
+                    <p align="left">
+                        <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                            <span style="font-size: 14px;">고영웅, 최 린</span></font>
+                    </p>
+
+                    <p align="left">
+                        <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                            <span style="font-size: 14px;">&quot;스마트폰 기반 실내 위치 인식을 위한 보행자 추측 항법 기반의 지문 데이터 맵 자동
+                                수집&nbsp;&quot;,</span>
+                        </font>
+                    </p>
+
+                    <p align="left">
+                        <span
+                            style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif; font-size: 14px;">한국차세대컴퓨팅학회</span>
+                        <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                            <span style="font-size: 14px;">&nbsp;2020 한국차세대컴퓨팅학회 하계학술대회&nbsp;2020년 8월.</span></font>
+                    </p>
+
+                    <p align="left">&nbsp;</p>
+                </div>
+
+                <div>
+                    <p align="left">
+                        <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                            <span style="font-size: 14px;">손원준, 최 린</span></font>
+                    </p>
+
+                    <p align="left">
+                        <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                            <span style="font-size: 14px;">&quot;지자기 기반 실내 위치 추정에 사용할 수 있는 지자기 벡터 보정법&quot;,</span>
+                        </font>
+                    </p>
+
+                    <p align="left">
+                        <span
+                            style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif; font-size: 14px;">한국차세대컴퓨팅학회</span>
+                        <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                            <span style="font-size: 14px;">&nbsp;2019 한국차세대컴퓨팅학회 춘계학술대회&nbsp;2019년 5월.</span></font>
+                    </p>
+                </div>
+
+                <div>
+                    <p align="left"
+                        style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                        &nbsp;</p>
+
+                    <p align="left">
+                        <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                            <span style="font-size: 14px;">김희수, 최 린</span></font>
+                    </p>
+
+                    <p align="left">
+                        <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                            <span style="font-size: 14px;">&quot;순환신경망을 이용한 BLE 실내 위치 추정 향상&quot;,</span></font>
+                    </p>
+
+                    <p align="left">
+                        <span
+                            style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif; font-size: 14px;">한국차세대컴퓨팅학회</span>
+                        <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                            <span style="font-size: 14px;">&nbsp;2019 한국차세대컴퓨팅학회 춘계학술대회&nbsp;2019년 5월.</span></font>
+                    </p>
+
+                    <p align="left">&nbsp;</p>
+
+                    <p align="left">
+                        <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                            <span style="font-size: 14px;">고영웅, 최 린</span></font>
+                    </p>
+
+                    <p align="left">
+                        <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                            <span style="font-size: 14px;">&quot;스마트폰 기반 보행자 추측 항법을 위한 3축 가속도 센서의 축 보정&quot;,</span>
+                        </font>
+                    </p>
+
+                    <p align="left">
+                        <span
+                            style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif; font-size: 14px;">한국차세대컴퓨팅학회</span>
+                        <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                            <span style="font-size: 14px;">&nbsp;2019 한국차세대컴퓨팅학회 춘계학술대회&nbsp;2019년 5월.</span></font>
+                    </p>
+
+                    <p align="left">&nbsp;</p>
+
+                    <p align="left">
+                        <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                            <span style="font-size: 14px;">민태산, 최 린</span></font>
+                    </p>
+
+                    <p align="left">
+                        <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                            <span style="font-size: 14px;">&quot;스마트폰 가속도 센서를 사용한 보폭 추정&quot;,</span></font>
+                    </p>
+
+                    <p align="left">
+                        <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                            <span style="font-size: 14px;">한국통신학회 2019 동계종합학술발표회,&nbsp;2019년 1월.</span></font>
+                    </p>
+
+                    <p align="left">&nbsp;</p>
+
+                    <p align="left">
+                        <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                            <span style="font-size: 14px;">손원준, 최 린</span></font>
+                    </p>
+
+                    <p align="left">
+                        <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                            <span style="font-size: 14px;">&quot;실내 위치추정 성능 향상을 위한 지자기 센서 보정법&quot;,</span></font>
+                    </p>
+
+                    <p align="left">
+                        <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                            <span style="font-size: 14px;">한국통신학회 2019 동계종합학술발표회,&nbsp;2019년 1월.</span></font>
+                    </p>
+
+                    <p align="left"
+                        style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                        &nbsp;</p>
+
+                    <p align="left">
+                        <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                            <span style="font-size: 14px;">김희수, 최 린</span></font>
+                    </p>
+
+                    <p align="left">
+                        <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                            <span style="font-size: 14px;">&quot;RNN을 활용한 BLE 실내 위치 인식&quot;,</span></font>
+                    </p>
+
+                    <p align="left">
+                        <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                            <span style="font-size: 14px;">한국통신학회 2019 동계종합학술발표회,&nbsp;2019년 1월.</span></font>
+                    </p>
+
+                    <p align="left">&nbsp;</p>
+
+                    <p align="left">
+                        <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                            <span style="font-size: 14px;">구경현, 최 린</span></font>
+                    </p>
+
+                    <p align="left">
+                        <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                            <span style="font-size: 14px;">&quot;BLE 지문인식을 사용한 차량용 스마트키 위치 인식&quot;,</span></font>
+                    </p>
+
+                    <p align="left">
+                        <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                            <span style="font-size: 14px;">한국정보과학회 2018 한국컴퓨터종합학술대회&nbsp;2018,&nbsp;2018년 6월.</span>
+                        </font>
+                    </p>
+                </div>
+
+                <div>&nbsp;</div>
+
+                <p align="left">
+                    <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">배한준, 최 린</span></font>
+                </p>
+
+                <p align="left">
+                    <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">&quot;LSTM을 이용한 자기장 기반 실내위치인식시스템&quot;,</span></font>
+                </p>
+
+                <p align="left">
+                    <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">한국차세대컴퓨팅학회 춘계학술대회 2018,&nbsp;2018년 5월.</span></font>
+                </p>
+
+                <p align="left">&nbsp;</p>
+
+                <p align="left">
+                    <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">배한준, 최 린</span></font>
+                </p>
+
+                <p align="left">
+                    <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">[우수논문선정] &quot;동적 디렉터리 테이블 : 공유 캐시 블록의 디렉터리 엔트리 동적
+                            할당&quot;,</span>
+                    </font>
+                </p>
+
+                <p align="left">
+                    <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">한국정보과학회 2017 한국컴퓨터종합학술대회 2017년 6월.</span></font>
+                </p>
+
+                <p align="left">&nbsp;</p>
+
+                <p align="left">
+                    <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">장호준, 최 린</span></font>
+                </p>
+
+                <p align="left">
+                    <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">&quot;순환 신경망을 이용한 지구 자기장 기반 실내 위치인식&quot;,</span></font>
+                </p>
+
+                <p align="left">
+                    <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">한국정보과학회 2017 한국컴퓨터종합학술대회 2017년 6월.</span></font>
+                </p>
+
+                <p align="left">&nbsp;</p>
+
+                <p align="left">
+                    <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">김도윤, 구경현, 최 린</span></font>
+                </p>
+
+                <p align="left">
+                    <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">&quot;보행자 추측 항법과 저전력 블루투스 지문인식을 이용한 실내 내비 게이션 시스템&quot;,</span>
+                    </font>
+                </p>
+
+                <p align="left">
+                    <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">2017년도 한국차세대컴퓨팅학회 하계학술대회 2017년 6월.</span></font>
+                </p>
+
+                <p align="left">&nbsp;</p>
+
+                <p align="left">
+                    <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">신재민, 최 린</span></font>
+                </p>
+
+                <p align="left">
+                    <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">&quot;경로 추정을 이용한 자기장 기반 실내 위치 인식 &quot;,</span></font>
+                </p>
+
+                <p align="left">
+                    <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">2017년도 한국차세대컴퓨팅학회 하계학술대회 2017년 6월.</span></font>
+                </p>
+
+                <p align="left">&nbsp;</p>
+
+                <p align="left">
+                    <span
+                        style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif; font-size: 14px;">&nbsp;구경현,
+                        최 린</span><br />
+                    <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">&quot;BLE RSSI 특성을 이용한 실내 접촉 탐지 알고리즘&quot;,</span></font><br />
+                    <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif"
+                        style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                        <span style="font-size: 14px;">2016년도 한국차세대컴퓨팅학회 추계학술대회&nbsp;2016년 10월</span></font>
+                    <span
+                        style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif; font-size: 14px;">.</span>
+                </p>
+
+                <div>&nbsp;</div>
+
+                <div>
+                    <p align="left">
+                        <span
+                            style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif; font-size: 14px;">&nbsp;김정원,
+                            최 린</span><br />
+                        <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                            <span style="font-size: 14px;">&quot;실내 위치 인식 신뢰성 개선을 위한 공간별 전파 특성 분석&quot;,</span></font>
+                        <br />
+                        <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                            <span style="font-size: 14px;">2016년도 한국차세대컴퓨팅학회 추계학술대회&nbsp;2016년 10월.</span></font>
+                    </p>
+                </div>
+
+                <div>&nbsp;</div>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&nbsp;안재형, 김정원, 최 린</span><br />
+                    <span style="font-size: 14px;">&quot;블루투스 v4.0 스캐너 기반 실내 위치 인식 시스템&quot;,</span><br />
+                    <span style="font-size: 14px;">한국정보과학회 2016&nbsp;</span><span
+                        style="font-size: 14px;">한국컴퓨터종합학술대회</span><span style="font-size: 14px;">&nbsp;2016년 6월.</span>
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&nbsp;장호준, 최 린</span><br />
+                    <span style="font-size: 14px;">&quot;지구 자기장 Finger-Print 및 추측 항법을 결합한 실시간 실내 위치정보 서비스
+                        연구&quot;,</span><br />
+                    <span style="font-size: 14px;">한국정보과학회 2016&nbsp;</span><span
+                        style="font-size: 14px;">한국컴퓨터종합학술대회</span><span style="font-size: 14px;">&nbsp;2016년 6월.</span>
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&nbsp;김도윤, 최 린</span><br />
+                    <span style="font-size: 14px;">&quot;스마트폰 내 모션 센서를 이용한 걸음 수 추출&quot;,</span><br />
+                    <span style="font-size: 14px;">한국정보과학회 2016&nbsp;</span><span
+                        style="font-size: 14px;">한국컴퓨터종합학술대회</span><span style="font-size: 14px;">&nbsp;2016년 6월.</span>
+                </p>
+
+                <p style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">&nbsp;</p>
+
+                <p align="left">
+                    <span
+                        style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif; font-size: 14px;">&nbsp;안재형,
+                        최 린</span><br />
+                    <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">&quot;병원 내 전염병 확산 방지를 위한 실내 추적 시스템&quot;,</span></font><br />
+                    <font face="나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif">
+                        <span style="font-size: 14px;">한국차세대컴퓨팅학회 2016 춘계학술대회&nbsp;2016년 5월.</span></font>
+                </p>
+
+                <p style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">&nbsp;</p>
+
+                <p style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">&nbsp;</p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&nbsp;차두진, 최 린</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&quot;<a
+                            href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3037&amp;sid=6e35e863228ac04d1b1a96ae5c7d9344&amp;module_srl=1026">기계학습
+                            알고리즘을 이용한 안드로이드 악성코드 탐지</a>
+                        &quot;,</span><br />
+                    <span style="font-size: 14px;">한국정보과학회 2014년 동계학술발표회 2014년 12월.</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&nbsp;조성호, 최 린</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&quot;<a
+                            href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3036&amp;sid=8101ca7fbd5040ca336b246d09caee4d&amp;module_srl=1026">그놈
+                            프로젝트 인적 네트워크의 포괄적 분석</a>
+                        &quot;,</span><br />
+                    <span style="font-size: 14px;">한국정보과학회 2014년 동계학술발표회 2014년 12월.</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&nbsp;김민지, 최 린</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&quot;<a
+                            href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3042&amp;sid=06c91b8833ded2956066f01389d9f412&amp;module_srl=1026">웨어러블
+                            장치를 위한 3d 온라인 필기인식 시스템</a>
+                        &quot;,</span><br />
+                    <span style="font-size: 14px;">한국정보처리학회 2014년 추계학술발표대회 2014년 11월.</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&nbsp;배용수, 이상훈, 최 린</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&quot;</span>
+                    <a
+                        href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3043&amp;sid=dc663b151d51c5eb2e4d737b8ddebfc8&amp;module_srl=1026">
+                        <span style="font-size: 14px;">이동 애드혹 네트워크의 반응형 라우팅 프로토콜을 위한 오버히어링을 이용한 경로 최적화 방법</span></a>
+                    <span style="font-size: 14px;"></span><span style="font-size: 14px;">&quot;,</span><br />
+                    <span style="font-size: 14px;">한국정보과학회 2013 한국컴퓨터종합학술대회 2013년 6월.</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&nbsp;이상훈, 최 린</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&quot;</span>
+                    <a
+                        href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3039&amp;sid=8fb3f82e9582a7a3253f247a5468bf35&amp;module_srl=1026">
+                        <span style="font-size: 14px;">무선 센서 네트워크에서의 동적 듀티 사이클 기법 설계 방안 연구</span></a>
+                    <span style="font-size: 14px;"></span><span style="font-size: 14px;">&quot;</span><span
+                        style="font-size: 14px;">,</span><br />
+                    <span style="font-size: 14px;">한국정보과학회 2013 한국컴퓨터종합학술대회 2013년 6월.</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&nbsp;윤창현, 최 린</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&quot;</span>
+                    <a
+                        href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3035&amp;sid=0610eb1bf4ae195755e2887e939970e9&amp;module_srl=1026">
+                        <span style="font-size: 14px;">CILS RSSI 가중치를 활용한 협동형 실내 측위 시스템</span></a>
+                    <span style="font-size: 14px;"></span><span style="font-size: 14px;">&quot;,</span><br />
+                    <span style="font-size: 14px;">한국정보과학회 2013 한국컴퓨터종합학술대회 2013년 6월.</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&nbsp;이상훈, 배용수,최 린</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">
+                        <span style="font-size: 14px;">
+                            &quot;<a
+                                href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3040&amp;sid=6d5500c2c4a16d1d242518ff8f51c69c&amp;module_srl=1026">센서
+                                네트워크 환경에서 비동기식 MAC 프로토콜을 위한 충돌해결 알고리즘</a>
+                            &quot;,</span></span><br />
+                    <span style="font-size: 14px;">한국정보과학회 2012 한국컴퓨터종합학술대회 2012년 6월.</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">홍순원, 최 린,</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&quot;<a
+                            href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3041&amp;sid=c5570c463860eb4567bca326e69efb0f&amp;module_srl=1026">스마트폰을
+                            이용한 꽃 자동 인식 시스템</a>
+                        &quot;,</span><br />
+                    <span style="font-size: 14px;">한국정보과학회 2011 한국컴퓨터종합학술대회 논문집 Vol.38, No.1(A), pp 462~465, 2011년
+                        6월.</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">홍기섭, 최 린,</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&quot;<a
+                            href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3038&amp;sid=6168b3a041db2ff233b522f8f8d02b13&amp;module_srl=1026">모바일
+                            센서 네트워크를 위한 방향성 비순환 그래프 기반의 다중경로 라우팅 프로토콜</a>
+                        &quot;,</span><br />
+                    <span style="font-size: 14px;">대한전자공학회 2011 하계종합학술대회 논문집 Vol.34, No.1, pp 1441~1444, 2011년
+                        6월.</span>
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">배용수, 최 린,</span><br />
+                    <span style="font-size: 14px;">&quot;센서 네트워크를 위한 저전력 RF Wakeup 회로 설계&quot;,</span><br />
+                    <span style="font-size: 14px;">제 21회 통신정보 합동학술대회 (JCCI 2011) 논문집, 2011년 5월.</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">이상훈, 최 린,</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&quot;</span>
+                    <a
+                        href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3053&amp;sid=7d49648f54e530141e28b4a7fa8139ac&amp;module_srl=1026">
+                        <span style="font-size: 14px;">비동기식 스케줄링 기반 센서 네트워크를 위한 반응형 클록 동기화 기법</span></a>
+                    <span style="font-size: 14px;">
+                        &quot;</span><span style="font-size: 14px;">,</span><br />
+                    <span style="font-size: 14px;">한국정보과학회 2010 한국컴퓨터종합학술대회 논문집 Vol.37, No.1(A), pp 228~229, 2010년
+                        6월.</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">홍기섭, 이상훈, 최 린,</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&quot;<a
+                            href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3052&amp;sid=2891740f7b505cc6a7c66233adeb76bf&amp;module_srl=1026">모바일
+                            센서 네트워크를 위한 트래픽 적응형 라우팅 프로토콜</a>
+                        &quot;,</span><br />
+                    <span style="font-size: 14px;">한국정보과학회 2010 한국컴퓨터종합학술대회 논문집 Vol.37, No.1(A), pp 202~203, 2010년
+                        6월.</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">박진영, 최 린,</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&quot;<a
+                            href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3056&amp;sid=b3549bd9fa553f59994540403d498fb3&amp;module_srl=1026">A
+                            Preliminary Study on a Cache Coherence Protocol for Multi-Core Processors with
+                            Ring Interconnects</a>
+                        &quot;,</span><br />
+                    <span style="font-size: 14px;">한국정보과학회 2008 한국컴퓨터종합학술대회 논문집 Vol.35, No.1(A), pp 303~304, 2008년
+                        6월.</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">최재영, 최 린,</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&quot;<a
+                            href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3058&amp;sid=b3a6e78dd4d3b7f57466ce97dfebd9f2&amp;module_srl=1026">Preliminary
+                            Study on On-Chip Interconnect Architecture for Multi-Core Processors</a>
+                        &quot;,</span><br />
+                    <span style="font-size: 14px;">한국정보과학회 2008 한국컴퓨터종합학술대회 논문집 Vol.35, No.1(B), pp 405~410, 2008년
+                        6월.</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">장재혁, 최 린,</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&quot;<a
+                            href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3055&amp;sid=c2200c1f05e3849c7ae330c9c3ab8e5c&amp;module_srl=1026">A
+                            Performance Analysis of AODV in Sensor Network</a>
+                        &quot;,</span><br />
+                    <span style="font-size: 14px;">2007년도 한국정보과학회 가을 학술발표논문집 Vol.34, No.2(B), pp 423~428, 2007년
+                        10월.</span>
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">정재균, 최 린,</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&quot;
+                        <a
+                            href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3057&amp;sid=a5ec2542c9a178acaf95c3a35e7a3e49&amp;module_srl=1026">GPS-based
+                            V-Geocast Routing Protocol for Mobile Sensor Networks</a>
+                        &quot;,</span><br />
+                    <span style="font-size: 14px;">2007년도 한국정보과학회 가을 학술발표논문집 Vol.34, No.2(D), pp 372~375, 2007년
+                        10월.</span>
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">이현준, 이상훈, 최 린,</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&quot;</span>
+                    <a
+                        href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3059&amp;sid=35816aa10687c69ecbcee66e70a23f28&amp;module_srl=1026">
+                        <span style="font-size: 14px;">SPEED-MAC Speedy and Energy Efficient Data
+                            Delivery MAC Protocol for Wireless Sensor Network</span></a>
+                    <span style="font-size: 14px;"></span><span style="font-size: 14px;">&quot;,</span><br />
+                    <span style="font-size: 14px;">2007년도 한국정보과학회 가을 학술발표논문집 Vol.34, No.2(D), pp 597~601, 2007년
+                        10월.</span>
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">김일관, 최 린,</span><br />
+                    <span style="font-size: 14px;">&quot;Instruction Set Extension and Hardware
+                        Support for Symmetric and Asymmetric Key Ciphers&quot;,</span><br />
+                    <span style="font-size: 14px;">IEEE Seoul Section 2003 학생 논문 경진 대회, 2003년 12월.</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">신상훈, 최 린,</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&quot;<a
+                            href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3061&amp;sid=a8e5f414db7d0850f335909cb6215261&amp;module_srl=1026">고성능
+                            내장형 마이크로프로세서의 분기 예측기 구현 및 성능 대비 비용 분석</a>
+                        &quot;,</span><br />
+                    <span style="font-size: 14px;">한국정보과학회 2003 추계 학술발표회 논문집, 2003년 10월.</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">김일관, 최 린,</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&quot;<a
+                            href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3062&amp;sid=f68624e755646b015c686e584bde1b22&amp;module_srl=1026">대칭
+                            및 비대칭 암호화 알고리즘 가속을 위한 명령어 집합 구조의 설계</a>
+                        &quot;,</span><br />
+                    <span style="font-size: 14px;">대한전자공학회 2003 하계 종합학술대회 논문집 Vol 26 ,No 1, pp 1343- 1346</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">허재성, 최 린,</span><br />
+                    <a href="http://it.korea.ac.kr/engine/file:///G:/APM_Setup/htdocs/research/publication/papers/hashing.pdf"
+                        style="color: rgb(255, 128, 0); text-decoration: none;">
+                        <span style="color: rgb(0, 0, 0); font-size: 14px;">&quot;Multi-level hashing을 사용한 Scalable
+                            Packet Classifiation 알고리듬 연구</span></a>
+                    <span style="font-size: 14px;">&quot;,</span><br />
+                    <span style="font-size: 14px;">대한전자공학회 2002 하계 종합학술대회 논문집 Vol 25 ,No 1, pp 113- 116</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">이상혁, 김일관, 최 린,</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&quot;<a
+                            href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3065&amp;sid=7d53de5b223ded71f7fc99069c10cbd1&amp;module_srl=1026">고성능
+                            내장형 마이크로프로세서를 위한 분기예측기의 설계 및 성능평가</a>
+                        &quot;,</span><br />
+                    <span style="font-size: 14px;">대한전자공학회 2002 하계 종합학술대회 논문집 Vol 25 ,No 1, pp 129- 132</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">김대건,이승진, 강경용, 최린, 강철희,</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&quot;<a
+                            href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3064&amp;sid=2b0ab16a858f8c2faec8ae10e2bfe1b9&amp;module_srl=1026">계층
+                            구조의 Deck을 갖는 HTML Filter 구현 방안</a>
+                        &quot;,</span><br />
+                    <span style="font-size: 14px;">대한전자공학회, 대한전자공학회 2001 하계 종합학술대회</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">이승진, 김대건, 최린, 강철희,</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    <span style="font-size: 14px;">&quot;<a
+                            href="http://it.korea.ac.kr/engine/?module=file&amp;act=procFileDownload&amp;file_srl=3066&amp;sid=a8a07938c1be8828bb4d7af174937736&amp;module_srl=1026">확장성
+                            있는 웹 서비스를 위한 무선 응용 프로토콜 기반의 HTML Filter 구현</a>
+                        &quot;,</span><br />
+                    <span style="font-size: 14px;">한국정보과학회 봄 학술발표 논문집, Vol.28, No.1,pp.391-393, 2001</span></p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;
+                </p>
+
+                <p align="left" style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;">
+                    &nbsp;
+                </p>
+            </div>
+        </div>
+
+        <div id="div1"></div>
+
+            </div>
+        </div>
+        <!-- Team End -->
+
+         <!-- footer 영역 -->
+         <div lang="en" class="row d-flex align-items-center" style="height: 17rem; background-color: #1E1E1E;">
+            <div class="col" ></div>
+            <div lang="en" class="col-9 " lang="ko" >
+                <hr style="color: #FFFFFF; border-width: 2px;">    
+            <h3 style="color: rgb(255, 255, 255); text-align: left;">
+                COMPUTER SYSTEM LAB</h3>
+            <p style="text-align: left; color: #FFFFFF;">Industry-Academy Building 236, Korea
+                University, 145 Anam-ro, Seongbuk-gu, Seoul, Republic of Korea. 02841
+                <br>Professor : lchoi@korea.ac.kr · swj8905@korea.ac.kr
+                <br> Tel : +82-2-3290-3896
+                </p>
+           
+            </div>
+            <div class="col"></div>
+        </div>
+
+    
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top">
+            <i class="bi bi-arrow-up"></i>
+        </a>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+        <script
+            src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+        <script
+            src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+
+        <!-- Template Javascript -->
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    </body>
+
+</html>
