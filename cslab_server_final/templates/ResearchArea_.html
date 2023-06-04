@@ -1,350 +1,431 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>고려대학교 컴퓨터시스템 연구실</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='mark.ico') }}">
 
-<head>
-    <meta charset="utf-8">
-    <title>고려대학교 컴퓨터시스템 연구실</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+            crossorigin="anonymous">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+        <style>
+            body {
+                position: relative;
+            }
+            :lang(en) {
+                font-family: 'Open-sans';
+                /* English font */
+            }
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
-        rel="stylesheet">
+            :lang(ko) {
+                font-family: 'Pretendard-Regular';
+                src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format('woff');
+                /* Korean font */
+            }
+            .dropdown .btn::after {
+                display: none;
+            }
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+            .dropdown-toggle-no-caret::after {
+                display: none !important;
+            }
 
-    <!-- Libraries Stylesheet -->
-    <link
-        href="{{ url_for('static', filename='lib/animate/animate.min.css') }}"
-        rel="stylesheet">
-    <link
-        href="{{ url_for('static', filename='lib/animate/animate.css') }}"
-        rel="stylesheet">
+            .nav-item:hover .nav-link {
+                color: #7C001A;
+                /* 원하는 색상으로 변경 */
+            }
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
-        rel="stylesheet">
+            .dropdown .btn::after {
+                display: none;
+            }
 
-    <!-- Template Stylesheet -->
-    <link href="{{ url_for('static', filename='css/style.css') }}"
-        rel="stylesheet">
-</head>
+            .btn-custom-size {
+                margin-top: 1rem;
+                width: 90%;
+                height: 4rem;
+                font-size: 19px;
+                line-height: 3rem;
+                text-align: center;
+                font-weight: bold;
+            }
 
-<body>
-    <!-- Spinner Start -->
-    <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    <!-- Spinner End -->
+            .btn-custom-size1 {
+                margin-top: 1rem;
+                width: 90%;
+                height: 9rem;
+                font-size: 18px;
+                line-height: 7rem;
+                text-align: center;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 카테고리 영역 시작 -->
+        <nav
+            class="navbar navbar-expand-lg bg-white "
+            aria-label="Eighth navbar example"
+            style="height: 10rem;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);">
+            <div class="container d-flex align-items-center">
+                <a class="navbar-brand " href="#">
+                    <div class="container h-100">
+                        <img
+                            href="/"
+                            src="../static/img/mark_.png"
+                            class="rounded float-start"
+                            alt="..."
+                            style="width: 5rem;height: 5rem; padding-right: 20px;">
+                        <h1 href="/" style="color:#262626; font-weight: bold;">CS LAB</h1>
+                        <p href="/" style="font-size: small;">COMPUTER SYSTEM LAB</p>
+                    </div>
+                </a>
+                <button
+                    class="navbar-toggler"
+                    style="background-color: #F9F9F9;"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarsExample07"
+                    aria-controls="navbarsExample07"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarsExample07">
+                    <ul class="navbar-nav" style="font-weight: bold;">
+                        <li class="nav-item" style="padding-right: 1.5rem;padding-top:1rem;">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
 
-    <!--nav-bar-->
-    <section style="height: 135px; border: none; display: flex; align-items: center; font-family: 'Open-sans'; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);">
-        <div class="logo" style="padding-left: 13%;">
-            <a href="/">
-                <img src="{{ url_for('static', filename='img/mark.png') }}"
-                    alt="School Logo" style="width: 80px; height: 90px; margin-right: 20px; border: none;">
-            </a>
-        </div>
-        <div style="padding-right: 20%;">
-            <h2 style="font-size: 50px; font-weight: bold; font-family: 'Open-sans';">
-                <a href="/" style="text-decoration: none; color: #000000;">CS LAB</a>
-            </h2>
-            <h5 style="font-size: 16px; font-family: 'Open-sans'; margin-top: -10px;">
-                <a href="/" style="text-decoration: none; color: #000000;">COMPUTER SYSTEM LAB</a>
-            </h5>
-        </div>
+                        <li class="nav-item dropdown" style="padding-right: 1.5rem;padding-top:1rem;">
+                            <a
+                                class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                                href="#"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">Research</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="/research">Research Area</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/project">Projects</a>
+                                </li>
+                            </ul>
+                        </li>
 
-        <ul class="nav nav-tabs" style="margin-right: 100px">
-            <!-- <div class="logo ">
-            <p>computer</p>
-        </div> -->
-            <li class="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false" style="color: #000000;">Research</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/research">Research Area</a>
-                    <a class="dropdown-item" href="/project">Projects</a>
+                        <li class="nav-item" style="padding-right: 1.5rem; padding-top:1rem;">
+                            <a class="nav-link active" aria-current="page" href="/professor">Professor</a>
+                        </li>
+
+                        <li class="nav-item dropdown" style="padding-right: 1.5rem;padding-top:1rem;">
+                            <a
+                                class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                                href="#"
+                                data-bs-toggle="dropdown dropdown-toggle-no-caret"
+                                aria-expanded="false">People</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="/members">Current members</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/alumni">Alumni</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown" style="padding-right: 1.5rem;padding-top:1rem;">
+                            <a
+                                class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                                href="#"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">Publications</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="/journal">Journals</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/conference">Conferences</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/patent">Patents</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown" style="padding-right: 1.5rem;padding-top:1rem;">
+                            <a
+                                class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                                href="#"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">Courses</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="/undergraduate">Undergraduate Courses</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/graduate">Graduate Courses</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown" style="padding-top:1rem;">
+                            <a
+                                class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                                href="#"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">Boards</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="/undergraduate">notice</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/graduate">News</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false">Professor</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/professor">Professor</a>
+            </nav>
+            <!-- 카테고리 영역 끝 -->
+
+            <!-- Introduction -->
+            <div
+                class="row"
+                style="height: 40rem; margin-top: 8rem; padding-left: 5rem;padding-right: 5rem;">
+                <div class="col-3"></div>
+                <div class="col-6" style="text-align: center;">
+                    <h2 style="font-weight: bold; color: #7C001A; margin-bottom: 3rem;">
+                        Introduction<br></h2>
+                    <h2 lang="ko" style="margin-bottom: 3rem; font-weight: bold;">고려대학교 컴퓨터시스템 연구실</h2>
+                    <p lang="ko" style="text-align: left;">
+                        고려대학교 컴퓨터시스템 연구실은 IoT, 실내 위치 인식, 무선 애드 혹 저전력 통신 프로토콜, 멀티코어 CPU 칩 설계 등 컴퓨터 시스템
+                        전반에서의 다양한 아키텍처 및 알고리즘 분야를 폭넓게 연구하고 있다.<br></p>
+
+                    <p lang="ko" style="text-align: left;">
+                        본 연구실의 지도 교수인 최린 교수는 Intel 사에서 고성능 64 비트 마이크로프로세서인 Itanium 프로세서 개발 팀에서 코어 파이프라인의
+                        설계 및 검증을 다 년간 수행한 개발 경험이 있으며 University of Illinois at Urbana-Champaign 대학 및
+                        University of California at Irvine 대학에서 슈퍼컴퓨터, 병렬 프로세서 구조, 병렬 컴파일러, 고성능 마이크로프로세서
+                        구조 연구 등 컴퓨터 시스템 분야에서의 연구 및 개발 경험을 바탕으로 연구를 지도해 나가고 있다. 본 연구실에서 현재 수행하고 있는 연구 내용은
+                        다음과 같다.</p>
+                    <hr
+                        justify-content-center="justify-content-center"
+                        style="align-items: center;margin-top: 5rem;margin-bottom: 0rem;">
+
                 </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false">People</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/members">Current members</a>
-                    <a class="dropdown-item" href="/alumni">Alumni</a>
+                <div class="col-3"></div>
+            </div>
+
+
+            <!-- 자동 스크롤 버튼 -->
+            <div class="custom_container">
+                <h2
+                    style="color: #7C001A; font-weight: bold; text-align: center;">Research</h2>
+                <h4
+                    style="color: #7E7E7E; font-weight: bold; text-align: center; margin-top: 0.5rem;margin-bottom: 5rem;">Computer Systems Lab Research</h4>
+
+                <div class="row justify-content-center" style="margin-bottom:1rem;">
+                    <div class="col-3 justify-content-center">
+                        <button
+                            onclick="scrollToSection('section1')"
+                            style="width:100%;height:15rem; max-width: 100%; max-height:20rem; border:none; border-radius: 30px;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);background-color:white; font-weight:bold;font-size:21px;">실내 위치 인식 알고리즘</button>
+                    </div>
+                    <div class="col-3 justify-content-center">
+                        <button
+                            onclick="scrollToSection('section2')"
+                            style="width:100%;height:15rem; max-width: 100%; max-height:20rem; border:none; border-radius: 30px;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);background-color:white; font-weight:bold;font-size:21px;">무선 센서 네트워크에서의<br>
+                            저전력 고성능 통신 프로토콜 연구</button>
+                    </div>
                 </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false">Publications</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/journal">Journals</a>
-                    <a class="dropdown-item" href="/conference">Conferences</a>
-                    <a class="dropdown-item" href="/patent">Patents</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false">Courses</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/undergraduate">Undergraduate Courses</a>
-                    <a class="dropdown-item" href="/graduate">Graduate Courses</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false">Boards</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/undergraduate">notice</a>
-                    <a class="dropdown-item" href="/graduate">News</a>
-                </div>
-            </li>
-
-        </ul>
-    </section>
-    <!--nav-bar-->
-
-
-    <!-- Main Start -->
-    <div style="margin-top: 7%;">
-        <div class="justify-content-center align-items-center text-center"
-            style=" margin: 0 auto; font-family: 'Pretendard-Regular';
-            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');">
-            <h1 style="font-weight: bold;font-family: 'Open-sans'; color: #7C001A; margin-bottom: 50px;">
-                Introduction<br></h1>
-            <h2 style="margin-bottom: 50px;">고려대학교 컴퓨터시스템 연구실</h2>
-            <div class="col-md-8 col-8 col-lg-10"
-                style="align-items: center; margin: 0 auto; font-size: 18px; text-align: left; padding: 25px; width: 50%;">
-                <p>
-                    고려대학교 컴퓨터시스템 연구실은 IoT, 실내 위치 인식, 무선 애드 혹 저전력 통신 프로토콜, 멀티코어 CPU 칩 <br>설계 등 컴퓨터 시스템
-                    전반에서의 다양한 아키텍처 및 알고리즘 분야를 폭넓게 연구하고 있다.<br></p>
-
-                <p> 본 연구실의 지도 교수인 최린 교수는 Intel 사에서 고성능 64 비트 마이크로프로세서인 Itanium 프로세서 개발 팀에서 코어 파이프라인의
-                    설계 및 검증을 다 년간 수행한 개발 경험이 있으며 University of Illinois at Urbana-Champaign 대학 및
-                    University of California at Irvine 대학에서 슈퍼컴퓨터, 병렬 프로세서 구조, 병렬 컴파일러, 고성능 마이크로프로세서
-                    구조 연구 등 컴퓨터 시스템 분야에서의 연구 및 개발 경험을 바탕으로 연구를 지도해 나가고 있다. 본 연구실에서 현재 수행하고 있는 연구 내용은
-                    다음과 같다.</p>
-                <hr justify-content-center style="align-items: center;margin-top: 125px;margin-bottom: 25px;">
-
-            </div>
-            <h1
-                style="font-weight: bold;font-family: 'Open-sans'; color: #7C001A; margin-top: 50px;margin-bottom: 100px;">
-                Research<br></h1>
-        </div>
-
-
-        <!-- 1. 실내 위치 인식 알고리즘 -->
-        <div class="text-center wow fadeInUp " data-wow-delay="0.6s"
-            style=" background-color: rgb(249, 249, 249); padding-top: 100px; padding-bottom: 100px;">
-            <!-- <h6 class="section-title bg-white text-center text-primary px-3 "
-        style="margin-top: 100px; font-color: #00143A; ;">COMPUTERSYSTEMLAB</h6> -->
-            <h1 style="display: inline-block; color: #F3DADA;">01</h1>&nbsp;&nbsp;&nbsp;&nbsp;<h2
-                style="display: inline-block; color:#7C001A;">실내 위치 인식 알고리즘</h2>
-
-            <div class="col-md-8 col-8 col-lg-10"
-                style="display: flex; align-items: center; font-size: 18px; margin: 0 auto; padding: 25px; width: 50%; text-align: left;">
-                <!-- <img src="{{ url_for('static', filename='img/mark.png') }}"
-                    alt="School Logo"
-                    style="width: 80px; height: 100px; margin-right: 20px; border: none; text-align: left;"> -->
-                <p>
-                    실외 환경과는 달리 실내 환경에서는 GPS 수신이 불가능하여 위치 기반 서비스가 아직 상용화되지 못 하고 있습니다. 현재 실내 위치 인식에는 WiFi AP나 블루투스 비콘의 전파
-                    신호
-                    세기를
-                    활용한 지문인식과 삼각 측량 방법이 주로 사용되며, 스마트폰의 모션 센서를 이용한 보행자 추측 항법(PDR), 지자기 센서를 활용하여 자기장 세기를 측정하고 자기장 맵을
-                    구성하여 위치를 추정하는 자기장 기반 위치 인식 등 다양한 방법이 시도되고 있습니다. 그러나 RF 신호의 불안정성으로 인해 전파 신호 기반 위치 인식의 오차가 여전히 상당하게
-                    나타나고 있습니다.</p>
-            </div>
-
-            <div class="col-md-8 col-8 col-lg-10"
-                style="display: flex; align-items: center; font-size: 18px; margin: 0 auto; padding: 25px; width: 50%;text-align: left;">
-                <!-- <img src="{{ url_for('static', filename='img/mark.png') }}"
-                    alt="School Logo"
-                    style="width: 80px; height: 100px; margin-right: 20px; border: none; text-align: left;"> -->
-                <p>
-                    따라서 본 연구실은 실내 위치 인식과 관련하여 기존의 지문인식 기술과, PDR, 그리고 자기 장 기반 위치 인식은 물론, 서버 중심의 서비스를 위해 '역 지문인식'이라는 새로운
-                    알고리즘을 제안하고 있습니다. 지문인식 기술, PDR, 자기장 기반 위치 인식과 함께 이
-                    알고리즘을 활용하여 인식 오차를 줄이기 위한 다양한 알고리즘과 실험을 진행하고 있습니다. 이러한 위치 인식 알고리즘은 연구재단의 X 프로젝트와 현대엘리베이터의 실내 위치 인식
-                    시스템 구현에 적용되고 있으며, 앞으로 1~2년 이내에 상용화 수준의 실내 위치 인식 시스템을 개발하고 구현하는 데 주력하고 있다.</p>
-            </div>
-        </div>
-
-
-        <!-- 2. 무선 센서 네트워크에서의 저전력 고성능 통신 프로토콜 연구 -->
-        <div class="text-center wow fadeInUp " data-wow-delay="0.7s"
-            style=" background-color: rgb(255, 255, 255); padding-top: 100px; padding-bottom: 100px;">
-            <!-- <h6 class="section-title bg-white text-center text-primary px-3 "
-        style="margin-top: 100px; font-color: #00143A; ;">COMPUTERSYSTEMLAB</h6> -->
-            <h1 style="display: inline-block; color: #F3DADA;">02</h1>&nbsp;&nbsp;&nbsp;&nbsp;<h2
-                style="display: inline-block; color:#7C001A;">무선 센서 네트워크에서의 저전력 고성능 통신 프로토콜 연구</h2>
-            <div class="col-md-8 col-8 col-lg-10"
-                style="display: flex; align-items: center; font-size: 18px; margin: 0 auto; padding: 25px; width: 50%;text-align: left;">
-                <img src="{{ url_for('static', filename='img/2_11.png') }}"
-                    alt="School Logo"
-                    style="width: 350px; height: 300px; margin-right: 20px; border: none; text-align: left;">
-                <p>
-                    미래의 IoT 및 유비쿼터스 컴퓨팅 시대에는 저렴한 센서 노드들이 협력하여 자율적인 무선 네트워크를 구축하고 정보를 교환하여 군사, 교통, 의료, 산악, 해양 등 다양한 환경에서
-                    새로운 응용 서비스를 제공할 것으로 예측됩니다. 센서 노드들은 일반적으로 배터리를 전력 공급원으로 사용하며 전체 에너지 소비 중 무선 통신이 가장 큰 비중을 차지하기 때문에
-                    효율적인 통신 방법에 대한 연구가 활발히 진행되고 있습니다. 본 연구팀은 이러한 문제를 해결하기 위해 기존의 센서 네트워크 프로토콜과 비교하여 2배 이상의 성능 향상과 2배에서
-                    10배 이상의 에너지 절감을 가능하게 하는 VSR, TAR, AMAC, SPEEDMAC, ZEROMAC 등의 새로운 무선 MAC 및 라우팅 통신 프로토콜을 제안하였습니다.</p>
-            </div>
-
-            <div class="col-md-8 col-8 col-lg-10"
-                style="display: flex; align-items: center; font-size: 18px; margin: 0 auto; padding: 25px; width: 50%;text-align: left;">
-                <!-- <img src="{{ url_for('static', filename='img/2_2.png') }}"
-                    alt="School Logo"
-                    style="width: 300px; height: 300px; margin-right: 20px; border: none; text-align: left;"> -->
-                <p>
-                    VSR은 Virtual Sink Rotation의 약자로 이동 싱크 노드를 가진 센서 네트워크에서 전체 네트워크의 에너지 소비를 줄이고 싱크 노드 주위의 에너지 집중 현상을
-                    해결하기 위한 라우팅 프로토콜입니다. VSR은 일반 센서 노드를 싱크 노드 대신하는 가상 싱크로 지정함으로써 싱크 노드의 이동을 효과적으로 지원하며 가상 싱크 회전 기술을 통해
-                    네트워크 내의 에너지 소비를 분산시킬 수 있습니다. AMAC은 기존의 센서 네트워크 MAC 사이클 시간 기법을 활용하여 전송 경로상의 노드들이 고-duty 사이클과 저-duty
-                    사이클을 가지도록 하여 저전력 고성능 MAC 프로토콜을 구현합니다. SPEEDMAC은 전력 소비를 최소화하고 실시간 통신을 가능하게 하는 고속 WSN 데이터 전송 프로토콜로, 노드
-                    간의 wake up 시간을 왜곡시켜 다중 홉 네트워크에서의 전송 지연을 최소화합니다. ZEROMAC은 RF watchdog 센서를 사용하여 휴면 상태에서도 통신 유무를 확인하여
-                    유휴 청취와 휴면 지연 문제를 해결합니다. 이를 기반으로 zero idle listening 및 zero sleep delay 성능을 제공하는 저전력/고성능 비동기식 무선 센서
-                    네트워크 프로토콜인 ZEROMAC이 개발되었습니다.</p>
-            </div>
-        </div>
-
-        <!-- 3. 방화벽 및 라우터에서의 고속 패킷 분류 알고리즘 연구 -->
-        <div class="text-center wow fadeInUp " data-wow-delay="0.8s"
-            style=" background-color: rgb(249, 249, 249); padding-top: 100px; padding-bottom: 100px;text-align: left;">
-            <!-- <h6 class="section-title bg-white text-center text-primary px-3 "
-        style="margin-top: 100px; font-color: #00143A; ;">COMPUTERSYSTEMLAB</h6> -->
-            <h1 style="display: inline-block; color: #F3DADA;">03</h1>&nbsp;&nbsp;&nbsp;&nbsp;<h2
-                style="display: inline-block; color:#7C001A;">방화벽 및 라우터에서의 고속 패킷 분류 알고리즘 연구</h2>
-            <div class="col-md-8 col-8 col-lg-10"
-                style="display: flex; align-items: center; font-size: 18px; margin: 0 auto; padding: 25px; width: 50%;text-align: left;">
-                <img src="{{ url_for('static', filename='img/3_1.png') }}"
-                    alt="School Logo"
-                    style="width: 350px; height: 300px; margin-right: 20px; border: none; ">
-                <p>
-                    인터넷에서의 모든 트래픽은 라우팅, 보안, 서비스 품질 개선 등을 이유로 개개의 패 킷 별로 감시되고 통제된다. 이를 위해 학교나 회사 등 기관은 물론, 개인용 컴퓨터에 이르기까지
-                    자체 네트워크로 출입되는 모든 패킷을 검사하여 정의된 규칙에 따라 패 킷의 출입을 통제하는 알고리즘을 패킷 분류 알고리즘이라 하며 이는 방화벽은 물론 라우터, 스위치, 가상 사설
-                    망 (VPN) 등 다양한 네트워크장비에 필수적인 기능이다. 10 Gbps 급 이상의 고속의 인터넷 장비에서 출입되는 모든 패킷을 실시간으로 분류 하기 위해서는 고속의 패킷 분류
-                    알고리즘이 필수적이다.</p>
-            </div>
-
-            <div class="col-md-8 col-8 col-lg-10"
-                style="display: flex; align-items: center; font-size: 18px; margin: 0 auto; padding: 25px; width: 50%;text-align: left;">
-                <!-- <img src="{{ url_for('static', filename='img/mark.png') }}"
-                    alt="School Logo"
-                    style="width: 80px; height: 100px; margin-right: 20px; border: none; text-align: left;"> -->
-                <p>
-                    본 연구팀은 “Entropy Hashing을 이용한 확장 가능한 패킷 분류 알고리즘”을 발명하 였으며 이 기술은 분류 규칙의 수가 약 2 만개 정도에서 머물러 있던 기존 패킷 분류
-                    알고리즘의 성능을 100배 이상 향상시켜 100 만개 이상의 분류 규칙을 지닌 초대형 룰 베이스에서도 효과적으로 동작할 수 있게 하는 기술이다. 본 연구팀은 이 기술과 관련하여
-                    (주)삼성전자 종합기술원과 국내 및 국제 특허 공동 출원 계약을 체결하였 고 현재 국내 및 미국 특허를 출원하였다.</p>
-            </div>
-        </div>
-
-
-        <!-- 4. 버퍼 오버플로우 공격의 차단 및 복구를 위한 안전한 프로세서 마이크 로구조 연구 -->
-        <div class="text-center wow fadeInUp " data-wow-delay="0.9s"
-            style=" background-color: rgb(255, 255, 255); padding-top: 100px; padding-bottom: 100px;text-align: left;">
-            <!-- <h6 class="section-title bg-white text-center text-primary px-3 "
-        style="margin-top: 100px; font-color: #00143A; ;">COMPUTERSYSTEMLAB</h6> -->
-            <h1 style="display: inline-block; color: #F3DADA;">04</h1>&nbsp;&nbsp;&nbsp;&nbsp;<h2
-                style="display: inline-block; color:#7C001A;">버퍼 오버플로우 공격의 차단 및 복구를 위한 안전한 프로세서 마이크 로구조 연구</h2>
-            <div class="col-md-8 col-8 col-lg-10"
-                style="display: flex; align-items: center; font-size: 18px; margin: 0 auto; padding: 25px; width: 50%;text-align: left;">
-                <!-- <img src="{{ url_for('static', filename='img/mark.png') }}"
-                    alt="School Logo"
-                    style="width: 80px; height: 100px; margin-right: 20px; border: none; text-align: left;"> -->
-                <p>
-                    버퍼 오버플로우 취약성을 통한 악성 코드 공격은 1988년 모리스 웜을 시작으로 최 근의 Code Red I, II, SQL Slammer, W32 Blaster에 이르기까지 가장
-                    자주 발생하 는 유형의 악성 코드 공격이다. 또한, 컴퓨터 사용자와의 상호작용 없이 독립적으로 시스템에 침입할 수 있고 SQL Slammer의 예와 같이 30분 이내에 전 세계의
-                    인터넷 망을 마비시킬 수 있는 매우 빠른 전파 속도를 가지기 때문에 기존의 Anti-Virus 소프 트웨어로의 처리가 불가능한 가장 치명적인 형태의 보안 위협이다.</p>
-            </div>
-
-            <div class="col-md-8 col-8 col-lg-10"
-                style="display: flex; align-items: center; font-size: 18px; margin: 0 auto; padding: 25px; width: 50%;text-align: left;">
-                <!-- <img src="{{ url_for('static', filename='img/mark.png') }}"
-                    alt="School Logo"
-                    style="width: 80px; height: 100px; margin-right: 20px; border: none; text-align: left;"> -->
-                <p>
-                    본 연구팀은 기존의 알려진 Worm 뿐만 아니라 새로운 형태의 악성 코드 공격까지 프로세서 하드웨어가 자체적으로 시스템을 진단하여 공격을 감지, 악성코드의 실행을 저지시키고 더
-                    나아가서 버퍼 오버플로우 공격으로 훼손된 데이터를 복구하여 주는 안전한 프로세서 마이크로 구조를 제안하였다. 또한 이 연구와 관련하여 국내 특허는 물론 대학 산업기술지원단
-                    (UNITEF)의 지원을 받아 미국, 일본 및 유럽 등 해외 29개 국에 특허 출원 중이며 2005년 대한민국기술이전박람회에 출품되어 전시되었고 2006년 KOTRA에서 주관하는
-                    해외기술수출입 사업에 선정되어 해외 기술이전 및 상용화를 진행 중에 있다. 최린 교수는 본 연구와 관련하여 2006년도 정보과학회 가 헌학술상을 수상하였다.</p>
-            </div>
-        </div>
-    </div>
-    <!-- main End -->
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer pt-5 pb-5 wow fadeIn" data-wow-delay="0.17s">
-        <div class="container">
-            <hr style="color: #FFFFFF;">
-            <div class="container px-4 text-white" style="color: azure;">
-                <h3 style="color: rgb(255, 255, 255); text-align: left;">
-                    COMPUTER SYSTEM LAB</h3>
-                <p style="text-align: left; color: #FFFFFF;">
-                    <i class="fa fa-map-marker-alt me-3"></i>Industry-Academy Building 236, Korea
-                    University, 145 Anam-ro, Seongbuk-gu, Seoul, Republic of Korea. 02841
-                    <br>
-                    <i class="fa fa-envelope me-3"></i>Professor : lchoi@korea.ac.kr · swj8905@korea.ac.kr
-                    <br>
-                    <i class="fa fa-phone-alt me-3"></i>
-                    Tel : +82-2-3290-3896
-                </p>
-                <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href="">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a class="btn btn-outline-light btn-social" href="">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a class="btn btn-outline-light btn-social" href="">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                    <a class="btn btn-outline-light btn-social" href="">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
+                <div class="row justify-content-center" style="margin-bottom:3rem;">
+                    <div class="col-3 justify-content-center">
+                        <button
+                            onclick="scrollToSection('section3')"
+                            style="width:100%;height:15rem; max-width: 100%; max-height:20rem; border:none; border-radius: 30px;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);background-color:white; font-weight:bold;font-size:21px;">방화벽 및 라우터에서의<br>
+                            고속 패킷 분류 알고리즘 연구</button>
+                    </div>
+                    <div class="col-3 justify-content-center">
+                        <button
+                            onclick="scrollToSection('section4')"
+                            style="width:100%;height:15rem; max-width: 100%; max-height:20rem; border:none; border-radius: 30px;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);background-color:white; font-weight:bold;font-size:21px;">버퍼 오버플로우 공격 차단 및 복구를 위한
+                            <br>안전한 프로세서 마이크로구조 연구</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- Footer End -->
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top">
-        <i class="bi bi-arrow-up"></i>
-    </a>
+            <!-- 01 -->
+            <section id="section1">
+                <div
+                    class="row"
+                    style=" background-color: white; padding-top: 5rem; ">
+                    <div class="col-3"></div>
+                    <div class="col-6" style="margin-top: 4rem; margin-bottom:5rem;">
+                        <h4
+                            style="color: #7E7E7E; font-weight: bold; text-align: center; margin-bottom: 0.5rem;">Research.1</h4>
+                        <h3 lang="ko"
+                            style="color: #7C001A; font-weight: bold; text-align: center; margin-bottom: 5rem;">실내 위치 인식 알고리즘</h3>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script
-        src="{{ url_for('static', filename='lib/wow/wow.min.js') }}">
-    </script>
-    <script
-        src="{{ url_for('static', filename='lib/easing/easing.min.js') }}">
-    </script>
-    <script
-        src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}">
-    </script>
-    <script
-        src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}">
-    </script>
+                        <div class="container" style="display: flex; justify-content: center;">
+                            <p style="padding-bottom: 2rem;">
+                                실외 환경과는 달리 실내 환경에서는 GPS 수신이 불가능하여 위치 기반 서비스가 아직 상용화되지 못 하고 있습니다. 현재 실내 위치 인식에는
+                                WiFi AP나 블루투스 비콘의 전파 신호 세기를 활용한 지문인식과 삼각 측량 방법이 주로 사용되며, 스마트폰의 모션 센서를 이용한 보행자 추측
+                                항법(PDR), 지자기 센서를 활용하여 자기장 세기를 측정하고 자기장 맵을 구성하여 위치를 추정하는 자기장 기반 위치 인식 등 다양한 방법이
+                                시도되고 있습니다. 그러나 RF 신호의 불안정성으로 인해 전파 신호 기반 위치 인식의 오차가 여전히 상당하게 나타나고 있습니다.</p>
+                        </div>
+                        <div class="container" style="display: flex; justify-content: center;">
+                            <p>
+                                따라서 본 연구실은 실내 위치 인식과 관련하여 기존의 지문인식 기술과, PDR, 그리고 자기 장 기반 위치 인식은 물론, 서버 중심의 서비스를
+                                위해 '역 지문인식'이라는 새로운 알고리즘을 제안하고 있습니다. 지문인식 기술, PDR, 자기장 기반 위치 인식과 함께 이 알고리즘을 활용하여
+                                인식 오차를 줄이기 위한 다양한 알고리즘과 실험을 진행하고 있습니다. 이러한 위치 인식 알고리즘은 연구재단의 X 프로젝트와 현대엘리베이터의 실내
+                                위치 인식 시스템 구현에 적용되고 있으며, 앞으로 1~2년 이내에 상용화 수준의 실내 위치 인식 시스템을 개발하고 구현하는 데 주력하고 있다.</p>
+                        </div>
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+            </section>
 
-    <!-- Template Javascript -->
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-</body>
+            <!-- 02 -->
+            <section id="section2">
+                <div class="row" style="padding-top: 5rem; ">
+                    <div class="col-3"></div>
+                    <div class="col-6" style="margin-top: 4rem; margin-bottom: 5rem;">
+                        <h4
+                            style="color: #7E7E7E; font-weight: bold; text-align: center; margin-bottom: 0.5rem;">Research.2</h4>
+                        <h3 lang="ko"
+                            style="color: #7C001A; font-weight: bold; text-align: center;margin-bottom: 5rem; ">무선 센서 네트워크에서의 저전력 고성능 통신 프로토콜 연구</h3>
 
-</html>
+                        <div class="container" style="display: flex; justify-content: center;">
+                            <img
+                                src="{{ url_for('static', filename='img/2_11.png') }}"
+                                alt="School Logo"
+                                style="width: 30rem; height: 10rem; margin-right: 20px; margin-bottom: 2rem;border: none; text-align: left;">
+                            <p style="padding-bottom: 2rem;">
+                                미래의 IoT 및 유비쿼터스 컴퓨팅 시대에는 저렴한 센서 노드들이 협력하여 자율적인 무선 네트워크를 구축하고 정보를 교환하여 군사, 교통,
+                                의료, 산악, 해양 등 다양한 환경에서 새로운 응용 서비스를 제공할 것으로 예측됩니다. 센서 노드들은 일반적으로 배터리를 전력 공급원으로
+                                사용하며 전체 에너지 소비 중 무선 통신이 가장 큰 비중을 차지하기 때문에 효율적인 통신 방법에 대한 연구가 활발히 진행되고 있습니다. 본
+                                연구팀은 이러한 문제를 해결하기 위해 기존의 센서 네트워크 프로토콜과 비교하여 2배 이상의 성능 향상과 2배에서 10배 이상의 에너지 절감을
+                                가능하게 하는 VSR, TAR, AMAC, SPEEDMAC, ZEROMAC 등의 새로운 무선 MAC 및 라우팅 통신 프로토콜을 제안하였습니다.</p>
+                        </div>
+                        <div class="container" style="display: flex; justify-content: center;">
+                            <p>VSR은 Virtual Sink Rotation의 약자로 이동 싱크 노드를 가진 센서 네트워크에서 전체 네트워크의 에너지 소비를 줄이고
+                                싱크 노드 주위의 에너지 집중 현상을 해결하기 위한 라우팅 프로토콜입니다. VSR은 일반 센서 노드를 싱크 노드 대신하는 가상 싱크로
+                                지정함으로써 싱크 노드의 이동을 효과적으로 지원하며 가상 싱크 회전 기술을 통해 네트워크 내의 에너지 소비를 분산시킬 수 있습니다. AMAC은
+                                기존의 센서 네트워크 MAC 사이클 시간 기법을 활용하여 전송 경로상의 노드들이 고-duty 사이클과 저-duty 사이클을 가지도록 하여 저전력
+                                고성능 MAC 프로토콜을 구현합니다. SPEEDMAC은 전력 소비를 최소화하고 실시간 통신을 가능하게 하는 고속 WSN 데이터 전송 프로토콜로,
+                                노드 간의 wake up 시간을 왜곡시켜 다중 홉 네트워크에서의 전송 지연을 최소화합니다. ZEROMAC은 RF watchdog 센서를 사용하여
+                                휴면 상태에서도 통신 유무를 확인하여 유휴 청취와 휴면 지연 문제를 해결합니다. 이를 기반으로 zero idle listening 및 zero
+                                sleep delay 성능을 제공하는 저전력/고성능 비동기식 무선 센서 네트워크 프로토콜인 ZEROMAC이 개발되었습니다.</p>
+                        </div>
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+            </section>
+
+            <!-- 03 -->
+            <section id="section3">
+                <div
+                    class="row"
+                    style="background-color: white;padding-top: 5rem; ">
+                    <div class="col-3"></div>
+                    <div class="col-6" style="margin-top: 4rem; margin-bottom: 5rem;">
+                        <h4
+                            style="color: #7E7E7E; font-weight: bold; text-align: center; margin-bottom: 0.5rem;">Research.3</h4>
+                        <h3 lang="ko"
+                            style="color: #7C001A; font-weight: bold; text-align: center;margin-bottom: 5rem; ">방화벽 및 라우터에서의 고속 패킷 분류 알고리즘 연구</h3>
+
+                        <div class="container" style="display: flex; justify-content: center;">
+                            <img
+                                src="{{ url_for('static', filename='img/3_1.png') }}"
+                                alt="School Logo"
+                                style="width: 30rem; height: 10rem; margin-right: 20px; margin-bottom: 2rem;border: none; ">
+                            <p style="padding-bottom: 2rem;">
+                                인터넷에서의 모든 트래픽은 라우팅, 보안, 서비스 품질 개선 등을 이유로 개개의 패 킷 별로 감시되고 통제된다. 이를 위해 학교나 회사 등
+                                기관은 물론, 개인용 컴퓨터에 이르기까지 자체 네트워크로 출입되는 모든 패킷을 검사하여 정의된 규칙에 따라 패 킷의 출입을 통제하는 알고리즘을
+                                패킷 분류 알고리즘이라 하며 이는 방화벽은 물론 라우터, 스위치, 가상 사설 망 (VPN) 등 다양한 네트워크장비에 필수적인 기능이다. 10
+                                Gbps 급 이상의 고속의 인터넷 장비에서 출입되는 모든 패킷을 실시간으로 분류 하기 위해서는 고속의 패킷 분류 알고리즘이 필수적이다.</p>
+                        </div>
+
+                        <div class="container" style="display: flex; justify-content: center;">
+                            <p>본 연구팀은 “Entropy Hashing을 이용한 확장 가능한 패킷 분류 알고리즘”을 발명하 였으며 이 기술은 분류 규칙의 수가 약 2
+                                만개 정도에서 머물러 있던 기존 패킷 분류 알고리즘의 성능을 100배 이상 향상시켜 100 만개 이상의 분류 규칙을 지닌 초대형 룰 베이스에서도
+                                효과적으로 동작할 수 있게 하는 기술이다. 본 연구팀은 이 기술과 관련하여 (주)삼성전자 종합기술원과 국내 및 국제 특허 공동 출원 계약을
+                                체결하였 고 현재 국내 및 미국 특허를 출원하였다.</p>
+                        </div>
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+
+            </section>
+
+            <!-- 04 -->
+            <section id="section4">
+                <div class="row" style="padding-top: 4rem; padding-bottom: 5rem;">
+                    <div class="col-3"></div>
+                    <div class="col-6" style="margin-top: 4rem; margin-bottom: 5rem;">
+                        <h4 lang="ko"
+                            style="color: #7E7E7E; font-weight: bold; text-align: center; margin-bottom: 0.5rem;">Research.4</h4>
+                        <h3
+                            style="color: #7C001A; font-weight: bold; text-align: center; margin-bottom: 5rem;">버퍼 오버플로우 공격의 차단 및 복구를 위한<br>안전한 프로세서 마이크로구조 연구</h3>
+                        <div class="container" style="display: flex; justify-content: center;">
+                            <p style="padding-bottom: 2rem;">
+                                버퍼 오버플로우 취약성을 통한 악성 코드 공격은 1988년 모리스 웜을 시작으로 최 근의 Code Red I, II, SQL Slammer,
+                                W32 Blaster에 이르기까지 가장 자주 발생하 는 유형의 악성 코드 공격이다. 또한, 컴퓨터 사용자와의 상호작용 없이 독립적으로 시스템에
+                                침입할 수 있고 SQL Slammer의 예와 같이 30분 이내에 전 세계의 인터넷 망을 마비시킬 수 있는 매우 빠른 전파 속도를 가지기 때문에
+                                기존의 Anti-Virus 소프 트웨어로의 처리가 불가능한 가장 치명적인 형태의 보안 위협이다.</p>
+                        </div>
+                        <div class="container" style="display: flex; justify-content: center;">
+                            <p>
+                                본 연구팀은 기존의 알려진 Worm 뿐만 아니라 새로운 형태의 악성 코드 공격까지 프로세서 하드웨어가 자체적으로 시스템을 진단하여 공격을 감지,
+                                악성코드의 실행을 저지시키고 더 나아가서 버퍼 오버플로우 공격으로 훼손된 데이터를 복구하여 주는 안전한 프로세서 마이크로 구조를 제안하였다.
+                                또한 이 연구와 관련하여 국내 특허는 물론 대학 산업기술지원단 (UNITEF)의 지원을 받아 미국, 일본 및 유럽 등 해외 29개 국에 특허
+                                출원 중이며 2005년 대한민국기술이전박람회에 출품되어 전시되었고 2006년 KOTRA에서 주관하는 해외기술수출입 사업에 선정되어 해외 기술이전
+                                및 상용화를 진행 중에 있다. 최린 교수는 본 연구와 관련하여 2006년도 정보과학회 가 헌학술상을 수상하였다.</p>
+                        </div>
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+            </section>
+
+            <!-- footer 영역 -->
+            <div
+                lang="en"
+                class="row d-flex align-items-center"
+                style="height: 17rem; background-color: #1E1E1E;">
+                <div class="col"></div>
+                <div lang="ko" class="col-9 ">
+                    <hr style="color: #FFFFFF; border-width: 2px;">
+                    <h3 style="color: rgb(255, 255, 255); text-align: left;">
+                        COMPUTER SYSTEM LAB</h3>
+                    <p style="text-align: left; color: #FFFFFF;">Industry-Academy Building 236,
+                        Korea University, 145 Anam-ro, Seongbuk-gu, Seoul, Republic of Korea. 02841
+                        <br>Professor : lchoi@korea.ac.kr · swj8905@korea.ac.kr
+                        <br>
+                        Tel : +82-2-3290-3896
+                    </p>
+
+                </div>
+                <div class="col"></div>
+            </div>
+
+            <script
+                src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+            <script
+                src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+                crossorigin="anonymous"></script>
+            <script
+                src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+                integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+                crossorigin="anonymous"></script>
+            <script
+                src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+                integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+                crossorigin="anonymous"></script>
+            <script>
+                function scrollToSection(sectionId) {
+                    var section = document.getElementById(sectionId);
+                    section.scrollIntoView({behavior: 'smooth'});
+                }
+            </script>
+        </body>
+    </html>
