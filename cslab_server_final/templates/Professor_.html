@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <title>고려대학교 컴퓨터시스템 연구실</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='mark.ico') }}">
+
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -39,6 +41,28 @@
         rel="stylesheet">
 
     <style>
+        :lang(en) {
+            font-family: 'Open-sans'; /* English font */
+        }
+
+        :lang(ko) {
+            font-family: 'Pretendard-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+         /* Korean font */
+        }
+        .dropdown .btn::after {
+            display: none;
+        }
+
+        .dropdown-toggle-no-caret::after {
+            display: none !important;
+        }
+
+        .nav-item:hover .nav-link {
+            color: #7C001A;
+            /* 원하는 색상으로 변경 */
+        }
+
         .line-container {
             position: relative;
             height: 420px;
@@ -91,91 +115,144 @@
     </div>
     <!-- Spinner End -->
 
-    <!--nav-bar-->
-    <section
-        style="height: 135px; border: none; display: flex; align-items: center; font-family: 'Open-sans'; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);">
-        <div class="logo" style="padding-left: 13%;">
-            <a href="/">
-                <img src="{{ url_for('static', filename='img/mark.png') }}"
-                    alt="School Logo" style="width: 80px; height: 90px; margin-right: 20px; border: none;">
-            </a>
-        </div>
-        <div style="padding-right: 20%;">
-            <h2 style="font-size: 50px; font-weight: bold; font-family: 'Open-sans';">
-                <a href="/" style="text-decoration: none; color: #000000;">CS LAB</a>
-            </h2>
-            <h5 style="font-size: 16px; font-family: 'Open-sans'; margin-top: -10px;">
-                <a href="/" style="text-decoration: none; color: #000000;">COMPUTER SYSTEM LAB</a>
-            </h5>
-        </div>
+     <!-- 카테고리 영역 시작 -->
+     <nav
+     class="navbar navbar-expand-lg bg-white "
+     aria-label="Eighth navbar example"
+     style="height: 10rem; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);">
+     <div class="container d-flex align-items-center">
+         <a class="navbar-brand " href="#">
+             <div class="container h-100">
+                 <img
+                     href="/"
+                     src="../static/img/mark_.png"
+                     class="rounded float-start"
+                     alt="..."
+                     style="width: 5rem;height: 5rem; padding-right: 20px;">
+                 <h1 href="/" style="color:#262626; font-weight: bold;">CS LAB</h1>
+                 <p href="/" style="font-size: small;">COMPUTER SYSTEM LAB</p>
+             </div>
+         </a>
+         <button
+             class="navbar-toggler"
+             style="background-color: #F9F9F9;"
+             type="button"
+             data-bs-toggle="collapse"
+             data-bs-target="#navbarsExample07"
+             aria-controls="navbarsExample07"
+             aria-expanded="false"
+             aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse justify-content-end" id="navbarsExample07">
+             <ul class="navbar-nav" style="font-weight: bold;">
+                 <li class="nav-item" style="padding-right: 1.5rem;padding-top:1rem;">
+                     <a class="nav-link active" aria-current="page" href="/">Home</a>
+                 </li>
 
-        <ul class="nav nav-tabs" style="margin-right: 100px">
-            <!-- <div class="logo ">
-                <p>computer</p>
-            </div> -->
-            <li class="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false" style="color: #000000;">Research</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/research">Research Area</a>
-                    <a class="dropdown-item" href="/project">Projects</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false">Professor</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/professor">Professor</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false">People</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/members">Current members</a>
-                    <a class="dropdown-item" href="/alumni">Alumni</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false">Publications</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/journal">Journals</a>
-                    <a class="dropdown-item" href="/conference">Conferences</a>
-                    <a class="dropdown-item" href="/patent">Patents</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false">Courses</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/undergraduate">Undergraduate Courses</a>
-                    <a class="dropdown-item" href="/graduate">Graduate Courses</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false">Boards</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/undergraduate">notice</a>
-                    <a class="dropdown-item" href="/graduate">News</a>
-                </div>
-            </li>
+                 <li class="nav-item dropdown" style="padding-right: 1.5rem;padding-top:1rem;">
+                     <a
+                         class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                         href="#"
+                         data-bs-toggle="dropdown"
+                         aria-expanded="false">Research</a>
+                     <ul class="dropdown-menu">
+                         <li>
+                             <a class="dropdown-item" href="/research">Research Area</a>
+                         </li>
+                         <li>
+                             <a class="dropdown-item" href="/project">Projects</a>
+                         </li>
+                     </ul>
+                 </li>
 
-        </ul>
-    </section>
-    <!--nav-bar-->
+                 <li class="nav-item" style="padding-right: 1.5rem; padding-top:1rem;">
+                    <a class="nav-link active" aria-current="page" href="/professor">Professor</a>
+                 </li>
+
+                 <li class="nav-item dropdown" style="padding-right: 1.5rem;padding-top:1rem;">
+                     <a
+                         class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                         href="#"
+                         data-bs-toggle="dropdown dropdown-toggle-no-caret"
+                         aria-expanded="false">People</a>
+                     <ul class="dropdown-menu">
+                         <li>
+                             <a class="dropdown-item" href="/members">Current members</a>
+                         </li>
+                         <li>
+                             <a class="dropdown-item" href="/alumni">Alumni</a>
+                         </li>
+                     </ul>
+                 </li>
+                 <li class="nav-item dropdown" style="padding-right: 1.5rem;padding-top:1rem;">
+                     <a
+                         class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                         href="#"
+                         data-bs-toggle="dropdown"
+                         aria-expanded="false">Publications</a>
+                     <ul class="dropdown-menu">
+                         <li>
+                             <a class="dropdown-item" href="/journal">Journals</a>
+                         </li>
+                         <li>
+                             <a class="dropdown-item" href="/conference">Conferences</a>
+                         </li>
+                         <li>
+                             <a class="dropdown-item" href="/patent">Patents</a>
+                         </li>
+                     </ul>
+                 </li>
+
+                 <li class="nav-item dropdown" style="padding-right: 1.5rem;padding-top:1rem;">
+                     <a
+                         class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                         href="#"
+                         data-bs-toggle="dropdown"
+                         aria-expanded="false">Courses</a>
+                     <ul class="dropdown-menu">
+                         <li>
+                             <a class="dropdown-item" href="/undergraduate">Undergraduate Courses</a>
+                         </li>
+                         <li>
+                             <a class="dropdown-item" href="/graduate">Graduate Courses</a>
+                         </li>
+                     </ul>
+                 </li>
+                 <li class="nav-item dropdown" style="padding-top:1rem;">
+                     <a
+                         class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                         href="#"
+                         data-bs-toggle="dropdown"
+                         aria-expanded="false">Boards</a>
+                     <ul class="dropdown-menu">
+                         <li>
+                             <a class="dropdown-item" href="/undergraduate">notice</a>
+                         </li>
+                         <li>
+                             <a class="dropdown-item" href="/graduate">News</a>
+                         </li>
+                     </ul>
+                 </li>
+             </ul>
+         </div>
+     </nav>
+     <!-- 카테고리 영역 끝 -->
 
     <!-- Professor Start -->
     <div style="margin-top: 7%;">
         <div class="justify-content-center align-items-center text-center"
-            style=" margin: 0 auto; font-family: 'Open-sans';">
+            style=" margin: 0 auto; ">
+            <div class="col-md-8 col-8 col-lg-10"
+            style="display: flex; align-items:flex-start; font-size: 18px; margin: 0 auto; padding: 25px; width: 50%; text-align: left;">
+            <h3 style="color: #7C001A; text-align: left; font-family: 'Open-sans';">Professor</h3>
+        </div>
             <div class="col-md-8 col-8 col-lg-10"
                 style="align-items: center; margin: 0 auto; font-size: 18px; text-align: left; padding-bottom: 100px; width: 50%;">
-                <h3 style="color: #7C001A;font-family: 'Open-sans'; padding-bottom: 25px;">Professor<br></h3>
                 <div class="col-md-8 col-8 col-lg-10 d-flex align-items-center" style="margin: 0 auto;">
                     <img class="img-fluid rounded-start"
                         src="{{ url_for('static', filename='img/professor.jpg') }}"
-                        alt="" style="margin-right: 30px; height: 300px; border-radius: 10px;">
+                        alt="" style="margin-right: 50px; height: 300px; border-radius: 10px;">
 
 
                     <ul style="list-style-type: none; margin: 0; padding: 0;">
@@ -204,7 +281,7 @@
 
         <!-- Education -->
         <div class="text-center wow fadeInUp " data-wow-delay="0.6s"
-            style=" background-color: rgb(249, 249, 249); padding-top: 75px; padding-bottom: 75px; font-family: 'Open-sans';">
+            style=" background-color: rgb(249, 249, 249); padding-top: 75px; padding-bottom: 75px; ">
             <div class="col-md-8 col-8 col-lg-10"
                 style="display: flex; align-items:flex-start; font-size: 18px; margin: 0 auto; padding: 25px; width: 50%; text-align: left;">
                 <h3 style="color: #7C001A; text-align: left; font-family: 'Open-sans';">Education</h3>
@@ -246,7 +323,7 @@
 
         <!-- History -->
         <div class="text-center wow fadeInUp " data-wow-delay="0.6s"
-            style=" background-color: rgb(255, 255, 255); padding-top: 75px; padding-bottom: 75px; font-family: 'Open-sans';">
+            style=" background-color: rgb(255, 255, 255); padding-top: 75px; padding-bottom: 75px;">
             <div class="col-md-8 col-8 col-lg-10"
                 style="display: flex; align-items:flex-start; font-size: 18px; margin: 0 auto; padding: 25px; width: 50%; text-align: left;">
                 <h3 style="color: #7C001A; text-align: left; font-family: 'Open-sans';">Employment history</h3>
@@ -292,7 +369,7 @@
 
         <!-- Award -->
         <div class="text-center wow fadeInUp " data-wow-delay="0.6s"
-            style=" background-color: rgb(249, 249, 249); padding-top: 75px; padding-bottom: 75px; font-family: 'Open-sans';">
+            style=" background-color: rgb(249, 249, 249); padding-top: 75px; padding-bottom: 75px; ">
             <div class="col-md-8 col-8 col-lg-10"
                 style="display: flex; align-items:flex-start; font-size: 18px; margin: 0 auto; padding: 25px; width: 50%; text-align: left;">
                 <h3 style="color: #7C001A; text-align: left; font-family: 'Open-sans';">Awards</h3>
@@ -337,40 +414,22 @@
 
         <!-- Professor End -->
 
-        <!-- Footer Start -->
-        <div class="container-fluid bg-dark text-light footer pt-5 pb-5 wow fadeIn" data-wow-delay="0.17s">
-            <div class="container">
-                <hr style="color: #FFFFFF;">
-                <div class="container px-4 text-white" style="color: azure;">
-                    <h3 style="color: rgb(255, 255, 255); text-align: left;">
-                        COMPUTER SYSTEM LAB</h3>
-                    <p style="text-align: left; color: #FFFFFF;">
-                        <i class="fa fa-map-marker-alt me-3"></i>Industry-Academy Building 236, Korea
-                        University, 145 Anam-ro, Seongbuk-gu, Seoul, Republic of Korea. 02841
-                        <br>
-                        <i class="fa fa-envelope me-3"></i>Professor : lchoi@korea.ac.kr · swj8905@korea.ac.kr
-                        <br>
-                        <i class="fa fa-phone-alt me-3"></i>
-                        Tel : +82-2-3290-3896
-                    </p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href="">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a class="btn btn-outline-light btn-social" href="">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a class="btn btn-outline-light btn-social" href="">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a class="btn btn-outline-light btn-social" href="">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
+        <!-- footer 영역 -->
+        <div lang="en" class="row d-flex align-items-center" style="height: 17rem; background-color: #1E1E1E;">
+            <div class="col" ></div>
+            <div lang="en" class="col-9 " lang="ko" >
+                <hr style="color: #FFFFFF; border-width: 2px;">    
+            <h3 style="color: rgb(255, 255, 255); text-align: left;">
+                COMPUTER SYSTEM LAB</h3>
+            <p style="text-align: left; color: #FFFFFF;">Industry-Academy Building 236, Korea
+                University, 145 Anam-ro, Seongbuk-gu, Seoul, Republic of Korea. 02841
+                <br>Professor : lchoi@korea.ac.kr · swj8905@korea.ac.kr
+                <br> Tel : +82-2-3290-3896
+                </p>
+           
             </div>
+            <div class="col"></div>
         </div>
-        <!-- Footer End -->
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top">
