@@ -62,7 +62,7 @@ console.log('Hello World!');
 
 |Feature|Description|
 |--|--|
-|Feature1|<img src="https://user-images.githubusercontent.com/61736137/102153953-b2881000-3ebb-11eb-9581-7026bc8e169e.jpg" width="400"><br>Feature1. Responsive Web Page|
+|Feature1|<img src="https://user-images.githubusercontent.com/61736137/102153953-b2881000-3ebb-11eb-9581-7026bc8e169e.jpg" width="300"><br>Feature1. Responsive Web Page|
 |Feature2|<img src="https://user-images.githubusercontent.com/61736137/102153956-b451d380-3ebb-11eb-9ab7-f8bad6c05a97.png" width="400"><br>Feature2. Responsive Web Page|
 
 ## Before release

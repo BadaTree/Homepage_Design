@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap
 # import ssl
 # from flask_uploads import UploadSet, configure_uploads, IMAGES
@@ -6,8 +6,13 @@ from flask_bootstrap import Bootstrap
 app = Flask(__name__, static_folder='static')
 bootstrap = Bootstrap(app)
 
-@app.route('/')
+
+@app.route('/', methods=['GET', 'POST'])
 def main():
+    aa = request.args.get('aa')
+    bb = request.args.get('bb')
+    print(aa)
+    print(bb)
     return render_template('/index_main.html')
 
 @app.route('/research')
@@ -20,6 +25,7 @@ def Projects():
 
 @app.route('/professor')
 def Professor():
+    
     return render_template('/Professor_.html')
 
 @app.route('/members')
@@ -60,6 +66,7 @@ def Undergradute_KECE343():
 
 @app.route('/graduate')
 def Gradute():
+    print(request.args.get("aa"))
     return render_template('/graduate.html')
 
 @app.route('/graduate/ECE656')

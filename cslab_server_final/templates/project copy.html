@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>고려대학교 컴퓨터시스템 연구실</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='mark.ico') }}">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{{ url_for('static', filename='lib/animate/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='lib/animate/animate.css') }}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+    <style>
+        :lang(en) {
+            font-family: 'Open-sans';
+            /* English font */
+        }
+
+        :lang(ko) {
+            font-family: 'Pretendard-Regular';
+            src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+                format('woff');
+            /* Korean font */
+        }
+
+        .dropdown .btn::after {
+            display: none;
+        }
+
+        .board-container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 5px;
+            background-color: #f0f0f0;
+        }
+
+        .board {
+            background-color: #fff;
+            padding: 5px;
+        }
+
+        .post {
+            margin-bottom: 20px;
+        }
+
+        .post h3 {
+            margin-bottom: 5px;
+        }
+
+        .post p {
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Updated Start -->
+    <div class="container">
+        <div class="row">
+            <div class="col-6 mx-auto">
+                <div class="video">
+                    <!-- Add video here -->
+                    <iframe id="video-link" width="560" height="315"
+                        src="https://www.youtube.com/embed/oBqC-l1Gsok?autoplay=1&mute=1" frameborder="0"
+                        allowfullscreen="allowfullscreen"></iframe>
+                </div>
+                <div class="description">
+                    <!-- Add descriptive text here -->
+                    <h2 id="heading">우리 연구실에 대해</h2>
+                </div>
+                <div class="buttons">
+                    <!-- Add buttons here -->
+                    <button
+                        onclick="changeContent('https://www.youtube.com/embed/pk2e7jMveEY?autoplay=1&mute=1', '기술 소개 영상')">기술 소개 영상 보기</button>
+                    <button
+                        onclick="changeContent('https://www.youtube.com/embed/oBqC-l1Gsok?autoplay=1&mute=1', '하나스퀘어 기술 데모 영상')">하나스퀘어 데모 영상 보기</button>
+                    <button
+                        onclick="changeContent('https://www.youtube.com/embed/nCcTHQ-77Vk?autoplay=1&mute=1', 'SK 미래관 기술 데모 영상')">SK 미래관 데모 영상 보기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Updated End -->
+
+    <!-- footer 영역 -->
+    <div lang="en" class="row d-flex align-items-center" style="height: 17rem; background-color: #1E1E1E;">
+        <div class="col"></div>
+        <div lang="ko" class="col-9 ">
+            <hr style="color: #FFFFFF; border-width: 2px;">
+            <h3 style="color: rgb(255, 255, 255); text-align: left;">COMPUTER SYSTEM LAB</h3>
+            <p style="text-align: left; color: #FFFFFF;">Industry-Academy Building 236, Korea University, 145
+                Anam-ro, Seongbuk-gu, Seoul, Republic of Korea. 02841
+                <br>Professor : lchoi@korea.ac.kr · swj8905@korea.ac.kr
+                <br>
+                Tel : +82-2-3290-3896
+            </p>
+
+        </div>
+        <div class="col"></div>
+    </div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+
+    <!-- Template Javascript -->
+    <script src="/static/lib/wow/wow.min.js"></script>
+
+    <script>
+        function changeContent(videoLink, text) {
+            var videoElement = document.getElementById('video-link');
+            var headingElement = document.getElementById('heading');
+
+            // Update video link
+            videoElement.src = videoLink;
+
+            // Update text
+            headingElement.textContent = text;
+        }
+    </script>
+
+</body>
+
+</html>
