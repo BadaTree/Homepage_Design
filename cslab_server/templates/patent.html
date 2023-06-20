@@ -1,1007 +1,621 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <title>고려대학교 컴퓨터시스템 연구실</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <head>
+        <meta charset="utf-8">
+        <title>고려대학교 컴퓨터시스템 연구실</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='mark.ico') }}">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
-        rel="stylesheet">
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin="crossorigin">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+            rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+        <!-- Icon Font Stylesheet -->
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+            rel="stylesheet">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+            rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
-    <link
-        href="{{ url_for('static', filename='lib/animate/animate.min.css') }}"
-        rel="stylesheet">
-    <link
-        href="{{ url_for('static', filename='lib/animate/animate.css') }}"
-        rel="stylesheet">
+        <!-- Libraries Stylesheet -->
+        <link
+            href="{{ url_for('static', filename='lib/animate/animate.min.css') }}"
+            rel="stylesheet">
+        <link
+            href="{{ url_for('static', filename='lib/animate/animate.css') }}"
+            rel="stylesheet">
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
-        rel="stylesheet">
+        <!-- Customized Bootstrap Stylesheet -->
+        <link
+            href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+            rel="stylesheet">
 
-    <!-- Template Stylesheet -->
-    <link href="{{ url_for('static', filename='css/style.css') }}"
-        rel="stylesheet">
+        <!-- Template Stylesheet -->
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
 
-    <style>
-        .board-container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 5px;
-            background-color: #f0f0f0;
-        }
+        <style>
+            :lang(en) {
+                font-family: 'Open-sans';
+                /* English font */
+            }
 
-        .board {
-            background-color: #fff;
-            padding: 5px;
-        }
+            :lang(ko) {
+                font-family: 'Pretendard-Regular';
+                src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format('woff');
+                /* Korean font */
+            }
+            .dropdown .btn::after {
+                display: none;
+            }
 
-        .post {
-            margin-bottom: 20px;
-        }
+            .dropdown-toggle-no-caret::after {
+                display: none !important;
+            }
 
-        .post h3 {
-            margin-bottom: 5px;
-        }
+            .nav-item:hover .nav-link {
+                color: #7C001A;
+                /* 원하는 색상으로 변경 */
+            }
 
-        .post p {
-            color: #333;
-        }
-    </style>
-</head>
+            .board-container {
+                width: 80%;
+                margin: 0 auto;
+                padding: 5px;
+                background-color: #f0f0f0;
+            }
 
-<body>
-    <!-- Spinner Start -->
-    <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
+            .board {
+                background-color: #fff;
+                padding: 5px;
+            }
+
+            .post {
+                margin-bottom: 20px;
+            }
+
+            .post h3 {
+                margin-bottom: 5px;
+            }
+
+            .post p {
+                color: #333;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Spinner Start -->
+        <div
+            id="spinner"
+            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div
+                class="spinner-border text-primary"
+                style="width: 3rem; height: 3rem;"
+                role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
         </div>
-    </div>
-    <!-- Spinner End -->
+        <!-- Spinner End -->
 
+        <!-- 카테고리 영역 시작 -->
+        <nav
+            class="navbar navbar-expand-lg bg-white "
+            aria-label="Eighth navbar example"
+            style="height: 10rem;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);">
+            <div class="container d-flex align-items-center">
+                <a class="navbar-brand " href="#">
+                    <div class="container h-100">
+                        <img
+                            href="/"
+                            src="../static/img/mark_.png"
+                            class="rounded float-start"
+                            alt="..."
+                            style="width: 5rem;height: 5rem; padding-right: 20px;">
+                        <h1 href="/" style="color:#262626; font-weight: bold;">CS LAB</h1>
+                        <p href="/" style="font-size: small;">COMPUTER SYSTEM LAB</p>
+                    </div>
+                </a>
+                <button
+                    class="navbar-toggler"
+                    style="background-color: #F9F9F9;"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarsExample07"
+                    aria-controls="navbarsExample07"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarsExample07">
+                    <ul class="navbar-nav" style="font-weight: bold;">
+                        <li class="nav-item" style="padding-right: 1.5rem;padding-top:1rem;">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
 
-        <!-- Navbar Start -->
-        <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-            <a href="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-                <h2 class="m-0 text-primary" href="/" style="color: #00143A;">
-                    <i class="fa fa-book me-3"></i>COMPUTERSYSTEMLAB</h2>
+                        <li class="nav-item dropdown" style="padding-right: 1.5rem;padding-top:1rem;">
+                            <a
+                                class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                                href="#"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">Research</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="/research">Research Area</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/project">Projects</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item" style="padding-right: 1.5rem; padding-top:1rem;">
+                            <a class="nav-link active" aria-current="page" href="/professor">Professor</a>
+                        </li>
+
+                        <li class="nav-item dropdown" style="padding-right: 1.5rem;padding-top:1rem;">
+                            <a
+                                class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                                href="#"
+                                data-bs-toggle="dropdown dropdown-toggle-no-caret"
+                                aria-expanded="false">People</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="/members">Current members</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/alumni">Alumni</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown" style="padding-right: 1.5rem;padding-top:1rem;">
+                            <a
+                                class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                                href="#"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">Publications</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="/journal">Journals</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/conference">Conferences</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/patent">Patents</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown" style="padding-right: 1.5rem;padding-top:1rem;">
+                            <a
+                                class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                                href="#"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">Courses</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="/undergraduate">Undergraduate Courses</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/graduate">Graduate Courses</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown" style="padding-top:1rem;">
+                            <a
+                                class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                                href="#"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">Boards</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="/undergraduate">notice</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/graduate">News</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- 카테고리 영역 끝 -->
+
+            <!-- Patents Start -->
+            <div style="margin-top: 7%;margin-bottom: 7%;">
+                <div
+                    class="col-md-8 col-8 col-lg-10"
+                    style="display: flex; align-items:flex-start; font-size: 18px; margin: 0 auto; width: 60%; text-align: left;">
+                    <h3 style="color: #7C001A; text-align: left; ">Patents</h3>
+                </div>
+                <div
+                    class="custom_container"
+                    style="color: #000; text-align: left; margin-top:5rem;">
+                    <div
+                        class="col-md-8 col-8 col-lg-10"
+                        style=" font-size: 18px; margin: 0 auto;  width: 60%; text-align: left;">
+                        <h3 style="padding-bottom:0.5rem;font-weight:bold;">2021</h3>
+                        <hr
+                            style=" border: none;border-top: 1px solid #000;width: 80%; margin-bottom:1.5rem; color:#2F2F2F;">
+                        <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            자기장 지도 획득 시스템, 장치 및 방법
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            출 원 번 호 : 10-2021-0003463 (KR)
+                            <br>
+                            Inventors : 최린,황승규<br>출 원 일 : 2021년 1월 11일</p>
+                        <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            기압과 자기장을 이용한 사용자가 위치한 층 식별 장치 및 방법
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            출 원 번 호 : 10-2021-0003480 (KR) 
+                            <br>
+                            Inventors : 최린,배한준,황승규<br>출 원 일 : 2021년 1월 11일</p>
+                            <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            인공 신경망을 이용한 자기장 기반 위치 추정 모델 생성 장치 및 방법
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            등 록 번 호  : 10-2243917 (KR) 
+                            <br>
+                            Inventors : 최린,장호준<br>등 록 일 : 2021년 4월 19일</p>
+                        <h3 style="padding-top:2.0rem;padding-bottom:0.5rem;font-weight:bold;">2020</h3>
+                        <hr
+                            style=" border: none;border-top: 1px solid #000;width: 80%; margin-bottom:1.5rem; color:#2F2F2F;">
+                        <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            자기장 기반 위치측정방법 및 위치측정장치 
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            출 원 번 호 : 10-2020-0043282 (KR) 
+                            <br>
+                            Inventors : 최린,손원준<br>출 원 일 : 2020년 4월 9일</p>
+                        <h3 style="padding-top:2.0rem;padding-bottom:0.5rem;font-weight:bold;">2016</h3>
+                        <hr
+                            style=" border: none;border-top: 1px solid #000;width: 80%; margin-bottom:1.5rem; color:#2F2F2F;">
+                            <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            3차원 동작인식 정보입력 장치 및 방법, 이를 구현하기 위한 프로그램이 저장된 기록매체  
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            등 록 번 호 :  10-1609553  (KR) 
+                            <br>
+                            Inventors : 최린, 김민지, 배한준<br>등 록 일 : 2016년 3월 31일</p>
+                        <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            심화 학습을 이용한 지구자기장 기반 실내 위치 인식 방법 
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            출 원 번 호 :  10-2016-0092260  (KR) 
+                            <br>
+                            Inventors : 최린<br>출 원 일 : 2016년 7월 20일</p>
+                        <h3 style="padding-top:2.0rem;padding-bottom:0.5rem;font-weight:bold;">2015</h3>
+                        <hr
+                            style=" border: none;border-top: 1px solid #000;width: 80%; margin-bottom:1.5rem; color:#2F2F2F;">
+                        <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            전염병 예방과 확산 방지를 위한 전염병 추적 관리 시스템 
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            출 원 번 호 :  10-2015-0155296  (KR) 
+                            <br>
+                            Inventors : 최린, 배한준, 안재형<br>출 원 일 : 2015년 11월 05일</p>
+                        <h3 style="padding-top:2.0rem;padding-bottom:0.5rem;font-weight:bold;">2014</h3>
+                        <hr
+                            style=" border: none;border-top: 1px solid #000;width: 80%; margin-bottom:1.5rem; color:#2F2F2F;">
+                        <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            손가락을 움직임을 이용한 정보 입력 시스템 및 그 입력 방법 
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            출 원 번 호 : 10-2014-0044139 (KR)
+                            <br>
+                            Inventors : 최린, 김민지, 배한준<br>출 원 일 : 2014년 4월 14일</p>
+                        <h3 style="padding-top:2.0rem;padding-bottom:0.5rem;font-weight:bold;">2013</h3>
+                        <hr
+                            style=" border: none;border-top: 1px solid #000;width: 80%; margin-bottom:1.5rem; color:#2F2F2F;">
+                        <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            센서 네트워크를 위한 통신 방법 및 시스템 
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            등 록 번 호 : 10-2009-0082617 (KR) 
+                            <br>
+                            Inventors : 홍승기, 전종암, 표철식, 최린, 이상훈<br>등 록 일 : 2013년 5월 24일 </p>
+                        <h3 style="padding-top:2.0rem;padding-bottom:0.5rem;font-weight:bold;">2010</h3>
+                        <hr
+                            style=" border: none;border-top: 1px solid #000;width: 80%; margin-bottom:1.5rem; color:#2F2F2F;">
+                            <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            Title:Sensor network system and communication method thereof Application number 
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            Application No.: 12/874,856 (US) 
+                            <br>
+                            Inventors : Seung Ki HONG, Jong Arm JUN, Cheol Sig PYO, Sang Hun LEE, Lynn CHOI<br>Filling Date : Sep 2, 2010</p>
+                            <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            Method for sensing and recovery against buffer overflow attacks and apparatus thereof 
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            Patent No.: 7,814,333 B2 (US) 
+                            <br>
+                            Inventors : 최린, 신용<br>Date of patent : Oct. 12, 2010</p>
+                        <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            Title:Sensor network system and communication method thereof Application number 
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            Application No.: 12/874,856 (US) 
+                            <br>
+                            Inventors : Seung Ki HONG, Jong Arm JUN, Cheol Sig PYO, Sang Hun LEE, Lynn CHOI<br>Filling Date : Sep 2, 2010</p>
+                            <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            센서 네트워크의 네크워크 노드들의 프로그램 방법 및 센서 네트워크의 동작 방법 
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            출 원 번 호 : 12/952,664 (US) 
+                            <br>
+                            Inventors : 이상훈, 최린<br>출 원 일 : 2010년 11월 23일 </p>
+                        <h3 style="padding-top:2.0rem;padding-bottom:0.5rem;font-weight:bold;">2009</h3>
+                        <hr
+                            style=" border: none;border-top: 1px solid #000;width: 80%; margin-bottom:1.5rem; color:#2F2F2F;">
+                            <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            Packet classification method through heirarchical rulebase partitioning 
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            Patent No.: 07480302 B2 (US) 
+                            <br>
+                            Inventors : 최린<br>Date of patent : Jan. 20, 2009 </p>
+                            <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            Communication method in the sensor network using variable duty-cyclce scheme 
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            등 록 번 호: 10-0892321 (KR)  
+                            <br>
+                            Inventors : 최린, 이상훈<br>등 록 일 : 2009년 4월 1일</p>
+                        <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            사건에 따른 센서 네트워크 전원 관리 방법 및 센서네트워크 전원 관리 시스템 
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            등 록 번 호 : 10-0911210 (KR)
+                            <br>
+                            Inventors : 홍승기, 최연준, 김선중, 최린, 이상훈<br>등 록 일 : 2009년 7월 31일 </p>
+                            <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            센서 네트워크의 네트워크 노드들의 프로그램 방법 및 센서 네트워크의 동작 방법 
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            출 원 번 호: 10-2009-0121662 (KR) 
+                            <br>
+                            Inventors : 홍승기, 전종암, 표철식, 이상훈, 최린<br>출 원 일 : 2009년 12월 9일 </p>
+                        <h3 style="padding-top:2.0rem;padding-bottom:0.5rem;font-weight:bold;">2008</h3>
+                        <hr
+                            style=" border: none;border-top: 1px solid #000;width: 80%; margin-bottom:1.5rem; color:#2F2F2F;">
+                        <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            신호 강도를 이용한 무선 센서 네트워크의 통신 방법 및 장치 
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            출 원 번 호: 10-2008-0013470 (KR) 
+                            <br>
+                            Inventors : 최효현, 김선기, 최린, 이상훈<br>출 원 일 : 2008년 2월 14일</p>
+                            <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            무선 센서 네트워크의 가상 싱크 노드를 이용한 통신 방법 및 장치 
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            출 원 번 호: 10-2008-0013469 (KR) 
+                            <br>
+                            Inventors : 최효현, 김선기, 최린, 정재균<br>출 원 일 : 2008년 2월 14일</p>
+                        <h3 style="padding-top:2.0rem;padding-bottom:0.5rem;font-weight:bold;">2007</h3>
+                        <hr
+                            style=" border: none;border-top: 1px solid #000;width: 80%; margin-bottom:1.5rem; color:#2F2F2F;">
+                        <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            사건에 따른 센서 네트워크 전원 관리 방법 및 센서네트워크 전원 관리 시스템 
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            출 원 번 호 : 10-2007-0126065 (KR) 
+                            <br>
+                            Inventors : 홍승기, 최연준, 김선중, 최린, 이상훈<br>출 원 일 : 2007년 12월 06일</p>
+                        <h3 style="padding-top:2.0rem;padding-bottom:0.5rem;font-weight:bold;">2006</h3>
+                        <hr
+                            style=" border: none;border-top: 1px solid #000;width: 80%; margin-bottom:1.5rem; color:#2F2F2F;">
+                        <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            METHOD FOR SENSING AND RECOVERY AGAINST BUFFER OVERFLOW ATTACKS AND APPARATUS THEREOF 
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            출 원 번 호: 10/598,970 (US) 
+                            <br>
+                            Inventors : 최 린, 신 용<br>출 원 일 : 2006년 6월 22일</p>
+                            <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            METHOD FOR SENSING AND RECOVERY AGAINST BUFFER OVERFLOW ATTACKS AND APPARATUS THEREOF 
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            출 원 번 호: 05789355.4 (EU) 
+                            <br>
+                            Inventors : 최 린, 신 용<br>출 원 일 : 2006년 6월 22일</p>
+
+                            <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            METHOD FOR SENSING AND RECOVERY AGAINST BUFFER OVERFLOW ATTACKS AND APPARATUS THEREOF 
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            출 원 번 호: 2007-503839 (JP)  
+                            <br>
+                            Inventors : 최 린, 신 용<br>출 원 일 : 2006년 9월 19일</p>
+
+                            <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            계층적 룰베이스 분할을 통한 패킷 분류 방법 
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            등 록 번 호: 특 허 제 10-0594755-0000호 
+                            <br>
+                            Inventors : 최 린<br>등 록 일 : 2006년 6월 22일</p>
+                        
+                            <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            버퍼 오버플로우 공격들을 감지하고 복구하는 방법 및 그장치 
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            등 록 번 호: 특 허 제 10-0586500호 
+                            <br>
+                            Inventors : 최 린, 신 용 <br>등 록 일 : 2006년 5월 26일</p>
+                        <h3 style="padding-top:2.0rem;padding-bottom:0.5rem;font-weight:bold;">2005</h3>
+                        <hr
+                            style=" border: none;border-top: 1px solid #000;width: 80%; margin-bottom:1.5rem; color:#2F2F2F;">
+                        <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            PACKET CLASSIFICATION METHOD THROUGH HIERARCHICAL RULEBASE PARTITIONING 
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            Patent No. : 11/118,326 
+                            <br>
+                            Inventors : 최 린<br>Filed : 2005년 5월 2일</p>
+                            <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            무선 센서 네트워크에서 가상 싱크와 로테이션을 사용한 라우팅 경로 설정 방법 
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            Patent No. : 10-2005-52257  
+                            <br>
+                            Inventors : 최 린, 최 광석 <br>Filed : 2005년 6월 17일</p>
+                            <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            Method for sensing and recovery against buffer overflow attacks and apparatus thereof  
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            Patent No. : PCT/KR2005/000776 
+                            <br>
+                            Inventors : 최 린, 신 용 <br>Filed : 2005년 3월 18일</p>
+                         
+                        <h3 style="padding-top:2.0rem;padding-bottom:0.5rem;font-weight:bold;">2004</h3>
+                        <hr
+                            style=" border: none;border-top: 1px solid #000;width: 80%; margin-bottom:1.5rem; color:#2F2F2F;">
+                        <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            계층적 룰베이스 분할을 통한 패킷 분류 방법 
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            Patent No. : 특허출원 제 P2004-0059058 호 
+                            <br>
+                            Inventors : 최 린, 허 재성, 정 진우 <br>Filed : 2004년 7월 28일</p>
+                            <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            버퍼 오버플로우 공격들을 감지하고 복구하는 방법 및 그 장치  
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            Patent No. : 특허출원 제 2004-0018279 호 
+                            <br>
+                            Inventors : 최 린, 신 용  <br>Filed : 2004년 3월 18일 </p>
+                        <h3 style="padding-top:2.0rem;padding-bottom:0.5rem;font-weight:bold;">2001</h3>
+                        <hr
+                            style=" border: none;border-top: 1px solid #000;width: 80%; margin-bottom:1.5rem; color:#2F2F2F;">
+                        <p
+                            lang="ko"
+                            style="font-size:1.1rem; font-weight:bold;padding-top:1rem;color:#2F2F2F;">
+                            Mechanism for saving power on long latency stalls  
+                        </p>
+                        <p style="color:#6C6C6C; font-size:1rem;">
+                            Patent No. : 6,233,690 U.S. Patent 
+                            <br>
+                            Inventors : Lynn Choi (Irvine, CA); Sharangpani; Harshvardhan (Santa Clara, CA) <br>Assignee : Intel Corporation (Santa Clara, CA) 
+                        <br>Appl. No. : 156552 <br>Filed : September 17, 1998 <br> Approved : May 15, 2001 (Intel Corporation) </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- footer 영역 -->
+            <div
+                lang="en"
+                class="row d-flex align-items-center"
+                style="height: 17rem; background-color: #1E1E1E;">
+                <div class="col"></div>
+                <div lang="ko" class="col-9 ">
+                    <hr style="color: #FFFFFF; border-width: 2px;">
+                    <h3 style="color: rgb(255, 255, 255); text-align: left;">
+                        COMPUTER SYSTEM LAB</h3>
+                    <p style="text-align: left; color: #FFFFFF;">Industry-Academy Building 236,
+                        Korea University, 145 Anam-ro, Seongbuk-gu, Seoul, Republic of Korea. 02841
+                        <br>Professor : lchoi@korea.ac.kr · swj8905@korea.ac.kr
+                        <br>
+                        Tel : +82-2-3290-3896
+                    </p>
+
+                </div>
+                <div class="col"></div>
+            </div>
+
+            <!-- Back to Top -->
+            <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top">
+                <i class="bi bi-arrow-up"></i>
             </a>
-            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Research</a>
-                        <div class="dropdown-menu fade-down m-0">
-                            <a href="/research" class="dropdown-item active">Research Area</a>
-    
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Professor</a>
-                        <div class="dropdown-menu fade-down m-0">
-                            <a href="/professor" class="dropdown-item active">Professor</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">People</a>
-                        <div class="dropdown-menu fade-down m-0">
-                            <a href="/members" class="dropdown-item active">Current members</a>
-                            <a href="/alumni" class="dropdown-item">Alumni</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Publications</a>
-                        <div class="dropdown-menu fade-down m-0">
-                            <a href="/journal" class="dropdown-item active">Journals</a>
-                            <a href="/conference" class="dropdown-item">Conferences</a>
-                            <a href="/patent" class="dropdown-item">Patents</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Courses</a>
-                        <div class="dropdown-menu fade-down m-0">
-                            <a href="/undergraduate" class="dropdown-item active">Undergraduate Courses</a>
-                            <a href="/graduate" class="dropdown-item">Graduate Courses</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Boards</a>
-                        <div class="dropdown-menu fade-down m-0">
-                            <a href="/notice" class="dropdown-item active">notice</a>
-                            <a href="/news" class="dropdown-item">news</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <!-- Navbar End -->
 
-    <!-- Header Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 page-header">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Patents</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Header End -->
-
-
-    <!-- Team Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3" style="color: #00143A;">
-                    COMPUTERSYSTEMLAB</h6>
-                <h1 class="mb-5">Patents</h1>
-            </div>
-            <div class="row g-2 justify-content-center">
-            </div>
-        </div>
-    </div>
-
-    <div class="board-container">
-        <div class="board" style="text-align: center;">
-            <div>&nbsp;</div>
-            <div>
-                <p align="left">&nbsp;</p>
-
-                    <font align="left" style=""><b style="font-size: 14px;">Title : </b><span
-                            style="font-size: 14px;"><b>자기장 지도
-                                획득 시스템, 장치 및 방법</b></span><b style="font-size: 14px;">&nbsp;</b></font>
-                </p>
-
-                <table border="0" cellpadding="0" style="font-size: 12px;" width="95%">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <p>
-                                    <font style="">
-                                        <font style=""><span style="font-size: 14px;">출 원 번 호 :
-                                                10-2021-0003463&nbsp;(KR)&nbsp;</span><br />
-                                            <span style="font-size: 14px;">Inventors :&nbsp;최린,황승규</span><br />
-                                            <span style="font-size: 14px;">출 원 일 : 2021년 1월 11일</span></font>
-                                    </font>
-                                </p>
-
-                                <p>&nbsp;</p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <p>
-                    <font align="left"><span style="font-size: 14px;"><b>Title :&nbsp;</b></span></font><span
-                        style="font-size: 14px;"><b>기압과 자기장을 이용한 사용자가 위치한 층 식별 장치 및 방법<span style="white-space: pre;">
-                            </span></b></span>
-                </p>
-
-                <table border="0" cellpadding="0" style="font-size: 12px;" width="95%">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <p><span style="font-size: 14px;">출 원 번 호
-                                        :&nbsp;10-2021-0003480&nbsp;(KR)&nbsp;</span><br />
-                                    <span style="font-size: 14px;">Inventors :&nbsp;최린,배한준,황승규<span
-                                            style="white-space:pre">
-                                        </span></span><br />
-                                    <span style="font-size: 14px;">출 원 일 : 2021년 1월 11일</span></p>
-
-                                <p>&nbsp;</p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <p>
-                    <font align="left"><span style="font-size: 14px;"><b>Title :&nbsp;자기장 기반 위치측정방법 및
-                                위치측정장치&nbsp;</b></span>
-                    </font>
-                </p>
-
-                <table border="0" cellpadding="0" style="font-size: 12px;" width="95%">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <p><span style="font-size: 14px;">출 원 번 호
-                                        :&nbsp;10-2020-0043282&nbsp;(KR)&nbsp;</span><br />
-                                    <span style="font-size: 14px;">Inventors :&nbsp;최린,손원준</span><br />
-                                    <span style="font-size: 14px;">출 원 일 : 2020년 4월 9일</span></p>
-
-                                <p>&nbsp;</p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <p>&nbsp;</p>
-
-                <p>
-                    <font size="2">
-                        <font align="left"><strong><span style="font-size: 14px;">Title :&nbsp;</span></strong></font>
-                    </font><span style="font-size: 14px;"><b>인공 신경망을 이용한 자기장 기반 위치 추정 모델 생성 장치 및 방법<span
-                                style="white-space: pre;"> </span></b></span>
-                </p>
-
-                <table border="0" cellpadding="0" style="font-size: 12px;" width="95%">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <p><span style="font-size: 14px;">등 록 번 호&nbsp;&nbsp;: 10-2243917&nbsp;(KR)&nbsp;</span>
-                                </p>
-
-                                <p>
-                                    <font style="">
-                                        <font style=""><span style="font-size: 14px;">Inventors :&nbsp;최린,장호준</span>
-                                        </font>
-                                    </font><br />
-                                    <span style="font-size: 14px;">등 록 일&nbsp;: 2021년 4월 19일</span>
-                                </p>
-
-                                <p>&nbsp;</p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <p ><strong>
-                        <font size="2"><span style="font-size: 14px; text-align: left;">Title :&nbsp;</span></font><span
-                            id="KO_APP_TITLE" style="font-size: 14px;">심화 학습을 이용한 지구자기장 기반 실내 위치 인식 방법</span><span
-                            style="font-size: 14px;">&nbsp;</span>
-                    </strong></p>
-
-                <table border="0" cellpadding="0"
-                    style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;" width="95%">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <p>
-                                    <font size="2">
-                                        <font size="2"><span style="font-size: 14px;">출 원 번 호 :&nbsp;</span></font><span
-                                            id="APP_NO" style="font-size: 14px;">10-2016-0092260</span>
-                                        <font size="2"><span style="font-size: 14px;">&nbsp;(KR)</span><span
-                                                style="font-size: 14px;">&nbsp;</span><br />
-                                            <span style="font-size: 14px;">Inventors : 최린</span><br />
-                                            <span style="font-size: 14px;">출 원 일 : 2016년 7월 20일</span></font>
-                                    </font>
-                                </p>
-
-                                <p>&nbsp;</p>
-
-                             
-
-                                <table border="0" cellpadding="0" style="font-size: 12px;" width="95%" >
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <p align="center" style="font-size: 12px;">
-                                                    <font size="2">
-                                                        <font-dl><strong><span style="font-size: 14px;text-align: center;">Title
-                                                                    :&nbsp;</span></strong>
-                                                        </font><strong><span style="font-size: 14px; text-align: center;">전염병 예방과 확산 방지를 위한 전염병 추적 관리
-                                                                시스템</span><span style="font-size: 14px;">&nbsp;</span></strong>
-                                                    </font>
-                                                </p>
-                                                <p>
-                                                    <font size="2">
-                                                        <font size="2">
-                                                            <font size="2"><span style="font-size: 14px;">출 원 번 호
-                                                                    :&nbsp;</span>
-                                                            </font><span id="APP_NO"
-                                                                style="font-size: 14px;">10-2015-0155296</span>
-                                                            <font size="2"><span
-                                                                    style="font-size: 14px;">&nbsp;(KR)</span><span
-                                                                    style="font-size: 14px;">&nbsp;</span><br />
-                                                                <span style="font-size: 14px;">Inventors : 최린, 배한준,
-                                                                    안재형</span><br />
-                                                                <span style="font-size: 14px;">출 원 일 : 2015년 11월
-                                                                    05일</span>
-                                                            </font>
-                                                        </font>
-                                                    </font>
-                                                </p>
-
-                                                <p>&nbsp;</p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <table border="0" cellpadding="0"
-                    style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;" width="95%">
-                    <tbody>
-                    </tbody>
-                </table>
-
-              
-                <table border="0" cellpadding="0"
-                    style="font-family: 나눔고딕, NanumGothic, NG, 돋움, Dotum, Arial, Helvetica, sans-serif;" width="95%">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <p align="center">
-                                    <font size="2"><strong><span style="font-size: 14px;">Title : 3차원 동작인식 정보입력 장치 및 방법, 이를 구현하기 위한
-                                                프로그램이
-                                                저장된 기록매체&nbsp;</span></strong></font>
-                                </p>
-                
-                                <p>
-                                    <font size="2">
-                                        <font size="2"><span style="font-size: 14px;">등 록 번 호 :&nbsp;</span></font><span
-                                            id="REG_NO">10-1609553</span>
-                                        <font size="2"><span style="font-size: 14px;">&nbsp;(KR)&nbsp;</span><br />
-                                            <span style="font-size: 14px;">Inventors : 최린, 김민지, 배한준</span><br />
-                                            <span style="font-size: 14px;">등 록 일 : 2016년 3월 31일</span></font>
-                                    </font>
-                                </p>
-
-                                <p>&nbsp;</p>
-
-                                <p>
-                                    <font size="2">
-                                        <font align="left"><strong><span style="font-size: 14px;">Title : 손가락을 움직임을 이용한
-                                                    정보 입력
-                                                    시스템 및 그 입력 방법&nbsp;</span></strong></font>
-                                    </font>
-                                </p>
-
-                                <table border="0" cellpadding="0" style="font-size: 12px;" width="95%">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <p>
-                                                    <font size="2">
-                                                        <font size="2">
-                                                            <font size="2"><span style="font-size: 14px;">출 원 번 호 :
-                                                                    10-2014-0044139 (KR)&nbsp;</span><br />
-                                                                <span style="font-size: 14px;">Inventors : 최린, 김민지,
-                                                                    배한준</span><br />
-                                                                <span style="font-size: 14px;">출 원 일 : 2014년 4월
-                                                                    14일</span>
-                                                            </font>
-                                                        </font>
-                                                    </font>
-                                                </p>
-
-                                                <p>&nbsp;</p>
-
-                                                <p>&nbsp;</p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <font align="left"><strong><span style="font-size: 14px;">Title:센서 네트워크를 위한 통신 방법 및
-                                            시스템&nbsp;</span></strong></font>
-
-                                <table border="0" cellpadding="0" width="95%">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <p>
-                                                    <font size="2">
-                                                        <font size="2"><span style="font-size: 14px;">등 록 번 호 :
-                                                                10-2009-0082617
-                                                                (KR)&nbsp;</span><br />
-                                                            <span style="font-size: 14px;">Inventors : 홍승기, 전종암, 표철식,
-                                                                최린,
-                                                                이상훈</span><br />
-                                                            <span style="font-size: 14px;">등 록 일 : 2013년 5월
-                                                                24일&nbsp;</span>
-                                                        </font>
-                                                    </font>
-                                                </p>
-
-                                                <p>&nbsp;</p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <p>&nbsp;</p>
-
-                                <p>
-                                    <font align="left"><strong><span style="font-size: 14px;">Title:사건에 따른 센서 네트워크 전원 관리
-                                                방법 및
-                                                센서네트워크 전원 관리 시스템&nbsp;</span></strong></font>
-                                </p>
-
-                                <table border="0" cellpadding="0" width="95%">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <font size="2"><span style="font-size: 14px;">등 록 번 호 : 10-0911210
-                                                        (KR)&nbsp;</span><br />
-                                                    <span style="font-size: 14px;">Inventors : 홍승기, 최연준, 김선중, 최린,
-                                                        이상훈</span><br />
-                                                    <span style="font-size: 14px;">등 록 일 : 2009년 7월 31일&nbsp;</span>
-                                                </font>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <p>&nbsp;</p>
-
-                                <p>
-                                    <font align="left"><strong><span style="font-size: 14px;">Title:사건에 따른 센서 네트워크 전원 관리
-                                                방법 및
-                                                센서네트워크 전원 관리 시스템&nbsp;</span></strong></font>
-                                </p>
-
-                                <table border="0" cellpadding="0" width="95%">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <font size="2"><span style="font-size: 14px;">출 원 번 호 : 10-2007-0126065
-                                                        (KR)&nbsp;</span><br />
-                                                    <span style="font-size: 14px;">Inventors : 홍승기, 최연준, 김선중, 최린,
-                                                        이상훈</span><br />
-                                                    <span style="font-size: 14px;">출 원 일 : 2007년 12월 06일</span></font>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <p>&nbsp;</p>
-
-                                <p>
-                                    <font align="left"><strong><span style="font-size: 14px;">Title:Sensor network
-                                                system and
-                                                communication method thereof Application number&nbsp;</span></strong>
-                                    </font>
-                                </p>
-
-                                <table border="0" cellpadding="0" width="95%">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <font size="2"><span style="font-size: 14px;">Application No.:
-                                                        12/874,856
-                                                        (US)&nbsp;</span><br />
-                                                    <span style="font-size: 14px;">Inventors : Seung Ki HONG, Jong Arm
-                                                        JUN,
-                                                        Cheol Sig PYO, Sang Hun LEE, Lynn CHOI</span><br />
-                                                    <span style="font-size: 14px;">Filling Date : Sep 2, 2010</span>
-                                                </font>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <p>&nbsp;</p>
-
-                                <p>
-                                    <font align="left"><strong><span style="font-size: 14px;">Title:Packet
-                                                classification method
-                                                through heirarchical rulebase partitioning&nbsp;</span></strong></font>
-                                </p>
-
-                                <table border="0" cellpadding="0" width="95%">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <font size="2"><span style="font-size: 14px;">Patent No.: 07480302 B2
-                                                        (US)&nbsp;</span><br />
-                                                    <span style="font-size: 14px;">Inventors : 최린</span><br />
-                                                    <span style="font-size: 14px;">Date of patent : Jan. 20, 2009</span>
-                                                </font>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <p>&nbsp;</p>
-
-                                <p>
-                                    <font align="left"><strong><span style="font-size: 14px;">Title:센서 네트워크의 네크워크 노드들의
-                                                프로그램 방법 및
-                                                센서 네트워크의 동작 방법&nbsp;</span></strong></font>
-                                </p>
-
-                                <table border="0" cellpadding="0" width="95%">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <p>
-                                                    <font size="2">
-                                                        <font size="2"><span style="font-size: 14px;">출 원 번 호 :
-                                                                12/952,664
-                                                                (US)&nbsp;</span><br />
-                                                            <span style="font-size: 14px;">Inventors : 이상훈,
-                                                                최린</span><br />
-                                                            <span style="font-size: 14px;">출 원 일 : 2010년 11월
-                                                                23일&nbsp;</span>
-                                                        </font>
-                                                    </font>
-                                                </p>
-
-                                                <p>&nbsp;</p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <p>&nbsp;</p>
-
-                                <p>
-                                    <font align="left"><strong><span style="font-size: 14px;">Title:Method for sensing
-                                                and
-                                                recovery against buffer overflow attacks and apparatus
-                                                thereof&nbsp;</span></strong></font>
-                                </p>
-
-                                <table border="0" cellpadding="0" width="95%">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <font size="2"><span style="font-size: 14px;">Patent No.: 7,814,333 B2
-                                                        (US)&nbsp;</span><br />
-                                                    <span style="font-size: 14px;">Inventors : 최린, 신용</span><br />
-                                                    <span style="font-size: 14px;">Date of patent : Oct. 12, 2010</span>
-                                                </font>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <p>&nbsp;</p>
-
-                                <p>
-                                    <font align="left"><strong><span style="font-size: 14px;">Title:센서 네트워크의 네트워크 노드들의
-                                                프로그램 방법 및
-                                                센서 네트워크의 동작 방법&nbsp;</span></strong></font>
-                                </p>
-
-                                <table border="0" cellpadding="0" width="95%">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <font size="2"><span style="font-size: 14px;">출 원 번 호: 10-2009-0121662
-                                                        (KR)&nbsp;</span><br />
-                                                    <span style="font-size: 14px;">Inventors : 홍승기, 전종암, 표철식, 이상훈,
-                                                        최린</span><br />
-                                                    <span style="font-size: 14px;">출 원 일 : 2009년 12월 9일</span></font>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <p>&nbsp;</p>
-
-                                <p>
-                                    <font align="left"><strong><span style="font-size: 14px;">Title:Communication method
-                                                in the
-                                                sensor network using variable duty-cyclce scheme&nbsp;</span></strong>
-                                    </font>
-                                </p>
-
-                                <table border="0" cellpadding="0" width="95%">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <font size="2"><span style="font-size: 14px;">등 록 번 호: 10-0892321
-                                                        (KR)&nbsp;</span><br />
-                                                    <span style="font-size: 14px;">Inventors : 최린, 이상훈</span><br />
-                                                    <span style="font-size: 14px;">등 록 일 : 2009년 4월 1일</span></font>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <p>&nbsp;</p>
-
-                                <p>
-                                    <font align="left"><strong><span style="font-size: 14px;">Title:신호 강도를 이용한 무선 센서
-                                                네트워크의 통신 방법
-                                                및 장치&nbsp;</span></strong></font>
-                                </p>
-
-                                <table border="0" cellpadding="0" width="95%">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <font size="2"><span style="font-size: 14px;">출 원 번 호: 10-2008-0013470
-                                                        (KR)&nbsp;</span><br />
-                                                    <span style="font-size: 14px;">Inventors : 최효현, 김선기, 최린,
-                                                        이상훈</span><br />
-                                                    <span style="font-size: 14px;">출 원 일 : 2008년 2월 14일</span></font>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <p>&nbsp;</p>
-
-                                <p>
-                                    <font align="left"><strong><span style="font-size: 14px;">Title:무선 센서 네트워크의 가상 싱크
-                                                노드를 이용한 통신
-                                                방법 및 장치&nbsp;</span></strong></font>
-                                </p>
-
-                                <table border="0" cellpadding="0" width="95%">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <font size="2"><span style="font-size: 14px;">출 원 번 호: 10-2008-0013469
-                                                        (KR)&nbsp;</span><br />
-                                                    <span style="font-size: 14px;">Inventors : 최효현, 김선기, 최린,
-                                                        정재균</span><br />
-                                                    <span style="font-size: 14px;">출 원 일 : 2008년 2월 14일</span></font>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <p>&nbsp;</p>
-
-                                <p>
-                                    <font align="left"><strong><span style="font-size: 14px;">Title:METHOD FOR SENSING
-                                                AND
-                                                RECOVERY AGAINST BUFFER OVERFLOW ATTACKS AND APPARATUS
-                                                THEREOF&nbsp;</span></strong></font>
-                                </p>
-
-                                <table border="0" cellpadding="0" width="95%">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <font size="2"><span style="font-size: 14px;">출 원 번 호: 10/598,970
-                                                        (US)&nbsp;</span><br />
-                                                    <span style="font-size: 14px;">Inventors : 최 린, 신 용</span><br />
-                                                    <span style="font-size: 14px;">출 원 일 : 2006년 6월 22일</span></font>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <p>&nbsp;</p>
-
-                                <p>
-                                    <font align="left"><strong><span style="font-size: 14px;">Title:METHOD FOR SENSING
-                                                AND
-                                                RECOVERY AGAINST BUFFER OVERFLOW ATTACKS AND APPARATUS
-                                                THEREOF&nbsp;</span></strong></font>
-                                </p>
-
-                                <table border="0" cellpadding="0" width="95%">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <p>
-                                                    <font size="2">
-                                                        <font size="2"><span style="font-size: 14px;">출 원 번 호:
-                                                                05789355.4
-                                                                (EU)&nbsp;</span><br />
-                                                            <span style="font-size: 14px;">Inventors : 최 린, 신
-                                                                용</span><br />
-                                                            <span style="font-size: 14px;">출 원 일 : 2006년 6월 22일</span>
-                                                        </font>
-                                                    </font>
-                                                </p>
-
-                                                <p>&nbsp;</p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <p>&nbsp;</p>
-
-                                <p>
-                                    <font align="left"><strong><span style="font-size: 14px;">Title:METHOD FOR SENSING
-                                                AND
-                                                RECOVERY AGAINST BUFFER OVERFLOW ATTACKS AND APPARATUS
-                                                THEREOF&nbsp;</span></strong></font>
-                                </p>
-
-                                <table border="0" cellpadding="0" width="95%">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <font size="2"><span style="font-size: 14px;">출 원 번 호: 2007-503839
-                                                        (JP)&nbsp;</span><br />
-                                                    <span style="font-size: 14px;">Inventors : 최 린, 신 용</span><br />
-                                                    <span style="font-size: 14px;">출 원 일 : 2006년 9월 19일</span></font>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <p>&nbsp;</p>
-
-                                <p>
-                                    <font align="left"><strong><span style="font-size: 14px;">Title:계층적 룰베이스 분할을 통한 패킷
-                                                분류
-                                                방법&nbsp;</span></strong></font>
-                                </p>
-
-                                <table border="0" cellpadding="0" width="95%">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <p>
-                                                    <font size="2">
-                                                        <font size="2"><span style="font-size: 14px;">등 록 번 호: 특 허 제
-                                                                10-0594755-0000호&nbsp;</span><br />
-                                                            <span style="font-size: 14px;">Inventors : 최 린</span><br />
-                                                            <span style="font-size: 14px;">등 록 일 : 2006년 6월 22일</span>
-                                                        </font>
-                                                    </font>
-                                                </p>
-
-                                                <p>&nbsp;</p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <p>&nbsp;</p>
-
-                                <p>
-                                    <font align="left"><strong><span style="font-size: 14px;">Title:버퍼 오버플로우 공격들을 감지하고
-                                                복구하는 방법 및
-                                                그장치&nbsp;</span></strong></font>
-                                </p>
-
-                                <table border="0" cellpadding="0" width="95%">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <p>
-                                                    <font size="2">
-                                                        <font size="2"><span style="font-size: 14px;">등 록 번 호: 특 허 제
-                                                                10-0586500호&nbsp;</span><br />
-                                                            <span style="font-size: 14px;">Inventors : 최 린, 신
-                                                                용&nbsp;</span><br />
-                                                            <span style="font-size: 14px;">등 록 일 : 2006년 5월 26일</span>
-                                                        </font>
-                                                    </font>
-                                                </p>
-
-                                                <p>&nbsp;</p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <p>&nbsp;</p>
-
-                                <p>
-                                    <font align="left"><strong><span style="font-size: 14px;">Title:PACKET
-                                                CLASSIFICATION METHOD
-                                                THROUGH HIERARCHICAL RULEBASE PARTITIONING&nbsp;</span></strong></font>
-                                </p>
-
-                                <table border="0" cellpadding="0" width="95%">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <font size="2"><span style="font-size: 14px;">Patent No. :
-                                                        11/118,326&nbsp;</span><br />
-                                                    <span style="font-size: 14px;">Inventors : 최 린&nbsp;</span><br />
-                                                    <span style="font-size: 14px;">Filed : 2005년 5월 2일</span></font>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <p>&nbsp;</p>
-
-                                <p>
-                                    <font align="left"><strong><span style="font-size: 14px;">Title:무선 센서 네트워크에서 가상 싱크와
-                                                로테이션을
-                                                사용한 라우팅 경로 설정 방법&nbsp;</span></strong></font>
-                                </p>
-
-                                <table border="0" cellpadding="0" width="95%">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <p>
-                                                    <font size="2">
-                                                        <font size="2"><span style="font-size: 14px;">Patent No. :
-                                                                10-2005-52257&nbsp;</span><br />
-                                                            <span style="font-size: 14px;">Inventors : 최 린, 최
-                                                                광석&nbsp;</span><br />
-                                                            <span style="font-size: 14px;">Filed : 2005년 6월 17일</span>
-                                                        </font>
-                                                    </font>
-                                                </p>
-
-                                                <p>&nbsp;</p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <p>&nbsp;</p>
-
-                                <p>
-                                    <font align="left"><strong><span style="font-size: 14px;">Title:Method for sensing
-                                                and
-                                                recovery against buffer overflow attacks and apparatus
-                                                thereof</span></strong><span style="font-size: 14px;">&nbsp;</span>
-                                    </font>
-                                </p>
-
-                                <table border="0" cellpadding="0" width="95%">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <font size="2"><span style="font-size: 14px;">Patent No. :
-                                                        PCT/KR2005/000776&nbsp;</span><br />
-                                                    <span style="font-size: 14px;">Inventors : 최 린, 신
-                                                        용&nbsp;</span><br />
-                                                    <span style="font-size: 14px;">Filed : 2005년 3월 18일</span></font>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <p>&nbsp;</p>
-
-                                <p>
-                                    <font align="left"><strong><span style="font-size: 14px;">Title:계층적 룰베이스 분할을 통한 패킷
-                                                분류
-                                                방법</span></strong><span style="font-size: 14px;">&nbsp;</span></font>
-                                </p>
-
-                                <table border="0" cellpadding="0" width="95%">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <p>
-                                                    <font size="2">
-                                                        <font size="2"><span style="font-size: 14px;">Patent No. : 특허출원
-                                                                제
-                                                                P2004-0059058 호&nbsp;</span><br />
-                                                            <span style="font-size: 14px;">Inventors : 최 린, 허 재성, 정
-                                                                진우&nbsp;</span><br />
-                                                            <span style="font-size: 14px;">Filed : 2004년 7월 28일</span>
-                                                        </font>
-                                                    </font>
-                                                </p>
-
-                                                <p>&nbsp;</p>
-                                                <font align="left"><strong><span style="font-size: 14px;">Title:버퍼 오버플로우
-                                                            공격들을
-                                                            감지하고 복구하는 방법 및 그 장치</span></strong><span
-                                                        style="font-size: 14px;">&nbsp;</span></font>
-
-                                                <table border="0" cellpadding="0" width="95%">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <font size="2"><span style="font-size: 14px;">Patent No.
-                                                                        : 특허출원
-                                                                        제 2004-0018279 호&nbsp;</span><br />
-                                                                    <span style="font-size: 14px;">Inventors : 최 린, 신
-                                                                        용&nbsp;</span><br />
-                                                                    <span style="font-size: 14px;">Filed : 2004년 3월
-                                                                        18일&nbsp;</span></font>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-
-                                                <p>
-                                                    <font size="2">
-                                                        <font size="2"><span style="font-size: 14px;">&nbsp; &nbsp;
-                                                                &nbsp;
-                                                                &nbsp; &nbsp; &nbsp;&nbsp;</span></font>
-                                                    </font>
-                                                </p>
-                                                <font size="2"> </font>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <p><strong><span style="font-size: 14px;">Title:Mechanism for saving power on long
-                                            latency
-                                            stalls</span></strong><span style="font-size: 14px;">&nbsp;</span></p>
-
-                                <table border="0" cellpadding="0" width="95%">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <font size="2"><span style="font-size: 14px;">Patent No. : 6,233,690
-                                                        U.S.
-                                                        Patent&nbsp;</span><br />
-                                                    <span style="font-size: 14px;">Inventors : Lynn Choi (Irvine, CA);
-                                                        Sharangpani; Harshvardhan (Santa Clara, CA)&nbsp;</span><br />
-                                                    <span style="font-size: 14px;">Assignee : Intel Corporation (Santa
-                                                        Clara,
-                                                        CA)&nbsp;</span><br />
-                                                    <span style="font-size: 14px;">Appl. No. : 156552&nbsp;</span><br />
-                                                    <span style="font-size: 14px;">Filed : September 17,
-                                                        1998&nbsp;</span><br />
-                                                    <span style="font-size: 14px;">Approved : May 15, 2001 (Intel
-                                                        Corporation)&nbsp;</span></font><br />
-                                                &nbsp;
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    <!-- Team End -->
-
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.17s">
-        <div class="container py-5">
-            <div class="container px-4 text-white" style="color: azure;">
-                <h3 style="color: rgb(255, 255, 255);">
-                    COMPUTER SYSTEM LAB</h3>
-                <p><i class="fa fa-map-marker-alt me-3"></i>Industry-Academy Building 236, Korea University, 145
-                    Anam-ro, Seongbuk-gu,
-                    Seoul, Republic of Korea. 02841
-                    <br><i class="fa fa-envelope me-3"></i>Professor : lchoi@korea.ac.kr · swj8905@korea.ac.kr
-                    <br> <i class="fa fa-phone-alt me-3"></i> Tel : +82-2-3290-3896
-                </p>
-                <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script
-        src="{{ url_for('static', filename='lib/wow/wow.min.js') }}">
-    </script>
-    <script
-        src="{{ url_for('static', filename='lib/easing/easing.min.js') }}">
-    </script>
-    <script
-        src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}">
-    </script>
-    <script
-        src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}">
-    </script>
-
-    <!-- Template Javascript -->
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-</body>
-
-</html>
+            <!-- JavaScript Libraries -->
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+            <script
+                src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
+            <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+            <script
+                src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+            <script
+                src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+
+            <!-- Template Javascript -->
+            <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+        </body>
+
+    </html>

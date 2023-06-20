@@ -1,9 +1,10 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap
-# from flask_uploads import UploadSet, configure_uploads, IMAGES
+
 
 app = Flask(__name__, static_folder='static')
 bootstrap = Bootstrap(app)
+
 
 @app.route('/')
 def main():
@@ -15,7 +16,7 @@ def ResearchArea():
 
 @app.route('/project')
 def Projects():
-    return render_template('/index_copy.html')
+    return render_template('/project.html')
 
 @app.route('/professor')
 def Professor():
@@ -71,12 +72,36 @@ def Gradute_ECE519():
 
 @app.route('/notice')
 def Notice():
-    return render_template('/index_main.html')
+    return render_template('/index_main copy.html')
 
 @app.route('/news')
 def News():
     return render_template('/team.html')
 
-app.run(port=5000)
+@app.route('/project_1')
+def Current1():
+    return render_template('/pj_1.html')
+
+@app.route('/project_2')
+def Current2():
+    return render_template('/pj_2.html')
+
+@app.route('/project_3')
+def Current3():
+    return render_template('/pj_3.html')
+
+@app.route('/project_4')
+def Current4():
+    return render_template('/pj_4.html')
+
+@app.route('/project_5')
+def Current5():
+    return render_template('/pj_5.html')
+
+@app.route('/project_6')
+def Current6():
+    return render_template('/pj_6.html')
+
 if __name__ == '__main__':
-    app.run(port=80)
+    app.run(host="163.152.52.63", port=8080, debug=False)
+

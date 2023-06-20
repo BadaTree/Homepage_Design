@@ -91,6 +91,29 @@
                 text-align: center;
                 font-weight: bold;
             }
+            .board-container {
+                width: 80%;
+                margin: 0 auto;
+                padding: 5px;
+                background-color: #f0f0f0;
+            }
+
+            .board {
+                background-color: #fff;
+                padding: 5px;
+            }
+
+            .post {
+                margin-bottom: 20px;
+            }
+
+            .post h3 {
+                margin-bottom: 5px;
+            }
+
+            .post p {
+                color: #333;
+            }
         </style>
     </head>
     <body>
@@ -206,7 +229,7 @@
                                 aria-expanded="false">Boards</a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a class="dropdown-item" href="/notice">notice</a>
+                                    <a class="dropdown-item" href="/undergraduate">notice</a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item" href="/graduate">News</a>
@@ -270,9 +293,9 @@
                                         alt="...">
                                     <div class="carousel-caption d-none d-md-block" style="margin-left: -4rem;">
                                         <h3
-                                            style="color:azure ; font-weight: bold; text-align: left; padding-bottom: 1rem;">[ 고려대 뉴스 ] LG 화학 플랜트에서 1미터 이내 측위 오차의 세계 최고 수준 실내측위 시스템 구축 </h3>
-                                        <p style="text-align: left; margin-bottom: 2rem;">LG 화학 플랜트에서 1미터 이내 측위 오차의 세계 최고 수준 실내측위 시스템 구축 
-                                            최린 교수팀, 독자적인 경량화 측위 엔진 기술 적용</p>
+                                            style="color:azure ; font-weight: bold; text-align: left; padding-bottom: 1rem;">[ 고려대 뉴스 ] LG 화학 플랜트에서 1미터 이내 측위 오차의 세계 최고 수준 실내측위 시스템 구축
+                                        </h3>
+                                        <p style="text-align: left; margin-bottom: 2rem;">LG 화학 플랜트에서 1미터 이내 측위 오차의 세계 최고 수준 실내측위 시스템 구축 최린 교수팀, 독자적인 경량화 측위 엔진 기술 적용</p>
                                         <p style="text-align: left; ">
                                             <a
                                                 class="btn btn-slider "
@@ -472,7 +495,7 @@
                                 <h6 class="card-text" style="font-size: 18px; color: #5E5E5E;">국방 과학 연구소</h6>
                                 <h6 class="card-text" style="font-size: 18px; color: #5E5E5E;">2022.11.25 ~ 2025.10.31</h6>
                                 <a
-                                    href="/project_2"
+                                    href="#"
                                     class="btn btn-primary "
                                     style="background-color: #7C001A; border: none; margin-top: 1rem;margin-bottom: 1rem; padding: 12px 15px;border-radius: 8px;">View Details >
                                 </a>
@@ -497,7 +520,7 @@
                                 <h6 class="card-text" style="font-size: 18px; color: #5E5E5E;">산업자원부</h6>
                                 <h6 class="card-text" style="font-size: 18px; color: #5E5E5E;">2022.05.01~2023.12.31</h6>
                                 <a
-                                    href="/project_3"
+                                    href="#"
                                     class="btn btn-primary "
                                     style="background-color: #7C001A; border: none; margin-top: 1rem;margin-bottom: 1rem; padding: 12px 15px;border-radius: 8px;">View Details >
                                 </a>
@@ -523,7 +546,7 @@
                                 <h6 class="card-text" style="font-size: 18px; color: #5E5E5E;">국토교통부</h6>
                                 <h6 class="card-text" style="font-size: 18px; color: #5E5E5E;">2022.04.01~2026.12.31</h6>
                                 <a
-                                    href="/project_4"
+                                    href="#"
                                     class="btn btn-primary "
                                     style="background-color: #7C001A; border: none; margin-top: 1rem;margin-bottom: 1rem; padding: 12px 15px;border-radius: 8px;">View Details >
                                 </a>
@@ -548,7 +571,7 @@
                                 <h6 class="card-text" style="font-size: 18px; color: #5E5E5E;">TA9</h6>
                                 <h6 class="card-text" style="font-size: 18px; color: #5E5E5E;">2021.08.13~2023~12.31</h6>
                                 <a
-                                    href="/project_5"
+                                    href="#"
                                     class="btn btn-primary "
                                     style="background-color: #7C001A; border: none; margin-top: 1rem;margin-bottom: 1rem; padding: 12px 15px;border-radius: 8px;">View Details >
                                 </a>
@@ -573,7 +596,7 @@
                                 <h6 class="card-text" style="font-size: 18px; color: #5E5E5E;">포스코</h6>
                                 <h6 class="card-text" style="font-size: 18px; color: #5E5E5E;">2021.02.01~2021.11.26</h6>
                                 <a
-                                    href="/project_6"
+                                    href="#"
                                     class="btn btn-primary "
                                     style="background-color: #7C001A; border: none; margin-top: 1rem;margin-bottom: 1rem; padding: 12px 15px;border-radius: 8px;">View Details >
                                 </a>
@@ -611,6 +634,7 @@
                     <div class="col"></div>
                 </div>
             </secton>
+
             <!-- information 영역 -->
             <section class="custom_container">
                 <div class="row " style="margin-bottom: 3rem;">
@@ -668,15 +692,23 @@
                 </div>
             </section>
 
-             <!-- Contact 영역 -->
-             <section class="custom_container" style="background-color: #F9F9F9; ">
-                <div class="row justify-content-md-center" style=" margin-top: 5rem;padding-bottom: 5rem;">
+            <!-- Contact 영역 -->
+            <section class="custom_container" style="background-color: #F9F9F9; ">
+                <div
+                    class="row justify-content-md-center"
+                    style=" margin-top: 5rem;padding-bottom: 5rem;">
                     <h1
                         style="color: #7C001A; font-weight: bold; text-align: center; margin-top: 5rem;">Contact</h1>
                     <h4 style="color: #7E7E7E; font-weight: bold; text-align: center;">Computer Systems Lab Information</h4>
-                    <iframe style="width:55%;height: 50vh; margin-top:3rem; margin-bottom:2rem; padding-left:auto; padding-right:auto;border-radius: 30px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1580.8931278067341!2d127.02288467028194!3d37.583650573217895!
-                    2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cbcb11f445687%3A0xba9f0bcf185144c4!2z7ISc7Jq47Yq567OE7IucIOyViOyVlOuPmTPqsIAg6rOg66Ck64yA7ZWZ6rWQIOqzte2Vmeq0gA!5e0!3m2!1sko!2skr!4v1685691831690!5m2!1sko!2skr" 
-                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe
+                        style="border:0;"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1580.8931278067341!2d127.02288467028194!3d37.583650573217895!
+                    2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cbcb11f445687%3A0xba9f0bcf185144c4!2z7ISc7Jq47Yq567OE7IucIOyViOyVlOuPmTPqsIAg6rOg66Ck64yA7ZWZ6rWQIOqzte2Vmeq0gA!5e0!3m2!1sko!2skr!4v1685691831690!5m2!1sko!2skr"
+                        width="100%"
+                        height="100%"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <h6 lang="ko" class="text-center font-weight-bold">
                         #236, Industry-Academy Building, 145 Anam-ro, Korea University, Seongbuk-gu,
                         Seoul 136-713, Republic of Korea<br><br>
@@ -685,7 +717,6 @@
                     </h6>
                 </div>
             </section>
-
 
             <!-- footer 영역 -->
             <div
@@ -722,17 +753,17 @@
                 src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
                 integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
                 crossorigin="anonymous"></script>
-                <script>
-                    function changeContent(videoLink, text) {
-                        var videoElement = document.getElementById('video-link');
-                        var headingElement = document.getElementById('heading');
-    
-                        // Update video link
-                        videoElement.src = videoLink;
-    
-                        // Update text
-                        headingElement.textContent = text;
-                    }
-                </script>
+            <script>
+                function changeContent(videoLink, text) {
+                    var videoElement = document.getElementById('video-link');
+                    var headingElement = document.getElementById('heading');
+
+                    // Update video link
+                    videoElement.src = videoLink;
+
+                    // Update text
+                    headingElement.textContent = text;
+                }
+            </script>
         </body>
     </html>

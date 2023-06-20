@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <title>고려대학교 컴퓨터시스템 연구실</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='mark.ico') }}">
+
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -13,7 +15,7 @@
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
     <link
         href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
         rel="stylesheet">
@@ -37,6 +39,70 @@
     <!-- Template Stylesheet -->
     <link href="{{ url_for('static', filename='css/style.css') }}"
         rel="stylesheet">
+
+    <style>
+        :lang(en) {
+            font-family: 'Open-sans'; /* English font */
+        }
+
+        :lang(ko) {
+            font-family: 'Pretendard-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+         /* Korean font */
+        }
+        .dropdown .btn::after {
+            display: none;
+        }
+
+        .dropdown-toggle-no-caret::after {
+            display: none !important;
+        }
+
+        .nav-item:hover .nav-link {
+            color: #7C001A;
+            /* 원하는 색상으로 변경 */
+        }
+
+        .line-container {
+            position: relative;
+            height: 420px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: -10px;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        .line {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: #DDDDDD;
+            z-index: 0.5;
+            justify-content: flex-start;
+        }
+
+        .circle-container {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+            /* align-items: center; */
+            /* justify-content: flex-start; */
+        }
+
+        .circle {
+            width: 15px;
+            height: 15px;
+            background-color: #9A9A9A;
+            border-radius: 50%;
+            margin-bottom: 100px;
+            z-index: 1;
+        }
+    </style>
 </head>
 
 <body>
@@ -49,237 +115,346 @@
     </div>
     <!-- Spinner End -->
 
-        <!-- Navbar Start -->
-        <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-            <a href="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-                <h2 class="m-0 text-primary" href="/" style="color: #00143A;">
-                    <i class="fa fa-book me-3"></i>COMPUTERSYSTEMLAB</h2>
-            </a>
-            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Research</a>
-                        <div class="dropdown-menu fade-down m-0">
-                            <a href="/research" class="dropdown-item active">Research Area</a>
-    
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Professor</a>
-                        <div class="dropdown-menu fade-down m-0">
-                            <a href="/professor" class="dropdown-item active">Professor</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">People</a>
-                        <div class="dropdown-menu fade-down m-0">
-                            <a href="/members" class="dropdown-item active">Current members</a>
-                            <a href="/alumni" class="dropdown-item">Alumni</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Publications</a>
-                        <div class="dropdown-menu fade-down m-0">
-                            <a href="/journal" class="dropdown-item active">Journals</a>
-                            <a href="/conference" class="dropdown-item">Conferences</a>
-                            <a href="/patent" class="dropdown-item">Patents</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Courses</a>
-                        <div class="dropdown-menu fade-down m-0">
-                            <a href="/undergraduate" class="dropdown-item active">Undergraduate Courses</a>
-                            <a href="/graduate" class="dropdown-item">Graduate Courses</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Boards</a>
-                        <div class="dropdown-menu fade-down m-0">
-                            <a href="/notice" class="dropdown-item active">notice</a>
-                            <a href="/news" class="dropdown-item">news</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <!-- Navbar End -->
-    
-    <!-- Header Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 page-header">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Professor</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Header End -->
+     <!-- 카테고리 영역 시작 -->
+     <nav
+     class="navbar navbar-expand-lg bg-white "
+     aria-label="Eighth navbar example"
+     style="height: 10rem; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);">
+     <div class="container d-flex align-items-center">
+         <a class="navbar-brand " href="#">
+             <div class="container h-100">
+                 <img
+                     href="/"
+                     src="../static/img/mark_.png"
+                     class="rounded float-start"
+                     alt="..."
+                     style="width: 5rem;height: 5rem; padding-right: 20px;">
+                 <h1 href="/" style="color:#262626; font-weight: bold;">CS LAB</h1>
+                 <p href="/" style="font-size: small;">COMPUTER SYSTEM LAB</p>
+             </div>
+         </a>
+         <button
+             class="navbar-toggler"
+             style="background-color: #F9F9F9;"
+             type="button"
+             data-bs-toggle="collapse"
+             data-bs-target="#navbarsExample07"
+             aria-controls="navbarsExample07"
+             aria-expanded="false"
+             aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse justify-content-end" id="navbarsExample07">
+             <ul class="navbar-nav" style="font-weight: bold;">
+                 <li class="nav-item" style="padding-right: 1.5rem;padding-top:1rem;">
+                     <a class="nav-link active" aria-current="page" href="/">Home</a>
+                 </li>
+
+                 <li class="nav-item dropdown" style="padding-right: 1.5rem;padding-top:1rem;">
+                     <a
+                         class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                         href="#"
+                         data-bs-toggle="dropdown"
+                         aria-expanded="false">Research</a>
+                     <ul class="dropdown-menu">
+                         <li>
+                             <a class="dropdown-item" href="/research">Research Area</a>
+                         </li>
+                         <li>
+                             <a class="dropdown-item" href="/project">Projects</a>
+                         </li>
+                     </ul>
+                 </li>
+
+                 <li class="nav-item" style="padding-right: 1.5rem; padding-top:1rem;">
+                    <a class="nav-link active" aria-current="page" href="/professor">Professor</a>
+                 </li>
+
+                 <li class="nav-item dropdown" style="padding-right: 1.5rem;padding-top:1rem;">
+                     <a
+                         class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                         href="#"
+                         data-bs-toggle="dropdown dropdown-toggle-no-caret"
+                         aria-expanded="false">People</a>
+                     <ul class="dropdown-menu">
+                         <li>
+                             <a class="dropdown-item" href="/members">Current members</a>
+                         </li>
+                         <li>
+                             <a class="dropdown-item" href="/alumni">Alumni</a>
+                         </li>
+                     </ul>
+                 </li>
+                 <li class="nav-item dropdown" style="padding-right: 1.5rem;padding-top:1rem;">
+                     <a
+                         class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                         href="#"
+                         data-bs-toggle="dropdown"
+                         aria-expanded="false">Publications</a>
+                     <ul class="dropdown-menu">
+                         <li>
+                             <a class="dropdown-item" href="/journal">Journals</a>
+                         </li>
+                         <li>
+                             <a class="dropdown-item" href="/conference">Conferences</a>
+                         </li>
+                         <li>
+                             <a class="dropdown-item" href="/patent">Patents</a>
+                         </li>
+                     </ul>
+                 </li>
+
+                 <li class="nav-item dropdown" style="padding-right: 1.5rem;padding-top:1rem;">
+                     <a
+                         class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                         href="#"
+                         data-bs-toggle="dropdown"
+                         aria-expanded="false">Courses</a>
+                     <ul class="dropdown-menu">
+                         <li>
+                             <a class="dropdown-item" href="/undergraduate">Undergraduate Courses</a>
+                         </li>
+                         <li>
+                             <a class="dropdown-item" href="/graduate">Graduate Courses</a>
+                         </li>
+                     </ul>
+                 </li>
+                 <li class="nav-item dropdown" style="padding-top:1rem;">
+                     <a
+                         class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                         href="#"
+                         data-bs-toggle="dropdown"
+                         aria-expanded="false">Boards</a>
+                     <ul class="dropdown-menu">
+                         <li>
+                             <a class="dropdown-item" href="/undergraduate">notice</a>
+                         </li>
+                         <li>
+                             <a class="dropdown-item" href="/graduate">News</a>
+                         </li>
+                     </ul>
+                 </li>
+             </ul>
+         </div>
+     </nav>
+     <!-- 카테고리 영역 끝 -->
 
     <!-- Professor Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3" style="color: #00143A;">
-                    COMPUTERSYSTEMLAB</h6>
-                <div class="row g-0 justify-content-center align-items-center " style=" margin: 0 auto;">
-                    <h1>Lynn Choi<br></h1>
-                    <div class="col-md-4 col-4 col-lg-2" style="align-items: center; margin: 0 auto;">
-                        <img class="img-fluid"
-                            src="{{ url_for('static', filename='img/professor.jpg') }}"
-                            alt="" class="img-fluid rounded-start"
-                            style="margin-right: 30px;margin-left: 10px; width: 300px; height: 300px;">
-                    </div>
-                    <div class="col-md-8 col-8 col-lg-10" style="text-align: left; font-size: 18px;">
+    <div style="margin-top: 7%;">
+        <div class="justify-content-center align-items-center text-center"
+            style=" margin: 0 auto; ">
+            <div class="col-md-8 col-8 col-lg-10"
+            style="display: flex; align-items:flex-start; font-size: 18px; margin: 0 auto; padding: 25px; width: 50%; text-align: left;">
+            <h3 style="color: #7C001A; text-align: left; font-family: 'Open-sans';">Professor</h3>
+        </div>
+            <div class="col-md-8 col-8 col-lg-10"
+                style="align-items: center; margin: 0 auto; font-size: 18px; text-align: left; padding-bottom: 100px; width: 50%;">
+                <div class="col-md-8 col-8 col-lg-10 d-flex align-items-center" style="margin: 0 auto;">
+                    <img class="img-fluid rounded-start"
+                        src="{{ url_for('static', filename='img/professor.jpg') }}"
+                        alt="" style="margin-right: 50px; height: 300px; border-radius: 10px;">
 
-                        <ul>
-                            <li>
-                                <strong>Professor<br></strong>
-                                School of Electrical Engineering, Korea University
-                            </li>
-                            <li>
-                                <strong>Location<br></strong>
-                                236, College of Engineering Building, Anam Ro 5, Sungbuk ku, Seoul, Republic of
-                                Korea.
-                                <br></li>
-                            <li>
-                                <strong>Phone<br></strong>3290-3896
-                            </li>
-                            <li>
-                                <strong>E-mail<br></strong>lchoi@korea.ac.kr
-                            </li>
-                    </div>
-                </div>
-                <hr>
 
-                <!-- Education -->
-                <div class="text-center wow fadeInUp" data-wow-delay="0.3s"
-                    style="background-color: rgb(249, 249, 249);">
-                    <!-- <h6 class="section-title bg-white text-center text-primary px-3 "
-                    style="margin-top: 100px; font-color: #00143A; ;">COMPUTERSYSTEMLAB</h6> -->
-                    <h1 class="mb-5">Education</h1>
-                    <div class="col-md-8 col-8 col-lg-10" style="text-align: left; font-size: 18px; margin: 0 auto;">
-                        <li>
-                            <strong>Sep.2000 - Present​<br></strong>
-                            Korea University, School of Electrical Engineering, Professor
-                        </li><br>
-                        <li>
-                            <strong>Sep.1998 - Aug.2000<br></strong>
-                            University of California Irvine, Department of Electrical and Computer
-                            Engineering, Assistant Professor
-                        </li><br>
-                        <li>
-                            <strong>​Mar. 2023 – Present<br></strong>
-                            Korea University, South Korea: Professor, Electrical Engineering
-                        </li><br>
-                    </div>
-                </div>
-                <hr>
-
-                <!-- history -->
-                <div class="text-center wow fadeInUp" data-wow-delay="0.1s "
-                    style="background-color: rgb(255, 255, 255);">
-                    <!-- <h6 class="section-title bg-white text-center text-primary px-3 "
-                    style="margin-top: 100px; font-color: #00143A; ;">COMPUTERSYSTEMLAB</h6> -->
-                    <h1 class="mb-5">Employment history</h1>
-                    <div class="col-md-8 col-8 col-lg-10" style="text-align: left; font-size: 18px; margin: 0 auto;">
-                        <li>
-                            <strong>Sep.2000 - Present​<br></strong>
-                            Korea University, School of Electrical Engineering, Professor
-                        </li><br>
-                        <li>
-                            <strong>Sep.1998 - Aug.2000<br></strong>
-                            University of California Irvine, Department of Electrical and Computer
-                            Engineering, Assistant Professor
-                        </li><br>
-                        <li>
-                            <strong>​Mar. 2023 – Present<br></strong>
-                            Korea University, South Korea: Professor, Electrical Engineering
-                        </li><br>
-                    </div>
-                </div>
-                <hr>
-
-                <!-- Awards -->
-                <div class="text-center wow fadeInUp" data-wow-delay="0.5s"
-                    style="background-color: rgb(249, 249, 249);">
-                    <!-- <h6 class="section-title bg-white text-center text-primary px-3 "
-                    style="margin-top: 100px; font-color: #00143A; ;">COMPUTERSYSTEMLAB</h6> -->
-                    <h1 class="mb-5">Awards</h1>
-                    <div class="col-md-8 col-8 col-lg-10" style="text-align: left; font-size: 18px; margin: 0 auto;">
-                        <li>
-                            <strong>1990 ~ 1993<br></strong>
-                            교육부 국비유학생, 컴퓨터공학 분야
-                        </li><br>
-                        <li>
-                            <strong>2006<br></strong>
-                            한국정보과학회, 가헌학술상 (2006), “버퍼 오버플로우 공격에 대한 마이크로구조적 방어 및 복구 기법"
-                        </li><br>
-                        <li>
-                            <strong>2020<br></strong>
-                            산업자원부 신기술인증 (2020), “딥러닝 기술 사용 자기장 기반 실내측위 기술”
-                        </li><br>
-                        <li>
-                            <strong>2022<br></strong>
-                            대한민국 산업기술 대전, 산업기술진흥 유공자 대통령 표창 (2022) “세계 최고 수준 (측위 오차 1미터 이내)의 독자적인 실내측위 원천기술
-                            개발”
+                    <ul style="list-style-type: none; margin: 0; padding: 0;">
+                        <h2 style="color: #000000; text-align: left; font-family: 'Open-sans';padding-bottom: 20px;">
+                            <strong>Lynn Choi<strong></h2>
+                        <li style="padding-bottom: 10px;">
+                            <strong style="color: #7C001A;">Professor<br></strong>
+                            School of Electrical Engineering, Korea University
                         </li>
+                        <li style="padding-bottom: 10px;">
+                            <strong style="color: #7C001A;">Location<br></strong>
+                            236, College of Engineering Building, Anam Ro 5, Sungbuk ku, Seoul, Republic of Korea.
+                            <br>
+                        </li>
+                        <li style="padding-bottom: 10px;">
+                            <strong style="color: #7C001A;">Phone<br></strong>3290-3896
+                        </li>
+                        <li style="padding-bottom: 10px;">
+                            <strong style="color: #7C001A;">E-mail<br></strong>lchoi@korea.ac.kr
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Education -->
+        <div class="text-center wow fadeInUp " data-wow-delay="0.6s"
+            style=" background-color: rgb(249, 249, 249); padding-top: 75px; padding-bottom: 75px; ">
+            <div class="col-md-8 col-8 col-lg-10"
+                style="display: flex; align-items:flex-start; font-size: 18px; margin: 0 auto; padding: 25px; width: 50%; text-align: left;">
+                <h3 style="color: #7C001A; text-align: left; font-family: 'Open-sans';">Education</h3>
+            </div>
+            <div class="col-md-8 col-8 col-lg-10"
+                style="display: flex; align-items:flex-start; font-size: 18px; margin: 0 auto; padding: 25px; width: 50%; text-align: left;">
+
+                <h2
+                    style="color: #F3DADA;font-family: 'Pretendard-Regular';
+                src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');padding-right: 70px;">
+                    ~ 2023</h2>
+                <div class="line-container" style="height: 280px;">
+                    <div class="circle-container" style="padding-top: -150px;">
+                        <div class="circle" style="margin-bottom: 80px;"></div>
+                        <div class="circle" style="margin-bottom: 80px;"></div>
+                        <div class="circle" style="margin-bottom: 80px;"></div>
                     </div>
+                    <div class="line"></div>
+                </div>
+
+                <div class="col-md-8 col-8 col-lg-10" style="text-align: left; font-size: 18px; margin: 0 auto;">
+                    <p>
+                        <strong>Mar.1996<br></strong>
+                        Seoul National University, Computer Engineering, B.S.
+                    </p><br>
+                    <p>
+                        <strong>Feb.1988<br></strong>
+                        University of Illinois Urbana - Champaign, Computer Science, PhD
+                    </p><br>
+                    <p>
+                        <strong>Feb.1986<br></strong>
+                        Seoul National University, Computer Engineering, M.S
+                    </p><br>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- History -->
+        <div class="text-center wow fadeInUp " data-wow-delay="0.6s"
+            style=" background-color: rgb(255, 255, 255); padding-top: 75px; padding-bottom: 75px;">
+            <div class="col-md-8 col-8 col-lg-10"
+                style="display: flex; align-items:flex-start; font-size: 18px; margin: 0 auto; padding: 25px; width: 50%; text-align: left;">
+                <h3 style="color: #7C001A; text-align: left; font-family: 'Open-sans';">Employment history</h3>
+            </div>
+
+            <div class="col-md-8 col-8 col-lg-10"
+                style="display: flex; align-items:flex-start; font-size: 18px; margin: 0 auto; padding: 25px; width: 50%; text-align: left;">
+                <h2
+                    style="color: #F3DADA; font-family: 'Pretendard-Regular';
+                src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');padding-right: 70px;">
+                    ~ 2023</h2>
+                <div class="line-container">
+                    <div class="circle-container">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="line" style=""></div>
+                </div>
+                <div class="col-md-8 col-8 col-lg-10" style="text-align: left; font-size: 18px; margin: 0 auto;">
+                    <p>
+                        <strong>Sep.2000 - Present​<br></strong>
+                        Korea University, School of Electrical Engineering, Professor
+                    </p><br>
+                    <p>
+                        <strong>Sep.1998 - Aug.2000<br></strong>
+                        University of California Irvine, Department of Electrical and Computer
+                        Engineering, Assistant Professor
+                    </p><br>
+                    <p>
+                        <strong>Apr.1996 - Aug.1998<br></strong>
+                        Intel Corporation, Santa Clara, California, Senior Design Engineer, Microarchitecture team of
+                        64-bit CPU, Itanium (Merced) project
+                    </p><br>
+                    <p>
+                        <strong>Feb.1988 - Aug.1990<br></strong>
+                        한국통신 연구개발단 전임연구원
+                    </p><br>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Team End -->
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.17s">
-        <div class="container py-5">
-            <div class="container px-4 text-white" style="color: azure;">
-                <h3 style="color: rgb(255, 255, 255);">
-                    COMPUTER SYSTEM LAB</h3>
-                <p><i class="fa fa-map-marker-alt me-3"></i>Industry-Academy Building 236, Korea University, 145
-                    Anam-ro, Seongbuk-gu,
-                    Seoul, Republic of Korea. 02841
-                    <br><i class="fa fa-envelope me-3"></i>Professor : lchoi@korea.ac.kr · swj8905@korea.ac.kr
-                    <br> <i class="fa fa-phone-alt me-3"></i> Tel : +82-2-3290-3896
+        <!-- Award -->
+        <div class="text-center wow fadeInUp " data-wow-delay="0.6s"
+            style=" background-color: rgb(249, 249, 249); padding-top: 75px; padding-bottom: 75px; ">
+            <div class="col-md-8 col-8 col-lg-10"
+                style="display: flex; align-items:flex-start; font-size: 18px; margin: 0 auto; padding: 25px; width: 50%; text-align: left;">
+                <h3 style="color: #7C001A; text-align: left; font-family: 'Open-sans';">Awards</h3>
+            </div>
+            <div class="col-md-8 col-8 col-lg-10"
+                style="display: flex; align-items:flex-start; font-size: 18px; margin: 0 auto; padding: 25px; width: 50%; text-align: left;">
+
+                <h2
+                    style="color: #F3DADA; padding-right: 20px; font-family: 'Pretendard-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');padding-right: 70px;">
+                    ~ 2023</h2>
+                <div class="line-container">
+                    <div class="circle-container">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="line" style=""></div>
+                </div>
+                <div class="col-md-8 col-8 col-lg-10" style="text-align: left; font-size: 18px; margin: 0 auto;">
+                    <p>
+                        <strong>2022<br></strong>
+                        대한민국 산업기술 대전, 산업기술진흥 유공자 대통령 표창 (2022) “세계 최고 수준 (측위 오차 1미터 이내)의 독자적인 실내측위 원천기술
+                        개발”
+                    </p><br>
+                    <p>
+                        <strong>2020<br></strong>
+                        산업자원부 신기술인증 (2020), “딥러닝 기술 사용 자기장 기반 실내측위 기술”
+                    </p><br>
+                    <p>
+                        <strong>2006<br></strong>
+                        한국정보과학회, 가헌학술상 (2006), “버퍼 오버플로우 공격에 대한 마이크로구조적 방어 및 복구 기법"
+                    </p><br>
+                    <p>
+                        <strong>1990 ~ 1993<br></strong>
+                        교육부 국비유학생, 컴퓨터공학 분야
+                    </p><br>
+                </div>
+            </div>
+        </div>
+
+        <!-- Professor End -->
+
+        <!-- footer 영역 -->
+        <div lang="en" class="row d-flex align-items-center" style="height: 17rem; background-color: #1E1E1E;">
+            <div class="col" ></div>
+            <div lang="en" class="col-9 " lang="ko" >
+                <hr style="color: #FFFFFF; border-width: 2px;">    
+            <h3 style="color: rgb(255, 255, 255); text-align: left;">
+                COMPUTER SYSTEM LAB</h3>
+            <p style="text-align: left; color: #FFFFFF;">Industry-Academy Building 236, Korea
+                University, 145 Anam-ro, Seongbuk-gu, Seoul, Republic of Korea. 02841
+                <br>Professor : lchoi@korea.ac.kr · swj8905@korea.ac.kr
+                <br> Tel : +82-2-3290-3896
                 </p>
-                <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                </div>
+           
             </div>
+            <div class="col"></div>
         </div>
-    </div>
-    <!-- Footer End -->
 
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top">
+            <i class="bi bi-arrow-up"></i>
+        </a>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script
+            src="{{ url_for('static', filename='lib/wow/wow.min.js') }}">
+        </script>
+        <script
+            src="{{ url_for('static', filename='lib/easing/easing.min.js') }}">
+        </script>
+        <script
+            src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}">
+        </script>
+        <script
+            src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}">
+        </script>
 
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script
-        src="{{ url_for('static', filename='lib/wow/wow.min.js') }}">
-    </script>
-    <script
-        src="{{ url_for('static', filename='lib/easing/easing.min.js') }}">
-    </script>
-    <script
-        src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}">
-    </script>
-    <script
-        src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}">
-    </script>
-
-    <!-- Template Javascript -->
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+        <!-- Template Javascript -->
+        <script src="{{ url_for('static', filename='js/main.js') }}">
+        </script>
 </body>
 
 </html>
