@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Indoor Positioning Laboratory</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='mark.ico') }}">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin="crossorigin">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+            rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+            rel="stylesheet">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+            rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link
+            href="{{ url_for('static', filename='lib/animate/animate.min.css') }}"
+            rel="stylesheet">
+        <link
+            href="{{ url_for('static', filename='lib/animate/animate.css') }}"
+            rel="stylesheet">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link
+            href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+            rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+        <style>
+            :lang(en) {
+                font-family: 'Open-sans'; /* English font */
+            }
+
+            :lang(ko) {
+                font-family: 'Pretendard-Regular';
+                src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+             /* Korean font */
+            }
+            .dropdown .btn::after {
+                display: none;
+            }
+
+            .dropdown-toggle-no-caret::after {
+                display: none !important;
+            }
+
+            .nav-item:hover .nav-link {
+                color: #7C001A;
+                /* 원하는 색상으로 변경 */
+            }
+
+            .dropdown .btn::after {
+               display: none;
+            }
+
+            .board-container {
+                width: 80%;
+                margin: 0 auto;
+                padding: 5px;
+                background-color: #f0f0f0;
+            }
+
+            .board {
+                background-color: #fff;
+                padding: 5px;
+            }
+
+            .post {
+                margin-bottom: 20px;
+            }
+
+            .post h3 {
+                margin-bottom: 5px;
+            }
+
+            .post p {
+                color: #333;
+            }
+        </style>
+    </head>
+
+    <body>
+    <!-- 카테고리 영역 시작 -->
+    <div class="custom_container" style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);padding-top: 2%; padding-bottom:2%;">
+        <nav
+            class="navbar navbar-expand-lg navbar-light bg-white "
+            aria-label="Eighth navbar example"
+            style=" padding: 0 0;">
+            <div class="container-fluid" style="margin-left: 10%;margin-right: 10%;">
+                <a class="navbar-brand " href="/">
+                    <div class="d-flex align-items-center">
+                        <img
+                            src="../static/img/mark_.png"
+                            alt="Logo"
+                            width="60"
+                            height="70"
+                            class="img-fluid">
+                        <div class="ms-3">
+                            <h4 class="mb-0" style="color: #262626;">Indoor Positioning Laboratory</h4>
+                            <h6 class="mb-0">Indoor Positioning Laboratory</p>
+                        </div>
+                    </div>
+                </a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    style="background-color: #F9F9F9;"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarsExample07"
+                    aria-controls="navbarsExample07"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" style="color: red;"></span>
+                </button>
+                <div
+                    class="collapse navbar-collapse justify-content-end"
+                    id="navbarsExample07"
+                    style="padding: 0 0;">
+                    <ul class="navbar-nav" style="font-weight: bold;">
+                        <li class="nav-item" style="padding-right: 1.5rem;padding-top:1rem;font-weight: bold;">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+
+                        <li class="nav-item dropdown" style="padding-right: 1.5rem;padding-top:1rem;">
+                            <a
+                                class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                                href="#"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">Research</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="/research">Research Area</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/project">Projects</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item" style="padding-right: 1.5rem; padding-top:1rem;">
+                            <a class="nav-link active" aria-current="page" href="/professor">Professor</a>
+                        </li>
+
+                        <li class="nav-item dropdown" style="padding-right: 1.5rem;padding-top:1rem;">
+                            <a
+                                class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                                href="/members"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">People</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="/members">Current members</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/alumni">Alumni</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown" style="padding-right: 1.5rem;padding-top:1rem;">
+                            <a
+                                class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                                href="#"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">Publications</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="/journal">Journals</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/conference">Conferences</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/patent">Patents</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown" style="padding-right: 1.5rem;padding-top:1rem;">
+                            <a
+                                class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                                href="#"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">Courses</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="/undergraduate">Undergraduate Courses</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/graduate">Graduate Courses</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown" style="padding-top:1rem;">
+                            <a
+                                class="nav-link dropdown-toggle dropdown-toggle-no-caret"
+                                href="#"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">Boards</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="/">notice</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/">News</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- 카테고리 영역 끝 -->
+
+        <!-- Current Start -->
+        <div class="row" style="padding: 6rem 10rem; padding-bottom: 10rem;">
+            <h1 style="color: #7C001A; font-weight: bold; text-align: center; padding-top: 5rem;">Current Projects</h1>
+            <h4 style="color: #7E7E7E; font-weight: bold; text-align: center; margin-top: 0.5rem; margin-bottom: 4rem">Computer Systems Lab</h4>
+            <div class="board-container">
+                <div class="board" style="color: #000;padding-left: 3rem;padding-right: 3rem; padding-top: 4rem;" lang="ko">
+                    <p>
+                        <b style="font-size: 16px;"> </b>
+                    </p>
+        
+                    <h4 style="font-weight:bold; text-align: center;"> 교통약자를 위한 도시철도 역사내 맞춤형 스마트 내비게이션 개발</h4>
+                    <h5 style="text-align: center;">2022.05.01~2023.12.31</h5>
+                    <hr style="margin-top: 2rem;margin-bottom: 2rem;">
+                    <div style="text-align: center;">
+                        <img src="../static/img/pj_03.png" alt="Project Image" style="max-width: 700px; height: auto;">
+                    </div>
+
+                    <p style="text-align: center;" lang="ko">
+                        <br><br><br> <b>□ 연구개발 개요</b><br>
+
+교통 약자를 위한 역사 내 맞춤형 내비게이션 개발을 위해 다음의 2단계로 나누어 연구 개발을 진행한다.<br><br>
+
+<b>1. 지구 자기장 기반 실내 측위 테스트베드 구축 및 기본적인 내비게이션 앱 개발 :</b><br><br> 지하철 역사 테스트베드(한국철도공사 운영 역사) 내에서 연구팀의 딥러닝 기반 지자기 실내 측위 기술을 적용하여 사용자의 위치 추적, 이동 경로 분석 및 다양한 보행 상태 등을 추정할 수 있는 실내 측위 시스템을 구축한다. 측위 시스템 구축을 위해 테스트베드 내 자기장 데이터를 수집하고, 수집한 자기장 맵을 딥러닝으로 학습한다. 딥러닝 모듈 외에도 측위를 위한 instant localization 엔진, PDR 엔진 등을 현장에 맞게 최적화한다. 1 단계에서는 기본적으로 테스트베드의 단층 환경에서 1 미터 내외의 측위 성능을 제공하는 것을 목표로 하며 다양한 보행 속도와 스마트폰 파지 자세에 모두 대응할 수 있도록 실시간 현장 테스트를 진행하고 성능을 검증한다. 휠체어 리프트, 엘리베이터, 에스컬레이터, 점자 블록, 장애인 화장실 등과 같은 교통 약자 편의 시설의 위치 정보를 DB에 저장하고, 기본적인 목적지 탐색 및 경로 안내 기능을 탑재한 내비게이션을 개발한다.
+
+<br><br>
+<b>2. 시스템 통합 및 장애인 유형 별 안전한 길 안내 서비스 개발 :</b><br><br> 2 단계에서는 1 단계에서 개발된 측위 엔진(딥러닝, instant localization, PDR)들을 통합하고 계단, 엘리베이터, 에스컬레이터를 포함한 복층 공간에서 실시간으로 층간 이동을 인식할 수 있도록 층간 이동 인식 모듈을 추가하여 복층을 포함한 역사 전체에서 1 미터 내외의 측위 성능을 제공하는 측위 시스템을 구축한다. 전동 휠체어 사용 지체장애인의 경우 전동 휠체어 전용 추측항법 엔진을 적용하여 이동 속도와 이동 방향을 정확하게 추정할 수 있도록 한다. 내비게이션 앱에서는 그림 2에서와 같이 장애인 유형을 시각 장애인, 휠체어 사용 장애인 등과 같이 세부적으로 나누어 사용자 유형 별 내비게이션 화면 및 메뉴 구성을 다르게 디자인하고,  경로 안내 시 휠체어 사용자에게는 엘리베이터나 휠체어 리프트가 있는 곳을 우선으로, 시각 장애인에게는 점자 블록이나 음성 유도기가 있는 곳을 우선으로 안내하는 등 안전하고 편리한 경로 안내를 제공할 수 있도록 개발한다. 열차 승강장 진입 알림 기능과 시각 장애인을 위한 위험 구역 접근 알림 기능 등을 개발하여 목적지 안내뿐만 아니라 위치 기반 다양한 부가 서비스를 통해 교통 약자들의 앱 사용 만족도를 높인다. 최종적으로 장애인 유형 별 다양한 시나리오를 가정하여 테스트를 진행하고, 장애인 협회의 협조를 통해 시각 장애인, 휠체어 사용 장애인의 현장 체험 및 최종 검증을 진행하고, 교통 약자를 위한 맞춤형 스마트 내비게이션 앱의 만족도 조사를 진행한다.
+
+                    </p>
+        
+                    <p>
+                        <b style="font-size: 16px;"> </b>
+                    </p>
+                </div>
+            </div>
+        </div>
+          
+    <!-- Current End -->
+
+    </body>
+
+  <!-- footer 영역 -->
+  <div lang="en" class="row d-flex align-items-center" style="height: 17rem; background-color: #1E1E1E;">
+    <div class="col" ></div>
+    <div lang="en" class="col-9 " lang="ko" >
+        <hr style="color: #FFFFFF; border-width: 2px;">    
+    <h3 style="color: rgb(255, 255, 255); text-align: left;">
+        COMPUTER SYSTEM LAB</h3>
+    <p style="text-align: left; color: #FFFFFF;">Industry-Academy Building 236, Korea
+        University, 145 Anam-ro, Seongbuk-gu, Seoul, Republic of Korea. 02841
+        <br>Professor : lchoi@korea.ac.kr · swj8905@korea.ac.kr
+        <br> Tel : +82-2-3290-3896
+        </p>
+   
+    </div>
+    <div class="col"></div>
+</div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+    <script
+        src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+    <script
+        src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</html>
