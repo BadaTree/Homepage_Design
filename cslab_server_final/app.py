@@ -4,6 +4,7 @@ from flask_bootstrap import Bootstrap
 # from flask_uploads import UploadSet, configure_uploads, IMAGES
 
 app = Flask(__name__, static_folder='static')
+app.static_folder = 'static'
 bootstrap = Bootstrap(app)
 
 
