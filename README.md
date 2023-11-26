@@ -1,13 +1,18 @@
 <!-- Heading -->
-# Heading 1
-## SSL 인증서 갱신 방법
+# SSL 인증서 갱신 방법 : 
+## Nginx 서버 중지 -> Certbot으로 갱신 -> Nginx 서버 다시 실행 -> APP.PY run
 ### 1. Nginx 서버 중지:
-#### 인증서 갱신 과정 중에 Nginx 서버를 일시적으로 중지합니다. 이를 위해 다음 명령을 사용합니다:
+#### Nginx 서버 제대로 종료되었는지 확인 (실행중인 nginx 있는지 확인):
 ```ts
-nginx -s stop
+taskkill /f /im nginx.exe
+
+```
+#### Nginx 서버 제대로 종료되었는지 확인 (실행중인 nginx 있는지 확인):
+```ts
+tasklist /fi "imagename eq nginx.exe"
+
 ```
 ### 2. 아래 명령을 사용하여 Certbot을 실행하고 인증서를 갱신합니다:
-#### 인증서 갱신 과정 중에 Nginx 서버를 일시적으로 중지합니다. 이를 위해 다음 명령을 사용합니다:
 ```ts
 certbot renew
 ```
@@ -19,73 +24,24 @@ pip install certbot-nginx
 ```
 ### 4. Nginx 서버 다시 시작:
 #### 인증서 갱신이 완료되면 Nginx 서버를 다시 시작합니다.
+####  Nginx 설치 경로로 이동 
 ```ts
-start nginx
+cd C:\nginx
 ```
-#### Heading 4
-##### Heading 5
-###### Heading 6
-Paragraph
+####  Nginx 실행
+```ts
+nginx
+```
 
 <!-- Line -->
 ___
 
-<!-- Text attributes -->
-This is the **bold** text and this is the *italic* text and let's do ~~strikethrough~~.
 
-<!-- Quote -->
-> Don't forget to code your dream 
+# Error Case :
 
-<!-- Bullet list -->
-Fruits:
-🍎
-🍋
+>The Certificate Authority failed to download the challenge files from the temporary standalone webserver started by Certbot on port 80. Ensure that the listed domains point to this machine and that it can accept inbound connections from the internet.
+**NGINX가 실행되고 있어서 발생한 문제. NGINX을 종료하고 갱신을 진행해야한다.**
 
-Other fruits:
-🍑
-🍏
-
-<!-- Numbered list -->
-Numbers:
-1. first
-2. second
-3. third
-
-<!-- Link -->
-Click [Here](http://academy.dream-coding.com/)
 
 <!-- Image -->
-![image description](https://user-images.githubusercontent.com/61736137/102153953-b2881000-3ebb-11eb-9581-7026bc8e169e.jpg)
-
-
-<!-- Table -->
-|Header|Description|
-|:--:|:--:|
-|Cell1|Cell2|
-|Cell3|Cell4|
-|Cell5|Cell6|
-
-<!-- Code -->
-To print message in the console, use `console.log('your message')` and ..
-
-```ts
-console.log('hello')
-```
-
-<!-- PR Description Example -->
-# What is Lorem Ipsum?
-`Lorem Ipsum` is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy **text ever since the 1500s**, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-```ts
-console.log('Hello World!');
-```
-
-|Feature|Description|
-|--|--|
-|Feature1|<img src="https://user-images.githubusercontent.com/61736137/102153953-b2881000-3ebb-11eb-9581-7026bc8e169e.jpg" width="400"><br>Feature1. Responsive Web Page|
-|Feature2|<img src="https://user-images.githubusercontent.com/61736137/102153956-b451d380-3ebb-11eb-9ab7-f8bad6c05a97.png" width="400"><br>Feature2. Responsive Web Page|
-
-## Before release
-- [x] Finish my changes
-- [ ] Push my commits to GitHub
-- [ ] Open a pull request
+![image description](https://private-user-images.githubusercontent.com/66122916/285629626-c72d312b-8381-4711-8490-c48d1e46da1b.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDA5NzQ0MDEsIm5iZiI6MTcwMDk3NDEwMSwicGF0aCI6Ii82NjEyMjkxNi8yODU2Mjk2MjYtYzcyZDMxMmItODM4MS00NzExLTg0OTAtYzQ4ZDFlNDZkYTFiLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzExMjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMxMTI2VDA0NDgyMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTM5YTc2MmQzYjNkOWY4MWFhZmEwMmY3Nzc2MzJkZmY3MmJiMzljODdkM2FmYTFiOTNlNTRhZmZkOTUxNjc3OGQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.LZd_ZLliZLsAeWJ9-pt1eWxESLoffAceK6pfxkpFJlo)
