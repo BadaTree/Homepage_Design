@@ -1,13 +1,18 @@
 <!-- Heading -->
-# Heading 1
-## SSL 인증서 갱신 방법
+# SSL 인증서 갱신 방법 : 
+## Nginx 서버 중지 -> Certbot으로 갱신 -> Nginx 서버 다시 실행 -> APP.PY run
 ### 1. Nginx 서버 중지:
-#### 인증서 갱신 과정 중에 Nginx 서버를 일시적으로 중지합니다. 이를 위해 다음 명령을 사용합니다:
+#### Nginx 서버 제대로 종료되었는지 확인 (실행중인 nginx 있는지 확인):
 ```ts
-nginx -s stop
+taskkill /f /im nginx.exe
+
+```
+#### Nginx 서버 제대로 종료되었는지 확인 (실행중인 nginx 있는지 확인):
+```ts
+tasklist /fi "imagename eq nginx.exe"
+
 ```
 ### 2. 아래 명령을 사용하여 Certbot을 실행하고 인증서를 갱신합니다:
-#### 인증서 갱신 과정 중에 Nginx 서버를 일시적으로 중지합니다. 이를 위해 다음 명령을 사용합니다:
 ```ts
 certbot renew
 ```
@@ -19,8 +24,13 @@ pip install certbot-nginx
 ```
 ### 4. Nginx 서버 다시 시작:
 #### 인증서 갱신이 완료되면 Nginx 서버를 다시 시작합니다.
+####  Nginx 설치 경로로 이동 
 ```ts
-start nginx
+cd C:\nginx
+```
+####  Nginx 실행
+```ts
+nginx
 ```
 #### Heading 4
 ##### Heading 5
