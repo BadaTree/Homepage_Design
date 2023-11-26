@@ -32,7 +32,16 @@ cd C:\nginx
 ```ts
 nginx
 ```
-#### Heading 4
+
+<!-- Line -->
+___
+
+
+# Error Case :
+
+>The Certificate Authority failed to download the challenge files from the temporary standalone webserver started by Certbot on port 80. Ensure that the listed domains point to this machine and that it can accept inbound connections from the internet.
+**NGINX가 실행되고 있어서 발생한 문제. NGINX을 종료하고 갱신을 진행해야한다.**
+
 
 <!-- Image -->
 ![image description](C:\Users\SKH\Github_local\Homepage_Design\KakaoTalk_20231126_125338741.png)
